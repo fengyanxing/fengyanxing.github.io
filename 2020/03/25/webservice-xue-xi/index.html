@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="sqlserver使用的简单记录, 冯雁星的博客">
-    <meta name="description" content="记录项目中的业务处理(环境：sqlserver2012、vs2017)使用sql语句将数据转换成相应的格式
-1.使用cast函数,不能转换日期类型
- cast(表达式 as 数据类型)
-
-&gt; select CAST(PLAN_LENGTH ">
+    <meta name="keywords" content="WebService学习, 冯雁星的博客">
+    <meta name="description" content="WebService学习注：(不会maven的可以先去学习maven配置和简单的命令)
+Webservice介绍apacheCXF简单测试1.pox文件引用：
+&amp;lt;!--项目依赖--&gt; 
+&amp;lt;dependencies&gt;
+    &amp;l">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>sqlserver使用的简单记录 | 冯雁星的博客</title>
+    <title>WebService学习 | 冯雁星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">sqlserver使用的简单记录</h1>
+                    <h1 class="description center-align post-title">WebService学习</h1>
                 </div>
             </div>
         </div>
@@ -441,28 +441,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-03-23
+                    2020-03-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-23
+                    2020-03-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1,326
+                    852
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    6 Min
+                    4 Min
                 </div>
                 
 
@@ -478,172 +478,167 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="记录项目中的业务处理-环境：sqlserver2012、vs2017"><a href="#记录项目中的业务处理-环境：sqlserver2012、vs2017" class="headerlink" title="记录项目中的业务处理(环境：sqlserver2012、vs2017)"></a>记录项目中的业务处理(环境：sqlserver2012、vs2017)</h3><h3 id="使用sql语句将数据转换成相应的格式"><a href="#使用sql语句将数据转换成相应的格式" class="headerlink" title="使用sql语句将数据转换成相应的格式"></a>使用sql语句将数据转换成相应的格式</h3><blockquote>
-<p>1.使用cast函数,不能转换日期类型</p>
-<p> cast(表达式 as 数据类型)</p>
-</blockquote>
-<pre class=" language-mssql"><code class="language-mssql">> select CAST(PLAN_LENGTH AS FLOAT) '长度' from [dbo].[CTS_PROJECTPLAN_DETAIL]</code></pre>
+                <h4 id="WebService学习"><a href="#WebService学习" class="headerlink" title="WebService学习"></a>WebService学习</h4><p><strong>注：</strong>(不会maven的可以先去学习maven配置和简单的命令)</p>
+<h5 id="Webservice介绍"><a href="#Webservice介绍" class="headerlink" title="Webservice介绍"></a>Webservice介绍</h5><h5 id="apacheCXF"><a href="#apacheCXF" class="headerlink" title="apacheCXF"></a>apacheCXF</h5><h5 id="简单测试"><a href="#简单测试" class="headerlink" title="简单测试"></a>简单测试</h5><p>1.pox文件引用：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--项目依赖--></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--jaxws规范包--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.cxf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>cxf-rt-frontend-jaxws<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.0shiyong.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--jetty包--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.cxf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>cxf-rt-transports-http-jetty<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--日志包--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.slf4j<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>slf4j-log4j12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.7.12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--插件的添加--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginManagement</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.maven.plugins<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>maven-compiler-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">></span></span>1.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">></span></span>1.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>encoding</span><span class="token punctuation">></span></span>UTF-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>encoding</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>showWarnings</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>showWarnings</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginManagement</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span></code></pre>
+<p>2.编写服务器端(使用@WebService注解进行标注其是一个服务)</p>
+<p>编写简单的服务接口</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@WebService</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">HelloService</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/*
+    * 使用注解@WebService
+    * 对外发布服务接口
+    * */</span>
+    <span class="token keyword">public</span> String <span class="token function">sayHello</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>接口的实现类编写：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">HelloService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> String <span class="token function">sayHello</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name<span class="token operator">+</span><span class="token string">",Welcome to xingxinghome!"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>3.在测试模块下测试服务端</p>
+<pre class=" language-java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Service</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//发布服务工厂</span>
+        JaxWsServerFactoryBean factor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JaxWsServerFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//设置服务地址</span>
+        factor<span class="token punctuation">.</span><span class="token function">setAddress</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8000/ws/hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//设置服务类</span>
+        factor<span class="token punctuation">.</span><span class="token function">setServiceBean</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HelloServiceImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//发布服务</span>
+        factor<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"服务发布成功：8000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>4.访问设置的地址显示如下：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">soap:</span>Envelope</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">soap:</span>Body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">soap:</span>Fault</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>faultcode</span><span class="token punctuation">></span></span>soap:Server<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>faultcode</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>faultstring</span><span class="token punctuation">></span></span>
+No binding operation info while invoking unknown method with params unknown.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>faultstring</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">soap:</span>Fault</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">soap:</span>Body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">soap:</span>Envelope</span><span class="token punctuation">></span></span></code></pre>
+<p>在其访问地址加上?wsdl就会显示出wsdl展示</p>
 <blockquote>
-<p>2.使用Convert函数通用</p>
-<p>Convert(数据类型，表达式)</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token operator">></span> <span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">FLOAT</span> <span class="token punctuation">,</span>PLAN_LENGTH<span class="token punctuation">)</span> <span class="token string">'长度'</span> <span class="token keyword">FROM</span> <span class="token punctuation">[</span>dbo<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">[</span>CTS_PROJECTPLAN_DETAIL<span class="token punctuation">]</span></code></pre>
+<p><a href="http://localhost:8000/ws/hello?wsdl" target="_blank" rel="noopener">http://localhost:8000/ws/hello?wsdl</a></p>
 </blockquote>
-<h4 id="除法时遇到分母为0时的处理"><a href="#除法时遇到分母为0时的处理" class="headerlink" title="除法时遇到分母为0时的处理"></a>除法时遇到分母为0时的处理</h4><p>简单的示范：</p>
-<pre class=" language-declaremssql"><code class="language-declaremssql">--定义变量并且设置分母为0，这样一定会出现错误
-declare @a int;
-declare @b int;
-set @a = 10;
-set @b = 0;
-select @a/@b
-
-
---1.可以使用case语句进行判断操作,当分母为0时将其转换成1
-select case @b when 0 then 1 else @a/@b 
-
-
---2.使用函数nullif，该函数
---nullif(express1,express2),如果express1==express2时，直接为null，将表达式2设置为0，遇到0时直接为null
-declare @a int;
-declare @b int;
-set @a=10
-set @b=5
-select @a/nullif(@b,0)
-
-
---当然最后的需要并不会是null值，可以使用isnull函数进行控制
---isnull(express1,express2),如果e1为null时，返回e2
-declare @a int;
-declare @b int;
-set @a=10
-set @b=5
-select isnull(@a/nullif(@b,0),1)
+<p>显示结果如下：</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200325092919279.png" alt="image-20200325092919279"></p>
+<p>3.客户端的编写</p>
+<p>客户端需要知道服务端是什么样子的接口，在客户端够构建与服务端一样的接口，不需要实现</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@WebService</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">HelloService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> String <span class="token function">sayHello</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<h4 id="项目需求："><a href="#项目需求：" class="headerlink" title="项目需求："></a>项目需求：</h4><blockquote>
-<p>将两列数据位varchar类型的数据进行类型转换并进行除法运算</p>
-<p>自己编写的语句是：</p>
-<p>select</p>
-<p>isnull(Convert(float,ziduan1)/nullif(Convert(float,字段2),0),1 ) ‘新列名’</p>
-<p>from 表名</p>
-<p>–简单的解释就是，两列char类型的数据进行float转换后进行除法，进行除数为0判断</p>
-</blockquote>
-<h4 id="查询数据库中的数据进行数据监视"><a href="#查询数据库中的数据进行数据监视" class="headerlink" title="查询数据库中的数据进行数据监视"></a>查询数据库中的数据进行数据监视</h4><p>要求：能够查出每周、每月、每年的工作量</p>
-<blockquote>
-<p>每日统计:<br>select 日期时间=convert(char(10), 日期时间, 120), 数量=sum(数量)<br>from T<br>group by convert(char(10), 日期时间, 120)</p>
-<p>每周统计:<br>select 日期时间=datepart(week, 日期时间), 数量=sum(数量)<br>from T<br>where year(日期时间)=year(getdate())<br>group by datepart(week, 日期时间)</p>
-<p>每月统计:<br>select 日期时间=convert(char(7), 日期时间, 120), 数量=sum(数量)<br>from T<br>group by convert(char(7), 日期时间, 120) </p>
-</blockquote>
-<p>直接进行更改，查询项目工作量的表中的workload列数据，按照周、月、日进行分组统计</p>
-<pre class=" language-mssql"><code class="language-mssql">select 周计划=datepart(week,[YEARMONTH] ),每周计划量=sum([WORKLOAD])
-from [dbo].[CTS_PROJECTPLAN_WORKLOAD] 
-where year([YEARMONTH])=year(getdate())
-group by datepart(week, [YEARMONTH])
+<p>测试连接服务端：(测试时，服务端需要启动)</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//服务接口访问的地址</span>
 
-select 月计划=datepart(MONTH,[YEARMONTH] ),每周计划量=sum([WORKLOAD])
-from [dbo].[CTS_PROJECTPLAN_WORKLOAD] 
-where month([YEARMONTH])=month(getdate())
-group by datepart(MONTH, [YEARMONTH])
+        <span class="token comment" spellcheck="true">//创建cxf代理工厂</span>
+        JaxWsProxyFactoryBean factory <span class="token operator">=</span>  <span class="token keyword">new</span> <span class="token class-name">JaxWsProxyFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//设置远程服务器端的地址</span>
+        factory<span class="token punctuation">.</span><span class="token function">setAddress</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8000/ws/hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//设置接口类型</span>
+        factory<span class="token punctuation">.</span><span class="token function">setServiceClass</span><span class="token punctuation">(</span>HelloService<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//对接口生成代理对象$Proxy34jdk代理，$CGLIB123使用cglib代理</span>
+        HelloService helloService <span class="token operator">=</span> factory<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>HelloService<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>helloService<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//远程访问服务端方法</span>
+        String content <span class="token operator">=</span> helloService<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token string">"jet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>4.控制台使用日志拦截器来进行soap请求的拦截</p>
+<p>在发布服务的时候添加代码：首先在main路径下的resource文件夹中添加log4j的配置文件</p>
+<pre class=" language-text"><code class="language-text"># Set root category priority to INFO and its only appender to CONSOLE.
+#log4j.rootCategory=INFO, CONSOLE
+log4j.rootCategory=INFO, CONSOLE, LOGFILE
 
+# Set the enterprise logger category to FATAL and its only appender to CONSOLE.
+log4j.logger.org.apache.axis.enterprise=FATAL, CONSOLE
 
-select 日期时间=convert(varchar(20), [YEARMONTH], 120), 数量=sum([WORKLOAD])
-from [CTS_PROJECTPLAN_WORKLOAD]
-group by convert(varchar(20), [YEARMONTH], 120) 
+# CONSOLE is set to be a ConsoleAppender using a PatternLayout.
+log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+log4j.appender.CONSOLE.Threshold=INFO
+log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+#log4j.appender.CONSOLE.layout.ConversionPattern=- %m%n
+log4j.appender.CONSOLE.layout.ConversionPattern=%d{ISO8601}%-6r[%15.15t]&-5p %30.30c %x - %m\n
+# LOGFILE is set to be a File appender using a PatternLayout.
+log4j.appender.LOGFILE=org.apache.log4j.FileAppender
+log4j.appender.LOGFILE.File=axis.log
+log4j.appender.LOGFILE.Append=true
+log4j.appender.LOGFILE.Threshold=INFO
+log4j.appender.LOGFILE.layout=org.apache.log4j.PatternLayout
+log4j.appender.LOGFILE.layout.ConversionPattern=%-4r [%t] %-5p %c %x - %m%n
 </code></pre>
-<h4 id="存储过程-基于sqlserver2012进行记录"><a href="#存储过程-基于sqlserver2012进行记录" class="headerlink" title="存储过程(基于sqlserver2012进行记录)"></a>存储过程(基于sqlserver2012进行记录)</h4><p>项目中要求的数据进行拼接过于多，因此使用存储过程，自己也对存储过程进行简单的学习。</p>
+<pre class=" language-java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//发布服务工厂</span>
+        JaxWsServerFactoryBean factor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JaxWsServerFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//设置服务地址</span>
+        factor<span class="token punctuation">.</span><span class="token function">setAddress</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8000/ws/hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//设置服务类</span>
+        factor<span class="token punctuation">.</span><span class="token function">setServiceBean</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HelloServiceImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//添加日志输入，输出连接器，观察soap请求，soap响应内容</span>
+        factor<span class="token punctuation">.</span><span class="token function">getInInterceptors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">LoggingInInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        factor<span class="token punctuation">.</span><span class="token function">getOutInterceptors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">LoggingOutInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//发布服务</span>
+        factor<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"服务发布成功：8000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span></code></pre>
+<p>控制台有信息：其中有服务的名称，服务的参数，soap封装格式</p>
 <blockquote>
-<p>存储过程的概念：</p>
-<p>存储过程（Stored Procedure）是在大型数据库系统中，一组为了完成特定功能的SQL 语句集，它存储在数据库中，一次编译后永久有效，用户通过指定存储过程的名字并给出参数（如果该存储过程带有参数）来执行它。存储过程是数据库中的一个重要对象。在数据量特别庞大的情况下利用存储过程能达到倍速的效率提升。</p>
-</blockquote>
-<pre class=" language-mssql"><code class="language-mssql">--情况1不带参数的存储过程
-create proc sp_name
-as
-begin 
-   print 'helloworld'
-end
---执行语句
-exec sp_name
---删除当前的存储过程
-drop proc sp_name
-
---2.带参数的存储过程
-create proc sp_name
-    @name nvarchar(50),
-    @author nvarchar(50)
-as 
-begin
-    select * from Books where title = @name and Author = @author
-end
-
---执行带有参数的存储过程
-exec sp_name 'C# Primer 习题解答（第5版）','蒋爱军，李师贤，梅晓勇  著'
-exec sp_name @name = 'C# Primer 习题解答（第5版）' , @author = '蒋爱军，李师贤，梅晓勇  著'
-
---3.带有默认值的存储过程
-create proc sp_name
-    @patt nvarchar(50) = '1046002111',
-    @repla nvarchar(50)
-as 
-begin
-    select * from Articel_Words where [WordPattern] = @patt and [ReplaceWord] = @repla
-end
---对参数进行更改
-exec sp_name @patt = 'newvalue'
-
---4.带有输出参数的存储过程
-create proc usp_output
-@bookname nvarchar(50),
-@recordCount int output --关键字代表输出参数
-as
-begin
-    select * from hero where bookname=@bookname
-    --把查询的记录条数赋值给变量@recordCount
-    set @recordCount = (select count(*) from hero where bookname=@bookname)
-end 
---调用带有参数的存储过程，需要定义变量，并把变量传递
-declare @num int
-exec usp_output @bookname='书剑恩仇录',@recordCount=@num output
-select @num as 记录条数
-
---5.存储过程实现分页
-create proc usp_fenye
-@pagesize int=3, --每页记录的条数
-@index int=1,    --当前查看第几页的内容
-@recordcount int output, --总的条数
-@pagecount int output --总的页数
-as
-begin
-    --分页
-    select
-        t.id,
-        t.bookname,
-        t.hero
-    from (select *,rn=row_number() over(order by id asc) from hero) as t
-    where t.rn between (@index-1) * @pagesize + 1 and @pagesize * @index
-    --计算总的条数
-    set @recordcount =( select count(*) from hero)
-    --计算总的页数
-    set @pagecount=ceiling(@recordcount * 1.0 / @pagesize)  --ceiling向上取整
-end
---执行存储过程
-declare @tiaoshu int
-declare @yeshu int
-exec usp_fenye @pagesize=5,@index =3,@recordcount=@tiaoshu output,@pagecount=@yeshu output
-select @tiaoshu as 总的条数
-select @yeshu as 总的页数</code></pre>
-<h4 id="删除存储过程"><a href="#删除存储过程" class="headerlink" title="删除存储过程"></a>删除存储过程</h4><blockquote>
-<p>drop produre sp_name</p>
-<p>注意的是，存储过程中不能够删除另一个存储过程，只能够调用另一存储过程</p>
-<p>每个不同的数据库具体实现不同</p>
-<p>sqlserver使用：drop proc 存储过程名</p>
-</blockquote>
-<h4 id="其余的命令"><a href="#其余的命令" class="headerlink" title="其余的命令"></a>其余的命令</h4><blockquote>
-<ol>
-<li>show procedure status</li>
-</ol>
-<p>显示数据库中所有存储的存储过程基本信息</p>
-<ol start="2">
-<li>show create procedure  sp_name </li>
-<li>exec sp_name </li>
-</ol>
+<p>Payload: &lt;soap:Envelope xmlns:soap=”<a href="http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;" target="_blank" rel="noopener">http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;</a><a href="soap:Body">soap:Body</a>&lt;ns2:sayHello xmlns:ns2=”<a href="http://service.itxing.com/&quot;&gt;" target="_blank" rel="noopener">http://service.itxing.com/&quot;&gt;</a><arg0>jet</arg0></ns2:sayHello></soap:Body></soap:Envelope></p>
 </blockquote>
 
             </div>
@@ -670,7 +665,7 @@ select @yeshu as 总的页数</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/03/23/sqlserver-shi-yong-de-jian-dan-ji-lu/">http://yoursite.com/2020/03/23/sqlserver-shi-yong-de-jian-dan-ji-lu/</a>
+                    <a href="http://yoursite.com/2020/03/25/webservice-xue-xi/">http://yoursite.com/2020/03/25/webservice-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -871,9 +866,52 @@ select @yeshu as 总的页数</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2020/03/25/webservice-xue-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="WebService学习">
+                        
+                        <span class="card-title">WebService学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            WebService学习注：(不会maven的可以先去学习maven配置和简单的命令)
+Webservice介绍apacheCXF简单测试1.pox文件引用：
+&lt;!--项目依赖--> 
+&lt;dependencies>
+    &l
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            it星
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/03/24/neo4j-xue-xi-yu-dao-de-keng/">
                     <div class="card-image">
@@ -895,45 +933,8 @@ neo4下载与安装(windows环境下)neo4j官网
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-24
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            it星
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/03/19/suan-fa-si-xiang-ji-lu/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="算法思想记录">
-                        
-                        <span class="card-title">算法思想记录</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            dijestla算法思想：引入两个集合，closelist和openlist，闭集合用来记录已经求出最短路径的顶点，开集合用阿里记录为求出最短路径的顶点。集合1：记录源节点（A）到各个节点之间的距离；集合2记录节点对应上一级点（父节点）1.
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-24
                             </span>
                         <span class="publish-author">
                             
