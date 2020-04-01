@@ -1,0 +1,1395 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Web学习的简单记录, 冯雁星的博客">
+    <meta name="description" content="Web学习的简单记录一、Html简单记录1.html简单介绍
+HTML:超文本标记语言，标记语言不是编程语言，是用一组标签对内容进行描述的语言HTML语法和规范：所有的html文件都要以.htm或者.html结尾html文件由头文件和体部分">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Web学习的简单记录 | 冯雁星的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">冯雁星的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>主页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>档案</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>内容</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>朋友</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">冯雁星的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			主页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			档案
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			内容
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			朋友
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="fengyanxing.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="fengyanxing.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Web学习的简单记录</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-04-01
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-04-01
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    0
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    1 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="Web学习的简单记录"><a href="#Web学习的简单记录" class="headerlink" title="Web学习的简单记录"></a>Web学习的简单记录</h4><h5 id="一、Html简单记录"><a href="#一、Html简单记录" class="headerlink" title="一、Html简单记录"></a>一、Html简单记录</h5><h6 id="1-html简单介绍"><a href="#1-html简单介绍" class="headerlink" title="1.html简单介绍"></a>1.html简单介绍</h6><blockquote>
+<p>HTML:超文本标记语言，标记语言不是编程语言，是用一组标签对内容进行描述的语言<br>HTML语法和规范：所有的html文件都要以.htm或者.html结尾<br>html文件由头文件<head><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><meta name="generator" content="Hexo 4.2.0"></head>和体部分<body></body>组成<br>html标签都是有开始标签和结束标签组成，其忽略大小写一般用小写</p>
+</blockquote>
+<h6 id="2-html简单规则"><a href="#2-html简单规则" class="headerlink" title="2.html简单规则"></a>2.html简单规则</h6><blockquote>
+<p>①标签不能交叉嵌套</p>
+<p>②标签必须正确关闭(闭合)</p>
+<p>③属性必须有值，属性值必须加引号</p>
+<p>④注释不能嵌套</p>
+</blockquote>
+<h6 id="3-html标签"><a href="#3-html标签" class="headerlink" title="3.html标签"></a>3.html标签</h6><blockquote>
+<p>标题标签：<hn></hn></p>
+<p>水平标签：<hr/></p>
+<p>段落标签：<p></p></p>
+<p>字体标签：<font color="#00ee00" size="5"></font></p>
+<p>表单标签：所有需要提交到服务器端的表单必须使用<form></form>括起来</p>
+<p>特殊字符：&lt;    ———&gt;   &amp;lt、&gt;  ———&gt;   &amp;gt 、空格   ———&gt;  &amp;nbsp </p>
+</blockquote>
+<blockquote>
+<pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!--
+超链接标签：&lt;a href="" >&lt;/a>
+href属性设置连接地址
+target属性设置哪个目标进行跳转
+_self  跳转到另一个页面，不打开新的地址，默认
+_blank  跳转到另一个页面，打开新的地址
+--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>www.baidu.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>百度<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>www.baidu.com<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_self<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>百度<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>www.baidu.com<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>百度<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!--列表标签   无序列表ul  有序列表ol
+        ul是无需列表
+            type属性可以修改
+        li是列表项
+--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>none<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>赵四<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>刘能<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>小沈阳<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>宋小宝<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!--图片标签
+        显示一张美女照片
+        img属性，显示照片
+           src属性可以设置图片的路径
+           width:设置图片宽度
+           height:设置图片高度
+           border:设置边框
+           alt:当图片不存在时，替换的文字或路径
+        相对路径：从工程中开始算
+        绝对路径：盘符/目录/文件名
+--></span>
+<span class="token comment" spellcheck="true">&lt;!--
+        table 标签是表格标签
+            border 设置表格标签
+            width 设置表格宽度
+            height 设置表格高度
+            align 设置表格相对于页面的对齐方式
+            cellspacing 设置单元格间距
+        tr     是行标签
+        th    是表头标签
+        td  是单元格标签
+            align 设置单元格文本对齐方式
+
+        b 是加粗标签
+--></span>
+<span class="token comment" spellcheck="true">&lt;!--ifarme标签可以在页面上开辟一个小区域显示一个单独的页面
+      ifarme和a标签组合使用的步骤:
+          1 在iframe标签中使用name属性定义一个名称
+          2 在a标签的target属性上设置iframe的name的属性值
+--></span></code></pre>
+</blockquote>
+<h6 id="4-向服务器提交的内容必须都包含在form标签中"><a href="#4-向服务器提交的内容必须都包含在form标签中" class="headerlink" title="4.向服务器提交的内容必须都包含在form标签中"></a>4.向服务器提交的内容必须都包含在form标签中</h6><pre class=" language-html"><code class="language-html"> <span class="token comment" spellcheck="true">&lt;!--
+        form标签就是表单
+            input type=text     是文件输入框  value设置默认显示内容
+            input type=password 是密码输入框  value设置默认显示内容
+            input type=radio    是单选框    name属性可以对其进行分组   checked="checked"表示默认选中
+            input type=checkbox 是复选框   checked="checked"表示默认选中
+            input type=reset    是重置按钮      value属性修改按钮上的文本
+            input type=submit   是提交按钮      value属性修改按钮上的文本
+            input type=button   是按钮          value属性修改按钮上的文本
+            input type=file     是文件上传域
+            input type=hidden   是隐藏域    当我们要发送某些信息，而这些信息，不需要用户参与，就可以使用隐藏域（提交的时候同时发送给服务器）
+
+            select 标签是下拉列表框
+            option 标签是下拉列表框中的选项 selected="selected"设置默认选中
+
+            textarea 表示多行文本输入框 （起始标签和结束标签中的内容是默认值）
+                rows 属性设置可以显示几行的高度
+                cols 属性设置每行可以显示几个字符宽度
+--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">readonly</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">placehoder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+&lt;input type="radio" name="" value="" checked=""/ >
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">check</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>菜单一<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token punctuation">></span></span>菜单2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+在选择中selected=“selected”为默认的选项
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
+
+ <span class="token comment" spellcheck="true">&lt;!--
+        form标签是表单标签
+            action属性设置提交的服务器地址
+            method属性设置提交的方式GET(默认值)或POST
+
+        表单提交的时候，数据没有发送给服务器的三种情况：
+            1、表单项没有name属性值
+            2、单选、复选（下拉列表中的option标签）都需要添加value属性，以便发送给服务器
+            3、表单项不在提交的form标签中
+
+        GET请求的特点是：
+            1、浏览器地址栏中的地址是：action属性[+?+请求参数]
+                请求参数的格式是：name=value&amp;name=value
+            2、不安全
+            3、它有数据长度的限制
+
+        POST请求的特点是：
+            1、浏览器地址栏中只有action属性值
+            2、相对于GET请求要安全
+            3、理论上没有数据长度的限制
+--></span>
+
+ <span class="token comment" spellcheck="true">&lt;!--DIV相关技术：DIV是一个块级元素（单独显示一行）。它单独使用没有任何意义必须结合css
+    使用，它主要应用于页面的布局。
+    span她是一个html标签，一个内联元素（显示一行）。它单独使用没有任何意义，必须结合css
+    使用。它主要用于对括起来的内容进行式的修饰
+            div标签       默认独占一行
+            span标签      它的长度是封装数据的长度
+            p段落标签     默认会在段落的上方或下方各空出一行来（如果已有就不再空）
+--></span>
+</code></pre>
+<h5 id="二、CSS层叠样式表"><a href="#二、CSS层叠样式表" class="headerlink" title="二、CSS层叠样式表"></a>二、CSS层叠样式表</h5><h6 id="1-css技术介绍："><a href="#1-css技术介绍：" class="headerlink" title="1.css技术介绍："></a>1.css技术介绍：</h6><p>Cascading Style Sheet指的是层叠样式表，样式由html元素显示，样式通常存储在样式表中，把样式添加在html中，用于解决内容与表现分离的问题</p>
+<h6 id="2-css中的常用选择器"><a href="#2-css中的常用选择器" class="headerlink" title="2.css中的常用选择器"></a>2.css中的常用选择器</h6><blockquote>
+<p>常见的选择器：<br>1.元素选择器</p>
+<style>
+div{
+属性名1：属性值1；
+属性名2：属性值2；
+属性名3：属性值3；
+}
+</style>
+
+<p>在实体中：</p>
+<div>....</div>
+
+<p>2.类选择器</p>
+<style>
+.div2{
+属性名1：属性值1；
+属性名2：属性值2；
+属性名3：属性值3；
+}
+</style>
+
+
+<p>在实体中：</p>
+<div class="div2">.....</div>
+
+<p>3.id选择器—唯一性</p>
+<style>
+#div3{
+属性名1：属性值1；
+属性名2：属性值2；
+属性名3：属性值3；
+}
+</style>
+
+<p>在实体中：</p>
+<div id="div3">...</div>
+
+<p>4.层级选择器</p>
+<style>
+div p{
+font-size:30px;
+color:green;
+}
+</style>
+
+
+<p>在实体中：</p>
+<div>
+<p>
+......
+</p>
+</div>
+
+
+<p>5.属性选择器</p>
+<style>
+input[type='text']{
+background-color:red;
+}
+
+
+input[type='password']{
+background-color:blue;
+}
+</style>
+
+<p>在实体中</p>
+<body>
+用户名：<input type="text" name="username"/><br/>
+密码：<input type="password" name="password"/>
+</body>
+</blockquote>
+<h6 id="3-css的引入方式"><a href="#3-css的引入方式" class="headerlink" title="3.css的引入方式"></a>3.css的引入方式</h6><blockquote>
+<p>css引入的方式：<br>1.行内引入<div style="color:red;font-size:100px;"> 内容</div><br>2.内部引入方式</p>
+<style typle="text/css">
+div{
+color:red;
+font-size:100px;
+}
+</style>
+
+<p>style代表了设置样式<br>3.外部引入：使用地址引入</p>
+</blockquote>
+<h5 id="三、javascript"><a href="#三、javascript" class="headerlink" title="三、javascript"></a>三、javascript</h5><h6 id="1-js简单介绍"><a href="#1-js简单介绍" class="headerlink" title="1.js简单介绍"></a>1.js简单介绍</h6><p>javascript被设计用来向html页面添加交互行为，其是一种脚本语言（是一种轻量级语言）。<br>javascript是一种解释型语言，是基于对象和事件的脚本语言，主要应用在客户端，由浏览器来执行js代码。可以与用户执行信息交互，具有安全性，不允许访问本地硬盘。</p>
+<p><strong>java与javascript的区别：无关</strong></p>
+<blockquote>
+<p>javascript包含有：<strong>DOM、BOM、ECMAscript</strong>(DOM:js操作操作网页，BOM:js操作浏览器)<br>ECMAscript：它是整个javascript的核心，包含（基本语法、变量、关键字、保留字、数据类型、语句、函数）<br>ECMAscript:有<strong>五种原始的类型</strong>：undefined、null、boolean、number、string</p>
+</blockquote>
+<h6 id="2-js的使用"><a href="#2-js的使用" class="headerlink" title="2.js的使用"></a>2.js的使用</h6><blockquote>
+<p>javascript数据类型分为<strong>原始数据类型和引用数据类型</strong><br>原始：String（字符串）、number（数字）、boolean（布尔）、<br>null（空对象，只有一个值null）、undefined（未定义，只有一个值undefined）、Object（对象类型）、函数类型：function<br>引用数据类型：Arrey 、Boolean、 Date、 Math、 Number、 String 、ReqExp<br>语句（if-else、while、do-while、for、switch、continue、break）</p>
+</blockquote>
+<h6 id="3-js中遵循的一些原则："><a href="#3-js中遵循的一些原则：" class="headerlink" title="3.js中遵循的一些原则："></a>3.js中遵循的一些原则：</h6><blockquote>
+<p>js中的特殊值：<br>undefined：未定义，所有js变量为赋予初始值<br>null  空值<br>NAN   不合法的值</p>
+<p>js中的<strong>全等于和等于</strong><br>等于==  简单的字面比较<br>全等于===  都比较，比较字面值和值类型<br><strong>js逻辑运算</strong><br>且   &amp;&amp;<br> 当表达式为真的时候,返回最后一个表达式的值<br> 当表达式中有一个为假的值时候，返回第一个为假的表达式的值<br>或   ||<br> 当表达式全为假，返回最后一个表达式的值<br> 只要有一个表达式为真，就会把第一个为真的表达式的值返回<br>非   |<br>在js中所有变量都可以为一个boolean类型的变量去使用，<br>0，null，undefined，“”空串可以认为是false</p>
+</blockquote>
+<h6 id="4-js中函数的定义、对象的定义、事件的介绍："><a href="#4-js中函数的定义、对象的定义、事件的介绍：" class="headerlink" title="4.js中函数的定义、对象的定义、事件的介绍："></a>4.js中函数的定义、对象的定义、事件的介绍：</h6><blockquote>
+<p><strong>函数定义</strong></p>
+<pre><code>1.  function 函数名（形式参数）{
+      函数体；
+      return 结果；#可有可无
+
+}</code></pre><ol start="2">
+<li><p>var 函数名 = function(){<br> 函数体；<br> return  返回值；<br>}</p>
+<p>js中函数不允许重载，后面的会替换前面的函数，不允许方法重名<br>函数的arguments隐形参数，是一个可变长参数，操作该变量相当于数组操作</p>
+<p><strong>js中定义对象</strong><br>Object形式的自定义对象<br> var 变量名 = new Object();<br> 变量名.属性名 = 值；<br> 变量名.函数名=function(){}<br>{}花括号形式的自定义对象<br> var 变量名={</p>
+<pre><code> 属性名：值，
+ 属性名：值，
+ 函数名：function（）{}</code></pre><p> }；<br><strong>js中的事件：</strong><br>onload 加载事件  页面加载完成后，常用于做页面js代码初始化事件<br>onclick单击事件  常用于按钮点击后响应操作<br>onblur失去焦点事件  常用于输入框失去焦点后验证其输入内容是否合法<br>onchange 内容发生改变事件  常用于下拉列表和输入框内容发生改变后操作<br>onsubmit 表单提交事件  常用于表单提交前，验证所有表单项是否合法<br>事件注册分为静态注册和动态注册</p>
+</li>
+</ol>
+</blockquote>
+<h6 id="5-js中获取Document对象"><a href="#5-js中获取Document对象" class="headerlink" title="5.js中获取Document对象"></a>5.js中获取Document对象</h6><p>DOM（Document Object Model）：文档对象模型，包含（整个html页面的内容）</p>
+<blockquote>
+<p>Document对象方法介绍：</p>
+<ol>
+<li>document.getElementById(elementId)通过标签id属性查找标签dom对象，elementId是标签的id属性</li>
+<li>document.getElementsByName(elementName)通过标签的name属性查找标签dom对象，elementName标签的name属性值</li>
+<li>document.getElementByTagName(tagname)通过标签名查找dom对象，tagname是标签名</li>
+<li>document.createElement(tagName)方法，通过给定的标签名，创建一个标签对象，tagName是要创建的标签名<br><strong>BOM：浏览器对象模型，（整个浏览器相关内容）</strong><br>1.window：alert（）；prompt（）；setInterval（）；clearInterval（）；setTimeout（）；clearTimeout（）<pre><code>history：go（参数）；back（）；forward（）
+location：href属性</code></pre>2.事件：<pre><code>onsubmit（）此事件写在form标签中，必须有返回值    
+onload（）此事件只能写一次并且放到body标签中
+其他事件需要放到需要操作的元素位置（onclick、onfocus、onblur）</code></pre>3.获取元素：<pre><code>document.getElementById（“id”）</code></pre>4.获取元素里面的值：<pre><code>document.getElementById（“id”）.value</code></pre>5.向页面输出：<pre><code>弹窗：alert（）；
+想浏览器写入内容：document.writer（内容）；
+想页面指定位置写入内容：innerHTML</code></pre></li>
+</ol>
+</blockquote>
+<h6 id="6-正则表达式简单入门"><a href="#6-正则表达式简单入门" class="headerlink" title="6.正则表达式简单入门"></a>6.正则表达式简单入门</h6><blockquote>
+<p>//格式1：var patt = new RegExp(“e”);<br>//格式2：var patt = /e/;<br>//格式1与格式2等价，表示要求字符串中是否包含小写字母</p>
+<p>var prep = /[a-z]/;<br>var bigstr = /\w/;<br>// 至少包含一个a   /a+/    有零个或者多个a   /a*/</p>
+<p>//表示要求字符串包含一个或零个a  /a?/<br>//表示连续的n个a  /a{n}/—&gt;例如3个a/a{3}/  至少有3个a最多有5个a  /a{3,5}/<br>//表示匹配一a结尾的字符串 a$<br>//^尖括号表示以a打头，/^a/<br>//从头到尾全部匹配/^a{3,5}$/<br>//数字字母下划线，字符串长度为3到5位/^\w{3,5}$/</p>
+</blockquote>
+<h5 id="四、Jquery（学习的不够，暂时不进行记录）"><a href="#四、Jquery（学习的不够，暂时不进行记录）" class="headerlink" title="四、Jquery（学习的不够，暂时不进行记录）"></a>四、Jquery（学习的不够，暂时不进行记录）</h5><h5 id="五、servlet"><a href="#五、servlet" class="headerlink" title="五、servlet"></a>五、servlet</h5><h6 id="1-servlet简单介绍"><a href="#1-servlet简单介绍" class="headerlink" title="1.servlet简单介绍"></a>1.servlet简单介绍</h6><blockquote>
+<p>servlet  运行在服务器端的java小程序，用来处理客户端请求、响应给浏览器的动态资源。<br>但是servlet的实质就是java代码，通过java的API动态的向客户端输出内容</p>
+</blockquote>
+<h6 id="2-servlet规范-接口"><a href="#2-servlet规范-接口" class="headerlink" title="2.servlet规范/接口"></a>2.servlet规范/接口</h6><blockquote>
+<p>  实现步骤：1）创建类实现Servlet接口；2）覆盖尚未实现的方法–service方法  3）在web.xml进行servlet的配置<br>  开发中经常继承HTTPservelet<br>  实现步骤：1）创建类继承HttpServlet类 2）覆盖doGet和doPost   3）在web.xml中进行servlet的配置</p>
+<p>  实现Servlet接口需要实现的方法：</p>
+<p>  init（ServlerConfig config）方法：初始化，在servlet对象创建的时候执行<br>       参数ServlerConfig代表是该servlet对象的配置信息<br>  service（ServletRequest request，ServletRespose respose）方法：每次请求（刷新页面）都会执行<br>       参数ServletRequest代表请求 认为ServletRequest内部封装的是http请求信息；<br>       参数ServletResponse代表响应 认为要封装的是响应信息<br>  destroy方法：servlet销毁时执行</p>
+</blockquote>
+<h6 id="3-servlet生命周期"><a href="#3-servlet生命周期" class="headerlink" title="3.servlet生命周期"></a>3.servlet生命周期</h6><blockquote>
+<p>默认在<strong>第一次访问servlet时创建servlet对象</strong>，会调用init方法<br>servlet销毁：<br><strong>服务器关闭时servlet销毁</strong>，会调用destory方法<br><strong>每次访问</strong>（刷新页面）必然执行的方法有：<br>service（ServletRequest req，ServletResponse res）方法;</p>
+</blockquote>
+<p>4.servlet的request与response</p>
+<blockquote>
+<p><strong>request</strong>：获取请求行（getMethod（）；getContextPath）、<br>   获取请求头(getHeader(name);),<br>   获取请求体(getParameter()/getParameterMap())<br>     转发和域对象（request.getRequestDispatcher(url).forward();setAttribute();getAttribute()）<br><strong>response</strong>:设置响应行：setStatus()<br>      设置响应头：setHeader(name,value)<br>     设置响应体：getWriter();write();getOutputStream().write()</p>
+</blockquote>
+<h5 id="六、xml可扩展标记语言"><a href="#六、xml可扩展标记语言" class="headerlink" title="六、xml可扩展标记语言"></a>六、xml可扩展标记语言</h5><h6 id="1-DTD约束"><a href="#1-DTD约束" class="headerlink" title="1.DTD约束"></a>1.DTD约束</h6><blockquote>
+<p>DTD约束（为了使得用户书写时规范一些）： Document Type Definition，文档定义类型<br>DTD引入方式：<br>    1.内部嵌入（当前xml有效）：<!DOCTYPE web-app[...写入语法......]><br>        <web-app></web-app><br>    2.本地DTD:<!DOCTYPE web-app SYSTEM="文件名.dtd"><br>        <web-app></web-app><br>    3.网络DTD:<!DOCTYPE web-app     PUBLIC="url路径/文件名.dtd"><br>        <web-app></web-app></p>
+</blockquote>
+<h6 id="2-Schema约束："><a href="#2-Schema约束：" class="headerlink" title="2.Schema约束："></a>2.Schema约束：</h6><blockquote>
+<p>新的xml约束，比DTD强大许多，Schema是cml文档以xsd为扩展名，功能强大，支持命名空间<br>约束文档 1.引入w3c预定义的名称空间：xmlns=“<a href="http://www.w3c.org/2001/XMLSchema”" target="_blank" rel="noopener">http://www.w3c.org/2001/XMLSchema”</a><br>2.自定义一个命名空间：targeName=“路径url”<br>3.定义元素和属性<br>4.引入w3c的实例文档：xmlns=“<a href="http://www.w3c.org/2001/XMLSchema-instance”" target="_blank" rel="noopener">http://www.w3c.org/2001/XMLSchema-instance”</a><br>5.引入自定义名称空间：xmlns=“<a href="http://url”" target="_blank" rel="noopener">http://url”</a><br>6.引入文档所在位置：xsi：文档名=“文档路径url”</p>
+</blockquote>
+<h6 id="3-xml解析"><a href="#3-xml解析" class="headerlink" title="3.xml解析"></a>3.xml解析</h6><blockquote>
+<p>1.DOM解析：将文档一次性加载到内存形成树形结构进行解析。文档很大时容易内存溢出<br>2.SAX解析：时间驱动方式解析，边读取边解析。不便于增删操作。<br>3.PULL：android内置的xml解析方式，类似于sax</p>
+<p><strong>解析器：</strong>JAXP（sun公司支持DOM和SAX）、JDom、<br>   jsoup（一种处理HTML的解析包）、dom4j（比较常用的解析开发包，hibernate底层采用）</p>
+<p><strong>常用的API以及方法：</strong><br>   1.SaxReader对象:read()方法执行xml文档<br>   2.Document对象：getRootElement（）获得根元素<br>   3.Element对象：elements()获取指定名称的所有子元素;element()获取第一个元素;getName();<br>   attributeValue()获取指定属性名的属性值;elementText()获取指定名称子元素的文本值;<br>   getText()获得当前元素文本内容</p>
+<p>步骤：1.获取解析器；2.获取document文档对象；3.获取根元素；<br>   4.获取元素下的子元素；5.遍历子元素；6.判断元素是否为servlet元素使用equals()方法</p>
+</blockquote>
+<h6 id="4-反射"><a href="#4-反射" class="headerlink" title="4.反射"></a>4.反射</h6><blockquote>
+<p>动态获取指定类以及类中的内容（成员），并运行其内容（不能new对象，智能获取类全名获取信息）<br>获取Class的三种方式：<br>    1.通过对象的getClass（）方法对应的字节码文件<br>    2.每个类型具备一个class静态属性，通过该属性可获取该类的字节码文件对象<br>    3.class.forName（“全类名”）；通过获取类名并作为参数传递，提高扩展性（JDBC也使用）<br>通常使用第三种方法获取，在使用class.newInstance（）；指定类中默认的空参构造函数完成初始化</p>
+</blockquote>
+<h5 id="七、jsp"><a href="#七、jsp" class="headerlink" title="七、jsp"></a>七、jsp</h5><h6 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h6><blockquote>
+<p>servlet技术：相当于在java代码中嵌入html，擅长java代码<br>jsp技术：相当于在html中嵌入java代码，擅长页面</p>
+</blockquote>
+<h6 id="1-jsp脚本"><a href="#1-jsp脚本" class="headerlink" title="1.jsp脚本"></a>1.jsp脚本</h6><blockquote>
+<p>1） &lt;%java代码%&gt;：这种形式被翻译到service方法的内部<br>2)&lt;%=java变量表达式%&gt;：这种java代码被翻译成service方法内部out.print（）<br>3）&lt;%！java代码%&gt;：这种会被翻译成servlet的成员内容</p>
+</blockquote>
+<h6 id="2-jsp注释"><a href="#2-jsp注释" class="headerlink" title="2.jsp注释"></a>2.jsp注释</h6><blockquote>
+<p>1）Html的注释<!--注释-->：这种形式的注释可见范围：jsp源码、翻译后的servlet、页面显示的html源码<br>2）java注释:单行注释//；多行注释/**/：这种形式的注释可见范围：可见范围jsp源码，翻译后的servlet<br>3）jsp注释:&lt;%–注释–%&gt;：可见范围：jsp源码<br>jsp本质就是servlet，执行过程：第一次访问—&gt;helloServlet.jsp—-&gt;helloServlet_jsp.java—-&gt;编译运行</p>
+</blockquote>
+<h6 id="3-jsp指令（三大指令）"><a href="#3-jsp指令（三大指令）" class="headerlink" title="3.jsp指令（三大指令）"></a>3.jsp指令（三大指令）</h6><blockquote>
+<p>1）<strong>page指令</strong>（jsp上边显示的几行）：<br>    &lt;%@page 属性名1=‘属性值1’ 属性名二=‘属性值2’ …%&gt;<br>    常用属性：语言language：；文本类型contentType；文件编码pageEncoding；<br>        脚本中直接使用session对象：设置属性session=true;<br>        继承(不能随意继承，不经常使用)extends=””;<br>        导包import=”包名”;产生错误后页面跳转位置errorPage=”跳转页面”<br>    若是404找不到文件错误在web.xml里设置全局的错误页面：<br><error-page><br><error-code>404</error-code><br><location>跳转页面路径</location><br></error-page><br>2）<strong>include指令：</strong>&lt;%@ include file=”另一个页面”%&gt;<br>3）<strong>taglib指令：</strong>引入标签库，格式：&lt;%@taglib uri=”标签库地址” prefix=”前缀”%&gt;</p>
+</blockquote>
+<h6 id="4-jsp九大内置对象"><a href="#4-jsp九大内置对象" class="headerlink" title="4.jsp九大内置对象"></a>4.jsp九大内置对象</h6><blockquote>
+<p>1.out：页面输出；request：得到用户请求；  response：用于服务器响应</p>
+<p>2.page:指当前页面转换后的Servlet类的实例；  pageContext:jsp页面容器application：所有用户的共享信息；</p>
+<ol start="3">
+<li>session:用来保存用户的信息 ; config:服务器配置，可以取得初始化参数； exception:表示jsp页面所发生异常；<br>out缓冲区默认为8kb；out缓冲区的数据会被放置在response缓冲区</li>
+</ol>
+</blockquote>
+<h6 id="5-jsp四大域"><a href="#5-jsp四大域" class="headerlink" title="5.jsp四大域"></a>5.jsp四大域</h6><blockquote>
+<p>page域：当前jsp页面范围<br>   request域：一次请求<br>   session域：一次会话<br>   application域：整个web应用</p>
+</blockquote>
+<h6 id="6-jsp标签"><a href="#6-jsp标签" class="headerlink" title="6.jsp标签"></a>6.jsp标签</h6><blockquote>
+<p>页面包含：&lt;jsp:include page=”被包含的页面”/&gt;<br>    静态包含：&lt;%@include file=”被包含的页面”%&gt;;<br>    动态包含：&lt;jsp:include page=”被包含的页面”&gt;<br>静态将两个页面合成一个页面，然后形成java文件，在进行编译执行<br>动态包含是将两个页面分开，各自形成java文件，随后进行各自的编译，包含的页面执行时需要被包含页面的信息，被包含的页面进行在进行执行</p>
+</blockquote>
+<h6 id="7-EL技术"><a href="#7-EL技术" class="headerlink" title="7.EL技术"></a>7.EL技术</h6><blockquote>
+<p>EL表达式：减少jsp脚本编写，EL目的是要替代jsp页面中脚本的编写<br>    EL从域中取数据，格式：${EL表达式}<br>    例如：EL获取pageContext域中的值${pageContextScope.key}<br>          EL获取request域中的值${requestScope.name}<br>          EL获取session域中的值${sessionScope.name}<br>          EL获取application域中的值${applicationScope.name}</p>
+</blockquote>
+<h6 id="8-el内置对象有11个"><a href="#8-el内置对象有11个" class="headerlink" title="8.el内置对象有11个"></a>8.el内置对象有11个</h6><blockquote>
+<p>pageScope、requestScope、sessionScope、applicationScope、<br>param、paramValues、（接收参数）<br>header、HeaderValues、（获取请求头）<br>cookie、（web开发中的cookie）<br>initParam、（获取全局初始化参数）<br>pageContext （web开发中的pageContext）</p>
+<p>例如：使用el表达式在jsp页面中可以获取项目名${pageContext.request.contextpath}</p>
+</blockquote>
+<h6 id="9-jstl（jsp-Standard-Tag-Library）："><a href="#9-jstl（jsp-Standard-Tag-Library）：" class="headerlink" title="9.jstl（jsp Standard Tag Library）："></a>9.jstl（jsp Standard Tag Library）：</h6><p>jsp标注标签库，可以嵌入在jsp页面中使用标签的形式完成业务逻辑等功能。</p>
+<blockquote>
+<p>&lt;%@taglib uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> prefix=”c” %&gt;<br>五个字库：Core、I18N、SQL、XML、Functions，最长用的是core库<br>jstl标签库导入：使用jsp的taglib指令<br>if标签：&lt;c:if test=””&gt;</c:if><br>foreach标签：    &lt;c:forEach items=”${list}” var=”str”&gt;<br>       ${str }<br/><br>       </c:forEach></p>
+</blockquote>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gitee.com/fengyanxing/fengyanxing.git" rel="external nofollow noreferrer">it星</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gitee.com/fengyanxing/fengyanxing.git/2020/04/01/web-xue-xi-de-jian-dan-ji-lu/">https://gitee.com/fengyanxing/fengyanxing.git/2020/04/01/web-xue-xi-de-jian-dan-ji-lu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="https://gitee.com/fengyanxing/fengyanxing.git" target="_blank">it星</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="qq,wechat,weibo,qzone,douban,linkedin,twitter,facebook,google," data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2020/04/01/web-xue-xi-de-jian-dan-ji-lu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Web学习的简单记录">
+                        
+                        <span class="card-title">Web学习的简单记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Web学习的简单记录一、Html简单记录1.html简单介绍
+HTML:超文本标记语言，标记语言不是编程语言，是用一组标签对内容进行描述的语言HTML语法和规范：所有的html文件都要以.htm或者.html结尾html文件由头文件和体部分
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            it星
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/03/31/redis-xue-xi-jian-dan-ji-lu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="redis学习简单记录">
+                        
+                        <span class="card-title">redis学习简单记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            nosql (not only sql)非关系型数据库
+Nosql数据库种类较多，但是都有一个特点是去点关系型数据库的关系特性。
+互联网的
+三高：高并发、高扩展、高负载
+3V：海量(Volume)、多样(Variety)、实时(Veloci
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            it星
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="https://gitee.com/fengyanxing/fengyanxing.git" target="_blank">it星</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">8.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fengyanxing" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1075335638@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1075335638" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1075335638" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

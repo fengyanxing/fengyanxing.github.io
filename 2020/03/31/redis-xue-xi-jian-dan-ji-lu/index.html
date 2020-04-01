@@ -4,13 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="使用马克记录笔记, 冯雁星的博客">
-    <meta name="description" content="使用马克记录笔记@(我的笔记)[不许抄袭|挺好使用的]maven配置：
-
-在maven的setting.xml中配置jdk1.8编译环境：
-
- &amp;lt;profile&amp;gt;  
-    &amp;lt;id&amp;gt;jdk18&amp;lt;/id&amp;gt;">
+    <meta name="keywords" content="redis学习简单记录, 冯雁星的博客">
+    <meta name="description" content="nosql (not only sql)非关系型数据库
+Nosql数据库种类较多，但是都有一个特点是去点关系型数据库的关系特性。
+互联网的
+三高：高并发、高扩展、高负载
+3V：海量(Volume)、多样(Variety)、实时(Veloci">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>使用马克记录笔记 | 冯雁星的博客</title>
+    <title>redis学习简单记录 | 冯雁星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,7 +312,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用马克记录笔记</h1>
+                    <h1 class="description center-align post-title">redis学习简单记录</h1>
                 </div>
             </div>
         </div>
@@ -442,28 +441,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-27
+                    2020-03-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-02-27
+                    2020-04-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    802
+                    2,812
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    11 Min
                 </div>
                 
 
@@ -479,82 +478,165 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="使用马克记录笔记"><a href="#使用马克记录笔记" class="headerlink" title="使用马克记录笔记"></a>使用马克记录笔记</h1><p>@(我的笔记)[不许抄袭|挺好使用的]<br><strong>maven配置：</strong></p>
+                <p>nosql (not only sql)非关系型数据库</p>
+<p>Nosql数据库种类较多，但是都有一个特点是去点关系型数据库的关系特性。</p>
+<p>互联网的</p>
+<p><strong>三高：高并发、高扩展、高负载</strong></p>
+<p>3V：<strong>海量(Volume)、多样(Variety)、实时(Velocity)</strong></p>
+<p>redis的配置文件中设定了数据库的个数，默认是16个（0-16-1个）</p>
+<p>select 切换数据库</p>
+<p>DBsize查看当前数据库的key的数量</p>
+<p>linux下启动redis：</p>
+<p>进入到redis安装目录(我的路径)：cd  /usr/local/redis/bin/</p>
+<p>将会看到有很多相关的redis文件，启动并访问redis服务：</p>
 <blockquote>
-<p>在maven的setting.xml中配置jdk1.8编译环境：</p>
+<p>./redis-server redis.conf</p>
+<p>./redis-cli  -p  6379</p>
 </blockquote>
-<pre><code> &lt;profile&gt;  
-    &lt;id&gt;jdk18&lt;/id&gt;  
-    &lt;activation&gt;  
-        &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;  
-        &lt;jdk&gt;1.8&lt;/jdk&gt;  
-    &lt;/activation&gt;  
-    &lt;properties&gt;  
-        &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;  
-        &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;  
-        &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;  
-    &lt;/properties&gt;   
-&lt;/profile&gt; </code></pre><h2 id="Spring-Boot-的简单使用"><a href="#Spring-Boot-的简单使用" class="headerlink" title="Spring Boot 的简单使用"></a>Spring Boot 的简单使用</h2><p>一个功能：<br>浏览器发送hello请求， 服务器接受请求并处理，响应Hello World字符串：</p>
-<h3 id="1-创建一个maven工程"><a href="#1-创建一个maven工程" class="headerlink" title="1.创建一个maven工程"></a>1.创建一个maven工程</h3><h4 id="导入spring-boot相关的依赖"><a href="#导入spring-boot相关的依赖" class="headerlink" title="导入spring boot相关的依赖"></a>导入spring boot相关的依赖</h4><pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.5.9.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span></code></pre>
-<h4 id="编写主程序，启动spring-boot应用"><a href="#编写主程序，启动spring-boot应用" class="headerlink" title="编写主程序，启动spring boot应用"></a>编写主程序，启动spring boot应用</h4><p>使用注解@SpringBootApplication，该注解用来标注一个主程序类，说明是一个springboot应用。</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorldApplication</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>HelloWorldApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="编写相关的业务逻辑"><a href="#编写相关的业务逻辑" class="headerlink" title="编写相关的业务逻辑"></a>编写相关的业务逻辑</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@ResponseBody</span>
-    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> String <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="直接运行主程序的main方法，访问本地的8080端口，输入-hello会调用Controller层的方法。"><a href="#直接运行主程序的main方法，访问本地的8080端口，输入-hello会调用Controller层的方法。" class="headerlink" title="直接运行主程序的main方法，访问本地的8080端口，输入/hello会调用Controller层的方法。"></a>直接运行主程序的main方法，访问本地的8080端口，输入/hello会调用Controller层的方法。</h4><h4 id="简化部署"><a href="#简化部署" class="headerlink" title="简化部署"></a>简化部署</h4><pre class=" language-xml"><code class="language-xml"> <span class="token comment" spellcheck="true">&lt;!--导入maven插件对项目进行打包--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
-</code></pre>
-<p>导入插件，使用插件对项目进行打包，生成jar文件使用java -jar 文件来进行运行，使得项目能够运行。</p>
-<h3 id="项目分析"><a href="#项目分析" class="headerlink" title="项目分析"></a>项目分析</h3><h4 id="pom-xml文件："><a href="#pom-xml文件：" class="headerlink" title="pom.xml文件："></a>pom.xml文件：</h4><p>1.父项目</p>
-<pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.5.9.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span>
-
- <span class="token comment" spellcheck="true">&lt;!--父项目的配置文件中的父项目，其管理spring boot 应用中的所有依赖版本（版本仲裁）--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.5.9.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>relativePath</span><span class="token punctuation">></span></span>../../spring-boot-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>relativePath</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span></code></pre>
-<p>2.导入依赖</p>
-<pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span></code></pre>
-<p>spring-boot-starter-web:<br>spring-boot-starter:spring-boot场景启动器，能够导入web模块启动相关依赖的组件<br>Spring boot将所有的功能场景抽取出来，作成一个个starters（启动器），需要什么样的场景导入什么样的启动器。</p>
-<h4 id="2-主程序类，主入口类"><a href="#2-主程序类，主入口类" class="headerlink" title="2.主程序类，主入口类"></a>2.主程序类，主入口类</h4><p>需要使用@SpringBootApplication注解:该注解标注的类是springboot的主配置类，springboot使用该类的main方法来启动springboot应用。<br>注解1.@SpringBootConfiguration:配置注解<br>注解2.@EnableAutoConfiguration开启自动配置功能的注解<br>注解3.@AutoConfigurationPackage:自动配置包，能够将主配置类所在的包中所有的组件扫描到spring容器中<br>注解4.@Import给容器中导入组件，将所有需要导入的组件以全类名的方式进行返回，并且将这些组件导入到容器中。<br>spring Boot在启动的时候从类路径下的META-INF/spring.factories中获取EnableAutoConfiguration指定的值，将这些值作为自动配置类导入容器中，自动配置类会生效，之前spring等框架手动配置的，自动配置类会进行配置。</p>
-<h3 id="使用Spring-initializer-快速创建spring-boot项目"><a href="#使用Spring-initializer-快速创建spring-boot项目" class="headerlink" title="使用Spring initializer 快速创建spring boot项目"></a>使用Spring initializer 快速创建spring boot项目</h3><p>idea支持使用spring项目创建向导快速创建一个Spring Boot项目，选择自己需要的模块<br>resources文件夹中目录结构：<br>  static:保存所有的静态资源：js css images<br>  templates:保存所有的模板页面，可以使用模板引擎<br>   application.properties:SpringBoot应用的配置文件</p>
+<p><strong>redis的键：</strong></p>
+<blockquote>
+<p>keys *</p>
+<p>exists key的名字，判断某个key是否存在</p>
+<p>move   key db  当前库被移除</p>
+<p>expire key  秒值   给当点的key设置过期时间</p>
+<p>ttl key 查看还有多少秒过期 -1表示永不过期 -2表示已经过期</p>
+<p>type key 查看你的key是什么类型</p>
+</blockquote>
+<p><strong>redis的五大数据类型</strong></p>
+<p><strong>1.redis的String 字符串</strong>：string是redis最基本的类型，一个key对应一个value，最大的value最多可以是512M。可以存图片或者序列化的对象(常用命令)</p>
+<blockquote>
+<p>set/get/del/append/strlen</p>
+<p>Incr/decr/incrby/decrby</p>
+<p>getrange/setrange</p>
+<p>setex(set with expire)键秒值/setnx(set if not exist)</p>
+<p>mset/mget/msetnx</p>
+<p>getset(先get再set)</p>
+</blockquote>
+<p><strong>2.redis的Hash哈希</strong>：是一个键值对的集合，适用于存储对象(k,v模式，v是一个键值对,常用命令)</p>
+<blockquote>
+<p>hset/hget/hmset/hmget/hgetall/hdel  基本的添加与查询</p>
+<p>hlen 查询长度</p>
+<p>hexist key 在key里面的某个值的key</p>
+<p>hkeys/hvals</p>
+<p>hincrby/hincrbyfloat</p>
+<p>hsetnx  如果存在不插入，不存在插入</p>
+</blockquote>
+<p><strong>3.redis的List列表</strong>：是一个简单的字符串列表</p>
+<blockquote>
+<p>lpush/rpush/lrange</p>
+<p>lpop/rpop</p>
+<p>lindex：按照索引下标获取元素</p>
+<p>llen ：查看集合长度</p>
+<p>lrem key  删除N个value</p>
+<p>ltrim key 开始index   结束index：截取指定范围的值后在赋值给key</p>
+<p>rpoplpush  源列表   目的列表</p>
+<p>lset key index value</p>
+<p>linsert key before/after 值1 值2</p>
+</blockquote>
+<p><strong>4.redis的Set集合</strong>：是一个无序无重复的集合(单值多value，常用命令)</p>
+<blockquote>
+<p>sadd/smembers/sismember</p>
+<p>scard：获取集合里面的元素个数</p>
+<p>srem key value ：删除集合中元素</p>
+<p>srandmember key 某个整数</p>
+<p>spop key ：随机出栈</p>
+<p>smove key1 key2 在key1里某个值  作用是将key1中的某个值赋给key2</p>
+<p>数学集合类：差集：sdiff  交集：sinter  并集：sunion</p>
+</blockquote>
+<p><strong>5.redis的Zset(Sorted set:有序集合)</strong>：有序的集合，不允许有重复的成员，每个元素都会有一个关联的double类型的分数，根据分数进行从小到大的排序</p>
+<blockquote>
+<ol>
+<li>zadd/zrange</li>
+</ol>
+<p>注：zrange常与withscores联合使用</p>
+<ol start="2">
+<li>zrangebyscore key 开始score 结束score</li>
+</ol>
+<p>注：zrangebyscore  key 开始scorre 结束score  (withscore 或者‘（’表示不包含或者limit返回限制)</p>
+<p>例子1：zrangescore   zset01  60   (90   表示zset集合中分数大于等于60小于90的元素的键值对的键值</p>
+<p>例子2：zrangescore   zset01  60   (90  withscores   表示zset集合中分数大于等于60小于90的元素整个键值对</p>
+<p>例子3：zrangescore   zset01  60   (90  limit 2  2     表示zset集合中分数大于等于60小于90的元素键值从2位置查两个</p>
+<ol start="3">
+<li>zcard/zcount key score区间/zrank key values值，作用是获取下标值/zscore key 对应值，获得分数</li>
+<li>zrevrank key values 作用是逆序获取下标值</li>
+<li>zrevrange</li>
+<li>zrevrangebyscore key</li>
+</ol>
+</blockquote>
+<p><a href="http://redisdoc.com/" target="_blank" rel="noopener">redis命令大全</a></p>
+<p><strong>redis的配置文件redis.conf:</strong></p>
+<p>Unitsd单位：对于大小写不敏感，GB gb  都一样。</p>
+<p>INCLUDES包含：标准的模板，可以包含其他的配置文件，使用include进行引入</p>
+<p>GENERAL：TCP-backlog=511（默认），其是一个连接队列。还包含redis日志，四个日志级别：debug、verbose、notice、waring</p>
+<p> SNAPSHOTTING快照：</p>
+<p>SECURITY安全：</p>
+<p>   自己配置密码：config set requirepass “123456”</p>
+<p>   登录时需验证：auth 123456</p>
+<p>LIMITS限制：Maxclients、Maxmemory、Maxmemory-policy、Maxmemory-samples(默认5个样例)</p>
+<blockquote>
+<p>Maxmemory-policy缓存过期机制：</p>
+<p>volatile-lru:使用LRU（最近最少使用淘汰）算法移除key，只针对于过期时间的键</p>
+<p>allkeys-lru：使用LRU（最近最少使用淘汰）算法移除key</p>
+<p>volatile-random：在过期集合中移除随机的key，只对设置了过期时间的键</p>
+<p>allkeys-random：移除随机的key</p>
+<p>volatile-ttl:移除那些TTL（设置存活时间）值最小的key，即就是将要过期的key</p>
+<p>noeviction：不进行移除，针对写操作（永不过期）</p>
+</blockquote>
+<p>APPEND ONLY MODE追加</p>
+<p>常见的配置redis.conf</p>
+<p><strong>Redis持久化：</strong></p>
+<p><strong>1.RDB（Rdies DataBase）</strong>：在<strong>指定时间间隔内</strong>将数据集快照写入磁盘，<strong>Snapshot快照</strong>，恢复时将快照读到内存。Redis会<strong>单独创建一个子进程</strong>来进行持久化，会先将数据写入到一个临时文件中，待持久化过程结束，再用该<strong>临时文件替换上次持久化好的文件</strong>，整个过程中主进程不进行IO操作，这样确保了极高的性能。对于需要进行大规模数据的恢复，且对于数据恢复的完整性不敏感，那么RDB方式比AOF方式更加高效。</p>
+<p>Fork的作用是复制一个与当前进程一样的进程，新进程的所有数据数值都和原进程一致。</p>
+<p>Rdb保存的是dump.rdb文件：命令save   秒值   改动次数   </p>
+<p>如何触发Rdb快照：将备份的dump.rdb拷贝到redis启动的目录下进行启动</p>
+<p><strong>2.AOF（Append Only File）</strong>：以日志的形式来记录每个写文件，是将redis执行的所有写过程指令记录下来(读不记录)，只允许追加文件但不可以改文件，redis启动之初会读取改文件重新构建数据，即redis将所有写指令从前到后执行一次恢复数据。</p>
+<p>Aof保存的是appendonly.aof(如果开启aof默认加载改文件进行开启redis)：文件出现错误时，启动redis失败，可以使用命令进行自动修复，将不符合的语法进行剔除。</p>
+<blockquote>
+<p>redis-check-aof  –fix  appendonly.aof</p>
+</blockquote>
+<p>Rewrite：Aof采用文件追加方式，文件会越来越大，为了避免此情况，新增加重写机制，当aof文件大小超过所设定的阈值时，Redis就会启动Aof文件内容压缩，只保留可以恢复数据的最小指令集，可以使用命令bgrewriteaof。</p>
+<p>重写（rewrite）原理：增长过大时，将fork出新的进程，将文件重写，遍历新进程内存中数据，每条记录有一条Set语句，重写aof文件的操作，并没有读取旧的aof文件，而是将整个内存中的数据库内容用命令的方式重写一个新的aof文件，与数据库快照类似。</p>
+<p>重写触发机制：Redis会记录上次重写时的aof大小，默认配置是当aof文件大小是上次rewrite后大小的一倍且文件大小等于64M</p>
+<p>aof默认是时刻进行记录，保证数据完整，缺点是相同数据集的数据而言aof文件远大于rdb文件，恢复速度慢于rdb，Aof运行效率要慢于rdb。每秒同步策略效率较好，不同步效率与rdb相同。</p>
+<p><strong>数据持久化选择：</strong></p>
+<p>RDB持久化方式能够在指定时间间隔对数据进行快照存储；AOF持久化方式记录每次对服务器写的操作，当服务器重启的是时候会重新执行这些恢复原始的数据，AOF命令以redis协议追加保存每次写的操作到文件末尾</p>
+<p>redis只做缓存时，可以不用持久化</p>
+<p>同时开启两种持久化，redis优先加载aof来恢复原始数据，rdb用作后备用途，每15分钟进行一次备份即可（保留规则：save  900 1）</p>
+<p>Redis事务：一组命令的集合，一起成功一起失败。一个事务中的所有命令被序列化，按顺序地串行执行而不会被其他命令插入，不允许加塞。</p>
+<p>事务作用：一个队列中，一次性、顺序性、排他性的执行一系列命令</p>
+<blockquote>
+<p>事务开启命令：MULTI                       使用调用事务命令：EXEC</p>
+<p>取消事务命令：DISCARD                取消watch命令对所有key的监视：UNWATCH</p>
+<p>监视一个或多个key命令，事务执行前数据被改则事务被打断：WATCH</p>
+</blockquote>
+<p><strong>Redis对于事务是部分支持</strong></p>
+<p><strong>执行事务、放弃事务、</strong></p>
+<p><strong>全体连坐</strong>（事务中的某一条指令不可加入队列中，导致整个指令队列全部错误）、</p>
+<p><strong>冤头债主</strong>（事务中的某一条指令有错误，但是能够加入队列，只有执行的时才会出错）、<strong>watch监控</strong>（悲观锁/乐观锁/CAS：check and set）</p>
+<p>悲观锁：认为每次数据访问时一定会被别人修改，所以每次拿取数据时锁定整个表，别人想要操作数据时进入阻塞直到拿到锁，例如：关系型数据库中的行锁、表锁、读锁、写锁</p>
+<p>乐观锁：认为每次拿取数据时，别人不会修改数据，相当于列锁，添加一个版本列</p>
+<p>Redis的发布订阅：进程间的一种消息通信模式：发送者（Pub）发送消息，订阅者（sub）接受消息</p>
+<blockquote>
+<p>订阅频道(channel)：SUBSCRIBE c1 c2  c3</p>
+<p>消息发布：PUBLISH c1  消息</p>
+<p>订阅多个，通配符：PSUBSCRIBE  new*</p>
+</blockquote>
+<p><strong>Redis的复制（Master/Slaver）</strong>:即主从复制，主机数据更新后根据配置和策略，自动同步到备机的master/slaver机制，Master以写为主，Slave以读为主（读写分离、容灾恢复）</p>
+<blockquote>
+<p>从库配置：slaveof 主库ip  主库端口</p>
+<p>主机挂掉，从库上升为主库：slaveof  no  one</p>
+</blockquote>
+<p>从库配置操作，拷贝多个redis.conf文件；开启daemonize  yes；pid文件名字；指定端口；log文件名字；dump.rdb名字</p>
+<p><strong>一主两仆</strong>：一个主机两个丛机，使用slaveof指向主机，只允许主机写数据，主机down掉，丛机等待主机复原，丛机down掉需要重新与主机建立连接，可以在配置文件中写就不需要每次手动连接</p>
+<p>主从复制原理，Slave启动成功连接到master后会发送一个sync命令，Master接到命令启动后台的存盘进程，同时收集所有接收到的修改数据集的命令，在后台进程执行完毕之后，master将传送整个数据文件slave</p>
+<p>全量复制：slave服务接收到数据库文件数据后将其存盘并加载到内存中</p>
+<p>增量复制：Master继续将新的所有收集到的修改数据的命令依次传递给slave，完成同步，每次重新连接需要做依次全量复制</p>
+<p><strong>常用的模式是哨兵模式(Sentinel)步骤:</strong></p>
+<p>针对于主从复制的体系，主机挂机的情况下，从丛机中进行投票进行选举一个新的主机，步骤：</p>
+<p>自定义配置文件，与redis.conf文件相同的路径建立一个sentinel.conf文件</p>
+<p>配置哨兵：sentinel monitor 被监控数据库名字 (自己起一个名字)    127.0.0.1   6379   1</p>
+<p>配置文件中的数字1表示主机挂掉后，票数多的成为新的主机</p>
+<p>启动哨兵：Redis-sentonel   sentinel.conf</p>
 
             </div>
             <hr/>
@@ -580,7 +662,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git/2020/02/27/shi-yong-ma-ke-ji-lu-bi-ji/">https://gitee.com/fengyanxing/fengyanxing.git/2020/02/27/shi-yong-ma-ke-ji-lu-bi-ji/</a>
+                    <a href="https://gitee.com/fengyanxing/fengyanxing.git/2020/03/31/redis-xue-xi-jian-dan-ji-lu/">https://gitee.com/fengyanxing/fengyanxing.git/2020/03/31/redis-xue-xi-jian-dan-ji-lu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -785,29 +867,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/03/02/an-zhuang-docker/">
+                <a href="/2020/04/01/web-xue-xi-de-jian-dan-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="安装Docker">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Web学习的简单记录">
                         
-                        <span class="card-title">安装Docker</span>
+                        <span class="card-title">Web学习的简单记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装Dockerlinux内核升级
-yum update -y
-yum install docker -io lxc libcgroup* device-mapp* -y
-安装第三方扩展源
-//安装第三方扩展源
-yum install ep
+                            Web学习的简单记录一、Html简单记录1.html简单介绍
+HTML:超文本标记语言，标记语言不是编程语言，是用一组标签对内容进行描述的语言HTML语法和规范：所有的html文件都要以.htm或者.html结尾html文件由头文件和体部分
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
                         </span>
                         <span class="publish-author">
                             
@@ -827,46 +905,35 @@ yum install ep
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/14/huan-ying-jin-ru-xing-xing-de-bo-ke/">
+                <a href="/2020/03/27/sql-yu-ju-jian-dan-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="标题党--卑微星">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="sql语句简单记录">
                         
-                        <span class="card-title">标题党--卑微星</span>
+                        <span class="card-title">sql语句简单记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            欢迎进入星星的博客@(测试工具)[版权声明|不许抄袭]标题一：新建博客_ 小标题 ：
-public static void main(String[] args){
-    System.out.println("HelloWorld!")
+                            mysql数据库创建表语句--商品表
+CREATE TABLE product_info (
+    product_id VARCHAR(32) NOT NULL, 
+    product_name VARCHAR(64) NOT NU
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-27
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/" class="post-category">
-                                    个人操作记录#文章分类
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            it星
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2-%E6%96%87%E7%AB%A0%E6%A0%87%E7%AD%BE/">
-                        <span class="chip bg-color">测试我的博客#文章标签</span>
-                    </a>
-                    
                 </div>
                 
             </div>
