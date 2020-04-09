@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="redis学习简单记录, 冯雁星的博客">
-    <meta name="description" content="nosql (not only sql)非关系型数据库
+    <meta name="description" content="nosql (not only sql)非关系型数据库(需要多多练习使用)
 Nosql数据库种类较多，但是都有一个特点是去点关系型数据库的关系特性。
 互联网的
 三高：高并发、高扩展、高负载
-3V：海量(Volume)、多样(Variety)、实时(Veloci">
+3V：海量(Volume)、多样(Variety)">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -448,14 +448,14 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-01
+                    2020-04-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2,812
+                    2,947
                 </div>
                 
 
@@ -478,11 +478,16 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>nosql (not only sql)非关系型数据库</p>
+                <p>nosql (not only sql)非关系型数据库(需要多多练习使用)</p>
 <p>Nosql数据库种类较多，但是都有一个特点是去点关系型数据库的关系特性。</p>
 <p>互联网的</p>
 <p><strong>三高：高并发、高扩展、高负载</strong></p>
 <p>3V：<strong>海量(Volume)、多样(Variety)、实时(Velocity)</strong></p>
+<p>验证或查看redis命令：</p>
+<blockquote>
+<p> ps  -ef|grep redis</p>
+<p>netstat -antp | grep redis</p>
+</blockquote>
 <p>redis的配置文件中设定了数据库的个数，默认是16个（0-16-1个）</p>
 <p>select 切换数据库</p>
 <p>DBsize查看当前数据库的key的数量</p>
@@ -501,6 +506,7 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
 <p>expire key  秒值   给当点的key设置过期时间</p>
 <p>ttl key 查看还有多少秒过期 -1表示永不过期 -2表示已经过期</p>
 <p>type key 查看你的key是什么类型</p>
+<p>dbsize  数据库的大小</p>
 </blockquote>
 <p><strong>redis的五大数据类型</strong></p>
 <p><strong>1.redis的String 字符串</strong>：string是redis最基本的类型，一个key对应一个value，最大的value最多可以是512M。可以存图片或者序列化的对象(常用命令)</p>
@@ -637,6 +643,20 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
 <p>配置哨兵：sentinel monitor 被监控数据库名字 (自己起一个名字)    127.0.0.1   6379   1</p>
 <p>配置文件中的数字1表示主机挂掉后，票数多的成为新的主机</p>
 <p>启动哨兵：Redis-sentonel   sentinel.conf</p>
+<p>redis配置实例:</p>
+<blockquote>
+<p>功能包括：(<a href="http://gethub.com/sohutv/cachecloud" target="_blank" rel="noopener">http://gethub.com/sohutv/cachecloud</a>)</p>
+<p>1.一键启动Redis。(Standalone、Sentinel、Cluster)</p>
+<p>2.机器、应用、实例监控和报警</p>
+<p>3.客户端：透明使用、性能上报</p>
+<p>4.可视化运维：配置、扩容、Failover、机器/应用/实例上下线。</p>
+</blockquote>
+<p>redis配置参数：</p>
+<p>daemonize:是否是守护进程（no|yes）</p>
+<p>port：端口设置</p>
+<p>logfile:日志文件</p>
+<p>dir：redis工作目录</p>
+<p><strong>redis单线程架构</strong></p>
 
             </div>
             <hr/>
@@ -1082,7 +1102,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.9k</span>&nbsp;字
+                class="white-color">11.2k</span>&nbsp;字
             
             
             

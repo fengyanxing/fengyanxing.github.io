@@ -4,10 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标题党--卑微星, 冯雁星的博客">
-    <meta name="description" content="欢迎进入星星的博客@(测试工具)[版权声明|不许抄袭]标题一：新建博客_ 小标题 ：
-public static void main(String[] args){
-    System.out.println(&#34;HelloWorld!&#34;)">
+    <meta name="keywords" content="tcp协议(马士兵讲解), 冯雁星的博客">
+    <meta name="description" content="互联网通信(TCP,后期自己对内容进行完善)
+1.分层（主要是为了解耦）
+exec 9 /dev/tcp/www.baidu.com/80
+#9表示文件描述符
+#：表示输入参数出
+#/dev/tcp/www.baidu.com/80  在l">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +18,7 @@ public static void main(String[] args){
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标题党--卑微星 | 冯雁星的博客</title>
+    <title>tcp协议(马士兵讲解) | 冯雁星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,12 +308,12 @@ public static void main(String[] args){
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">标题党--卑微星</h1>
+                    <h1 class="description center-align post-title">tcp协议(马士兵讲解)</h1>
                 </div>
             </div>
         </div>
@@ -425,25 +428,12 @@ public static void main(String[] args){
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2-%E6%96%87%E7%AB%A0%E6%A0%87%E7%AD%BE/">
-                                <span class="chip bg-color">测试我的博客#文章标签</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/" class="post-category">
-                                个人操作记录#文章分类
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -452,28 +442,28 @@ public static void main(String[] args){
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-01-14
+                    2020-04-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-01-14
+                    2020-04-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    56
+                    530
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -489,11 +479,44 @@ public static void main(String[] args){
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="欢迎进入星星的博客"><a href="#欢迎进入星星的博客" class="headerlink" title="欢迎进入星星的博客"></a>欢迎进入星星的博客</h1><p>@(测试工具)[版权声明|不许抄袭]<br><strong>标题一：新建博客</strong><br>_ <strong>小标题</strong> ：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"HelloWorld!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>###公式测试：<br>$\Gamma(n)=(n-1)!\quad\forall n\in\mathbb N$</p>
+                <p>互联网通信(TCP,后期自己对内容进行完善)</p>
+<p>1.分层（主要是为了解耦）</p>
+<pre class=" language-shell"><code class="language-shell">exec 9<> /dev/tcp/www.baidu.com/80
+#9表示文件描述符
+#<>：表示输入参数出
+#/dev/tcp/www.baidu.com/80  在linux表示文件，linux一切皆文件（摄像头、显示器的等）
+echo -e "GET /HTTP/1.0\n" 1>& 9
+cat 0<& 9</code></pre>
+<p>传输控制层（UDP、TCP）</p>
+<p>TCP面向连接的、可靠的传输协议（三次握手）</p>
+<p>1.客户端发送SYN给服务器请求连接，其中约定数据包大小</p>
+<p>2.服务器给客户端发送syn+ack(该ack=客户端seq+1)</p>
+<p>3.客户端发送ack给服务器进行确认</p>
+<p>当传输层建立连接后双方的操作系统开辟资源</p>
+<p>为什么两次连接不可行？</p>
+<blockquote>
+<p>对于两次连接时：</p>
+<p>客户端A给服务器B发送请求，由于网络时延导致A发送的消息在网络中过久，A重新发送数据给服务器B，B与A完成正常的数据交换后，延时的数据到达服务器，B等待A连接，A已经拿到资源，不回复服务器B会导致B一致处于监听状态。</p>
+</blockquote>
+<p>四次挥手</p>
+<p>1.客户端发送fin给服务器请求连接，进入FIN_WAIT_1状态</p>
+<p>2.服务器给客户端发送ack，Server进入LAST+ACK状态(不确认是否断开，只表示接收到消息)</p>
+<p>3.服务器给客户端发送fin,Server进入LAST_ACK状态（服务器确认断开）</p>
+<p>3.客户端发送ack给服务器进行确认，客户端进入TIME_WAIT状态，Server进入CLOSED状态</p>
+<blockquote>
+<p>#linux下抓包</p>
+<p>yum  install  tcpdump</p>
+<p>tcpdump   -nn  -i  eth0   port  80</p>
+<p>curl  url     —&gt; 例如  curl   <a href="http://www.baidu.com:80" target="_blank" rel="noopener">www.baidu.com:80</a></p>
+</blockquote>
+<p>网络层（ip）</p>
+<p>ip地址点分字节，ip地址与子网掩码进行按位与操作得到网关</p>
+<p>linux路由表：route -n</p>
+<p>arp协议，主机获取网关的mac的地址进行广播，网关将自己的mac地址交给主机，主机进行数据与ip地址封装</p>
+<blockquote>
+<p>arp -d  删除的路由中的记录 &amp;&amp; curl url</p>
+<p>tcpdump -nn -i eth0 port 80 or arp</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -519,7 +542,7 @@ public static void main(String[] args){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git/2020/01/14/huan-ying-jin-ru-xing-xing-de-bo-ke/">https://gitee.com/fengyanxing/fengyanxing.git/2020/01/14/huan-ying-jin-ru-xing-xing-de-bo-ke/</a>
+                    <a href="https://gitee.com/fengyanxing/fengyanxing.git/2020/04/02/tcp-xie-yi-ma-shi-bing-jiang-jie/">https://gitee.com/fengyanxing/fengyanxing.git/2020/04/02/tcp-xie-yi-ma-shi-bing-jiang-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,11 +579,7 @@ public static void main(String[] args){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2-%E6%96%87%E7%AB%A0%E6%A0%87%E7%AD%BE/">
-                                    <span class="chip bg-color">测试我的博客#文章标签</span>
-                                </a>
-                            
+                            <span class="chip bg-color">No tag</span>
                         </div>
                     
                 </div>
@@ -728,29 +747,27 @@ public static void main(String[] args){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/02/27/shi-yong-ma-ke-ji-lu-bi-ji/">
+                <a href="/2020/04/04/java-wen-ti-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="使用马克记录笔记">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="java问题记录">
                         
-                        <span class="card-title">使用马克记录笔记</span>
+                        <span class="card-title">java问题记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用马克记录笔记@(我的笔记)[不许抄袭|挺好使用的]maven配置：
+                            java问题记录:
+1.什么是面向对象？
 
-在maven的setting.xml中配置jdk1.8编译环境：
-
- &lt;profile&gt;  
-    &lt;id&gt;jdk18&lt;/id&gt;
+面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描述某个事物在整个问题的步骤中的行为。面向对象技术是一种以对象为基础，以事件或消息来驱动对象执行处理的程序设计技
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-04
                         </span>
                         <span class="publish-author">
                             
@@ -770,24 +787,25 @@ public static void main(String[] args){
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/14/hello-world/">
+                <a href="/2020/04/01/web-xue-xi-de-jian-dan-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Web学习的简单记录">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Web学习的简单记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            Web学习的简单记录一、Html简单记录1.html简单介绍
+HTML:超文本标记语言，标记语言不是编程语言，是用一组标签对内容进行描述的语言HTML语法和规范：所有的html文件都要以.htm或者.html结尾html文件由头文件和体部分
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
                             </span>
                         <span class="publish-author">
                             
