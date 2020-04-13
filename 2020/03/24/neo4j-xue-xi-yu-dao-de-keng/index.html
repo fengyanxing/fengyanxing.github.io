@@ -448,7 +448,7 @@ neo4下载与安装(windows环境下)neo4j官网
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-24
+                    2020-04-13
                 </div>
                 
 
@@ -484,7 +484,7 @@ neo4下载与安装(windows环境下)neo4j官网
 <p><a href="http://we-yun.com/index.php/blog/releases-56.html" target="_blank" rel="noopener">国内下载地址</a></p>
 <h5 id="1-neo4j简单介绍"><a href="#1-neo4j简单介绍" class="headerlink" title="1.neo4j简单介绍"></a>1.neo4j简单介绍</h5><p>其是基于java语言编写的图形数据库。图是一组节点和连接这些节点的关系，图数据库也被称作图形数据库管理系统(GDBMS)。</p>
 <h5 id="2-需要安装jdk环境"><a href="#2-需要安装jdk环境" class="headerlink" title="2.需要安装jdk环境"></a>2.需要安装jdk环境</h5><p>先使用java -version，查看自己的java环境是否配置好。</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324190457173.png" alt="image-20200324190457173"></p>
+<p><img src="/medias/images/image-20200324190457173.png" alt="image-20200324190457173"></p>
 <h5 id="3-下载neo4j后解压，主要目录如下"><a href="#3-下载neo4j后解压，主要目录如下" class="headerlink" title="3.下载neo4j后解压，主要目录如下"></a>3.下载neo4j后解压，主要目录如下</h5><blockquote>
 <p>Neo4j应用程序有如下主要的目录结构：</p>
 <ul>
@@ -495,21 +495,21 @@ neo4下载与安装(windows环境下)neo4j官网
 </ul>
 </blockquote>
 <h5 id="4-创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）"><a href="#4-创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）" class="headerlink" title="4.创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）"></a>4.创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）</h5><p>新建系统变量：将自己neo4j目录粘贴到变量值位置</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324190915553.png" alt="image-20200324190915553"></p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324191226568.png" alt="image-20200324191226568"></p>
+<p><img src="/medias/images/image-20200324190915553.png" alt="image-20200324190915553"></p>
+<p><img src="/medias/images/image-20200324191226568.png" alt="image-20200324191226568"></p>
 <p>最后将bin加入到path路径下：</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324191354386.png" alt="image-20200324191354386"></p>
-<h5 id="5-测试安装是否成功"><a href="#5-测试安装是否成功" class="headerlink" title="5.测试安装是否成功"></a>5.测试安装是否成功</h5><h6 id="出现错误1"><a href="#出现错误1" class="headerlink" title="出现错误1:"></a>出现错误1:</h6><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324193244410.png" alt="image-20200324193244410"></p>
+<p><img src="/medias/images/image-20200324191354386.png" alt="image-20200324191354386"></p>
+<h5 id="5-测试安装是否成功"><a href="#5-测试安装是否成功" class="headerlink" title="5.测试安装是否成功"></a>5.测试安装是否成功</h5><h6 id="出现错误1"><a href="#出现错误1" class="headerlink" title="出现错误1:"></a>出现错误1:</h6><p><img src="/medias/images/image-20200324193244410.png" alt="image-20200324193244410"></p>
 <p>如果出现这种情况，不能加载.psd1模块，这是由于相对路径配置的问题导致的，打开下面的文件：</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324193432628.png" alt="image-20200324193432628"></p>
+<p><img src="/medias/images/image-20200324193432628.png" alt="image-20200324193432628"></p>
 <p>将路径改成自己的路径：</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324193542460.png" alt="image-20200324193542460"></p>
+<p><img src="/medias/images/image-20200324193542460.png" alt="image-20200324193542460"></p>
 <h6 id="出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境"><a href="#出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境" class="headerlink" title="出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境"></a>出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境</h6><blockquote>
 <p>Neo4j cannot be started using java version 1.8.0_221</p>
 </blockquote>
 <p>更换jdk启动neo4j，成功访问</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324193821721.png" alt="image-20200324193821721"></p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324193840986.png" alt="image-20200324193840986"></p>
+<p><img src="/medias/images/image-20200324193821721.png" alt="image-20200324193821721"></p>
+<p><img src="/medias/images/image-20200324193840986.png" alt="image-20200324193840986"></p>
 <h4 id="Neo4j简单的命令"><a href="#Neo4j简单的命令" class="headerlink" title="Neo4j简单的命令"></a>Neo4j简单的命令</h4><h5 id="后期需要去学习一些Cypher语法"><a href="#后期需要去学习一些Cypher语法" class="headerlink" title="后期需要去学习一些Cypher语法"></a>后期需要去学习一些Cypher语法</h5><p>1.删除数据库中之前的图，创建一个空白的环境进行操作</p>
 <blockquote>
 <p>MATCH (n) DETACH DELETE n</p>
@@ -562,17 +562,17 @@ neo4下载与安装(windows环境下)neo4j官网
 <blockquote>
 <p>MATCH (a:Person)-[:BORN_IN]-&gt;(b:Location {city:’Boston’}) RETURN a,b</p>
 </blockquote>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324211750318.png" alt="image-20200324211750318"></p>
+<p><img src="/medias/images/image-20200324211750318.png" alt="image-20200324211750318"></p>
 <p>11.查询所有对外有关系的节点</p>
 <blockquote>
 <p>MATCH (a)–&gt;() RETURN a</p>
 </blockquote>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324211806411.png" alt="image-20200324211806411"></p>
+<p><img src="/medias/images/image-20200324211806411.png" alt="image-20200324211806411"></p>
 <p>12.查询所有有关系的节点</p>
 <blockquote>
 <p>MATCH (a)–() RETURN a</p>
 </blockquote>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324211913095.png" alt="image-20200324211913095"></p>
+<p><img src="/medias/images/image-20200324211913095.png" alt="image-20200324211913095"></p>
 <p>13.查询所有对外有关系的节点，以及关系类型</p>
 <blockquote>
 <p>MATCH (a)-[r]-&gt;() RETURN a.name, type(r)</p>

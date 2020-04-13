@@ -542,9 +542,9 @@ _blank  跳转到另一个页面，打开新的地址
         b 是加粗标签
 --></span>
 <span class="token comment" spellcheck="true">&lt;!--ifarme标签可以在页面上开辟一个小区域显示一个单独的页面
-      ifarme和a标签组合使用的步骤:
-          1 在iframe标签中使用name属性定义一个名称
-          2 在a标签的target属性上设置iframe的name的属性值
+   ifarme和a标签组合使用的步骤:
+       1 在iframe标签中使用name属性定义一个名称
+       2 在a标签的target属性上设置iframe的name的属性值
 --></span></code></pre>
 </blockquote>
 <h6 id="4-向服务器提交的内容必须都包含在form标签中"><a href="#4-向服务器提交的内容必须都包含在form标签中" class="headerlink" title="4.向服务器提交的内容必须都包含在form标签中"></a>4.向服务器提交的内容必须都包含在form标签中</h6><pre class=" language-html"><code class="language-html"> <span class="token comment" spellcheck="true">&lt;!--
@@ -618,6 +618,7 @@ div{
 }
 </style>
 
+
 <p><code>在实体中：</code></p>
 <div>....</div>
 
@@ -629,6 +630,7 @@ div{
 属性名3：属性值3；
 }
 </style>
+
 
 
 <p><code>在实体中：</code></p>
@@ -643,6 +645,7 @@ div{
 }
 </style>
 
+
 <p><code>在实体中：</code></p>
 <div id="div3">...</div>
 
@@ -655,6 +658,7 @@ color:green;
 </style>
 
 
+
 <p><code>在实体中：</code></p>
 <div>
 <p>
@@ -663,11 +667,13 @@ color:green;
 </div>
 
 
+
 <p><code>5.属性选择器</code></p>
 <style>
 input[type='text']{
 background-color:red;
 }
+
 
 
 `input[type='password']{`
@@ -686,6 +692,7 @@ font-size:100px;
 }
 </style>
 
+
 <p><code>style代表了设置样式</code><br><code>3.外部引入：使用地址引入</code></p>
 </blockquote>
 <h5 id="三、javascript"><a href="#三、javascript" class="headerlink" title="三、javascript"></a>三、javascript</h5><h6 id="1-js简单介绍"><a href="#1-js简单介绍" class="headerlink" title="1.js简单介绍"></a>1.js简单介绍</h6><p>javascript被设计用来向html页面添加交互行为，其是一种脚本语言（是一种轻量级语言）。<br>javascript是一种解释型语言，是基于对象和事件的脚本语言，主要应用在客户端，由浏览器来执行js代码。可以与用户执行信息交互，具有安全性，不允许访问本地硬盘。</p>
@@ -698,7 +705,7 @@ font-size:100px;
 </blockquote>
 <h6 id="3-js中遵循的一些原则："><a href="#3-js中遵循的一些原则：" class="headerlink" title="3.js中遵循的一些原则："></a>3.js中遵循的一些原则：</h6><blockquote>
 <p><code>js中的特殊值：</code><br><code>undefined：未定义，所有js变量为赋予初始值</code><br><code>null  空值</code><br><code>NAN   不合法的值</code></p>
-<p><code>js中的**全等于和等于**</code><br><code>等于==  简单的字面比较</code><br><code>全等于===  都比较，比较字面值和值类型</code><br><code>**js逻辑运算**</code><br><code>且   &amp;&amp;</code><br> <code>当表达式为真的时候,返回最后一个表达式的值</code><br> <code>当表达式中有一个为假的值时候，返回第一个为假的表达式的值</code><br><code>或   ||</code><br> <code>当表达式全为假，返回最后一个表达式的值</code><br> <code>只要有一个表达式为真，就会把第一个为真的表达式的值返回</code><br><code>非   |</code><br><code>在js中所有变量都可以为一个boolean类型的变量去使用，</code><br><code>0，null，undefined，“”空串可以认为是false</code></p>
+<p><code>js中的**全等于和等于**</code><br><code>等于==  简单的字面比较</code><br><code>全等于===  都比较，比较字面值和值类型</code><br><code>**js逻辑运算**</code><br><code>且   &amp;&amp;</code><br><code>当表达式为真的时候,返回最后一个表达式的值</code><br><code>当表达式中有一个为假的值时候，返回第一个为假的表达式的值</code><br><code>或   ||</code><br><code>当表达式全为假，返回最后一个表达式的值</code><br><code>只要有一个表达式为真，就会把第一个为真的表达式的值返回</code><br><code>非   |</code><br><code>在js中所有变量都可以为一个boolean类型的变量去使用，</code><br><code>0，null，undefined，“”空串可以认为是false</code></p>
 </blockquote>
 <h6 id="4-js中函数的定义、对象的定义、事件的介绍："><a href="#4-js中函数的定义、对象的定义、事件的介绍：" class="headerlink" title="4.js中函数的定义、对象的定义、事件的介绍："></a>4.js中函数的定义、对象的定义、事件的介绍：</h6><blockquote>
 <p><code>**函数定义**</code></p>
@@ -706,15 +713,13 @@ font-size:100px;
       函数体；
       return 结果；#可有可无
 
-}</code></pre><ol start="2">
-<li><p><code>var 函数名 = function(){</code><br> <code>函数体；</code><br> <code>return  返回值；</code><br><code>}</code></p>
-<p><code>js中函数不允许重载，后面的会替换前面的函数，不允许方法重名</code><br><code>函数的arguments隐形参数，是一个可变长参数，操作该变量相当于数组操作</code></p>
-<p><code>**js中定义对象**</code><br><code>Object形式的自定义对象</code><br> <code>var 变量名 = new Object();</code><br> <code>变量名.属性名 = 值；</code><br> <code>变量名.函数名=function(){}</code><br><code>{}花括号形式的自定义对象</code><br> <code>var 变量名={</code></p>
-<pre><code> `属性名：值，`
- `属性名：值，`
- `函数名：function（）{}`</code></pre><p> <code>}；</code><br><code>**js中的事件：**</code><br><code>onload 加载事件  页面加载完成后，常用于做页面js代码初始化事件</code><br><code>onclick单击事件  常用于按钮点击后响应操作</code><br><code>onblur失去焦点事件  常用于输入框失去焦点后验证其输入内容是否合法</code><br><code>onchange 内容发生改变事件  常用于下拉列表和输入框内容发生改变后操作</code><br><code>onsubmit 表单提交事件  常用于表单提交前，验证所有表单项是否合法</code><br><code>事件注册分为静态注册和动态注册</code></p>
-</li>
-</ol>
+}
+
+2.   `var 函数名 = function(){`
+      `函数体；`
+      `return  返回值；`
+     `}`</code></pre><p> <code>js中函数不允许重载，后面的会替换前面的函数，不允许方法重名</code><br>    <code>函数的arguments隐形参数，是一个可变长参数，操作该变量相当于数组操作</code></p>
+<p> <code>**js中定义对象**</code><br>    <code>Object形式的自定义对象</code><br>        <code>var 变量名 = new Object();</code><br>        <code>变量名.属性名 = 值；</code><br>        <code>变量名.函数名=function(){}</code><br>    <code>{}花括号形式的自定义对象</code><br>        <code>var 变量名={</code><br>            <code>属性名：值，</code><br>            <code>属性名：值，</code><br>            <code>函数名：function（）{}</code><br>        <code>}；</code><br><code>**js中的事件：**</code><br>    <code>onload 加载事件  页面加载完成后，常用于做页面js代码初始化事件</code><br>    <code>onclick单击事件  常用于按钮点击后响应操作</code><br>    <code>onblur失去焦点事件  常用于输入框失去焦点后验证其输入内容是否合法</code><br>    <code>onchange 内容发生改变事件  常用于下拉列表和输入框内容发生改变后操作</code><br>    <code>onsubmit 表单提交事件  常用于表单提交前，验证所有表单项是否合法</code><br><code>事件注册分为静态注册和动态注册</code></p>
 </blockquote>
 <h6 id="5-js中获取Document对象"><a href="#5-js中获取Document对象" class="headerlink" title="5.js中获取Document对象"></a>5.js中获取Document对象</h6><p>DOM（Document Object Model）：文档对象模型，包含（整个html页面的内容）</p>
 <blockquote>
@@ -742,14 +747,14 @@ font-size:100px;
 <h6 id="2-servlet规范-接口"><a href="#2-servlet规范-接口" class="headerlink" title="2.servlet规范/接口"></a>2.servlet规范/接口</h6><blockquote>
 <p>  <code>实现步骤：1）创建类实现Servlet接口；2）覆盖尚未实现的方法--service方法  3）在web.xml进行servlet的配置</code><br>  <code>开发中经常继承HTTPservelet</code><br>  <code>实现步骤：1）创建类继承HttpServlet类 2）覆盖doGet和doPost   3）在web.xml中进行servlet的配置</code></p>
 <p>  <code>实现Servlet接口需要实现的方法：</code></p>
-<p>  <code>init（ServlerConfig config）方法：初始化，在servlet对象创建的时候执行</code><br>       <code>参数ServlerConfig代表是该servlet对象的配置信息</code><br>  <code>service（ServletRequest request，ServletRespose respose）方法：每次请求（刷新页面）都会执行</code><br>       <code>参数ServletRequest代表请求 认为ServletRequest内部封装的是http请求信息；</code><br>       <code>参数ServletResponse代表响应 认为要封装的是响应信息</code><br>  <code>destroy方法：servlet销毁时执行</code></p>
+<p>  <code>init（ServlerConfig config）方法：初始化，在servlet对象创建的时候执行</code><br>      <code>参数ServlerConfig代表是该servlet对象的配置信息</code><br>  <code>service（ServletRequest request，ServletRespose respose）方法：每次请求（刷新页面）都会执行</code><br>      <code>参数ServletRequest代表请求 认为ServletRequest内部封装的是http请求信息；</code><br>      <code>参数ServletResponse代表响应 认为要封装的是响应信息</code><br>  <code>destroy方法：servlet销毁时执行</code></p>
 </blockquote>
 <h6 id="3-servlet生命周期"><a href="#3-servlet生命周期" class="headerlink" title="3.servlet生命周期"></a>3.servlet生命周期</h6><blockquote>
 <p><code>默认在**第一次访问servlet时创建servlet对象**，会调用init方法</code><br><code>servlet销毁：</code><br><code>**服务器关闭时servlet销毁**，会调用destory方法</code><br><code>**每次访问**（刷新页面）必然执行的方法有：</code><br><code>service（ServletRequest req，ServletResponse res）方法;</code></p>
 </blockquote>
 <p>4.servlet的request与response</p>
 <blockquote>
-<p><code>**request**：获取请求行（getMethod（）；getContextPath）、</code><br>   <code>获取请求头(getHeader(name);),</code><br>   <code>获取请求体(getParameter()/getParameterMap())</code><br>     <code>转发和域对象（request.getRequestDispatcher(url).forward();setAttribute();getAttribute()）</code><br><code>**response**:设置响应行：setStatus()</code><br>      <code>设置响应头：setHeader(name,value)</code><br>     <code>设置响应体：getWriter();write();getOutputStream().write()</code></p>
+<p><code>**request**：获取请求行（getMethod（）；getContextPath）、</code><br><code>获取请求头(getHeader(name);),</code><br><code>获取请求体(getParameter()/getParameterMap())</code><br>     <code>转发和域对象（request.getRequestDispatcher(url).forward();setAttribute();getAttribute()）</code><br><code>**response**:设置响应行：setStatus()</code><br>      <code>设置响应头：setHeader(name,value)</code><br>     <code>设置响应体：getWriter();write();getOutputStream().write()</code></p>
 </blockquote>
 <h5 id="六、xml可扩展标记语言"><a href="#六、xml可扩展标记语言" class="headerlink" title="六、xml可扩展标记语言"></a>六、xml可扩展标记语言</h5><h6 id="1-DTD约束"><a href="#1-DTD约束" class="headerlink" title="1.DTD约束"></a>1.DTD约束</h6><blockquote>
 <p><code>DTD约束（为了使得用户书写时规范一些）： Document Type Definition，文档定义类型</code><br><code>DTD引入方式：</code><br>    <code>1.内部嵌入（当前xml有效）：&lt;!DOCTYPE web-app[...写入语法......]&gt;</code><br>        <code>&lt;web-app&gt;&lt;/web-app&gt;</code><br>    <code>2.本地DTD:&lt;!DOCTYPE web-app SYSTEM=&quot;文件名.dtd&quot;&gt;</code><br>        <code>&lt;web-app&gt;&lt;/web-app&gt;</code><br>    <code>3.网络DTD:&lt;!DOCTYPE web-app     PUBLIC=&quot;url路径/文件名.dtd&quot;&gt;</code><br>        <code>&lt;web-app&gt;&lt;/web-app&gt;</code></p>
