@@ -448,21 +448,21 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-09
+                    2020-04-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2,947
+                    3,419
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    11 Min
+                    13 Min
                 </div>
                 
 
@@ -498,7 +498,7 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
 <p>./redis-server redis.conf</p>
 <p>./redis-cli  -p  6379</p>
 </blockquote>
-<p><strong>redis的键：</strong></p>
+<p><strong>redis的通用命令：</strong></p>
 <blockquote>
 <p>keys *</p>
 <p>exists key的名字，判断某个key是否存在</p>
@@ -508,15 +508,47 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
 <p>type key 查看你的key是什么类型</p>
 <p>dbsize  数据库的大小</p>
 </blockquote>
+<p>注:一般不会使用redis的长命令</p>
+<p>例如：keys,flushall,flushdb,slow lua script,mutil/exec,operate big value</p>
 <p><strong>redis的五大数据类型</strong></p>
+<p>redis对象包括：数据类型、内部编码</p>
+<table>
+<thead>
+<tr>
+<th>redis的键Key</th>
+<th>内部的编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String</td>
+<td>raw、int、embstr</td>
+</tr>
+<tr>
+<td>hash</td>
+<td>hashtable、ziplist</td>
+</tr>
+<tr>
+<td>list</td>
+<td>linkedlist、ziplist</td>
+</tr>
+<tr>
+<td>set</td>
+<td>hashtable、insert</td>
+</tr>
+<tr>
+<td>zset</td>
+<td>skiplist、ziplist</td>
+</tr>
+</tbody></table>
 <p><strong>1.redis的String 字符串</strong>：string是redis最基本的类型，一个key对应一个value，最大的value最多可以是512M。可以存图片或者序列化的对象(常用命令)</p>
 <blockquote>
 <p>set/get/del/append/strlen</p>
 <p>Incr/decr/incrby/decrby</p>
-<p>getrange/setrange</p>
+<p>getrange/setrange：getrange key  start   end；setrange  key  start  end</p>
 <p>setex(set with expire)键秒值/setnx(set if not exist)</p>
-<p>mset/mget/msetnx</p>
+<p>mset/mget/msetnx(mget或mset是批次处理，1次mget时间= 网络时间+n次的命令时间)时间复杂度为O（N）</p>
 <p>getset(先get再set)</p>
+<p>append 在次机床叠加字符串</p>
 </blockquote>
 <p><strong>2.redis的Hash哈希</strong>：是一个键值对的集合，适用于存储对象(k,v模式，v是一个键值对,常用命令)</p>
 <blockquote>
@@ -589,11 +621,67 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
 <p>noeviction：不进行移除，针对写操作（永不过期）</p>
 </blockquote>
 <p>APPEND ONLY MODE追加</p>
-<p>常见的配置redis.conf</p>
+<p>Redis中的功能：</p>
+<p>慢查询、pipeline、发布订阅、Bitmap、HyperLogLog、GEO</p>
+<ul>
+<li>1.慢查询：(慢查询默认配置:slowlog-max-len = 128和slowlog-log-slower-than = 10000)</li>
+</ul>
+<p>​     客户端请求的生命周期：客户端发送命令；排队；执行命令；返回结果。第三阶段慢执行称为慢查询，客户端超时可能不是慢查询的原因。</p>
+<blockquote>
+<p> 动态配置：config set slowlog-max-len = 1000</p>
+<p>slowlog get[n]:获取慢查询队列</p>
+<p>slowlog len :获取慢查询队列长度</p>
+<p>slowlog reset:清空慢查询队列</p>
+<p> slowlog-max-len默认10毫秒，通常设置1ms</p>
+<p>slowlog-log-slower-than队列长度大多设置在1000</p>
+</blockquote>
+<ul>
+<li><p>pipeline流水线：多次操作可以分批进行操作，例如10000次可以分为100*100</p>
+</li>
+<li><p>发布订阅(客户端与客户端之间的消息，类似于生产者消费者)</p>
+</li>
+</ul>
+<blockquote>
+<p> public channel  mrssage   发布消息</p>
+<p>subscribe channel   订阅频道</p>
+<p>psubscribe [pattern]  订阅模式</p>
+</blockquote>
+<ul>
+<li>Bitmap(位图)</li>
+</ul>
+<blockquote>
+<p>setbit key offset value    给位图指定索引设置值</p>
+<p>getbit key offset     获取位图指定索引的值</p>
+<p>bitcount  key  [start  end]   获取指定范围的值</p>
+<p>bittop op destkey  key  [key…]</p>
+</blockquote>
+<ul>
+<li>HyperLogLog(极小控件数据统计)</li>
+</ul>
+<blockquote>
+<p>pfadd key element [emelent]</p>
+<p> pfcount key [key]</p>
+</blockquote>
+<ul>
+<li>GEO(redis3.2的功能)存储两个地理的经纬度，用于计算两地距离</li>
+</ul>
+<blockquote>
+<p>geoadd key  精度 维度 标识</p>
+<p>geopod key 标识 [标识]</p>
+<p>geodist   key   标识1  标识2</p>
+<p>georadius key  精度  维度  选项</p>
+</blockquote>
 <p><strong>Redis持久化：</strong></p>
-<p><strong>1.RDB（Rdies DataBase）</strong>：在<strong>指定时间间隔内</strong>将数据集快照写入磁盘，<strong>Snapshot快照</strong>，恢复时将快照读到内存。Redis会<strong>单独创建一个子进程</strong>来进行持久化，会先将数据写入到一个临时文件中，待持久化过程结束，再用该<strong>临时文件替换上次持久化好的文件</strong>，整个过程中主进程不进行IO操作，这样确保了极高的性能。对于需要进行大规模数据的恢复，且对于数据恢复的完整性不敏感，那么RDB方式比AOF方式更加高效。</p>
+<p><strong>1.RDB（Rdies DataBase）</strong>：在<strong>指定时间间隔内</strong>将数据集快照写入磁盘，<strong>Snapshot快照</strong>，恢复时将快照读到内存。Redis会<strong>单独创建一个子进程</strong>来进行持久化，会先将数据写入到一个临时文件中，待持久化过程结束，再用该<strong>临时文件替换上次持久化好的文件</strong>，整个过程中主进程不进行IO操作，这样确保了极高的性能。对于需要进行大规模数据的恢复，且对于数据恢复的完整性不敏感，那么RDB方式比AOF方式更加高效。(时间复杂度O(N))</p>
 <p>Fork的作用是复制一个与当前进程一样的进程，新进程的所有数据数值都和原进程一致。</p>
-<p>Rdb保存的是dump.rdb文件：命令save   秒值   改动次数   </p>
+<p>Rdb保存的是dump.rdb文件：</p>
+<blockquote>
+<p>命令save   秒值   改动次数   （同步）</p>
+<p>bgsave (异步)</p>
+<p>自动生成该文件</p>
+<p>经常将配置文件中的save命令关掉，手动进行save</p>
+<p>dbfilename dump-${port}.rdb</p>
+</blockquote>
 <p>如何触发Rdb快照：将备份的dump.rdb拷贝到redis启动的目录下进行启动</p>
 <p><strong>2.AOF（Append Only File）</strong>：以日志的形式来记录每个写文件，是将redis执行的所有写过程指令记录下来(读不记录)，只允许追加文件但不可以改文件，redis启动之初会读取改文件重新构建数据，即redis将所有写指令从前到后执行一次恢复数据。</p>
 <p>Aof保存的是appendonly.aof(如果开启aof默认加载改文件进行开启redis)：文件出现错误时，启动redis失败，可以使用命令进行自动修复，将不符合的语法进行剔除。</p>
@@ -656,7 +744,6 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
 <p>port：端口设置</p>
 <p>logfile:日志文件</p>
 <p>dir：redis工作目录</p>
-<p><strong>redis单线程架构</strong></p>
 
             </div>
             <hr/>
@@ -900,7 +987,7 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
                     <div class="summary block-with-text">
                         
                             Web学习的简单记录一、Html简单记录1.html简单介绍
-HTML:超文本标记语言，标记语言不是编程语言，是用一组标签对内容进行描述的语言HTML语法和规范：所有的html文件都要以.htm或者.html结尾html文件由头文件和体部分
+HTML:超文本标记语言，标记语言不是编程语言，是用一组标签对内容进行描述的语言HTML语法和规范：所有的html文件都要以.htm或者.html结尾html文件由头文件&lt;
                         
                     </div>
                     <div class="publish-info">
@@ -1102,7 +1189,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.2k</span>&nbsp;字
+                class="white-color">18.9k</span>&nbsp;字
             
             
             
