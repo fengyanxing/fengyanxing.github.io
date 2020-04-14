@@ -461,21 +461,21 @@ JVM结构：
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3,040
+                    4,353
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    11 Min
+                    16 Min
                 </div>
                 
 
@@ -557,8 +557,7 @@ JVM结构：
 <p>1、新生代：（1）使用复制清除算法（Copinng算法），原因是年轻代每次GC都要回收大部分对象。新生代里面分成一份较大的Eden空间和两份较小的Survivor空间。每次只使用Eden和其中一块Survivor空间，然后垃圾回收的时候，把存活对象放到未使用的Survivor（划分出from、to）空间中，清空Eden和刚才使用过的Survivor空间。（2）分为Eden、Survivor From、Survivor To，比例默认为8：1：1 （3）内存不足时发生Minor GC </p>
 <p>2、老年代：（1）采用标记-整理算法（mark-compact），原因是老年代每次GC只会回收少部分对象。</p>
 <p>3、Perm：用来存储类的元数据，也就是方法区。（1）Perm的废除：在jdk1.8中，Perm被替换成MetaSpace，<strong>MetaSpace存放在本地内存中</strong>。原因是永久代进场内存不够用，或者发生内存泄漏。（2）MetaSpace（元空间）：元空间的本质和永久代类似，都是对JVM规范中方法区的实现。不过元空间与永久代之间最大的区别在于：元空间并不在虚拟机中，而是使用本地内存。</p>
-<p><strong>GC垃圾回收：</strong></p>
-<p><img src="/medias/images/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8.png" alt="垃圾收集器"></p>
+<p>垃圾回收之前首先判断该对象能否被回收</p>
 <p><strong>判断对象是否要回收的方法：可达性分析法</strong> </p>
 <p>1、 可达性分析法：通过一系列“GC Roots”对象作为起点进行搜索，如果在“GC  Roots”和一个对象之间没有可达路径，则称该对象是不可达的。不可达对象不一定会成为可回收对象。进入DEAD状态的线程还可以恢复，GC不会回收它的内存。（把一些对象当做root对象，JVM认为root对象是不可回收的，并且root对象引用的对象也是不可回收的）</p>
 <p> 2、 以下对象会被认为是<strong>root对象</strong>：</p>
@@ -567,16 +566,93 @@ JVM结构：
 <p>static references in methodarea;Clazz</p>
 </blockquote>
 <p>（1） 虚拟机栈（栈帧中本地变量表）中引用的对象 （2） 方法区中静态属性引用的对象 （3） 方法区中常量引用的对象 （4） 本地方法栈中Native方法引用的对象 </p>
+<p>对象的存活都与引用相关，java中的引用分为强引用、弱引用、软引用、虚引用。</p>
+<p>强引用是程序代码中普遍的存在，只要强引用还在该对象不会被回收。</p>
+<p>软引用是描述一些还有用但并非必需的对象在系统内存溢出前将会将这些对象列入垃圾回收的范围，SoftReference类实现软引用。（常用做缓存）</p>
+<p>弱引用也用来描述非必需对象，被弱引用关联的对象只能生存到下一次垃圾收集发生之前（放置内存泄露）</p>
+<p>虚引用最弱的引用不能够获取对象实例，该引用关联的对象被回收时收到一个系统的通知（管理堆外内存）</p>
 <p>3、 对象被判定可被回收，需要经历两个阶段：（1） 第一个阶段是可达性分析，分析该对象是否可达 （2）  第二个阶段是当<strong>对象没有重写finalize()方法</strong>或者<strong>finalize()方法已经被调用过</strong>，虚拟机认为该对象不可以被救活，因此回收该对象。（finalize()方法在垃圾回收中的作用是，给该对象一次救活的机会） </p>
-<p>4、 方法区中的垃圾回收：（1） 常量池中一些常量、符号引用没有被引用，则会被清理出常量池 （2） 无用的类：被判定为无用的类，会被清理出方法区。判定方法如下：A、 该类的所有实例被回收 B、 加载该类的ClassLoader被回收 C、 该类的Class对象没有被引用 </p>
+<p>4、 方法区中的垃圾回收：（1） 常量池中一些常量、符号引用没有被引用，则会被清理出常量池 （2） 无用的类：被判定为无用的类，会被清理出方法区。判定方法如下：A、 该类的所有实例被回收 B、 加载该类的ClassLoader被回收 C、 该类的Class对象没有被引用 (无法通过反射访问该类反射)</p>
 <p>5、 finalize(): （1） GC垃圾回收要回收一个对象的时候，调用该对象的finalize()方法。然后在下一次垃圾回收的时候，才去回收这个对象的内存。（2）  可以在该方法里面，指定一些对象在释放前必须执行的操作。</p>
 <p>常见的垃圾回收算法：1、Mark-Sweep（标记-清除算法）：（1）思想：标记清除算法分为两个阶段，标记阶段和清除阶段。标记阶段任务是标记出所有需要回收的对象，清除阶段就是清除被标记对象的空间。（2）优缺点：实现简单，容易产生内存碎片 2、Copying（复制清除算法）：（1）思想：将可用内存划分为大小相等的两块，每次只使用其中的一块。当进行垃圾回收的时候了，把其中存活对象全部复制到另外一块中，然后把已使用的内存空间一次清空掉。（2）优缺点：不容易产生内存碎片；可用内存空间少；存活对象多的话，效率低下。3、Mark-Compact（标记-整理算法）：（1）思想：先标记存活对象，然后把存活对象向一边移动，然后清理掉端边界以外的内存。（2）优缺点：不容易产生内存碎片；内存利用率高；存活对象多并且分散的时候，移动次数多，效率低下</p>
-<p>分代垃圾回收算法：</p>
+<p><strong>分代垃圾回收算法：</strong></p>
 <p>因为新生代每次垃圾回收都要回收大部分对象，所以新生代采用Copying算法。（1）新生代里面分成一份较大的Eden空间和两份较小的Survivor空间。每次只使用Eden和其中一块Survivor空间，然后垃圾回收的时候，把存活对象放到未使用的Survivor（划分出from、to）空间中，清空Eden和刚才使用过的Survivor空间。（2） 由于老年代每次只回收少量的对象，因此采用mark-compact算法。（3） 在堆区外有一个永久代。对永久代的回收主要是无效的类和常量 GC使用时对程序的影响？垃圾回收会影响程序的性能，Java虚拟机必须要追踪运行程序中的有用对象，然后释放没用对象，这个过程消耗处理器时间。</p>
 <p>几种不同的垃圾回收类型：</p>
 <p>（1）Minor GC：从年轻代（包括Eden、Survivor区）回收内存。</p>
 <p>（2）Major GC：清理整个老年代，当eden区内存不足时触发。</p>
 <p>（3）Full GC：清理整个堆空间，包括年轻代和老年代。当老年代内存不足时触发</p>
+<p>标记-清理算法</p>
+<p>两个阶段，标记阶段和清理阶段，标记阶段标记处需要回收的对象。不足是两个阶段效率不高并且会产生大量不连续的内存碎片。</p>
+<p>复制算法</p>
+<p>将内存空间分为两个大小相等的两块，将存活的对象复制到另一块区域。缺点是内存缩小为一半。</p>
+<p>标记-整理算法</p>
+<p>标记被回收的对象将存活的对象整理在一段，将端边界外的内存全部清理</p>
+<p>分代垃圾回收</p>
+<p>新生代每次垃圾收集有大量的对象被回收，少量存活，使用复制算法，老年代存活率比较高，没有额外的空间分配担保，使用标记清理或标记整理算法。</p>
+<p>常用的垃圾收集器</p>
+<p><strong>GC垃圾回收：</strong></p>
+<p><img src="/medias/images/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8.png" alt="垃圾收集器"></p>
+<p>内存分配和回收策略</p>
+<p><strong>内存管理</strong>在于给<strong>对象分配内存</strong>和<strong>回收分配给对象的内存</strong></p>
+<p>对象优先分配在Eden区域，大的对象直接进入老年代，例如数组对象；长期存活的对象进入老年代，虚拟机给每个对象定义了一个对象年龄计数器（默认大于15岁进入老年代）。动态对象年龄判定，survivor区中相同年龄的所有的对象大于survivor区域的一半，比该年龄大的对象进入老年代；空间分配担保MinorGC发生之前，需要确保老年代的最大可用连续空间是否大于新生代对象总空间，大于时直接Minor    GC；不大于的时候需要查看HandlePromotionFailure担保值，可担保时进行Minor GC否则进行Full GC。</p>
+<p>简单的测试题（j++和++j）：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//输出的结果为10</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+       <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           j <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//输出的结果为0</span>
+ <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+       <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           j <span class="token operator">=</span> <span class="token punctuation">(</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>字节码指令的比较</p>
+<pre class=" language-text"><code class="language-text"> j++字节码(在if内部的指令是先进栈，再改变局部变量表中j的值，栈中的元素值不会受到影响，依旧是0)
+ 0 iconst_0  将int类型数据0入栈
+ 1 istore_1  将栈顶int类型数值存入第二个局部变量表（istore_1表示第二个，从0开始）
+ 2 iconst_0  将int类型数据0入栈
+ 3 istore_2  将栈顶int类型数值存入第三个局部变量表
+ 4 iload_2    第三个局部变量进栈
+ 5 bipush 10   将一个byte类型的常量值推送至栈顶
+ 7 if_icmpge 21 (+14)  比较栈顶两int型数值大小，当结果大于等于0时跳转到21位置
+
+10 iload_1     第二个局部变量进栈
+11 iinc 1 by 1   指定int型变量增加指定值,局部变量的增加不会改变栈中元素的值，最后会被覆盖
+
+14 istore_1    将栈顶int类型数值存入第二个局部变量表（istore_1表示第二个，从0开始）
+15 iinc 2 by 1  指定int型变量增加指定值
+18 goto 4 (-14)  无条件跳转
+21 getstatic #2 <java/lang/System.out>
+24 iload_1
+25 invokevirtual #3 <java/io/PrintStream.println>
+28 return
+
+++j字节码(在if内部的指令是先改变局部变量表中j的值，再将局部变量表中的值入栈，栈中元素的值会随着局部变量表的值更改，栈中的元素值不会受到影响，依旧是0)
+0 iconst_0 将int类型数据0入栈
+ 1 istore_1  将栈顶int类型数值存入第二个局部变量表（istore_1表示第二个，从0开始）
+ 2 iconst_0  将int类型数据0入栈
+ 3 istore_2  将栈顶int类型数值存入第三个局部变量表
+ 4 iload_2    第三个局部变量进栈
+ 5 bipush 10   将一个byte类型的常量值推送至栈顶
+ 7 if_icmpge 21 (+14)   比较栈顶两int型数值大小，当结果大于等于0时跳转到21位置
+
+10 iinc 1 by 1    指定int型变量增加指定值，先增加变量表中的值
+13 iload_1       第二个局部变量进栈
+
+14 istore_1    将栈顶int类型数值存入第二个局部变量表
+15 iinc 2 by 1   指定int型变量增加指定值
+18 goto 4 (-14)   无条件跳转
+21 getstatic #2 <java/lang/System.out>
+24 iload_1
+25 invokevirtual #3 <java/io/PrintStream.println>
+28 return
+</code></pre>
 
             </div>
             <hr/>
@@ -1029,7 +1105,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.9k</span>&nbsp;字
+                class="white-color">19.2k</span>&nbsp;字
             
             
             
