@@ -4,12 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="neo4j学习（遇到的坑）, 冯雁星的博客">
-    <meta name="description" content="[TOC]
-neo4下载与安装(windows环境下)neo4j官网
-注：官网下载neo4j相当的慢。
-国内下载地址
-1.neo4j简单介绍其是基于java语言编写的图形数据库。图是一组节点和连接这些节点的关系，图数据库也被称作图形数据库管">
+    <meta name="keywords" content="pddl学习, 冯雁星的博客">
+    <meta name="description" content="角括号&amp;lt;&amp;gt; 表述名字
+圆括号（）元素名字
+方括号[]围绕着option
+An asterisk（*）means “zero or more of”
+a plus（+）means“one or more of”
+规划系统是问题求解">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@ neo4下载与安装(windows环境下)neo4j官网
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>neo4j学习（遇到的坑） | 冯雁星的博客</title>
+    <title>pddl学习 | 冯雁星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,12 +308,12 @@ neo4下载与安装(windows环境下)neo4j官网
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">neo4j学习（遇到的坑）</h1>
+                    <h1 class="description center-align post-title">pddl学习</h1>
                 </div>
             </div>
         </div>
@@ -441,28 +442,28 @@ neo4下载与安装(windows环境下)neo4j官网
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-03-24
+                    2020-04-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-21
+                    2020-04-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1,245
+                    409
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    1 Min
                 </div>
                 
 
@@ -478,134 +479,17 @@ neo4下载与安装(windows环境下)neo4j官网
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>[TOC]</p>
-<h4 id="neo4下载与安装-windows环境下"><a href="#neo4下载与安装-windows环境下" class="headerlink" title="neo4下载与安装(windows环境下)"></a>neo4下载与安装(windows环境下)</h4><p><a href="https://neo4j.com/" target="_blank" rel="noopener">neo4j官网</a></p>
-<p>注：官网下载neo4j相当的慢。</p>
-<p><a href="http://we-yun.com/index.php/blog/releases-56.html" target="_blank" rel="noopener">国内下载地址</a></p>
-<h5 id="1-neo4j简单介绍"><a href="#1-neo4j简单介绍" class="headerlink" title="1.neo4j简单介绍"></a>1.neo4j简单介绍</h5><p>其是基于java语言编写的图形数据库。图是一组节点和连接这些节点的关系，图数据库也被称作图形数据库管理系统(GDBMS)。</p>
-<h5 id="2-需要安装jdk环境"><a href="#2-需要安装jdk环境" class="headerlink" title="2.需要安装jdk环境"></a>2.需要安装jdk环境</h5><p>先使用java -version，查看自己的java环境是否配置好。</p>
-<p><img src="/medias/images/image-20200324190457173.png" alt="image-20200324190457173"></p>
-<h5 id="3-下载neo4j后解压，主要目录如下"><a href="#3-下载neo4j后解压，主要目录如下" class="headerlink" title="3.下载neo4j后解压，主要目录如下"></a>3.下载neo4j后解压，主要目录如下</h5><blockquote>
-<p>Neo4j应用程序有如下主要的目录结构：</p>
-<ul>
-<li>bin目录：用于存储Neo4j的可执行程序；</li>
-<li>conf目录：用于控制Neo4j启动的配置文件；</li>
-<li>data目录：用于存储核心数据库文件；</li>
-<li>plugins目录：用于存储Neo4j的插件；</li>
-</ul>
-</blockquote>
-<h5 id="4-创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）"><a href="#4-创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）" class="headerlink" title="4.创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）"></a>4.创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）</h5><p>新建系统变量：将自己neo4j目录粘贴到变量值位置</p>
-<p><img src="/medias/images/image-20200324190915553.png" alt="image-20200324190915553"></p>
-<p><img src="/medias/images/image-20200324191226568.png" alt="image-20200324191226568"></p>
-<p>最后将bin加入到path路径下：</p>
-<p><img src="/medias/images/image-20200324191354386.png" alt="image-20200324191354386"></p>
-<h5 id="5-测试安装是否成功"><a href="#5-测试安装是否成功" class="headerlink" title="5.测试安装是否成功"></a>5.测试安装是否成功</h5><h6 id="出现错误1"><a href="#出现错误1" class="headerlink" title="出现错误1:"></a>出现错误1:</h6><p><img src="/medias/images/image-20200324193244410.png" alt="image-20200324193244410"></p>
-<p>如果出现这种情况，不能加载.psd1模块，这是由于相对路径配置的问题导致的，打开下面的文件：</p>
-<p><img src="/medias/images/image-20200324193432628.png" alt="image-20200324193432628"></p>
-<p>将路径改成自己的路径：</p>
-<p><img src="/medias/images/image-20200324193542460.png" alt="image-20200324193542460"></p>
-<h6 id="出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境"><a href="#出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境" class="headerlink" title="出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境"></a>出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境</h6><blockquote>
-<p>Neo4j cannot be started using java version 1.8.0_221</p>
-</blockquote>
-<p>更换jdk启动neo4j，成功访问</p>
-<p><img src="/medias/images/image-20200324193821721.png" alt="image-20200324193821721"></p>
-<p><img src="/medias/images/image-20200324193840986.png" alt="image-20200324193840986"></p>
-<h4 id="Neo4j简单的命令"><a href="#Neo4j简单的命令" class="headerlink" title="Neo4j简单的命令"></a>Neo4j简单的命令</h4><h5 id="后期需要去学习一些Cypher语法"><a href="#后期需要去学习一些Cypher语法" class="headerlink" title="后期需要去学习一些Cypher语法"></a>后期需要去学习一些Cypher语法</h5><p>1.删除数据库中之前的图，创建一个空白的环境进行操作</p>
-<blockquote>
-<p>MATCH (n) DETACH DELETE n</p>
-</blockquote>
-<p><em>MATCH</em> 是匹配操作，小括号()代表一个节点node，括号里面的n为标识符</p>
-<p>2.创建一个人物节点：</p>
-<blockquote>
-<p>CREATE (n:Person {name:’John’}) RETURN n</p>
-</blockquote>
-<p>_CREATE_是创建操作，Person是标签，代表节点的类型。花括号{}代表节点属性。该语句表示创建一个标签为Person的节点，该节点具有一个name属性值，值为john</p>
-<p>3.创建更多人物节点</p>
-<blockquote>
-<p>CREATE (n:Person {name:’Sally’}) RETURN n</p>
-<p>CREATE (n:Person {name:’Steve’}) RETURN n</p>
-<p>Create(n:Person{name:’Xing’})RETURN n</p>
-</blockquote>
-<p>4.创建地区节点</p>
-<blockquote>
-<p>CREATE(n:Location{city:’Miami’,state:’FL’})</p>
-<p>CREATE(n:Location{city:’SHANXI’,state:’MA’})</p>
-<p>CREATE(n:Location{city:’SHANGHAI’,state:’ME’})</p>
-</blockquote>
-<p>节点类型为Location，属性包括city和state</p>
-<p>5.创建关系</p>
-<blockquote>
-<p>MATCH   (a:Person {name:’Liz’}),</p>
-<p>​                (b:Person {name:’Mike’})</p>
-<p>MERGE   (a)-&gt;[:FRIENDS]-&gt;(b)</p>
-</blockquote>
-<p>方括号<code>[]</code>即为关系，<code>FRIENDS</code>为关系的类型。注意这里的箭头<code>--&gt;</code>是有方向的，表示是从a到b的关系。</p>
-<p>6.关系也可以增加属性</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Shawn’}),<br>      (b:Person {name:’Sally’})<br>MERGE (a)-[:FRIENDS {since:2001}]-&gt;(b)</p>
-</blockquote>
-<p>在关系中，同样的使用花括号{}来增加关系的属性，这里给FRIENDS关系增加了since属性，属性值为2001，表示他们建立朋友关系的时间。</p>
-<p>7.增加更多的关系</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Shawn’}), (b:Person {name:’John’}) MERGE (a)-[:FRIENDS {since:2012}]-&gt;(b)<br>MATCH (a:Person {name:’Mike’}), (b:Person {name:’Shawn’}) MERGE (a)-[:FRIENDS {since:2006}]-&gt;(b)<br>MATCH (a:Person {name:’Sally’}), (b:Person {name:’Steve’}) MERGE (a)-[:FRIENDS {since:2006}]-&gt;(b)<br>MATCH (a:Person {name:’Liz’}), (b:Person {name:’John’}) MERGE (a)-[:MARRIED {since:1998}]-&gt;(b)</p>
-</blockquote>
-<p>8.建立不同类型节点之间的关系-人物和地点的关系</p>
-<blockquote>
-<p>MATCH (a:Person {name:’John’}), (b:Location {city:’Boston’}) MERGE (a)-[:BORN_IN {year:1978}]-&gt;(b)</p>
-</blockquote>
-<p>这里的关系是BORN_IN，表示出生地，同样有一个属性，表示出生年份。 </p>
-<p>9.同样建立更多人的出生地</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Liz’}), (b:Location {city:’Boston’}) MERGE (a)-[:BORN_IN {year:1981}]-&gt;(b)<br>MATCH (a:Person {name:’Mike’}), (b:Location {city:’San Francisco’}) MERGE (a)-[:BORN_IN {year:1960}]-&gt;(b)<br>MATCH (a:Person {name:’Shawn’}), (b:Location {city:’Miami’}) MERGE (a)-[:BORN_IN {year:1960}]-&gt;(b)<br>MATCH (a:Person {name:’Steve’}), (b:Location {city:’Lynn’}) MERGE (a)-[:BORN_IN {year:1970}]-&gt;(b)</p>
-</blockquote>
-<p>10.至此，知识图谱的数据已经插入完毕，可以开始做查询了。我们查询下所有在Boston出生的人物</p>
-<blockquote>
-<p>MATCH (a:Person)-[:BORN_IN]-&gt;(b:Location {city:’Boston’}) RETURN a,b</p>
-</blockquote>
-<p><img src="/medias/images/image-20200324211750318.png" alt="image-20200324211750318"></p>
-<p>11.查询所有对外有关系的节点</p>
-<blockquote>
-<p>MATCH (a)–&gt;() RETURN a</p>
-</blockquote>
-<p><img src="/medias/images/image-20200324211806411.png" alt="image-20200324211806411"></p>
-<p>12.查询所有有关系的节点</p>
-<blockquote>
-<p>MATCH (a)–() RETURN a</p>
-</blockquote>
-<p><img src="/medias/images/image-20200324211913095.png" alt="image-20200324211913095"></p>
-<p>13.查询所有对外有关系的节点，以及关系类型</p>
-<blockquote>
-<p>MATCH (a)-[r]-&gt;() RETURN a.name, type(r)</p>
-</blockquote>
-<p>14.查询所有有结婚关系的节点</p>
-<blockquote>
-<p>MATCH (n)-[:MARRIED]-() RETURN n</p>
-</blockquote>
-<p>15.创建节点的时候就建好关系</p>
-<blockquote>
-<p>CREATE (a:Person {name:’Todd’})-[r:FRIENDS]-&gt;(b:Person {name:’Carlos’})</p>
-</blockquote>
-<p>16.查找某人的朋友的朋友</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Mike’})-[r1:FRIENDS]-()-[r2:FRIENDS]-(friend_of_a_friend) RETURN friend_of_a_friend.name AS fofName</p>
-</blockquote>
-<p>17.增加/修改节点的属性</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Liz’}) SET a.age=34<br>MATCH (a:Person {name:’Shawn’}) SET a.age=32<br>MATCH (a:Person {name:’John’}) SET a.age=44<br>MATCH (a:Person {name:’Mike’}) SET a.age=25</p>
-</blockquote>
-<p>18.删除节点的属性</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Mike’}) SET a.test=’test’<br>MATCH (a:Person {name:’Mike’}) REMOVE a.test</p>
-</blockquote>
-<p>19.删除节点</p>
-<blockquote>
-<p>MATCH (a:Location {city:’Portland’}) DELETE a</p>
-</blockquote>
-<p>20.删除有关系的节点</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Todd’})-[rel]-(b:Person) DELETE a,b,rel</p>
-</blockquote>
-<h5 id="简单总结："><a href="#简单总结：" class="headerlink" title="简单总结："></a>简单总结：</h5><p>一开始学习图数据库不是很好理解，不像关系型数据库那样使用习惯了。图数据库是一个趋势，无论是在搜索还是在推荐系统中都被广泛使用。</p>
+                <p>角括号&lt;&gt; 表述名字</p>
+<p>圆括号（）元素名字</p>
+<p>方括号[]围绕着option</p>
+<p>An asterisk（*）means “zero or more of”</p>
+<p>a plus（+）means“one or more of”</p>
+<p>规划系统是问题求解算法，它在关于状态和行动的显示命题表示或关系表示上运转。这些表示方法使获得高效启发式和强有力且灵活的问题求解算法成为可能。</p>
+<p>PDDL（planning domain definition language）将初始和目标状态描述为方法的合取，并根据前提和效用描述了动作。</p>
+<p>状态空间搜索能够在前向方向（前进）和后向方法（后退）上操作。有效的启发式可由子目标独立性假设和状态规划问题的各种松弛而获得。</p>
+<p>一个规划图可从初始状态开始增量式地构造出来。每一层包含一个所有在那个时间步出现的文字和行动的超集，并且对文字之间或行动之间互斥（或简称mutex）关系进行编码。规划图为状态空间和偏序规划器产生有有的启发式，并能直接用于GRAPHPLAN算法中。</p>
+<p>其他方法包括情景演算公理上的一阶逻辑推理；将规划问题编制为布尔满足性问题或约束满足问题；在偏序规划空间进行显示地搜索。</p>
+<p>进行规划的每一种主流方法都有其拥护者，而哪种方法最好还没有达成一致。方法之间的竞争和杂交导致了规划系统的效率上的重要收货。</p>
 
             </div>
             <hr/>
@@ -631,7 +515,7 @@ neo4下载与安装(windows环境下)neo4j官网
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git/2020/03/24/neo4j-xue-xi-yu-dao-de-keng/">https://gitee.com/fengyanxing/fengyanxing.git/2020/03/24/neo4j-xue-xi-yu-dao-de-keng/</a>
+                    <a href="https://gitee.com/fengyanxing/fengyanxing.git/2020/04/16/pddl-xue-xi/">https://gitee.com/fengyanxing/fengyanxing.git/2020/04/16/pddl-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -836,28 +720,25 @@ neo4下载与安装(windows环境下)neo4j官网
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/03/25/webservice-xue-xi/">
+                <a href="/2020/04/20/guan-xi-xing-shu-ju-ku-zhi-oracle/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="WebService学习">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="关系型数据库之Oracle">
                         
-                        <span class="card-title">WebService学习</span>
+                        <span class="card-title">关系型数据库之Oracle</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WebService学习注：(不会maven的可以先去学习maven配置和简单的命令)
-Webservice介绍apacheCXF简单测试1.pox文件引用：
-&lt;!--项目依赖--> 
-&lt;dependencies>
-    &l
+                            关系型数据库之Oracle
+Oracle数据库是一个数据管理系统（RDBMS），提供开放的，全面的，近乎完整的信息管理，一个Oracle数据库由多个实例组成，实例操作数据库，任意时刻一个实例只能与一个数据库关联，一个数据库上只有一个实例对其
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
                         </span>
                         <span class="publish-author">
                             
@@ -877,28 +758,27 @@ Webservice介绍apacheCXF简单测试1.pox文件引用：
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/23/sqlserver-shi-yong-de-jian-dan-ji-lu/">
+                <a href="/2020/04/13/java-yuan-ma-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="sqlserver使用的简单记录">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="java源码笔记">
                         
-                        <span class="card-title">sqlserver使用的简单记录</span>
+                        <span class="card-title">java源码笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录项目中的业务处理(环境：sqlserver2012、vs2017)使用sql语句将数据转换成相应的格式
-1.使用cast函数,不能转换日期类型
- cast(表达式 as 数据类型)
+                            java源码笔记
+1.ArrayList
 
-> select CAST(PLAN_LENGTH 
+ArrayList是由长度可变的数组组成的，允许null值，与Vector相类似，该类的方法不同步 size、empty、get、set、iterator等为常数时间，add方法是一个O(n)的时
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
                             </span>
                         <span class="publish-author">
                             
