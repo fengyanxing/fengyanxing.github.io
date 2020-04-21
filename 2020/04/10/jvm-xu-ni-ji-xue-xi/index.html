@@ -461,7 +461,7 @@ JVM结构：
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-20
+                    2020-04-21
                 </div>
                 
 
@@ -493,7 +493,7 @@ JVM结构：
             <div id="articleContent">
                 <p>关于该学习笔记参考网上的jvm课程以及一些文章的讲解</p>
 <p><strong>JVM结构：</strong></p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Chexo%5Cthemes%5Chexo-theme-matery%5Csource%5Cmedias%5Cimages%5Cjvm.png" alt="JVM运行时数据区"></p>
+<p><img src="/medias/images/jvm.png" alt="JVM运行时数据区"></p>
 <p>局部变量表存放了编译期可知的基本数据类型、对象引用和returnAddress类型，其所需的内存空间在编译期间完成分配，方法运行期间不会改变局部变量表的大小。</p>
 <p>除了程序计数器之外，内存区域可能都会产生OutOfMemoryError异常，还可能抛出该异常的有直接内存，例如N I/O是一种基于通道和缓冲区的I/O方式，可以使用Native区域直接分配堆外内存。</p>
 <p><strong>对象的创建：</strong></p>
@@ -501,11 +501,11 @@ JVM结构：
 <p>检查后为新生的对象分配大小固定的堆空间，分配的方式有“指针碰撞”和“空闲列表”，依据垃圾回收器是否带有压缩整理功能决定。例如：Serial和ParNew采用指针碰撞；CMS使用Mark-Sweep算法的收集器采用空闲列表。</p>
 <p>频繁的对象创建导致内存空间分配出错，虚拟机采用两种解决方法，第一种是CAS失败重试的方式保证更新操作的原子性；另一种是把内存分存，又称本地线程分配缓冲(Thread Local Allocation Buffer,TLAB)为每个线程分配内存，此时的对象是一个半初始化的值，随后调用<init>方法，产生真正可用的对象</p>
 <p><strong>对象的布局：</strong></p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Chexo%5Cthemes%5Chexo-theme-matery%5Csource%5Cmedias%5Cimages%5C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B8%83%E5%B1%80.png" alt="对象的布局信息"></p>
+<p><img src="/medias/images/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B8%83%E5%B1%80.png" alt="对象的布局信息"></p>
 <p><strong>Mark Word</strong>用于存储对象自身的运行时数据，有<strong>哈希值、GC分代年龄、锁状态标志、线程持有的锁、偏向线程ID、偏向时间戳。</strong></p>
 <p>对象访问定位：</p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Chexo%5Cthemes%5Chexo-theme-matery%5Csource%5Cmedias%5Cimages%5C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AE%9A%E4%BD%8D.png" alt="对象使用句柄访问"></p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Chexo%5Cthemes%5Chexo-theme-matery%5Csource%5Cmedias%5Cimages%5C%E5%AF%B9%E8%B1%A1%E5%AE%9A%E4%BD%8D2.png" alt="对象直接指针访问"></p>
+<p><img src="/medias/images/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AE%9A%E4%BD%8D.png" alt="对象使用句柄访问"></p>
+<p><img src="/medias/images/%E5%AF%B9%E8%B1%A1%E5%AE%9A%E4%BD%8D2.png" alt="对象直接指针访问"></p>
 <p>两种访问方式的特点</p>
 <table>
 <thead>
@@ -520,7 +520,7 @@ JVM结构：
 </tr>
 </tbody></table>
 <p><strong>JMM java的内存模型：</strong></p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Chexo%5Cthemes%5Chexo-theme-matery%5Csource%5Cmedias%5Cimages%5Cjmm.png" alt="JMM内存模型"></p>
+<p><img src="/medias/images/jmm.png" alt="JMM内存模型"></p>
 <p>1、  Java的并发采用“共享内存”模型，线程之间通过读写内存的公共状态进行通讯。多个线程之间是不能通过直接传递数据交互的，它们之间交互只能通过共享变量实现。</p>
 <p>2、 主要目的是定义程序中各个变量的访问规则。</p>
 <p>3、 Java内存模型规定所有变量都存储在主内存中，每个线程还有自己的工作内存。</p>
@@ -552,7 +552,7 @@ JVM结构：
 <p>（7）如果一个变量没有被锁定，不允许对其执行unlock操作，也不允许unlock一个被其他线程锁定的变量 </p>
 <p>（8）对一个变量执行unlock操作之前，需要将该变量同步回主内存中</p>
 <p><strong>堆的内存划分：</strong></p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Chexo%5Cthemes%5Chexo-theme-matery%5Csource%5Cmedias%5Cimages%5Cheap.png" alt="java堆的内存结构"></p>
+<p><img src="/medias/images/heap.png" alt="java堆的内存结构"></p>
 <p>Java堆的内存划分分别为年轻代、Old  Memory（老年代）、Perm（永久代）。其中在Jdk1.8中，永久代被移除，使用MetaSpace代替。</p>
 <p>1、新生代：（1）使用复制清除算法（Copinng算法），原因是年轻代每次GC都要回收大部分对象。新生代里面分成一份较大的Eden空间和两份较小的Survivor空间。每次只使用Eden和其中一块Survivor空间，然后垃圾回收的时候，把存活对象放到未使用的Survivor（划分出from、to）空间中，清空Eden和刚才使用过的Survivor空间。（2）分为Eden、Survivor From、Survivor To，比例默认为8：1：1 （3）内存不足时发生Minor GC </p>
 <p>2、老年代：（1）采用标记-整理算法（mark-compact），原因是老年代每次GC只会回收少部分对象。</p>
@@ -586,7 +586,7 @@ JVM结构：
 <p>（3）Full GC：清理整个堆空间，包括年轻代和老年代。当老年代内存不足时触发</p>
 <p>常用的垃圾收集器</p>
 <p><strong>GC垃圾回收：</strong></p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Chexo%5Cthemes%5Chexo-theme-matery%5Csource%5Cmedias%5Cimages%5C%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8.png" alt="垃圾收集器"></p>
+<p><img src="/medias/images/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8.png" alt="垃圾收集器"></p>
 <p>内存分配和回收策略</p>
 <p><strong>内存管理</strong>在于给<strong>对象分配内存</strong>和<strong>回收分配给对象的内存</strong></p>
 <p>对象优先分配在Eden区域，大的对象直接进入老年代，例如数组对象；</p>
@@ -652,7 +652,7 @@ JVM结构：
 </code></pre>
 <p>Class文件结构：</p>
 <p>class文件是以8字节为基础单位的二进制流紧凑的排列在一起，中间无分割符，高于8位字节的数据项以Big-Endian(高位字节地址在最低位、最低位字节地址在最高位)存储。Class文件中只有两种伪数据结构：无符号数(u1、u2、u4、u8)和表(_info)。</p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Chexo%5Cthemes%5Chexo-theme-matery%5Csource%5Cmedias%5Cimages%5Cclass%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B.png" alt="类的文件结构"></p>
+<p><img src="/medias/images/class%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B.png" alt="类的文件结构"></p>
 <p><strong>魔数：</strong>class文件中的头4个字节为魔数，0xCAFEBABE</p>
 <p><strong>主次版本号：</strong>第5，6字节存储的是class文件的版本号，第7,8字节存储的是主版本号。</p>
 <p><strong>常量池：</strong>首先放置u2类型的常量池容量计数值，从1开始计数。常量池最要存放的是字面量(文本字符串，final常量等)和符号引用(类和接口的权限定名、字段的名称和描述符、方法的名称和描述符)</p>
