@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java源码笔记, 冯雁星的博客">
-    <meta name="description" content="java源码笔记
-1.ArrayList
+    <meta name="keywords" content="java高并发, 冯雁星的博客">
+    <meta name="description" content="java高并发
+什么是进程？
 
-ArrayList是由长度可变的数组组成的，允许null值，与Vector相类似，该类的方法不同步 size、empty、get、set、iterator等为常数时间，add方法是一个O(n)的时">
+进程，是并发执行的程序在执行过程中分配和管理资源的基本单位，是一个动态概念，竟争计算机系统资源的基本单位。每一个进程都有一个自己的地址空 间，即进程空间或（虚空间）。进程空间的大小 只与处理机的位数有关，一个">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>java源码笔记 | 冯雁星的博客</title>
+    <title>java高并发 | 冯雁星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +306,12 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java源码笔记</h1>
+                    <h1 class="description center-align post-title">java高并发</h1>
                 </div>
             </div>
         </div>
@@ -440,28 +440,28 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    251
+                    706
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -477,35 +477,61 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>java源码笔记</p>
-<p>1.ArrayList</p>
+                <p>java高并发</p>
+<p>什么是进程？</p>
 <blockquote>
-<p>ArrayList是由长度可变的数组组成的，允许null值，与Vector相类似，<strong>该类的方法不同步</strong><br> size、empty、get、set、iterator等为常数时间，add方法是一个O(n)的时间复杂度<br> 与linkedList相比较常数因子比较低，有一个初始的容量，列表元素至少和数组一样，<br> 可自动扩容grow()</p>
+<p>进程，是并发执行的程序在执行过程中<strong>分配和管理资源的基本单位</strong>，是一个动态概念，竟争计算机系统资源的基本单位。每一个进程都有一个自己的地址空 间，即进程空间或（虚空间）。进程空间的大小 只与处理机的位数有关，一个 16 位长处理机的进程空间大小为 216 ，而 32 位处理机的进程空间大小为 232 。进程至少有 5 种基本状态，它们是：初始态，执行态，等待状态，就绪状态，终止状态。<strong>进程拥有一个完整的虚拟地址空间，不依赖于线程而独立存在</strong></p>
 </blockquote>
-<p>2.继承与实现关系</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">AbstractList</span><span class="token operator">&lt;</span>E<span class="token operator">></span>
-        <span class="token keyword">implements</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>E<span class="token operator">></span><span class="token punctuation">,</span> RandomAccess<span class="token punctuation">,</span> Cloneable<span class="token punctuation">,</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable
-<span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//初始大小10，用户可以手动指定</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> DEFAULT_CAPACITY <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//底层使用Object数组实现</span>
-    <span class="token comment" spellcheck="true">//底层的扩容函数，扩容为原来的1.5倍</span>
-     <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">grow</span><span class="token punctuation">(</span><span class="token keyword">int</span> minCapacity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// overflow-conscious code</span>
-        <span class="token keyword">int</span> oldCapacity <span class="token operator">=</span> elementData<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//新数组的长度=旧数组的长度+旧数组长度右移一位（相当于除以2）</span>
-        <span class="token comment" spellcheck="true">//新数组长度是旧数组的1.5倍</span>
-        <span class="token keyword">int</span> newCapacity <span class="token operator">=</span> oldCapacity <span class="token operator">+</span> <span class="token punctuation">(</span>oldCapacity <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>newCapacity <span class="token operator">-</span> minCapacity <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
-            newCapacity <span class="token operator">=</span> minCapacity<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>newCapacity <span class="token operator">-</span> MAX_ARRAY_SIZE <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
-            newCapacity <span class="token operator">=</span> <span class="token function">hugeCapacity</span><span class="token punctuation">(</span>minCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// minCapacity is usually close to size, so this is a win:</span>
-        elementData <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">copyOf</span><span class="token punctuation">(</span>elementData<span class="token punctuation">,</span> newCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-<span class="token punctuation">}</span></code></pre>
+<p>什么是线程？</p>
+<blockquote>
+<p>线程，在网络或多用户环境下，一个服务器通常需要接收大量且不确定数量用户的并发请求，为每一个请求都创建一个进程显然是行不通的，——无论是从系统资源开销方面或是响应用户请求的效率方面来看。因此，操作系统中线程的概念便被引进了。线程，是进程的一部分，一个没有线程的进程可以被看作是单线程的。线程有时又被称为<strong>轻权进程或轻量级进程</strong>，也是 CPU <strong>调度</strong>的一个基本单位。<strong>线程是进程的一部分，没有自己的地址空间，与进程内的其他线程一起共享分配给该进程的所有资源</strong>。</p>
+</blockquote>
+<p>什么是协程？</p>
+<blockquote>
+<p>协程是一种<strong>用户态的轻量级线程</strong>，协程的调度完全由用户控制。协程拥有自己的寄存器上下文和栈。协程调度切换时，将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈，直接操作栈则<strong>基本没有内核切换的开销</strong>，可以不加锁的访问全局变量，所以<strong>上下文的切换非常快</strong>。</p>
+</blockquote>
+<p>启动一个java程序</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>jps</td>
+<td>显示系统内所有Hotspot虚拟机进程</td>
+</tr>
+<tr>
+<td>jstat</td>
+<td>用于收集Hotspot虚拟机各个方面的运行数据</td>
+</tr>
+<tr>
+<td>jinfo</td>
+<td>显示虚拟机配置信息</td>
+</tr>
+<tr>
+<td>jmap</td>
+<td>生成虚拟机的内存转储快照</td>
+</tr>
+<tr>
+<td>jstack</td>
+<td>生成虚拟机的线程快照</td>
+</tr>
+<tr>
+<td>jhat</td>
+<td>用于分析heapdump文件，建立http/html服务器，使得用户在浏览器中访问</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>jps [options] [hostid]</p>
+<p>参数有：</p>
+<p>-p 只输出LVMID，省略主类的名称</p>
+<p>-m  输出虚拟机进程启动时传递给主类main的函数参数</p>
+<p>-l  输出主类的全名，如果进程执行的是jar包，输出jar路径</p>
+<p>-v  输出虚拟机进程启动时jvm参数</p>
+</blockquote>
+<p>jConsole可视化工具</p>
 
             </div>
             <hr/>
@@ -531,7 +557,7 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/fengyanxing/2020/04/13/java-yuan-ma-bi-ji/">https://github.com/fengyanxing/2020/04/13/java-yuan-ma-bi-ji/</a>
+                    <a href="https://github.com/fengyanxing/2020/04/24/java-gao-bing-fa/">https://github.com/fengyanxing/2020/04/24/java-gao-bing-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -736,29 +762,26 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/16/pddl-xue-xi/">
+                <a href="/2020/04/26/netty-ru-men/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="pddl学习">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Netty入门">
                         
-                        <span class="card-title">pddl学习</span>
+                        <span class="card-title">Netty入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            角括号&lt;&gt; 表述名字
-圆括号（）元素名字
-方括号[]围绕着option
-An asterisk（*）means “zero or more of”
-a plus（+）means“one or more of”
-规划系统是问题求解
+                            Netty入门
+Netty是JBOSS提供的开源项目，github上的独立项目
+Netty是一个异步的、基于事件驱动的网络应用框架，用以快速开发高性能、高可靠的网络IO程序。Netty主要是针对TCP协议下，面向客户端高并发应用或Peer 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-26
                         </span>
                         <span class="publish-author">
                             
@@ -778,48 +801,43 @@ a plus（+）means“one or more of”
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/10/jvm-xu-ni-ji-xue-xi/">
+                <a href="/2020/04/20/bos-xiang-mu-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="JVM虚拟机学习">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="BOS项目记录">
                         
-                        <span class="card-title">JVM虚拟机学习</span>
+                        <span class="card-title">BOS项目记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于该学习笔记参考网上的jvm课程以及一些文章的讲解
-JVM结构：
+                            BOS项目
+1.数据库环境搭建：
 
-局部变量表存放了编译期可知的基本数据类型、对象引用和returnAddress类型，其所需的内存空间在编译期间完成分配，方法运行期间不会改变局部变量表的大小。
-除了程序计
+
+net start mysql
+
+mysql -uroot -p123
+
+create database bos32 character set utf-8;
+
+use bos32;
+—-查看所有的用户
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    java深入学习
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            it星
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/jvm/">
-                        <span class="chip bg-color">jvm</span>
-                    </a>
-                    
                 </div>
                 
             </div>

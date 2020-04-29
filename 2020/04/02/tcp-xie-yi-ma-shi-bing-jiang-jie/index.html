@@ -5,12 +5,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="tcp协议(马士兵讲解), 冯雁星的博客">
-    <meta name="description" content="互联网通信(TCP,后期自己对内容进行完善)
+    <meta name="description" content="互联网通信(后期自己对内容进行完善)
 1.分层（主要是为了解耦）
 exec 9 /dev/tcp/www.baidu.com/80
 #9表示文件描述符
-#：表示输入参数出
-#/dev/tcp/www.baidu.com/80  在l">
+#：表示输入输出流
+#exec
+#/dev/tcp/www.baidu.com/80  ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -449,21 +450,21 @@ exec 9 /dev/tcp/www.baidu.com/80
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-09
+                    2020-04-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    530
+                    871
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -479,16 +480,18 @@ exec 9 /dev/tcp/www.baidu.com/80
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>互联网通信(TCP,后期自己对内容进行完善)</p>
+                <p>互联网通信(后期自己对内容进行完善)</p>
 <p>1.分层（主要是为了解耦）</p>
 <pre class=" language-shell"><code class="language-shell">exec 9<> /dev/tcp/www.baidu.com/80
 #9表示文件描述符
-#<>：表示输入参数出
+#<>：表示输入输出流
+#exec
 #/dev/tcp/www.baidu.com/80  在linux表示文件，linux一切皆文件（摄像头、显示器的等）
-echo -e "GET /HTTP/1.0\n" 1>& 9
+echo -e "GET / HTTP/1.0\n" 1>& 9
+##  1>&  指令表示输出指向一个文件描述符
 cat 0<& 9</code></pre>
 <p>传输控制层（UDP、TCP）</p>
-<p>TCP面向连接的、可靠的传输协议（三次握手）</p>
+<p>TCP面向<strong>连接的、可靠的</strong>传输协议（三次握手）</p>
 <p>1.客户端发送SYN给服务器请求连接，其中约定数据包大小</p>
 <p>2.服务器给客户端发送syn+ack(该ack=客户端seq+1)</p>
 <p>3.客户端发送ack给服务器进行确认</p>
@@ -510,13 +513,35 @@ cat 0<& 9</code></pre>
 <p>curl  url     —&gt; 例如  curl   <a href="http://www.baidu.com:80" target="_blank" rel="noopener">www.baidu.com:80</a></p>
 </blockquote>
 <p>网络层（ip）</p>
-<p>ip地址点分字节，ip地址与子网掩码进行按位与操作得到网关</p>
+<p>ip地址点分字节，ip地址与子网掩码进行按位与操作得到网络号（网关）</p>
 <p>linux路由表：route -n</p>
 <p>arp协议，主机获取网关的mac的地址进行广播，网关将自己的mac地址交给主机，主机进行数据与ip地址封装</p>
 <blockquote>
 <p>arp -d  删除的路由中的记录 &amp;&amp; curl url</p>
 <p>tcpdump -nn -i eth0 port 80 or arp</p>
 </blockquote>
+<p>Http协议的一些基本概念：</p>
+<p>HTTP超文本传输协议是一个基于请求与相应模式的，无状态的，应用层协议，常基于TCP的连接</p>
+<p>http协议内容：请求行、请求头、空行、数据</p>
+<p>客户端请求消息：请求方法，URL，协议版本为请求行，请求头部，头部字段名，值，请求数据</p>
+<p>服务器端响应消息：状态行，消息报头，空行，响应正文</p>
+<blockquote>
+<p>URI：统一资源标识符    访问资源的命名机制，存放资源的主机名、资源的名称由路径决定</p>
+<p> URL：统一资源定位符      URN：统一资源命名</p>
+</blockquote>
+<p>Http：的方法有：</p>
+<blockquote>
+<p>1.GET为获取资源数据get方法用于请求指定的页面信息，并返回请求消息的主体</p>
+<p>2.POST为提交资源数据post方法用于向指定的资源提交数据</p>
+<p>3.PUT为更新资源数据</p>
+<p>4.DELETE为删除资源数据</p>
+<p>5.HEAD为读取资源的元数据</p>
+<p>6.OPTIONS为读取资源多支持的所有请求方法</p>
+<p>7.TRACE为回显服务器收到额请求</p>
+<p>8.CONNECT为保留将来使用</p>
+</blockquote>
+<p>多个socket对应一个进程：多路复用器：EPOLL</p>
+<p>netty需要了解线程池相关知识</p>
 
             </div>
             <hr/>
@@ -532,7 +557,7 @@ cat 0<& 9</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git" rel="external nofollow noreferrer">it星</a>
+                    <a href="https://github.com/fengyanxing" rel="external nofollow noreferrer">it星</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -542,7 +567,7 @@ cat 0<& 9</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git/2020/04/02/tcp-xie-yi-ma-shi-bing-jiang-jie/">https://gitee.com/fengyanxing/fengyanxing.git/2020/04/02/tcp-xie-yi-ma-shi-bing-jiang-jie/</a>
+                    <a href="https://github.com/fengyanxing/2020/04/02/tcp-xie-yi-ma-shi-bing-jiang-jie/">https://github.com/fengyanxing/2020/04/02/tcp-xie-yi-ma-shi-bing-jiang-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -555,7 +580,7 @@ cat 0<& 9</code></pre>
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git" target="_blank">it星</a>
+                    <a href="https://github.com/fengyanxing" target="_blank">it星</a>
                     !
                 </span>
             </div>
@@ -759,10 +784,10 @@ cat 0<& 9</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java问题记录:
+                            java基础与概念:
 1.什么是面向对象？
 
-面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描述某个事物在整个问题的步骤中的行为。面向对象技术是一种以对象为基础，以事件或消息来驱动对象执行处理的程序设计技
+面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描述某个事物在整个问题的步骤中的行为。面向对象技术是一种以对象为基础，以事件或消息来驱动对象执行处理的程序设计
                         
                     </div>
                     <div class="publish-info">
@@ -959,13 +984,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
-            <a href="https://gitee.com/fengyanxing/fengyanxing.git" target="_blank">it星</a>
+            <a href="https://github.com/fengyanxing" target="_blank">it星</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.8k</span>&nbsp;字
+                class="white-color">25.1k</span>&nbsp;字
             
             
             

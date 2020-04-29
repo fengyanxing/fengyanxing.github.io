@@ -455,21 +455,21 @@ use bos32;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-20
+                    2020-04-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2,134
+                    2,622
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    13 分
                 </div>
                 
 
@@ -916,7 +916,70 @@ xing = rw
 <p>svnserve  -d -r   当前的仓库路径</p>
 </blockquote>
 <p>如果在cmd命令行之下不能svn命令，先进行svn的修复工作，在对其进行svn命令的检查svn info</p>
-<p>创建一个配置文件每次启动时点击.bat文件即可</p>
+<p>创建一个配置文件每次启动时点击.bat文件即可，使用svn对代码进行管理</p>
+<p>前端页面使用jquery easyui</p>
+<p>引入静态资源文件：</p>
+<pre class=" language-xml"><code class="language-xml">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../themes/default/easyui.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../themes/icon.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../demo.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../jquery-1.8.0.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../jquery.easyui.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>前端的编写</p>
+<p>1.layout页面布局</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>easyui-layout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- 使用div描述每个区域 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>星星制作管理系统<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>north<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 北部区域<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>系统菜单<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>west<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>西部区域<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>center<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>中部区域<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>east<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>东部区域<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">50</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>south<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>南部区域<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre>
+<p>2.accordion折叠面板</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>easyui-layout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>星星管理系统2<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>north<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>系统设置<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>west<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- 制作accordion折叠面板
+            使用div表示每个面板
+             --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>easyui-accordion<span class="token punctuation">"</span></span> <span class="token attr-name">dataoptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fit:true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iconCls:<span class="token punctuation">'</span>icon-cut<span class="token punctuation">'</span><span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>面板1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>111<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>面板1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>111<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>面板1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>111<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>center<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>east<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">50</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>south<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre>
+<p>3.tabs选项卡面板</p>
+<pre class=" language-html"><code class="language-html">s<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>easyui-layout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>星星管理系统3.0<span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>north<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>系统设置<span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>west<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>easyui-accorfion<span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fit:true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iconCls:<span class="token punctuation">'</span>icon-cut<span class="token punctuation">'</span><span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>面板一<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>1111<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iconCls:<span class="token punctuation">'</span>icon-save<span class="token punctuation">'</span><span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>面板二<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>2222<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>  <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>面板三<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>3333<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>center<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>easyui-tabs<span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fit:true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token comment" spellcheck="true">&lt;!-- 制作一个tabs选项卡面板 --></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iconCls:<span class="token punctuation">'</span>icon-cut<span class="token punctuation">'</span><span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>面板一<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>closable:true<span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>面板二<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>222<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>面板三<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>333<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>east<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">50</span>px</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>region:<span class="token punctuation">'</span>south<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre>
+<p>ztree插件</p>
+<p>引入ztree的文件</p>
+<p>使用标准json构建ztree</p>
+<p>使用普通的json构建ztree</p>
+<p>使用ajax异步请求获取数据</p>
 
             </div>
             <hr/>
@@ -932,7 +995,7 @@ xing = rw
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git" rel="external nofollow noreferrer">it星</a>
+                    <a href="https://github.com/fengyanxing" rel="external nofollow noreferrer">it星</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -942,7 +1005,7 @@ xing = rw
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git/2020/04/20/bos-xiang-mu-ji-lu/">https://gitee.com/fengyanxing/fengyanxing.git/2020/04/20/bos-xiang-mu-ji-lu/</a>
+                    <a href="https://github.com/fengyanxing/2020/04/20/bos-xiang-mu-ji-lu/">https://github.com/fengyanxing/2020/04/20/bos-xiang-mu-ji-lu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -955,7 +1018,7 @@ xing = rw
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git" target="_blank">it星</a>
+                    <a href="https://github.com/fengyanxing" target="_blank">it星</a>
                     !
                 </span>
             </div>
@@ -1143,41 +1206,32 @@ xing = rw
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/20/bos-xiang-mu-ji-lu/">
+                <a href="/2020/04/24/java-gao-bing-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="BOS项目记录">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="java高并发">
                         
-                        <span class="card-title">BOS项目记录</span>
+                        <span class="card-title">java高并发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            BOS项目
-1.数据库环境搭建：
+                            java高并发
+什么是进程？
 
-
-net start mysql
-
-mysql -uroot -p123
-
-create database bos32 character set utf-8;
-
-use bos32;
-—-查看所有的用户
+进程，是并发执行的程序在执行过程中分配和管理资源的基本单位，是一个动态概念，竟争计算机系统资源的基本单位。每一个进程都有一个自己的地址空 间，即进程空间或（虚空间）。进程空间的大小 只与处理机的位数有关，一个
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-24
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1186,7 +1240,6 @@ use bos32;
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1366,13 +1419,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
-            <a href="https://gitee.com/fengyanxing/fengyanxing.git" target="_blank">it星</a>
+            <a href="https://github.com/fengyanxing" target="_blank">it星</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.8k</span>&nbsp;字
+                class="white-color">25.1k</span>&nbsp;字
             
             
             

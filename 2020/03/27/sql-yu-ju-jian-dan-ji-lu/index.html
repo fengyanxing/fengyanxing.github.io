@@ -447,21 +447,21 @@ CREATE TABLE product_info (
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-27
+                    2020-04-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    225
+                    497
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -532,6 +532,32 @@ CREATE TABLE product_info (
     <span class="token keyword">KEY</span> idx_order_id <span class="token punctuation">(</span>order_id<span class="token punctuation">)</span>
  <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+<p>需求：创建一个薪资表，表中有员工的信息，查询某个员工薪资变化t以及员工编号emp_no</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--创建薪资表</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>salaries<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+<span class="token punctuation">`</span>emp_no<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token punctuation">`</span>salary<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token punctuation">`</span>from_date<span class="token punctuation">`</span> <span class="token keyword">DATE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token punctuation">`</span>to_date<span class="token punctuation">`</span> <span class="token keyword">DATE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>emp_no<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>from_date<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">--1、用COUNT()函数和GROUP BY语句可以统计同一emp_no值的记录条数</span>
+<span class="token comment" spellcheck="true">--2、输出的涨幅次数为t，故用AS语句将COUNT(emp_no)的值转换为t</span>
+<span class="token comment" spellcheck="true">--3、由于COUNT()函数不可用于WHERE语句中，故使用HAVING语句来限定t>15的条件</span>
+<span class="token keyword">select</span> <span class="token number">a</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">from</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> emp_no<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">as</span> t <span class="token keyword">from</span> 
+salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> emp_no<span class="token punctuation">)</span>
+ <span class="token keyword">as</span> <span class="token number">a</span> 
+<span class="token keyword">where</span> t<span class="token operator">></span><span class="token number">15</span>
+
+<span class="token comment" spellcheck="true">--对于distinct与group by的使用: 1、当对系统的性能高并数据量大时使用group by 2、当对系统的性能不高时使用数据量少时两者皆可 3、尽量使用group by</span>
+<span class="token keyword">select</span> salary <span class="token keyword">from</span> salaries  <span class="token keyword">where</span> to_date<span class="token operator">=</span><span class="token string">'9999-01-01'</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> salary  <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">DESC</span>
+</code></pre>
+<p>having和where的使用场景</p>
+<blockquote>
+<p>WHERE语句在GROUP BY语句之前；SQL会在分组之前计算WHERE语句。</p>
+<p>HAVING语句在GROUP BY语句之后；SQL会在分组之后计算HAVING语句。  </p>
+</blockquote>
 
             </div>
             <hr/>
@@ -547,7 +573,7 @@ CREATE TABLE product_info (
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git" rel="external nofollow noreferrer">it星</a>
+                    <a href="https://github.com/fengyanxing" rel="external nofollow noreferrer">it星</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -557,7 +583,7 @@ CREATE TABLE product_info (
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git/2020/03/27/sql-yu-ju-jian-dan-ji-lu/">https://gitee.com/fengyanxing/fengyanxing.git/2020/03/27/sql-yu-ju-jian-dan-ji-lu/</a>
+                    <a href="https://github.com/fengyanxing/2020/03/27/sql-yu-ju-jian-dan-ji-lu/">https://github.com/fengyanxing/2020/03/27/sql-yu-ju-jian-dan-ji-lu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -570,7 +596,7 @@ CREATE TABLE product_info (
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://gitee.com/fengyanxing/fengyanxing.git" target="_blank">it星</a>
+                    <a href="https://github.com/fengyanxing" target="_blank">it星</a>
                     !
                 </span>
             </div>
@@ -975,13 +1001,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
-            <a href="https://gitee.com/fengyanxing/fengyanxing.git" target="_blank">it星</a>
+            <a href="https://github.com/fengyanxing" target="_blank">it星</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.8k</span>&nbsp;字
+                class="white-color">25.1k</span>&nbsp;字
             
             
             
