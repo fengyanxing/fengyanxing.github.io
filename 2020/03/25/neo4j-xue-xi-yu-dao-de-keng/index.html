@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="sql语句简单记录, it星的博客">
-    <meta name="description" content="mysql数据库创建表语句--商品表
-CREATE TABLE product_info (
-    product_id VARCHAR(32) NOT NULL, 
-    product_name VARCHAR(64) NOT NU">
+    <meta name="keywords" content="neo4j学习, it星的博客">
+    <meta name="description" content="neo4j下载与安装(windows环境下)neo4j官网
+注：官网下载neo4j相当的慢。
+国内下载地址
+1.neo4j简单介绍其是基于java语言编写的图形数据库。图是一组节点和连接这些节点的关系，图数据库也被称作图形数据库管理系统(G">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@ CREATE TABLE product_info (
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>sql语句简单记录 | it星的博客</title>
+    <title>neo4j学习 | it星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +306,12 @@ CREATE TABLE product_info (
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">sql语句简单记录</h1>
+                    <h1 class="description center-align post-title">neo4j学习</h1>
                 </div>
             </div>
         </div>
@@ -426,12 +426,25 @@ CREATE TABLE product_info (
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/neo4j/">
+                                <span class="chip bg-color">neo4j</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -440,28 +453,28 @@ CREATE TABLE product_info (
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-27
+                    2020-03-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-22
+                    2020-05-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    497
+                    1,244
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -477,87 +490,133 @@ CREATE TABLE product_info (
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="mysql数据库创建表语句"><a href="#mysql数据库创建表语句" class="headerlink" title="mysql数据库创建表语句"></a>mysql数据库创建表语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--商品表</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> product_info <span class="token punctuation">(</span>
-    product_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> 
-    product_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_price <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token punctuation">,</span> 
-    product_stock <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_description <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    product_icon <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    category_type <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>product_id<span class="token punctuation">)</span>
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">--类目表</span>
- <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> product_category <span class="token punctuation">(</span>
-    category_id <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-    category_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    category_type <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>category_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
-     <span class="token comment" spellcheck="true">--类型唯一性</span>
-    <span class="token keyword">UNIQUE</span> <span class="token keyword">KEY</span> uqe_category_type <span class="token punctuation">(</span>category_type<span class="token punctuation">)</span>    
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">--订单表</span>
- <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> order_master <span class="token punctuation">(</span>
-    order_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_phone <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_address <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_openid <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    order_amount <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    order_status <span class="token keyword">TINYINT</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
-    pay_status <span class="token keyword">TINYINT</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-     <span class="token comment" spellcheck="true">--订单主键</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>order_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
-     <span class="token comment" spellcheck="true">--订单索引</span>
-    <span class="token keyword">KEY</span> idx_buyer_openid <span class="token punctuation">(</span>buyer_openid<span class="token punctuation">)</span>
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">--订单明细表</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> order_detial<span class="token punctuation">(</span>
-    detial_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    order_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_price <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_quantity   <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>detial_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">KEY</span> idx_order_id <span class="token punctuation">(</span>order_id<span class="token punctuation">)</span>
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>需求：创建一个薪资表，表中有员工的信息，查询某个员工薪资变化t以及员工编号emp_no</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--创建薪资表</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>salaries<span class="token punctuation">`</span> <span class="token punctuation">(</span>
-<span class="token punctuation">`</span>emp_no<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token punctuation">`</span>salary<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token punctuation">`</span>from_date<span class="token punctuation">`</span> <span class="token keyword">DATE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token punctuation">`</span>to_date<span class="token punctuation">`</span> <span class="token keyword">DATE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>emp_no<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>from_date<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">--1、用COUNT()函数和GROUP BY语句可以统计同一emp_no值的记录条数</span>
-<span class="token comment" spellcheck="true">--2、输出的涨幅次数为t，故用AS语句将COUNT(emp_no)的值转换为t</span>
-<span class="token comment" spellcheck="true">--3、由于COUNT()函数不可用于WHERE语句中，故使用HAVING语句来限定t>15的条件</span>
-<span class="token keyword">select</span> <span class="token number">a</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">from</span>
-<span class="token punctuation">(</span><span class="token keyword">select</span> emp_no<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">as</span> t <span class="token keyword">from</span> 
-salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> emp_no<span class="token punctuation">)</span>
- <span class="token keyword">as</span> <span class="token number">a</span> 
-<span class="token keyword">where</span> t<span class="token operator">></span><span class="token number">15</span>
-
-<span class="token comment" spellcheck="true">--对于distinct与group by的使用: 1、当对系统的性能高并数据量大时使用group by 2、当对系统的性能不高时使用数据量少时两者皆可 3、尽量使用group by</span>
-<span class="token keyword">select</span> salary <span class="token keyword">from</span> salaries  <span class="token keyword">where</span> to_date<span class="token operator">=</span><span class="token string">'9999-01-01'</span>
-<span class="token keyword">group</span> <span class="token keyword">by</span> salary  <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">DESC</span>
-</code></pre>
-<p>having和where的使用场景</p>
-<blockquote>
-<p>WHERE语句在GROUP BY语句之前；SQL会在分组之前计算WHERE语句。</p>
-<p>HAVING语句在GROUP BY语句之后；SQL会在分组之后计算HAVING语句。  </p>
+                <h4 id="neo4j下载与安装-windows环境下"><a href="#neo4j下载与安装-windows环境下" class="headerlink" title="neo4j下载与安装(windows环境下)"></a>neo4j下载与安装(windows环境下)</h4><p><a href="https://neo4j.com/" target="_blank" rel="noopener">neo4j官网</a></p>
+<p>注：官网下载neo4j相当的慢。</p>
+<p><a href="http://we-yun.com/index.php/blog/releases-56.html" target="_blank" rel="noopener">国内下载地址</a></p>
+<h5 id="1-neo4j简单介绍"><a href="#1-neo4j简单介绍" class="headerlink" title="1.neo4j简单介绍"></a>1.neo4j简单介绍</h5><p>其是基于java语言编写的图形数据库。图是一组节点和连接这些节点的关系，图数据库也被称作图形数据库管理系统(GDBMS)。</p>
+<h5 id="2-需要安装jdk环境"><a href="#2-需要安装jdk环境" class="headerlink" title="2.需要安装jdk环境"></a>2.需要安装jdk环境</h5><p>先使用java -version，查看自己的java环境是否配置好。</p>
+<p><img src="/medias/images/image-20200324190457173.png" alt="image-20200324190457173"></p>
+<h5 id="3-下载neo4j后解压，主要目录如下"><a href="#3-下载neo4j后解压，主要目录如下" class="headerlink" title="3.下载neo4j后解压，主要目录如下"></a>3.下载neo4j后解压，主要目录如下</h5><blockquote>
+<p>Neo4j应用程序有如下主要的目录结构：</p>
+<ul>
+<li>bin目录：用于存储Neo4j的可执行程序；</li>
+<li>conf目录：用于控制Neo4j启动的配置文件；</li>
+<li>data目录：用于存储核心数据库文件；</li>
+<li>plugins目录：用于存储Neo4j的插件；</li>
+</ul>
 </blockquote>
+<h5 id="4-创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）"><a href="#4-创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）" class="headerlink" title="4.创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）"></a>4.创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）</h5><p>新建系统变量：将自己neo4j目录粘贴到变量值位置</p>
+<p><img src="/medias/images/image-20200324190915553.png" alt="image-20200324190915553"></p>
+<p><img src="/medias/images/image-20200324191226568.png" alt="image-20200324191226568"></p>
+<p>最后将bin加入到path路径下：</p>
+<p><img src="/medias/images/image-20200324191354386.png" alt="image-20200324191354386"></p>
+<h5 id="5-测试安装是否成功"><a href="#5-测试安装是否成功" class="headerlink" title="5.测试安装是否成功"></a>5.测试安装是否成功</h5><h6 id="出现错误1"><a href="#出现错误1" class="headerlink" title="出现错误1:"></a>出现错误1:</h6><p><img src="/medias/images/image-20200324193244410.png" alt="image-20200324193244410"></p>
+<p>如果出现这种情况，不能加载.psd1模块，这是由于相对路径配置的问题导致的，打开下面的文件：</p>
+<p><img src="/medias/images/image-20200324193432628.png" alt="image-20200324193432628"></p>
+<p>将路径改成自己的路径：</p>
+<p><img src="/medias/images/image-20200324193542460.png" alt="image-20200324193542460"></p>
+<h6 id="出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境"><a href="#出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境" class="headerlink" title="出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境"></a>出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境</h6><blockquote>
+<p>Neo4j cannot be started using java version 1.8.0_221</p>
+</blockquote>
+<p>更换jdk启动neo4j，成功访问</p>
+<p><img src="/medias/images/image-20200324193821721.png" alt="image-20200324193821721"></p>
+<p><img src="/medias/images/image-20200324193840986.png" alt="image-20200324193840986"></p>
+<h4 id="Neo4j简单的命令"><a href="#Neo4j简单的命令" class="headerlink" title="Neo4j简单的命令"></a>Neo4j简单的命令</h4><h5 id="后期需要去学习一些Cypher语法"><a href="#后期需要去学习一些Cypher语法" class="headerlink" title="后期需要去学习一些Cypher语法"></a>后期需要去学习一些Cypher语法</h5><p>1.删除数据库中之前的图，创建一个空白的环境进行操作</p>
+<blockquote>
+<p>MATCH (n) DETACH DELETE n</p>
+</blockquote>
+<p><em>MATCH</em> 是匹配操作，小括号()代表一个节点node，括号里面的n为标识符</p>
+<p>2.创建一个人物节点：</p>
+<blockquote>
+<p>CREATE (n:Person {name:’John’}) RETURN n</p>
+</blockquote>
+<p>_CREATE_是创建操作，Person是标签，代表节点的类型。花括号{}代表节点属性。该语句表示创建一个标签为Person的节点，该节点具有一个name属性值，值为john</p>
+<p>3.创建更多人物节点</p>
+<blockquote>
+<p>CREATE (n:Person {name:’Sally’}) RETURN n</p>
+<p>CREATE (n:Person {name:’Steve’}) RETURN n</p>
+<p>Create(n:Person{name:’Xing’})RETURN n</p>
+</blockquote>
+<p>4.创建地区节点</p>
+<blockquote>
+<p>CREATE(n:Location{city:’Miami’,state:’FL’})</p>
+<p>CREATE(n:Location{city:’SHANXI’,state:’MA’})</p>
+<p>CREATE(n:Location{city:’SHANGHAI’,state:’ME’})</p>
+</blockquote>
+<p>节点类型为Location，属性包括city和state</p>
+<p>5.创建关系</p>
+<blockquote>
+<p>MATCH   (a:Person {name:’Liz’}),</p>
+<p>​                (b:Person {name:’Mike’})</p>
+<p>MERGE   (a)-&gt;[:FRIENDS]-&gt;(b)</p>
+</blockquote>
+<p>方括号<code>[]</code>即为关系，<code>FRIENDS</code>为关系的类型。注意这里的箭头<code>--&gt;</code>是有方向的，表示是从a到b的关系。</p>
+<p>6.关系也可以增加属性</p>
+<blockquote>
+<p>MATCH (a:Person {name:’Shawn’}),<br>      (b:Person {name:’Sally’})<br>MERGE (a)-[:FRIENDS {since:2001}]-&gt;(b)</p>
+</blockquote>
+<p>在关系中，同样的使用花括号{}来增加关系的属性，这里给FRIENDS关系增加了since属性，属性值为2001，表示他们建立朋友关系的时间。</p>
+<p>7.增加更多的关系</p>
+<blockquote>
+<p>MATCH (a:Person {name:’Shawn’}), (b:Person {name:’John’}) MERGE (a)-[:FRIENDS {since:2012}]-&gt;(b)<br>MATCH (a:Person {name:’Mike’}), (b:Person {name:’Shawn’}) MERGE (a)-[:FRIENDS {since:2006}]-&gt;(b)<br>MATCH (a:Person {name:’Sally’}), (b:Person {name:’Steve’}) MERGE (a)-[:FRIENDS {since:2006}]-&gt;(b)<br>MATCH (a:Person {name:’Liz’}), (b:Person {name:’John’}) MERGE (a)-[:MARRIED {since:1998}]-&gt;(b)</p>
+</blockquote>
+<p>8.建立不同类型节点之间的关系-人物和地点的关系</p>
+<blockquote>
+<p>MATCH (a:Person {name:’John’}), (b:Location {city:’Boston’}) MERGE (a)-[:BORN_IN {year:1978}]-&gt;(b)</p>
+</blockquote>
+<p>这里的关系是BORN_IN，表示出生地，同样有一个属性，表示出生年份。 </p>
+<p>9.同样建立更多人的出生地</p>
+<blockquote>
+<p>MATCH (a:Person {name:’Liz’}), (b:Location {city:’Boston’}) MERGE (a)-[:BORN_IN {year:1981}]-&gt;(b)<br>MATCH (a:Person {name:’Mike’}), (b:Location {city:’San Francisco’}) MERGE (a)-[:BORN_IN {year:1960}]-&gt;(b)<br>MATCH (a:Person {name:’Shawn’}), (b:Location {city:’Miami’}) MERGE (a)-[:BORN_IN {year:1960}]-&gt;(b)<br>MATCH (a:Person {name:’Steve’}), (b:Location {city:’Lynn’}) MERGE (a)-[:BORN_IN {year:1970}]-&gt;(b)</p>
+</blockquote>
+<p>10.至此，知识图谱的数据已经插入完毕，可以开始做查询了。我们查询下所有在Boston出生的人物</p>
+<blockquote>
+<p>MATCH (a:Person)-[:BORN_IN]-&gt;(b:Location {city:’Boston’}) RETURN a,b</p>
+</blockquote>
+<p><img src="/medias/images/image-20200324211750318.png" alt="image-20200324211750318"></p>
+<p>11.查询所有对外有关系的节点</p>
+<blockquote>
+<p>MATCH (a)–&gt;() RETURN a</p>
+</blockquote>
+<p><img src="/medias/images/image-20200324211806411.png" alt="image-20200324211806411"></p>
+<p>12.查询所有有关系的节点</p>
+<blockquote>
+<p>MATCH (a)–() RETURN a</p>
+</blockquote>
+<p><img src="/medias/images/image-20200324211913095.png" alt="image-20200324211913095"></p>
+<p>13.查询所有对外有关系的节点，以及关系类型</p>
+<blockquote>
+<p>MATCH (a)-[r]-&gt;() RETURN a.name, type(r)</p>
+</blockquote>
+<p>14.查询所有有结婚关系的节点</p>
+<blockquote>
+<p>MATCH (n)-[:MARRIED]-() RETURN n</p>
+</blockquote>
+<p>15.创建节点的时候就建好关系</p>
+<blockquote>
+<p>CREATE (a:Person {name:’Todd’})-[r:FRIENDS]-&gt;(b:Person {name:’Carlos’})</p>
+</blockquote>
+<p>16.查找某人的朋友的朋友</p>
+<blockquote>
+<p>MATCH (a:Person {name:’Mike’})-[r1:FRIENDS]-()-[r2:FRIENDS]-(friend_of_a_friend) RETURN friend_of_a_friend.name AS fofName</p>
+</blockquote>
+<p>17.增加/修改节点的属性</p>
+<blockquote>
+<p>MATCH (a:Person {name:’Liz’}) SET a.age=34<br>MATCH (a:Person {name:’Shawn’}) SET a.age=32<br>MATCH (a:Person {name:’John’}) SET a.age=44<br>MATCH (a:Person {name:’Mike’}) SET a.age=25</p>
+</blockquote>
+<p>18.删除节点的属性</p>
+<blockquote>
+<p>MATCH (a:Person {name:’Mike’}) SET a.test=’test’<br>MATCH (a:Person {name:’Mike’}) REMOVE a.test</p>
+</blockquote>
+<p>19.删除节点</p>
+<blockquote>
+<p>MATCH (a:Location {city:’Portland’}) DELETE a</p>
+</blockquote>
+<p>20.删除有关系的节点</p>
+<blockquote>
+<p>MATCH (a:Person {name:’Todd’})-[rel]-(b:Person) DELETE a,b,rel</p>
+</blockquote>
+<h5 id="简单总结："><a href="#简单总结：" class="headerlink" title="简单总结："></a>简单总结：</h5><p>一开始学习图数据库不是很好理解，不像关系型数据库那样使用习惯了。图数据库是一个趋势，无论是在搜索还是在推荐系统中都被广泛使用。</p>
 
             </div>
             <hr/>
@@ -583,7 +642,7 @@ salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/fengyanxing/2020/03/27/sql-yu-ju-jian-dan-ji-lu/">https://github.com/fengyanxing/2020/03/27/sql-yu-ju-jian-dan-ji-lu/</a>
+                    <a href="https://github.com/fengyanxing/2020/03/25/neo4j-xue-xi-yu-dao-de-keng/">https://github.com/fengyanxing/2020/03/25/neo4j-xue-xi-yu-dao-de-keng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -620,7 +679,11 @@ salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/neo4j/">
+                                    <span class="chip bg-color">neo4j</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -788,47 +851,6 @@ salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/31/redis-xue-xi-jian-dan-ji-lu/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="redis学习简单记录">
-                        
-                        <span class="card-title">redis学习简单记录</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            nosql (not only sql)非关系型数据库(需要多多练习使用)
-Nosql数据库种类较多，但是都有一个特点是去点关系型数据库的关系特性。
-互联网的
-三高：高并发、高扩展、高负载
-3V：海量(Volume)、多样(Variety)
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            it星
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2020/03/25/webservice-xue-xi/">
                     <div class="card-image">
                         
@@ -849,8 +871,45 @@ Webservice介绍apacheCXF简单测试1.pox文件引用：
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            it星
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/03/19/suan-fa-si-xiang-ji-lu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="算法思想记录">
+                        
+                        <span class="card-title">算法思想记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            dijestla算法思想：引入两个集合，closelist和openlist，闭集合用来记录已经求出最短路径的顶点，开集合用阿里记录为求出最短路径的顶点。集合1：记录源节点（A）到各个节点之间的距离；集合2记录节点对应上一级点（父节点）1.
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-19
                             </span>
                         <span class="publish-author">
                             
@@ -1007,7 +1066,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.6k</span>&nbsp;字
+                class="white-color">35.7k</span>&nbsp;字
             
             
             
