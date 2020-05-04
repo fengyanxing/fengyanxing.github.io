@@ -4,11 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="sql语句简单记录, it星的博客">
-    <meta name="description" content="mysql数据库创建表语句--商品表
-CREATE TABLE product_info (
-    product_id VARCHAR(32) NOT NULL, 
-    product_name VARCHAR(64) NOT NU">
+    <meta name="keywords" content="nginx笔记, it星的博客">
+    <meta name="description" content="title: categoriestype: “web学习”layout: “web学习”
+nginx笔记
+nginx是什么？能做什么？  nginx是一个高性能的Http和反向代理web服务器，占用内存少，并发能力强，事实上nginx的并">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@ CREATE TABLE product_info (
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>sql语句简单记录 | it星的博客</title>
+    <title>nginx笔记 | it星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +305,12 @@ CREATE TABLE product_info (
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">sql语句简单记录</h1>
+                    <h1 class="description center-align post-title">nginx笔记</h1>
                 </div>
             </div>
         </div>
@@ -440,28 +439,28 @@ CREATE TABLE product_info (
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-27
+                    2020-05-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-22
+                    2020-05-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    497
+                    2,519
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    10 分
                 </div>
                 
 
@@ -477,87 +476,199 @@ CREATE TABLE product_info (
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="mysql数据库创建表语句"><a href="#mysql数据库创建表语句" class="headerlink" title="mysql数据库创建表语句"></a>mysql数据库创建表语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--商品表</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> product_info <span class="token punctuation">(</span>
-    product_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> 
-    product_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_price <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token punctuation">,</span> 
-    product_stock <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_description <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    product_icon <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    category_type <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>product_id<span class="token punctuation">)</span>
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">--类目表</span>
- <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> product_category <span class="token punctuation">(</span>
-    category_id <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-    category_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    category_type <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>category_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
-     <span class="token comment" spellcheck="true">--类型唯一性</span>
-    <span class="token keyword">UNIQUE</span> <span class="token keyword">KEY</span> uqe_category_type <span class="token punctuation">(</span>category_type<span class="token punctuation">)</span>    
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">--订单表</span>
- <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> order_master <span class="token punctuation">(</span>
-    order_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_phone <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_address <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_openid <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    order_amount <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    order_status <span class="token keyword">TINYINT</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
-    pay_status <span class="token keyword">TINYINT</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-     <span class="token comment" spellcheck="true">--订单主键</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>order_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
-     <span class="token comment" spellcheck="true">--订单索引</span>
-    <span class="token keyword">KEY</span> idx_buyer_openid <span class="token punctuation">(</span>buyer_openid<span class="token punctuation">)</span>
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">--订单明细表</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> order_detial<span class="token punctuation">(</span>
-    detial_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    order_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_price <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_quantity   <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>detial_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">KEY</span> idx_order_id <span class="token punctuation">(</span>order_id<span class="token punctuation">)</span>
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>需求：创建一个薪资表，表中有员工的信息，查询某个员工薪资变化t以及员工编号emp_no</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--创建薪资表</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>salaries<span class="token punctuation">`</span> <span class="token punctuation">(</span>
-<span class="token punctuation">`</span>emp_no<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token punctuation">`</span>salary<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token punctuation">`</span>from_date<span class="token punctuation">`</span> <span class="token keyword">DATE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token punctuation">`</span>to_date<span class="token punctuation">`</span> <span class="token keyword">DATE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>emp_no<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>from_date<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">--1、用COUNT()函数和GROUP BY语句可以统计同一emp_no值的记录条数</span>
-<span class="token comment" spellcheck="true">--2、输出的涨幅次数为t，故用AS语句将COUNT(emp_no)的值转换为t</span>
-<span class="token comment" spellcheck="true">--3、由于COUNT()函数不可用于WHERE语句中，故使用HAVING语句来限定t>15的条件</span>
-<span class="token keyword">select</span> <span class="token number">a</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">from</span>
-<span class="token punctuation">(</span><span class="token keyword">select</span> emp_no<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">as</span> t <span class="token keyword">from</span> 
-salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> emp_no<span class="token punctuation">)</span>
- <span class="token keyword">as</span> <span class="token number">a</span> 
-<span class="token keyword">where</span> t<span class="token operator">></span><span class="token number">15</span>
-
-<span class="token comment" spellcheck="true">--对于distinct与group by的使用: 1、当对系统的性能高并数据量大时使用group by 2、当对系统的性能不高时使用数据量少时两者皆可 3、尽量使用group by</span>
-<span class="token keyword">select</span> salary <span class="token keyword">from</span> salaries  <span class="token keyword">where</span> to_date<span class="token operator">=</span><span class="token string">'9999-01-01'</span>
-<span class="token keyword">group</span> <span class="token keyword">by</span> salary  <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">DESC</span>
-</code></pre>
-<p>having和where的使用场景</p>
+                <p>title: categories<br>type: “web学习”<br>layout: “web学习”</p>
+<p>nginx笔记</p>
+<h5 id="nginx是什么？能做什么？"><a href="#nginx是什么？能做什么？" class="headerlink" title="nginx是什么？能做什么？"></a>nginx是什么？能做什么？</h5><p>  nginx是一个高性能的Http和反向代理web服务器，占用内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好。</p>
+<p>  专为性能优化而开发，性能是其最重要的考量，实现上注重效率，能经受高负载的考验，报告中支出其能支持高达50000个并发连接数。</p>
+<h5 id="nginx的反向代理"><a href="#nginx的反向代理" class="headerlink" title="nginx的反向代理"></a>nginx的反向代理</h5><p>  正向代理：如果把局域网外的Internet想象成一个巨大的资源库，则局域网中的客户端要访问internet，则需要通过代理服务器进行访问，这种代理称为正向代理。（需要客户端配置，输入的是目标地址）</p>
+<p>  反向代理：客户端对代理是无感知的，因为客户端不需要任何配置就可以访问，只需要将请求发送反向代理服务器，通过反向代理选择目标服务器获取数据后，返回客户端，向外暴露的是代理服务器地址，隐藏了真实服务器 IP地址。（客户端不需配置，访问反向代理服务器即可）</p>
+<h5 id="nginx的负载均衡"><a href="#nginx的负载均衡" class="headerlink" title="nginx的负载均衡"></a>nginx的负载均衡</h5><p>服务器进行集群，单个服务器解决不了的问题，通过增加服务器数量，然后将请求分发到各个服务器上，将最原先请求集中到单个服务器上的情况改为将请求分发到多个服务器上，将负载分发到不同的服务器，称之为负载均衡。</p>
+<h5 id="nginx动静分离"><a href="#nginx动静分离" class="headerlink" title="nginx动静分离"></a>nginx动静分离</h5><p>为了加快网站的解析速度，可以把静态资源和动态资源分开放置，有不同的服务器来进行解析，加快解析速度，降低原来单个服务器的压力。</p>
+<h5 id="nginx的linux安装"><a href="#nginx的linux安装" class="headerlink" title="nginx的linux安装"></a>nginx的linux安装</h5><p>nginx安装需要的依赖（根据个人的需要进行下载相关的依赖）：</p>
+<p>pcre-8.37.tar.gz、openssl-1.0.1t.tar.gz、</p>
+<p>zlib-1.2.8.tar.gz、nginx-1.11.1.tar.gz</p>
+<p>使用linux命令在有网的情况下安装</p>
+<p>1.安装pcre依赖</p>
 <blockquote>
-<p>WHERE语句在GROUP BY语句之前；SQL会在分组之前计算WHERE语句。</p>
-<p>HAVING语句在GROUP BY语句之后；SQL会在分组之后计算HAVING语句。  </p>
+<p>wget <a href="http://downloads.sourceforge.net/project/pcre/pcre/8.32/pcre-8.37.tsr.gz" target="_blank" rel="noopener">http://downloads.sourceforge.net/project/pcre/pcre/8.32/pcre-8.37.tsr.gz</a></p>
+<p>解压文件：tar - xvf  pcre.tar.gz</p>
+<p>在解压的文件夹中 cd pcre</p>
+<p>执行检查配置文件：./configure</p>
+<p>编译并安装：make  &amp;&amp;make install</p>
+<p>使用命令查看版本号：pcre-config  –version</p>
 </blockquote>
+<p>2.安装openssl和安装zlib</p>
+<blockquote>
+<p>yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel</p>
+</blockquote>
+<p>注：</p>
+<blockquote>
+<p>一键命令安装四个依赖</p>
+<p>yum -y install gcc  zlib  zlib-devel  pcre-devel  openssl  openssl-devel</p>
+</blockquote>
+<p>3.安装nginx</p>
+<blockquote>
+<p>1.将安装包传输到linux服务器</p>
+<p>2.解压文件： tar - xvf  nginx.tar,gz</p>
+<p>3.检查相关的配置：cd  nginx后执行./configure</p>
+<p>4.编译并安装：make &amp;&amp; make install</p>
+<p>安装成功后在usr/local/中有一个nginx的目录，启动nginx命令在sbin中</p>
+<p>启动nginx命令：./nginx</p>
+<p>查看启动的端口：ps -ef  |  grep  nginx</p>
+</blockquote>
+<p>启动时遇到错误：</p>
+<blockquote>
+<p> error while loading shared libraries: libpcre.so.1: cannot open shared object file: No such file or directory</p>
+</blockquote>
+<p>安装的pcre依赖需要建立连接</p>
+<pre class=" language-shell"><code class="language-shell">##查找出错的文件位置
+find / -type f -name *libpcre.so.*
+##进行软连接
+ln -s /lib64/libpcre.so.0.0.1 /lib64/libpcre.so.1
+##启动nginx，在usr/local/nginx/sbin中执行
+./nginx
+##验证是否启动成功
+ps -ef | grep nginx
+
+##centos6查看防火墙
+service iptables status
+##开启防火墙
+service iptables start
+##关闭防火墙
+service iptables stop
+##开机不启动防火墙
+chkconfig iptables off
+##开机启动防火墙
+chkconfig iptables on
+##查看端口状态
+/etc/init.d/iptables status
+##重启防火墙
+service iptables restart
+##开放指定的端口，修改/etc/sysconfig/iptables文件,重启防火墙
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+
+##centos7查看防火墙
+firewall-cmd --list-all
+##查看防火墙状态
+firewall-cmd --state
+##开启防火墙
+systemctl stop firewalld.service
+##开机不启动防火墙
+systemctl disable firewalld.service
+##开机启动防火墙
+systemctl enable firewalld.service
+##设置开放端口号
+firewall-cmd --add-service = http -permanent
+sudo firewall-cmd --cmd --add-port=80/tcp --permanent
+##重启防火墙
+firewall-cmd -reload</code></pre>
+<h5 id="nginx常用命令-在-usr-local-nginx-sbin-下使用"><a href="#nginx常用命令-在-usr-local-nginx-sbin-下使用" class="headerlink" title="nginx常用命令(在/usr/local/nginx/sbin/下使用)"></a>nginx常用命令(在/usr/local/nginx/sbin/下使用)</h5><p>1.查看nginx版本号</p>
+<blockquote>
+<p>./nginx -v</p>
+</blockquote>
+<p>2.关闭nginx</p>
+<blockquote>
+<p>./nginx  -s  stop</p>
+</blockquote>
+<p>3.启动nginx </p>
+<blockquote>
+<p>./nginx</p>
+</blockquote>
+<p>4.重加载(更改配置文件后，不需要重启nginx)</p>
+<blockquote>
+<p>./nginx -s reload</p>
+</blockquote>
+<h5 id="nginx配置-配置文件的位置-usr-local-nginx-conf"><a href="#nginx配置-配置文件的位置-usr-local-nginx-conf" class="headerlink" title="nginx配置(配置文件的位置/usr/local/nginx/conf/)"></a>nginx配置(配置文件的位置/usr/local/nginx/conf/)</h5><p>配置文件的组成(主要分为三部分)：</p>
+<p>1.全局块：可以支持并发的数量，值越大可以支持的并发量越多</p>
+<p>work    processes    1;</p>
+<p>2.events块：涉及nginx服务器与用户的网络连接</p>
+<p>例如：worker   processes   1024</p>
+<p>3.http块：配置最频繁的部分，http包含http全局块和server块</p>
+<p>server与虚拟主机相关，包括监听的端口号，主机名称，本地路径</p>
+<h5 id="反向代理实例"><a href="#反向代理实例" class="headerlink" title="反向代理实例"></a>反向代理实例</h5><p>访问nginx时，跳转到tomcat的服务器中。</p>
+<p>1.linux需要有tomcat，并且tomcat依赖jdk因此需要安装jdk</p>
+<p>2.启动tomcat，进入tomcat的安装的路径下的bin文件夹下</p>
+<pre class=" language-shell"><code class="language-shell">##启动tomcat
+./startup.sh
+##查看启动情况，在tomcat的路径在，有logs目录
+cd logs/
+##查看日志
+tail -f catalina.out
+##在防火墙总添加8080端口(vim /etc/sysconfig/iptables)
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT</code></pre>
+<p>3.用户访问80端口，利用反向代理转发到8080端口的web服务器中</p>
+<p>1.用户本地host配置域名：</p>
+<blockquote>
+<p>C:\Windows\System32\drivers\etc\的路径下有一个hosts文件，添加域名和用户名的映射</p>
+<p>192.168.159.132  www .xing123.com</p>
+</blockquote>
+<p>2.在nginx的配置文件中</p>
+<p>修改server_name为自己的服务器地址</p>
+<p>在licalation块中添加：proxy_pass  http:  localhost:8080;表示访问本地的web服务器位置</p>
+<p>3.不同的路径访问不同的tomcat服务器</p>
+<blockquote>
+<p>安装不同的tomcat并设置配置文件中的端口：8001、8002、8003等</p>
+<p>设置nginx的server监听以及location中的转发位置，具体如下图：</p>
+</blockquote>
+<p><img src="%5Cmedias%5Cimages%5Cwebimg%5Cnginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png" alt="image-20200504105942408"></p>
+<p>将监听的nginx端口号以及tomcat的端口号在linux的防火墙中配置</p>
+<blockquote>
+<p>-A INPUT -m state –state NEW -m tcp -p tcp –dport 8081 -j ACCEPT</p>
+<p>-A INPUT -m state –state NEW -m tcp -p tcp –dport 9001 -j ACCEPT</p>
+<p>-A INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</p>
+<p>-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT</p>
+</blockquote>
+<p>重新启动防火墙以及nginx</p>
+<p>测试：</p>
+<p>访问路径为：192.168.159.132:9001/edu/a.html，该路径映射到端口为8080的tomcat</p>
+<p>访问路径为：192.168.159.132:9001/vod/b.html，该路径映射到端口为8081的tomcat</p>
+<p>配置location路径是使用的通配符：</p>
+<blockquote>
+<p>=：用于不含正则表达式的uri前，要求请求的字符串严格匹配</p>
+<p>~:表示uri包含正则表达式，并且区分大小写</p>
+<p>~*:表示uri包含正则表达式，并且不区分大小写</p>
+<p>^~:用于不含正则表达式的uri前</p>
+</blockquote>
+<h5 id="负载均衡实例"><a href="#负载均衡实例" class="headerlink" title="负载均衡实例"></a>负载均衡实例</h5><p>对于同一请求分别均衡的分发到8080和8081的服务器中</p>
+<p>1.准备两台服务器，8080和8081，并准备相同的资源及路径edu/a.html</p>
+<p>2.负载均衡配置</p>
+<p><img src="%5Cmedias%5Cimages%5Cwebimg%5Cnginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E9%85%8D%E7%BD%AE.png" alt="image-20200504112024745"></p>
+<p>3.测试路径：http: 192.168.159.132/edu/a.html</p>
+<p>对于同一地址分别在浏览器上显示不同的服务器地址</p>
+<p>4.nginx分配服务器的策略：</p>
+<p>第一种，默认策略为轮询策略；第二种，根据权重分配策略</p>
+<p>第三种，ip地址hash；第四种，fair方式，按后台响应时间来分配请求</p>
+<h5 id="动静分离实例"><a href="#动静分离实例" class="headerlink" title="动静分离实例"></a>动静分离实例</h5><p>将动态请求与静态请求分离开来，可以有两种分离方式</p>
+<p>一种是将静态文件独立成单独的域名，放在独立的服务器上；另一种办法是动态跟静态文件混合在一起发布，通过nginx来分开。</p>
+<p>通过location指定不同的后缀名实现不同的请求转发，通过expires参数设置，可以使浏览器缓存过期时间，减少与服务器之前的请求和流量。具体的Expires定义：是一个资源设定过期时间，也就是无需去服务器端验证，直接通过浏览器自身确认是否过期即可，所以不会产生额外的流量，此方法不适合经常变动的资源。例如设置为3d表示3天之内访问这个URL，发送一个请求，对比服务器改文件最后更新时间没有变化，则不会从服务器抓取，返回状态吗304，如果有更新，则直接从服务器重新下载，返回200。</p>
+<p>案例准备：先建立一些静态资源,在根路径在建立data文件夹并建立两个子文件夹image以及www，在两个文件夹中放置静态的资源。</p>
+<p>在nginx的配置文件中进行配置(/usr/local/nginx/conf/nginx.conf)</p>
+<p><img src="%5Cmedias%5Cimages%5Cwebimg%5Cnginx%E5%8A%A8%E9%9D%99%E5%88%86%E7%A6%BB.png" alt="image-20200504145326327"></p>
+<p>在浏览器中测试，http: //192.168.159.132/image/dncs.jpg</p>
+<h5 id="nginx高可用集群"><a href="#nginx高可用集群" class="headerlink" title="nginx高可用集群"></a>nginx高可用集群</h5><p>场景，当nginx服务器出现问题时，能够保证用户能够正常访问tomcat，配置两个nginx一个主服务器一个备份服务器，使用keeplived检测nginx是否存活，对外提供虚拟ip给两个nginx的ip地址进行绑定。</p>
+<p>准备：两台服务器，两个服务器安装nginx，两台服务器安装keepaived</p>
+<p>安装keepalived</p>
+<blockquote>
+<p> yum install keepalived -y</p>
+<p>查看安装情况</p>
+<p>rpm  -q  -a  keepalived</p>
+</blockquote>
+<p>安装完成后在路径：/etc/keepalived/  中有一个配置文件keepalived.conf文件，可以配置相关的信息。</p>
+<p>启动nginx和keepalived</p>
+<blockquote>
+<p>./nginx</p>
+<p>systemctl start keepalived.service</p>
+</blockquote>
+<p>当主nginx挂掉后，需要调用外部的配置文件（shell脚本）将kill掉nginx主机上的keepalived。</p>
+<h5 id="nginx原理"><a href="#nginx原理" class="headerlink" title="nginx原理"></a>nginx原理</h5><p>master&amp;&amp;worker,启动nginx后会启动master进程和worker进程，worker进程争抢资源。</p>
+<p>一个master和多个worker设计有利于热部署，每个worker为一个独立的进程，worker的数量与服务器的cpu核数大致相等。</p>
+<p>worker_connection，一个请求会占用2个或者4个连接数</p>
+<p>一个master有4个worker，worker最大支持1024连接，求最大并发数量：</p>
+<p>请求的是静态资源，需要除以2</p>
+<p>worker_connection<em>worker_processes/2</em></p>
+<p><em>或者</em></p>
+<p>如果作为反向代理，需要除以4</p>
+<p><em>worker_connection</em>worker_processes/4</p>
 
             </div>
             <hr/>
@@ -583,7 +694,7 @@ salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/fengyanxing/2020/03/27/sql-yu-ju-jian-dan-ji-lu/">https://github.com/fengyanxing/2020/03/27/sql-yu-ju-jian-dan-ji-lu/</a>
+                    <a href="https://github.com/fengyanxing/2020/05/04/nginx-bi-ji/">https://github.com/fengyanxing/2020/05/04/nginx-bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -784,33 +895,32 @@ salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/03/31/redis-xue-xi-jian-dan-ji-lu/">
+                <a href="/2020/05/04/nginx-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="redis学习简单记录">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="nginx笔记">
                         
-                        <span class="card-title">redis学习简单记录</span>
+                        <span class="card-title">nginx笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            nosql (not only sql)非关系型数据库(需要多多练习使用)
-Nosql数据库种类较多，但是都有一个特点是去点关系型数据库的关系特性。
-互联网的
-三高：高并发、高扩展、高负载
-3V：海量(Volume)、多样(Variety)
+                            title: categoriestype: “web学习”layout: “web学习”
+nginx笔记
+nginx是什么？能做什么？  nginx是一个高性能的Http和反向代理web服务器，占用内存少，并发能力强，事实上nginx的并
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -819,6 +929,7 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -829,28 +940,26 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/25/webservice-xue-xi/">
+                <a href="/2020/04/30/spring-jie-mi-yue-du-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="WebService学习">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Spring揭秘阅读笔记">
                         
-                        <span class="card-title">WebService学习</span>
+                        <span class="card-title">Spring揭秘阅读笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WebService学习注：(不会maven的可以先去学习maven配置和简单的命令)
-Webservice介绍apacheCXF简单测试1.pox文件引用：
-&lt;!--项目依赖--> 
-&lt;dependencies>
-    &l
+                            Spring揭秘阅读笔记
+1.IOC的概念：全称是Inversion of  Contorl叫做控制反转，和依赖注入概念等同，思想是不需要自己去创建对象，让IOC创建好拿来。
+主要是通过引入中间代理消除对象间复杂的耦合关系，并统一管理分散的
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-30
                             </span>
                         <span class="publish-author">
                             
