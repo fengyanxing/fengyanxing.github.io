@@ -904,18 +904,18 @@ JVM结构：
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="java源码笔记">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="java源码">
                         
-                        <span class="card-title">java源码笔记</span>
+                        <span class="card-title">java源码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             java源码笔记
-1.ArrayList
+注：源码学习是一个长久的过程，目前有的程序还模糊，相信自己以后会明白的1.ArrayList
 
-ArrayList是由长度可变的数组组成的，允许null值，与Vector相类似，该类的方法不同步 size、empty、get、set、iterator等为常数时间，add方法是一个O(n)的时
+ArrayList是由长度可变的数组组成的，允许null值，与Vector相类似，该类的方法不同步 size、empty、ge
                         
                     </div>
                     <div class="publish-info">
@@ -924,11 +924,23 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            it星
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    java基础学习
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -940,36 +952,47 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/07/java-cao-zuo-excel/">
+                <a href="/2020/04/09/suan-fa-si-xiang-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="java操作excel">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="java算法">
                         
-                        <span class="card-title">java操作excel</span>
+                        <span class="card-title">java算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java操作excel
-使用apache提供的工具POI操作Excel
-1.Maven的依赖
-        &lt;dependency>
-            &lt;groupId>org.apache.poi&lt;/groupI
+                            
+主要的算法刷题以及算法思想记录在csdn中
+
+dijestla算法思想：引入两个集合，closelist和openlist，闭集合用来记录已经求出最短路径的顶点，开集合用阿里记录为求出最短路径的顶点。集合1：记录源节点（A）到各个节点之间
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            it星
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E7%AE%97%E6%B3%95%E8%AE%B0%E5%BD%95/" class="post-category">
+                                    java算法记录
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -980,6 +1003,43 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: it星的博客<br />'
+            + '文章作者: it星<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归it星所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->

@@ -851,36 +851,48 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/25/webservice-xue-xi/">
+                <a href="/2020/03/26/redis-xue-xi-jian-dan-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="WebService学习">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="redis">
                         
-                        <span class="card-title">WebService学习</span>
+                        <span class="card-title">redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WebService学习注：(不会maven的可以先去学习maven配置和简单的命令)
-Webservice介绍apacheCXF简单测试1.pox文件引用：
-&lt;!--项目依赖--> 
-&lt;dependencies>
-    &l
+                            nosql (not only sql)非关系型数据库(需要多多练习使用)
+Nosql数据库种类较多，但是都有一个特点是去点关系型数据库的关系特性。
+互联网的
+三高：高并发、高扩展、高负载
+3V：海量(Volume)、多样(Variety)
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-26
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            it星
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/nosql/">
+                        <span class="chip bg-color">nosql</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -892,32 +904,48 @@ Webservice介绍apacheCXF简单测试1.pox文件引用：
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/19/suan-fa-si-xiang-ji-lu/">
+                <a href="/2020/03/10/sqlserver-shi-yong-de-jian-dan-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="算法思想记录">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="sqlServer学习">
                         
-                        <span class="card-title">算法思想记录</span>
+                        <span class="card-title">sqlServer学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            dijestla算法思想：引入两个集合，closelist和openlist，闭集合用来记录已经求出最短路径的顶点，开集合用阿里记录为求出最短路径的顶点。集合1：记录源节点（A）到各个节点之间的距离；集合2记录节点对应上一级点（父节点）1.
+                            记录项目中的业务处理(环境：sqlserver2012、vs2017)使用sql语句将数据转换成相应的格式
+1.使用cast函数,不能转换日期类型
+ cast(表达式 as 数据类型)
+
+> select CAST(PLAN_LENGTH 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            it星
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/sql/">
+                        <span class="chip bg-color">sql</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -928,6 +956,43 @@ Webservice介绍apacheCXF简单测试1.pox文件引用：
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: it星的博客<br />'
+            + '文章作者: it星<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归it星所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->

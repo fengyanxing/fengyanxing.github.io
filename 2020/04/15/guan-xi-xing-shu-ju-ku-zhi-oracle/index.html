@@ -747,37 +747,55 @@ col 列名 for 9999(表示设置数字为4位)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/16/pddl-xue-xi/">
+                <a href="/2020/04/22/bos-xiang-mu-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="pddl学习">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Bos项目的简单记录">
                         
-                        <span class="card-title">pddl学习</span>
+                        <span class="card-title">Bos项目的简单记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            角括号&lt;&gt; 表述名字
-圆括号（）元素名字
-方括号[]围绕着option
-An asterisk（*）means “zero or more of”
-a plus（+）means“one or more of”
-规划系统是问题求解
+                            BOS项目
+1.数据库环境搭建：
+
+
+net start mysql
+
+mysql -uroot -p123
+
+create database bos32 character set utf-8;
+
+use bos32;
+—-查看所有的用户
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            it星
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    java基础
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -789,22 +807,23 @@ a plus（+）means“one or more of”
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/13/java-yuan-ma-bi-ji/">
+                <a href="/2020/04/13/webservice-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="java源码笔记">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="WebService学习">
                         
-                        <span class="card-title">java源码笔记</span>
+                        <span class="card-title">WebService学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java源码笔记
-1.ArrayList
-
-ArrayList是由长度可变的数组组成的，允许null值，与Vector相类似，该类的方法不同步 size、empty、get、set、iterator等为常数时间，add方法是一个O(n)的时
+                            WebService学习注：(不会maven的可以先去学习maven配置和简单的命令)
+Webservice介绍apacheCXF简单测试1.pox文件引用：
+&lt;!--项目依赖--> 
+&lt;dependencies>
+    &l
                         
                     </div>
                     <div class="publish-info">
@@ -813,11 +832,23 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            it星
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    java深入学习
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/WebService/">
+                        <span class="chip bg-color">WebService</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -828,6 +859,43 @@ ArrayList是由长度可变的数组组成的，允许null值，与Vector相类�
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: it星的博客<br />'
+            + '文章作者: it星<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归it星所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->

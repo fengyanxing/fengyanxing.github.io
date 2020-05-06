@@ -937,21 +937,24 @@ nginx是什么？能做什么？  nginx是一个高性能的Http和反向代理w
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/30/spring-jie-mi-yue-du-bi-ji/">
+                <a href="/2020/04/30/pddl-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Spring揭秘阅读笔记">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="pddl规划">
                         
-                        <span class="card-title">Spring揭秘阅读笔记</span>
+                        <span class="card-title">pddl规划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Spring揭秘阅读笔记
-1.IOC的概念：全称是Inversion of  Contorl叫做控制反转，和依赖注入概念等同，思想是不需要自己去创建对象，让IOC创建好拿来。
-主要是通过引入中间代理消除对象间复杂的耦合关系，并统一管理分散的
+                            角括号&lt;&gt; 表述名字
+圆括号（）元素名字
+方括号[]围绕着option
+An asterisk（*）means “zero or more of”
+a plus（+）means“one or more of”
+规划系统是问题求解
                         
                     </div>
                     <div class="publish-info">
@@ -960,11 +963,23 @@ nginx是什么？能做什么？  nginx是一个高性能的Http和反向代理w
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            it星
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AF%BE%E9%A2%98%E7%9B%B8%E5%85%B3/" class="post-category">
+                                    课题相关
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">规划</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -975,6 +990,43 @@ nginx是什么？能做什么？  nginx是一个高性能的Http和反向代理w
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: it星的博客<br />'
+            + '文章作者: it星<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归it星所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
