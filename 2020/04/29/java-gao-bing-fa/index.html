@@ -460,21 +460,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2020-05-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    706
+                    1,958
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    7 分
                 </div>
                 
 
@@ -544,7 +544,46 @@
 <p>-l  输出主类的全名，如果进程执行的是jar包，输出jar路径</p>
 <p>-v  输出虚拟机进程启动时jvm参数</p>
 </blockquote>
-<p>jConsole可视化工具</p>
+<h5 id="java多线程与并发编程"><a href="#java多线程与并发编程" class="headerlink" title="java多线程与并发编程"></a>java多线程与并发编程</h5><h6 id="1-多线程的三大特性"><a href="#1-多线程的三大特性" class="headerlink" title="1.多线程的三大特性"></a>1.多线程的三大特性</h6><p><strong>原子性：</strong> java的内存模型保证了基本数据类型的操作具备原子性的，对于double和long类型的数据非原子操作，虚拟机提供了字节码指令monitorenter和moniterexit进行lock和unlock</p>
+<p><strong>可见性：</strong>可见性是指当一个线程修改了共享变量的值，其他线程能够立即得知这个修改。java内存模型是通过将工作内存中的变量值同步到主内存中，依赖于主内存作为媒介的方式实现可见性。Volatile关键字保证了线程之间的可见性。java中还能够保证可见性的有cynchronized(是同步快对一个变量unlock时，必须先把此变量同步到主内存中)和final关键字(在构造器中完成初始化后，构造器没有将this的引用传递出去，对于其他线程就可见final的值)</p>
+<p><strong>有序性：</strong>java内，一个线程内部所有的操作都是有序的，如果在一个线程中观察另一个线程，所有的操作都是无序的。java中使用volatile和synchronized两个关键字来保证线程之间操作的有序性，Synochronized是一个变量在同一时刻只允许一条线程对其进行lock操作。</p>
+<h6 id="2-java内存模型"><a href="#2-java内存模型" class="headerlink" title="2.java内存模型"></a>2.java内存模型</h6><p>可以参考另一篇文章：</p>
+<h6 id="3-Volatile关键字"><a href="#3-Volatile关键字" class="headerlink" title="3.Volatile关键字"></a>3.Volatile关键字</h6><p>volatile与synchronized的区别：</p>
+<blockquote>
+<p>a.volatile轻量级，只能修饰变量，synchronized重量级，还可以修饰方法</p>
+<p>b.volatile只能保证数据的可见性，不能够用来同步，因为多个线程并发访问volatile修饰的变量不会阻塞</p>
+<p>c.synchronized不仅可以保证可见性，还保证原子性，因为只有获得了锁的线程才能进入临界区，从而保证临界区中的所有语句全部执行，多个线程之间争抢synchronized锁对象时，会出现阻塞。</p>
+</blockquote>
+<h6 id="4-ThrreadLocal"><a href="#4-ThrreadLocal" class="headerlink" title="4.ThrreadLocal"></a>4.ThrreadLocal</h6><p>提高一个线程的局部变量，访问某个线程拥有自己的局部变量</p>
+<p>当使用threadlocal维护变量时，ThreadLocal为每个使用该变量的线程提供独立的变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响到其他线程对应的副本。</p>
+<p>ThreadLocal通过map集合，Map.put(“当前线程”，值);</p>
+<h6 id="5-线程池"><a href="#5-线程池" class="headerlink" title="5.线程池"></a>5.线程池</h6><p>什么是线程池?</p>
+<p>线程池是指在初始化一个多线程应用程序的过程中创建一个线程集合，然后需要执行新的任务时重用这些线程而不是新建一个线程。线程池的个数完全取决于可用内存数量和应用程序的需求。</p>
+<p>线程池的作用：</p>
+<blockquote>
+<p>1.线程池改进了一个应用程序的响应时间，由于线程池中的线程已经准备好等待被分配任务，应用程序可以直接拿了使用而不用新建一个线程</p>
+<p>2.线程为每个短生存周期任务创建一个完整的开销并可以在任务完成后回收资源</p>
+<p>3.线程池根据当前在系统中运行的进程来进行优化线程时间片</p>
+<p>4.线程池允许我们开启多个任务而不用为每个线程设置属性</p>
+<p>5.线程池允许我们正在执行的任务的程序参数传递一个包含状态信息的对象</p>
+<p>6.线程池可以用来解决处理一个特定的求情最大线程数量限制问题</p>
+</blockquote>
+<p>线程池的四种创建方式：</p>
+<blockquote>
+<p>Executors提供的四种线程池</p>
+<p>1.newCachedThreadPool:创建一个可以缓存的线程池，如果线程池长度超过处理需要，可灵活回收空余线程</p>
+<p>2.newFixedThreadPool:创建一个定长的线程池，可控制线程最大并发数，超出线程会在队列中等待</p>
+<p>3.newScheduledThreadPool:创建一个定长的线程池，支持定时及周期任务执行</p>
+<p>4.newSingleThreadExecutor:创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定的顺序执行。</p>
+</blockquote>
+<p>线程池使用时会用到的概念：</p>
+<p>核心数——》任务队列——》最大线程数——》拒绝策略</p>
+<p>个人理解该过程类似于银行业务，一开始有三个业务窗口，两个VIP窗口，顾客少的时候不用排队，再多的人时，安排叫号，使其在候选区域等候，当再多人员时，开放vip窗口办理业务，当人数过多时，选择一定的拒绝策略，让多余的人不用等候。</p>
+<p>拒绝策略有四种：</p>
+<p>1.AbortPolicy：抛出异常，RejectedExecutionException</p>
+<p>2.DisCardPolicy：什么也不做，直接忽略</p>
+<p>3.DiscardOldestPolicy：丢弃执行队列中最老的任务，尝试为当前提交的任务腾出位置</p>
+<p>4.CallerRunsPolicy：直接由提交任务者执行这个任务</p>
 
             </div>
             <hr/>
@@ -1059,7 +1098,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.7k</span>&nbsp;字
+                class="white-color">39.6k</span>&nbsp;字
             
             
             

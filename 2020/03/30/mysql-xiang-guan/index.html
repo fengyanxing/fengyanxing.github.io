@@ -4,10 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="spring揭秘阅读, it星的博客">
-    <meta name="description" content="Spring揭秘阅读笔记
-1.IOC的概念：全称是Inversion of  Contorl叫做控制反转，和依赖注入概念等同，思想是不需要自己去创建对象，让IOC创建好拿来。
-主要是通过引入中间代理消除对象间复杂的耦合关系，并统一管理分散的">
+    <meta name="keywords" content="mysql学习, it星的博客">
+    <meta name="description" content="mysql数据库创建表语句--商品表
+CREATE TABLE product_info (
+    product_id VARCHAR(32) NOT NULL, 
+    product_name VARCHAR(64) NOT NU">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>spring揭秘阅读 | it星的博客</title>
+    <title>mysql学习 | it星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,12 +306,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">spring揭秘阅读</h1>
+                    <h1 class="description center-align post-title">mysql学习</h1>
                 </div>
             </div>
         </div>
@@ -427,8 +428,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/spring/">
-                                <span class="chip bg-color">spring</span>
+                            <a href="/tags/sql/">
+                                <span class="chip bg-color">sql</span>
                             </a>
                         
                     </div>
@@ -439,8 +440,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                java深入学习
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
                             </a>
                         
                     </div>
@@ -452,28 +453,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-30
+                    2020-03-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2020-05-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    735
+                    1,226
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -489,55 +490,117 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Spring揭秘阅读笔记</p>
-<p>1.IOC的概念：全称是Inversion of  Contorl叫做控制反转，和依赖注入概念等同，思想是不需要自己去创建对象，让IOC创建好拿来。</p>
-<p>主要是通过引入中间代理消除对象间复杂的耦合关系，并统一管理分散的复杂耦合关系。</p>
-<p>IOC三种依赖注入方式:</p>
-<table>
-<thead>
-<tr>
-<th>方式</th>
-<th>构造方法注入</th>
-<th>Setter注入</th>
-<th>接口注入</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>好处</td>
-<td>对象被构造后进入就绪状态，可以马上使用</td>
-<td>当前对象只要为其依赖对象所对应的属性添加setter方法，就可以通过Setter将相应的依赖对象设置到被注入的对象中</td>
-<td>被注入对象如果想要为其注入依赖对象，就必须实现某个接口，接口中提供注入方法</td>
-</tr>
-<tr>
-<td>优点</td>
-<td>构造后即进入就绪状态；</td>
-<td>setter方法可以被继承，允许设置默认值</td>
-<td>—</td>
-</tr>
-<tr>
-<td>缺点</td>
-<td>当依赖对象比较多时，构造方法参数比较长</td>
-<td>对象构造后无法进入就绪状态</td>
-<td>强制被注入对象实现不必要的接口，带有侵入性</td>
-</tr>
-</tbody></table>
-<p>注：接口和接口方法不重要，重要的是接口声明方法的参数类型必须是“被注入的对象”所依赖的对象类型</p>
-<p>2.IOC Service Provider职责是：</p>
-<p>1.业务对象的构建管理：IOC Service Provider需要将对象的构建逻辑从客户端对象剥离</p>
-<p>2.业务对象间的依赖绑定：IOC Service Provider通过结合之前构建和管理所有业务对象，以及各个业务间可以识别的依赖关系，将这些对象依赖的对象注入绑定，从而保证每个业务对象在使用的时候，可以处于就绪状态。</p>
-<p>IOC Service Provider如何管理对象间的关系：</p>
-<p>方式一：直接编码方式注册对象管理信息</p>
-<p>方式二：配置文件的方式</p>
-<p>方式三：元数据方式（即注解的方式）</p>
-<p>3.IOC容器之BeanFactory</p>
-<p>IOC Service Provider是一个可以有对象创建管理和依赖注入服务的一个容器，是Spring IOC容器的一部分，Spring Ioc还提供对象生命周期管理，线程管理，查找服务，AOP支持等</p>
-<p>Spring提供了两种容器类型：BeanFactory和ApplicationContext</p>
-<p>BeanFactory：基础类型IOC容器，提供完整的IOC服务支持，如果没有特殊指定，默认采用延迟初始化策略（lazy-load）。</p>
-<p>ApplicationContext：在BeanFactory的基础上构建，是相对比较高级的容器实现，其拥有BeanFactory的所有支持，还提供了时间发布、国际化信息等。ApplicationContext间接继承BeanFactory，还实现了其他的接口。</p>
-<p>BeanFactory的对象注册与依赖绑定方式：</p>
-<p>方式一：直接编码</p>
-<p>方式二：外部配置文件方式（properties配置和xml配置）</p>
-<p>方式三：注解方式</p>
+                <h4 id="mysql数据库创建表语句"><a href="#mysql数据库创建表语句" class="headerlink" title="mysql数据库创建表语句"></a>mysql数据库创建表语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--商品表</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> product_info <span class="token punctuation">(</span>
+    product_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> 
+    product_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    product_price <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token punctuation">,</span> 
+    product_stock <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    product_description <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    product_icon <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    category_type <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
+    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
+    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>product_id<span class="token punctuation">)</span>
+ <span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">--类目表</span>
+ <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> product_category <span class="token punctuation">(</span>
+    category_id <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+    category_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    category_type <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
+    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
+    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>category_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+     <span class="token comment" spellcheck="true">--类型唯一性</span>
+    <span class="token keyword">UNIQUE</span> <span class="token keyword">KEY</span> uqe_category_type <span class="token punctuation">(</span>category_type<span class="token punctuation">)</span>    
+ <span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">--订单表</span>
+ <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> order_master <span class="token punctuation">(</span>
+    order_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    buyer_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    buyer_phone <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    buyer_address <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    buyer_openid <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    order_amount <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    order_status <span class="token keyword">TINYINT</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    pay_status <span class="token keyword">TINYINT</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
+    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
+     <span class="token comment" spellcheck="true">--订单主键</span>
+    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>order_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+     <span class="token comment" spellcheck="true">--订单索引</span>
+    <span class="token keyword">KEY</span> idx_buyer_openid <span class="token punctuation">(</span>buyer_openid<span class="token punctuation">)</span>
+ <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">--订单明细表</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> order_detial<span class="token punctuation">(</span>
+    detial_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    order_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    product_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    product_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    product_price <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    product_quantity   <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
+    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
+    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>detial_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">KEY</span> idx_order_id <span class="token punctuation">(</span>order_id<span class="token punctuation">)</span>
+ <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>需求：创建一个薪资表，表中有员工的信息，查询某个员工薪资变化t以及员工编号emp_no</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--创建薪资表</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>salaries<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+<span class="token punctuation">`</span>emp_no<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token punctuation">`</span>salary<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token punctuation">`</span>from_date<span class="token punctuation">`</span> <span class="token keyword">DATE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token punctuation">`</span>to_date<span class="token punctuation">`</span> <span class="token keyword">DATE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>emp_no<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>from_date<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">--1、用COUNT()函数和GROUP BY语句可以统计同一emp_no值的记录条数</span>
+<span class="token comment" spellcheck="true">--2、输出的涨幅次数为t，故用AS语句将COUNT(emp_no)的值转换为t</span>
+<span class="token comment" spellcheck="true">--3、由于COUNT()函数不可用于WHERE语句中，故使用HAVING语句来限定t>15的条件</span>
+<span class="token keyword">select</span> <span class="token number">a</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">from</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> emp_no<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">as</span> t <span class="token keyword">from</span> 
+salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> emp_no<span class="token punctuation">)</span>
+ <span class="token keyword">as</span> <span class="token number">a</span> 
+<span class="token keyword">where</span> t<span class="token operator">></span><span class="token number">15</span>
+
+<span class="token comment" spellcheck="true">--对于distinct与group by的使用: 1、当对系统的性能高并数据量大时使用group by 2、当对系统的性能不高时使用数据量少时两者皆可 3、尽量使用group by</span>
+<span class="token keyword">select</span> salary <span class="token keyword">from</span> salaries  <span class="token keyword">where</span> to_date<span class="token operator">=</span><span class="token string">'9999-01-01'</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> salary  <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">DESC</span>
+</code></pre>
+<p>having和where的使用场景</p>
+<blockquote>
+<p>WHERE语句在GROUP BY语句之前；SQL会在分组之前计算WHERE语句。</p>
+<p>HAVING语句在GROUP BY语句之后；SQL会在分组之后计算HAVING语句。  </p>
+</blockquote>
+<h4 id="Mysql常见的问题"><a href="#Mysql常见的问题" class="headerlink" title="Mysql常见的问题"></a>Mysql常见的问题</h4><p>索引相当于一个字典，存放一个文件及在文件中的偏移量。索引存在的位置是存放在磁盘位置。基本概念：局部性原理(时间局部性和空间局部性)和磁盘预读(以页为单位)</p>
+<p>1.mysql原子性和持久性怎么保证？</p>
+<p>2.innode和myisam区别</p>
+<blockquote>
+<p>innodb存储引擎的数据文件和索引文件放在一个文件夹中，myisam分为不同的文件</p>
+<p>innodb支持事务，myisam不支持</p>
+<p>innodb支持表锁和行锁，而myisam支持表锁</p>
+<p>innodb有外键，myisam没有外键</p>
+</blockquote>
+<p>3.索引分类：主键索引、唯一索引、普通索引和全文索引、组合索引。</p>
+<p>主键索引：主键是一种唯一性索引，但它必须指定为PRIMARY_KEY，每个表只能有一个主键</p>
+<p>唯一索引：索引列的所有值都只能出现一次，即必须唯一，值可以为空</p>
+<p>普通索引：基本的索引类型，值可以为空，没有唯一性限制</p>
+<p>全文索引：全文索引的类型为FULLTEXT，全文索引可以在varchar、char、text类型的列上创建</p>
+<p>组合索引：多列值组成一个索引，专门用于组合搜索</p>
+<p>4.innodb的底层数据结构（最左匹配、索引下推）</p>
+<p>innodb的索引文件和数据文件存放在一起，b+树的叶子节点存放的是数据，是索引位置的那一行数据。</p>
+<blockquote>
+<p>innodb是通过B+Tree结构对主键创建索引，然后叶子节点存储记录，如果没有主键，那么会选择唯一键，如果没有唯一键，那么就会生成一个6位的row_id来作为主键</p>
+<p>如果创建索引的键是其他字段，那么会在叶子节点中存储的是该记录的主键，然后通过主键索引找到对应的记录，叫做<strong>回表</strong>。</p>
+</blockquote>
+<p>索引覆盖：根据普通索引查找到维护的主键，再根据主键通过回表查询另一个b+树找到对应的数据；在进行一个查询是只查询主键，不需要回表</p>
+<p>5.为什么使用b+树而不适用b树</p>
+<p>数据结构的选取：</p>
+<p>hash表：</p>
+<p>不使用hash表的原因有，利用hash存储的话需要将所有的数据文件添加到内存，比较耗费内存空间；如果所有的查询都是等值查询，效率高，但是常用数据库为范围查询查找数据。</p>
+<p>二叉搜索树和红黑树：</p>
+<p>不使用该树无论是二叉树还是红黑树，都会因为树的深度过深而造成io次数变多，影响数据读取的效率。</p>
+<p>b树多个分支，有一个度Degree，所有的键值分布在</p>
+<p>b+树在叶子节点上增加了兄弟关系之间的连接。</p>
 
             </div>
             <hr/>
@@ -563,7 +626,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/fengyanxing/2020/04/30/spring-jie-mi-yue-du-bi-ji/">https://github.com/fengyanxing/2020/04/30/spring-jie-mi-yue-du-bi-ji/</a>
+                    <a href="https://github.com/fengyanxing/2020/03/30/mysql-xiang-guan/">https://github.com/fengyanxing/2020/03/30/mysql-xiang-guan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,8 +664,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/spring/">
-                                    <span class="chip bg-color">spring</span>
+                                <a href="/tags/sql/">
+                                    <span class="chip bg-color">sql</span>
                                 </a>
                             
                         </div>
@@ -772,34 +835,35 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/30/java-wen-ti-ji-lu/">
+                <a href="/2020/04/07/java-cao-zuo-excel/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="java基础">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="java操作excel">
                         
-                        <span class="card-title">java基础</span>
+                        <span class="card-title">java操作excel</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java基础与概念:
-1.什么是面向对象？
-
-面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描述某个事物在整个问题的步骤中的行为。面向对象技术是一种以对象为基础，以事件或消息来驱动对象执行处理的程序设计
+                            java操作excel
+使用apache提供的工具POI操作Excel
+1.Maven的依赖
+        &lt;dependency>
+            &lt;groupId>org.apache.poi&lt;/groupI
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-07
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    java基础学习
+                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    java基础
                                 </a>
                             
                             
@@ -824,26 +888,29 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/29/netty-ru-men/">
+                <a href="/2020/03/28/an-zhuang-docker/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Netty入门">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Docker入门">
                         
-                        <span class="card-title">Netty入门</span>
+                        <span class="card-title">Docker入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Netty入门
-Netty是JBOSS提供的开源项目，github上的独立项目
-Netty是一个异步的、基于事件驱动的网络应用框架，用以快速开发高性能、高可靠的网络IO程序。Netty主要是针对TCP协议下，面向客户端高并发应用或Peer 
+                            安装Dockerlinux内核升级
+yum update -y
+yum install docker -io lxc libcgroup* device-mapp* -y
+安装第三方扩展源
+//安装第三方扩展源
+yum install ep
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-28
                             </span>
                         <span class="publish-author">
                             
@@ -860,8 +927,8 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/netty/">
-                        <span class="chip bg-color">netty</span>
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>
@@ -1049,7 +1116,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.7k</span>&nbsp;字
+                class="white-color">39.6k</span>&nbsp;字
             
             
             

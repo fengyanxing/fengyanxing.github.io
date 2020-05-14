@@ -4,11 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="neo4j学习, it星的博客">
-    <meta name="description" content="neo4j下载与安装(windows环境下)neo4j官网
-注：官网下载neo4j相当的慢。
-国内下载地址
-1.neo4j简单介绍其是基于java语言编写的图形数据库。图是一组节点和连接这些节点的关系，图数据库也被称作图形数据库管理系统(G">
+    <meta name="keywords" content="spring学习笔记, it星的博客">
+    <meta name="description" content="Spring学习笔记
+1.IOC的概念：全称是Inversion of  Contorl叫做控制反转，和依赖注入概念等同，思想是不需要自己去创建对象，让IOC创建好拿来。
+主要是通过引入中间代理消除对象间复杂的耦合关系，并统一管理分散的复杂">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>neo4j学习 | it星的博客</title>
+    <title>spring学习笔记 | it星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +305,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">neo4j学习</h1>
+                    <h1 class="description center-align post-title">spring学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -428,8 +427,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/neo4j/">
-                                <span class="chip bg-color">neo4j</span>
+                            <a href="/tags/spring/">
+                                <span class="chip bg-color">spring</span>
                             </a>
                         
                     </div>
@@ -440,8 +439,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                数据库
+                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                java深入学习
                             </a>
                         
                     </div>
@@ -453,28 +452,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-25
+                    2020-04-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-04
+                    2020-05-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1,244
+                    1,019
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -490,133 +489,80 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="neo4j下载与安装-windows环境下"><a href="#neo4j下载与安装-windows环境下" class="headerlink" title="neo4j下载与安装(windows环境下)"></a>neo4j下载与安装(windows环境下)</h4><p><a href="https://neo4j.com/" target="_blank" rel="noopener">neo4j官网</a></p>
-<p>注：官网下载neo4j相当的慢。</p>
-<p><a href="http://we-yun.com/index.php/blog/releases-56.html" target="_blank" rel="noopener">国内下载地址</a></p>
-<h5 id="1-neo4j简单介绍"><a href="#1-neo4j简单介绍" class="headerlink" title="1.neo4j简单介绍"></a>1.neo4j简单介绍</h5><p>其是基于java语言编写的图形数据库。图是一组节点和连接这些节点的关系，图数据库也被称作图形数据库管理系统(GDBMS)。</p>
-<h5 id="2-需要安装jdk环境"><a href="#2-需要安装jdk环境" class="headerlink" title="2.需要安装jdk环境"></a>2.需要安装jdk环境</h5><p>先使用java -version，查看自己的java环境是否配置好。</p>
-<p><img src="/medias/images/image-20200324190457173.png" alt="image-20200324190457173"></p>
-<h5 id="3-下载neo4j后解压，主要目录如下"><a href="#3-下载neo4j后解压，主要目录如下" class="headerlink" title="3.下载neo4j后解压，主要目录如下"></a>3.下载neo4j后解压，主要目录如下</h5><blockquote>
-<p>Neo4j应用程序有如下主要的目录结构：</p>
-<ul>
-<li>bin目录：用于存储Neo4j的可执行程序；</li>
-<li>conf目录：用于控制Neo4j启动的配置文件；</li>
-<li>data目录：用于存储核心数据库文件；</li>
-<li>plugins目录：用于存储Neo4j的插件；</li>
-</ul>
-</blockquote>
-<h5 id="4-创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）"><a href="#4-创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）" class="headerlink" title="4.创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）"></a>4.创建系统环境变量（可以配置也可以不配置，使用时进入bin下启动也可以）</h5><p>新建系统变量：将自己neo4j目录粘贴到变量值位置</p>
-<p><img src="/medias/images/image-20200324190915553.png" alt="image-20200324190915553"></p>
-<p><img src="/medias/images/image-20200324191226568.png" alt="image-20200324191226568"></p>
-<p>最后将bin加入到path路径下：</p>
-<p><img src="/medias/images/image-20200324191354386.png" alt="image-20200324191354386"></p>
-<h5 id="5-测试安装是否成功"><a href="#5-测试安装是否成功" class="headerlink" title="5.测试安装是否成功"></a>5.测试安装是否成功</h5><h6 id="出现错误1"><a href="#出现错误1" class="headerlink" title="出现错误1:"></a>出现错误1:</h6><p><img src="/medias/images/image-20200324193244410.png" alt="image-20200324193244410"></p>
-<p>如果出现这种情况，不能加载.psd1模块，这是由于相对路径配置的问题导致的，打开下面的文件：</p>
-<p><img src="/medias/images/image-20200324193432628.png" alt="image-20200324193432628"></p>
-<p>将路径改成自己的路径：</p>
-<p><img src="/medias/images/image-20200324193542460.png" alt="image-20200324193542460"></p>
-<h6 id="出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境"><a href="#出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境" class="headerlink" title="出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境"></a>出现错误2：neo4j版本与jdk版本不相符合，neo4j似乎需要jdk11环境</h6><blockquote>
-<p>Neo4j cannot be started using java version 1.8.0_221</p>
-</blockquote>
-<p>更换jdk启动neo4j，成功访问</p>
-<p><img src="/medias/images/image-20200324193821721.png" alt="image-20200324193821721"></p>
-<p><img src="/medias/images/image-20200324193840986.png" alt="image-20200324193840986"></p>
-<h4 id="Neo4j简单的命令"><a href="#Neo4j简单的命令" class="headerlink" title="Neo4j简单的命令"></a>Neo4j简单的命令</h4><h5 id="后期需要去学习一些Cypher语法"><a href="#后期需要去学习一些Cypher语法" class="headerlink" title="后期需要去学习一些Cypher语法"></a>后期需要去学习一些Cypher语法</h5><p>1.删除数据库中之前的图，创建一个空白的环境进行操作</p>
+                <p>Spring学习笔记</p>
+<p>1.IOC的概念：全称是Inversion of  Contorl叫做控制反转，和依赖注入概念等同，思想是不需要自己去创建对象，让IOC创建好拿来。</p>
+<p>主要是通过引入中间代理消除对象间复杂的耦合关系，并统一管理分散的复杂耦合关系。</p>
+<p>IOC三种依赖注入方式:</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>构造方法注入</th>
+<th>Setter注入</th>
+<th>接口注入</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>好处</td>
+<td>对象被构造后进入就绪状态，可以马上使用</td>
+<td>当前对象只要为其依赖对象所对应的属性添加setter方法，就可以通过Setter将相应的依赖对象设置到被注入的对象中</td>
+<td>被注入对象如果想要为其注入依赖对象，就必须实现某个接口，接口中提供注入方法</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>构造后即进入就绪状态；</td>
+<td>setter方法可以被继承，允许设置默认值</td>
+<td>—</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>当依赖对象比较多时，构造方法参数比较长</td>
+<td>对象构造后无法进入就绪状态</td>
+<td>强制被注入对象实现不必要的接口，带有侵入性</td>
+</tr>
+</tbody></table>
+<p>注：接口和接口方法不重要，重要的是接口声明方法的参数类型必须是“被注入的对象”所依赖的对象类型</p>
+<p>2.IOC Service Provider职责是：</p>
+<p>1.业务对象的构建管理：IOC Service Provider需要将对象的构建逻辑从客户端对象剥离</p>
+<p>2.业务对象间的依赖绑定：IOC Service Provider通过结合之前构建和管理所有业务对象，以及各个业务间可以识别的依赖关系，将这些对象依赖的对象注入绑定，从而保证每个业务对象在使用的时候，可以处于就绪状态。</p>
+<p>IOC Service Provider如何管理对象间的关系：</p>
+<p>方式一：直接编码方式注册对象管理信息</p>
+<p>方式二：配置文件的方式</p>
+<p>方式三：元数据方式（即注解的方式）</p>
+<p>3.IOC容器之BeanFactory</p>
+<p>IOC Service Provider是一个可以有对象创建管理和依赖注入服务的一个容器，是Spring IOC容器的一部分，Spring Ioc还提供对象生命周期管理，线程管理，查找服务，AOP支持等</p>
+<p>Spring提供了两种容器类型：BeanFactory和ApplicationContext</p>
+<p><strong>BeanFactory：</strong>基础类型IOC容器，提供完整的IOC服务支持，如果没有特殊指定，默认采用延迟初始化策略（lazy-load）。</p>
+<p><strong>ApplicationContext：</strong>在BeanFactory的基础上构建，是相对比较高级的容器实现，其拥有BeanFactory的所有支持，还提供了时间发布、国际化信息等。ApplicationContext间接继承BeanFactory，还实现了其他的接口。</p>
+<p>BeanFactory的对象注册与依赖绑定方式：</p>
+<p>方式一：直接编码</p>
+<p>方式二：外部配置文件方式（properties配置和xml配置）</p>
+<p>方式三：注解方式</p>
+<p>spring相关的问题：</p>
+<p>1.请用自己的语言描述springIOC、DI、MVC的基本执行原理。</p>
 <blockquote>
-<p>MATCH (n) DETACH DELETE n</p>
+<p>答：SpringIOC、DI、MVC主要执行分为三个阶段</p>
+<p>配置阶段：主要完成web.xml和Annotation配置</p>
+<p>初始化阶段：完成IOC容器的初始化、DI的自动注入和HandlerMapping的初始化</p>
+<p>运行阶段：根据用户请求的URL调用对应的Method，将结果打印到浏览器</p>
 </blockquote>
-<p><em>MATCH</em> 是匹配操作，小括号()代表一个节点node，括号里面的n为标识符</p>
-<p>2.创建一个人物节点：</p>
+<p>2.Spring中的Bean是线程安全的吗？为什么？</p>
 <blockquote>
-<p>CREATE (n:Person {name:’John’}) RETURN n</p>
+<p>Spring中的Bean是用户自己写的类，该bean的线程是否安全与spring无关，因为Spring只承担了创建和管理bean的职责，并没有对Bean进行任何修改。</p>
 </blockquote>
-<p>_CREATE_是创建操作，Person是标签，代表节点的类型。花括号{}代表节点属性。该语句表示创建一个标签为Person的节点，该节点具有一个name属性值，值为john</p>
-<p>3.创建更多人物节点</p>
+<p>3.使用自己的语言详细描述SpringIOC和DI的工作流程</p>
 <blockquote>
-<p>CREATE (n:Person {name:’Sally’}) RETURN n</p>
-<p>CREATE (n:Person {name:’Steve’}) RETURN n</p>
-<p>Create(n:Person{name:’Xing’})RETURN n</p>
+<p>IOC流程：</p>
+<p>a.读取配置文件</p>
+<p>b.解析配置文件，并封装成BeanDefinition</p>
+<p>c.把BeanDefinition对应的实例放入容器进行缓存</p>
+<p>DI流程：</p>
+<p>a.循环读取BeanDefinition的缓存信息</p>
+<p>b.调用getBean()方法创建对象实例</p>
+<p>c.将创建好的对象实例包装为BeanWarpper对象</p>
+<p>d.将BeanWapper对象缓存到IOC容器</p>
+<p>e.循环IOC容器进行注入</p>
 </blockquote>
-<p>4.创建地区节点</p>
-<blockquote>
-<p>CREATE(n:Location{city:’Miami’,state:’FL’})</p>
-<p>CREATE(n:Location{city:’SHANXI’,state:’MA’})</p>
-<p>CREATE(n:Location{city:’SHANGHAI’,state:’ME’})</p>
-</blockquote>
-<p>节点类型为Location，属性包括city和state</p>
-<p>5.创建关系</p>
-<blockquote>
-<p>MATCH   (a:Person {name:’Liz’}),</p>
-<p>​                (b:Person {name:’Mike’})</p>
-<p>MERGE   (a)-&gt;[:FRIENDS]-&gt;(b)</p>
-</blockquote>
-<p>方括号<code>[]</code>即为关系，<code>FRIENDS</code>为关系的类型。注意这里的箭头<code>--&gt;</code>是有方向的，表示是从a到b的关系。</p>
-<p>6.关系也可以增加属性</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Shawn’}),<br>      (b:Person {name:’Sally’})<br>MERGE (a)-[:FRIENDS {since:2001}]-&gt;(b)</p>
-</blockquote>
-<p>在关系中，同样的使用花括号{}来增加关系的属性，这里给FRIENDS关系增加了since属性，属性值为2001，表示他们建立朋友关系的时间。</p>
-<p>7.增加更多的关系</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Shawn’}), (b:Person {name:’John’}) MERGE (a)-[:FRIENDS {since:2012}]-&gt;(b)<br>MATCH (a:Person {name:’Mike’}), (b:Person {name:’Shawn’}) MERGE (a)-[:FRIENDS {since:2006}]-&gt;(b)<br>MATCH (a:Person {name:’Sally’}), (b:Person {name:’Steve’}) MERGE (a)-[:FRIENDS {since:2006}]-&gt;(b)<br>MATCH (a:Person {name:’Liz’}), (b:Person {name:’John’}) MERGE (a)-[:MARRIED {since:1998}]-&gt;(b)</p>
-</blockquote>
-<p>8.建立不同类型节点之间的关系-人物和地点的关系</p>
-<blockquote>
-<p>MATCH (a:Person {name:’John’}), (b:Location {city:’Boston’}) MERGE (a)-[:BORN_IN {year:1978}]-&gt;(b)</p>
-</blockquote>
-<p>这里的关系是BORN_IN，表示出生地，同样有一个属性，表示出生年份。 </p>
-<p>9.同样建立更多人的出生地</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Liz’}), (b:Location {city:’Boston’}) MERGE (a)-[:BORN_IN {year:1981}]-&gt;(b)<br>MATCH (a:Person {name:’Mike’}), (b:Location {city:’San Francisco’}) MERGE (a)-[:BORN_IN {year:1960}]-&gt;(b)<br>MATCH (a:Person {name:’Shawn’}), (b:Location {city:’Miami’}) MERGE (a)-[:BORN_IN {year:1960}]-&gt;(b)<br>MATCH (a:Person {name:’Steve’}), (b:Location {city:’Lynn’}) MERGE (a)-[:BORN_IN {year:1970}]-&gt;(b)</p>
-</blockquote>
-<p>10.至此，知识图谱的数据已经插入完毕，可以开始做查询了。我们查询下所有在Boston出生的人物</p>
-<blockquote>
-<p>MATCH (a:Person)-[:BORN_IN]-&gt;(b:Location {city:’Boston’}) RETURN a,b</p>
-</blockquote>
-<p><img src="/medias/images/image-20200324211750318.png" alt="image-20200324211750318"></p>
-<p>11.查询所有对外有关系的节点</p>
-<blockquote>
-<p>MATCH (a)–&gt;() RETURN a</p>
-</blockquote>
-<p><img src="/medias/images/image-20200324211806411.png" alt="image-20200324211806411"></p>
-<p>12.查询所有有关系的节点</p>
-<blockquote>
-<p>MATCH (a)–() RETURN a</p>
-</blockquote>
-<p><img src="/medias/images/image-20200324211913095.png" alt="image-20200324211913095"></p>
-<p>13.查询所有对外有关系的节点，以及关系类型</p>
-<blockquote>
-<p>MATCH (a)-[r]-&gt;() RETURN a.name, type(r)</p>
-</blockquote>
-<p>14.查询所有有结婚关系的节点</p>
-<blockquote>
-<p>MATCH (n)-[:MARRIED]-() RETURN n</p>
-</blockquote>
-<p>15.创建节点的时候就建好关系</p>
-<blockquote>
-<p>CREATE (a:Person {name:’Todd’})-[r:FRIENDS]-&gt;(b:Person {name:’Carlos’})</p>
-</blockquote>
-<p>16.查找某人的朋友的朋友</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Mike’})-[r1:FRIENDS]-()-[r2:FRIENDS]-(friend_of_a_friend) RETURN friend_of_a_friend.name AS fofName</p>
-</blockquote>
-<p>17.增加/修改节点的属性</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Liz’}) SET a.age=34<br>MATCH (a:Person {name:’Shawn’}) SET a.age=32<br>MATCH (a:Person {name:’John’}) SET a.age=44<br>MATCH (a:Person {name:’Mike’}) SET a.age=25</p>
-</blockquote>
-<p>18.删除节点的属性</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Mike’}) SET a.test=’test’<br>MATCH (a:Person {name:’Mike’}) REMOVE a.test</p>
-</blockquote>
-<p>19.删除节点</p>
-<blockquote>
-<p>MATCH (a:Location {city:’Portland’}) DELETE a</p>
-</blockquote>
-<p>20.删除有关系的节点</p>
-<blockquote>
-<p>MATCH (a:Person {name:’Todd’})-[rel]-(b:Person) DELETE a,b,rel</p>
-</blockquote>
-<h5 id="简单总结："><a href="#简单总结：" class="headerlink" title="简单总结："></a>简单总结：</h5><p>一开始学习图数据库不是很好理解，不像关系型数据库那样使用习惯了。图数据库是一个趋势，无论是在搜索还是在推荐系统中都被广泛使用。</p>
 
             </div>
             <hr/>
@@ -642,7 +588,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/fengyanxing/2020/03/25/neo4j-xue-xi-yu-dao-de-keng/">https://github.com/fengyanxing/2020/03/25/neo4j-xue-xi-yu-dao-de-keng/</a>
+                    <a href="https://github.com/fengyanxing/2020/04/30/spring-shu-ji-yue-du/">https://github.com/fengyanxing/2020/04/30/spring-shu-ji-yue-du/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -680,8 +626,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/neo4j/">
-                                    <span class="chip bg-color">neo4j</span>
+                                <a href="/tags/spring/">
+                                    <span class="chip bg-color">spring</span>
                                 </a>
                             
                         </div>
@@ -851,31 +797,34 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/26/hello-world/">
+                <a href="/2020/04/30/java-wen-ti-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="标题党--it星">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="java基础">
                         
-                        <span class="card-title">标题党--it星</span>
+                        <span class="card-title">java基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            java基础与概念:
+1.什么是面向对象？
+
+面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描述某个事物在整个问题的步骤中的行为。面向对象技术是一种以对象为基础，以事件或消息来驱动对象执行处理的程序设计
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-26
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-30
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" class="post-category">
-                                    个人操作记录
+                            <a href="/categories/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    java基础学习
                                 </a>
                             
                             
@@ -885,8 +834,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">测试我的博客</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -900,35 +849,33 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/10/sqlserver-shi-yong-de-jian-dan-ji-lu/">
+                <a href="/2020/04/29/netty-ru-men/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="sqlServer学习">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Netty入门">
                         
-                        <span class="card-title">sqlServer学习</span>
+                        <span class="card-title">Netty入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录项目中的业务处理(环境：sqlserver2012、vs2017)使用sql语句将数据转换成相应的格式
-1.使用cast函数,不能转换日期类型
- cast(表达式 as 数据类型)
-
-> select CAST(PLAN_LENGTH 
+                            Netty入门
+Netty是JBOSS提供的开源项目，github上的独立项目
+Netty是一个异步的、基于事件驱动的网络应用框架，用以快速开发高性能、高可靠的网络IO程序。Netty主要是针对TCP协议下，面向客户端高并发应用或Peer 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
+                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    java深入学习
                                 </a>
                             
                             
@@ -938,8 +885,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/sql/">
-                        <span class="chip bg-color">sql</span>
+                    <a href="/tags/netty/">
+                        <span class="chip bg-color">netty</span>
                     </a>
                     
                 </div>
