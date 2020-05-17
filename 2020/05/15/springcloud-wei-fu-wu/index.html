@@ -1,0 +1,1535 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="springcloud实验, it星的博客">
+    <meta name="description" content="SpringCloud微服务入门
+注：个人的学习是通过视频的讲解、阅读相关数据、进行实践、记录笔记进行的，希望与君共勉。个人的实验环境是Windows7，64位，内存16G，建议16G否则效果很差。
+下面是我启动三个注册中心，一个路由网关一">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>springcloud实验 | it星的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">it星的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>主页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>档案</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>内容</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>朋友</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">it星的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			主页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			档案
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			内容
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			朋友
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="fengyanxing.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="fengyanxing.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">springcloud实验</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/spring-cloud/">
+                                <span class="chip bg-color">spring cloud</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                java深入学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-15
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-05-17
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4,837
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>SpringCloud微服务入门</p>
+<p>注：个人的学习是通过视频的讲解、阅读相关数据、进行实践、记录笔记进行的，希望与君共勉。个人的实验环境是Windows7，64位，内存16G，建议16G否则效果很差。</p>
+<p>下面是我启动三个注册中心，一个路由网关一个服务器端进行测试，使用内存启动后占11~12G</p>
+<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Cblogimages%5Cspringcloud0515%5Ccpu.png" alt="启动后内存"></p>
+<p>前提条件：在进行接下来的实现希望读者知道java的一些知识、mybatis、spring、springboot、mysql、json、maven等相关的知识。</p>
+<p>如果读者没有学过maven，可以花几分钟读简单看一看maven创建项目的一篇博客：</p>
+<p><a href="https://fengyanxing.github.io/2020/05/14/maven-gong-ju/" target="_blank" rel="noopener">maven学习</a></p>
+<p>如果有什么需要的maven的依赖可以进行搜索</p>
+<p><a href="https://mvnrepository.com/" target="_blank" rel="noopener">maven中央库</a></p>
+<p>springCloud官方网站，有各种的组件：</p>
+<p><a href="https://www.springcloud.cc/" target="_blank" rel="noopener">Spring Cloud</a></p>
+<p>SpringCloud配置中文网址</p>
+<p><a href="https://www.springcloud.cc/spring-cloud-config.html" target="_blank" rel="noopener">Spring Cloud Config</a></p>
+<p><strong>注：</strong>SpringCloud 是一种生态，用来解决为服务中的一些问题</p>
+<p>实现之前必须确定自己的SpringBoot与自己的SpringCloud版本号是否对应，如果不对应就会有各种错误。</p>
+<p><a href="https://www.cnblogs.com/zhuwenjoyce/p/10261079.html" target="_blank" rel="noopener">可以参考网上的分析</a></p>
+<h5 id="微服务中的主要问题"><a href="#微服务中的主要问题" class="headerlink" title="微服务中的主要问题"></a>微服务中的主要问题</h5><blockquote>
+<p>1.微服务较多，客户端如何访问？</p>
+<p>2.服务器端之间的交互方式？</p>
+<p>3.服务雪崩，服务器挂掉怎么办？</p>
+<p>4.服务多是如何管理的？</p>
+</blockquote>
+<p>我们带着问题去进行学习，最后我们对于技术有一个宏观的把控</p>
+<p>基本概念：API网关、HTTP/RPC、注册与发现、熔断机制（问题产生的根本原因：网络不可靠）</p>
+<p><strong>下面是一些常见的面试中的问题：</strong></p>
+<p>微服务之间如何通讯？</p>
+<p>1.SpringCloud和Dubbo的区别？</p>
+<blockquote>
+<p>Doubbo只是为了实现服务治理，而Spring Cloud是一种生态，是微服务的一种架构，实现了微服务的方方面面，服务治理知识其中一部分</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>微服务核心</th>
+<th>Dubbo</th>
+<th>Spring Cloud</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>服务注册中心</td>
+<td>Zookeeper、Redis</td>
+<td>SpringCloud   Netflix   Eureka</td>
+</tr>
+<tr>
+<td>服务调用方式</td>
+<td>RPC</td>
+<td>REST API</td>
+</tr>
+<tr>
+<td>服务网关</td>
+<td>无</td>
+<td>Spring Cloud Netflix Zuul</td>
+</tr>
+<tr>
+<td>断路器</td>
+<td>不完善</td>
+<td>Spring Cloud Netflix Hystrix</td>
+</tr>
+<tr>
+<td>分布式配置</td>
+<td>无</td>
+<td>Spring Cloudconfig</td>
+</tr>
+<tr>
+<td>分布式追踪系统</td>
+<td>无</td>
+<td>Spring Cloud Sleuth</td>
+</tr>
+<tr>
+<td>消息总线</td>
+<td>无</td>
+<td>Spring Cloud Bus</td>
+</tr>
+<tr>
+<td>数据流</td>
+<td>无</td>
+<td>Spring Cloud Stream</td>
+</tr>
+<tr>
+<td>批量任务</td>
+<td>无</td>
+<td>Spring Cloud Task</td>
+</tr>
+</tbody></table>
+<p>2.SpringBoot和Spring Cloud的理解</p>
+<p>Spring是一个快速的开发框架，可以通过maven依赖的继承方式，快速整合第三方的常用框架，完全采用注解化，简化xml配置。</p>
+<p>SpringCloud是一整套的微服务框架，是一种生态，是一系列框架的集合。springCloud依赖springboot</p>
+<p>3.什么是服务熔断？什么是服务降级？(正文中有答案)</p>
+<p>4.微服务的优缺点是什么？</p>
+<p>可以参考网上的教程：</p>
+<p><a href="https://www.cnblogs.com/kongsq/p/9886676.html" target="_blank" rel="noopener">微服务的优缺点</a></p>
+<p>优点：</p>
+<blockquote>
+<p>1.每个服务都比较简单，只关注一个业务功能</p>
+<p>2.微服务架构方式是松耦合的，可以提供更高的灵活性</p>
+<p>3.微服务可以通过最佳及最合适的不同的编程语言与工具进行开发</p>
+<p>4.每个微服务可由不同的团队独立开发，互不影响，加快推出市场的速度</p>
+<p>5.微服务架构是持续交付的巨大推动力，允许在频繁发布不同服务同时保持系统其它部分的可用性和稳定性</p>
+</blockquote>
+<p>缺点：</p>
+<blockquote>
+<p>1.运维的开销以及成本的增加</p>
+<p>2.需要有一定的开发运维一体化技术</p>
+<p>3.隐式的接口及接口匹配问题</p>
+<p>4.代码重复问题</p>
+<p>5.分布式系统的复杂性</p>
+<p>6.一部机制</p>
+</blockquote>
+<p>5.你知道的微服务技术栈有哪些？</p>
+<table>
+<thead>
+<tr>
+<th>微服务开发条目</th>
+<th>实现的技术</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>服务开发</td>
+<td>SpringBoot、Spring、SpringMvc</td>
+</tr>
+<tr>
+<td>服务配置与管理</td>
+<td>Netflix公司的Arcaius、阿里的Diamond</td>
+</tr>
+<tr>
+<td>服务注册与发现</td>
+<td>Eureka、consul、Zookeeper</td>
+</tr>
+<tr>
+<td>服务调用</td>
+<td>Rest、RPC、gRpc</td>
+</tr>
+<tr>
+<td>服务熔断器</td>
+<td>Hystrix、Envoy</td>
+</tr>
+<tr>
+<td>负载均衡</td>
+<td>Ribbon、Nginx</td>
+</tr>
+<tr>
+<td>服务接口调用</td>
+<td>Fegin</td>
+</tr>
+<tr>
+<td>消息队列</td>
+<td>Kafka、RabbitMQ、ActiveMq</td>
+</tr>
+<tr>
+<td>服务配置中心管理</td>
+<td>SpringCloudConfig、chef</td>
+</tr>
+<tr>
+<td>服务路由</td>
+<td>Zuul</td>
+</tr>
+<tr>
+<td>服务监控</td>
+<td>Zabbix、Nagious、Metrics、Specataor</td>
+</tr>
+<tr>
+<td>全链路追踪</td>
+<td>Zipkin、Brave、Dapper</td>
+</tr>
+<tr>
+<td>服务部署</td>
+<td>Docker、Openstack、Kubernetes</td>
+</tr>
+<tr>
+<td>数据流操作开发包</td>
+<td>SpringCloud Stream（封装Redis、Rabbit、Kafka）</td>
+</tr>
+<tr>
+<td>事件消息总线</td>
+<td>SpringCloud BUS</td>
+</tr>
+</tbody></table>
+<p>6.eureka和zookeeper都可以提供服务注册与发现的功能，区别是什么？</p>
+<blockquote>
+<p>CAP理论支出，一个分布式系统不可能同时满足C(一致性)、A(可用性)、P(容错性)，分区容错性P在分布式系统中是必须保证的，因此我们只能在A和C之间权衡。</p>
+<p>eureka保证AP原则；zookeeper保证CP</p>
+<p>zookeeper可以容忍注册中心返回几分钟以前的注册信息，但不能接受服务直接挂掉，主服务器挂掉后其他的节点进行选举产生一个新的领导者，选举时间中服务不可用，服务瘫痪，导致长期服务不可以注册</p>
+<p>Eureka首先保证了可用性，Eureka的各个节点是平等的，几个节点挂掉不会影响正常的节点工作，剩余的节点依旧可以提供注册和查询，只要注册中心有一台服务器可以使用，就可以保证注册中心的可用。</p>
+<p>Eureka可以很好的应对因网络故障导致部分节点失去联系的情况，不会像zookeeper那样使得整个注册服务瘫痪</p>
+</blockquote>
+<p>微服务中一般分为<strong>三大角色：</strong></p>
+<p>服务注册中心：用于提供服务的注册与发现</p>
+<p>服务提供者：将自身的服务注册到服务中心</p>
+<p>服务的消费者：从服务注册中心获取服务</p>
+<p><strong>Eureka服务注册与发现（相当于Zookeeper）</strong></p>
+<p>Eureka是一个Netflix的一个子模块,也是核心模块之一。Eureka是一个基于REST</p>
+<p>的服务，用于定位服务，以实现云端中间层服务发现和故障转移，服务注册与发现对于微服务是相当重要的，有了服务发现与注册，只需要使用服务的标识符，就可以访问到服务，而不需要修改服务器调用的配置文件了，功能类似于Dubbo的注册中心。</p>
+<p><strong>原理讲解：</strong></p>
+<p>Eureka的基本架构：</p>
+<blockquote>
+<p>SpringCloud封装了NetFlix公司开发的Eureka模块来实现服务注册和发现</p>
+<p>Eureka采用CS架构设计，EurekaServer作为服务注册功能的服务器，用来服务使得注册</p>
+<p>Eureka的客户端连接到EurekaServer并维持心跳连接。这样系统维护人员就可以通过EurekaServer来监控系统各个微服务是否正常运行，SpringCloud的一些其他模块就可以通过EurekaServer来发现系统中的其他微服务，并执行相关的逻辑</p>
+</blockquote>
+<p><strong>自我保护机制：</strong></p>
+<p>某一时刻一个微服务不能够使用时，eureka不会立刻清理，依旧会对该微服务的信息进行保存。</p>
+<p>默认情况下，Eureka在一定的时间内没有接收到某个服务实例的心跳，EurekaServer将会注销该实例，但是当网络分区故障发生时，微服务与Eureka之间无法进行正常通信，以上行为将会非常危险，因为微服务本身是健康的，此时本不应该注销这个服务。Eureka的自我保护机制来解决这个问题，当EurekaServer节点在短时间内丢失过多的客户端时，那么这个节点就会进入自我保护模式，一旦进入自我保护模式，EurekaServer就会保护服务注册表中的信息，不再删除服务注册表中的数据。当网络故障恢复后，该EurekaServer节点会自动退出自我保存模式。自我保护模式是一种应用网络异常的安全保护措施，宁可同时保留所有的服务，也不盲目注销任何健康的微服务。</p>
+<p>可以手动设置取消自我保护模式：eureka.server.enable-self-preservation = false禁止自我保护模式。</p>
+<p>CAP原则：</p>
+<p>RDBMS(mysql、oracle、sqlserver)——-ACID</p>
+<p>NoSql(redis、Mongdb)—–CAP</p>
+<p>ACID：</p>
+<blockquote>
+<p>原子性：Atomicity    一致性：Consistency</p>
+<p>隔离性：Isolation     持久性：Durability</p>
+</blockquote>
+<p>CAP：</p>
+<blockquote>
+<p>强一致性：Consitency    可用性：Availability      分区容错性：Partition toleration</p>
+</blockquote>
+<p><strong>CAP三者只能满足两个。</strong></p>
+<p>CAP核心：一个分布式系统不可能同时很好的满足一致性，可用性和分区容错性。</p>
+<p>一般都是两个满足，</p>
+<p>CA：单点集群，满足一致性，可用性的系统，通常可扩展性比较差</p>
+<p>CP：满足一致性，分区容错性的系统，通常性能不是特别高</p>
+<p>AP：满足可用性，分区容错性系统，通常可能对一致性要求低一些</p>
+<p><strong>Eureka实现的是AP原则、Zookeeper实现遵循的是CP</strong></p>
+<p><strong>Ribbon：</strong></p>
+<p>ribbon是什么？</p>
+<blockquote>
+<p>SpringCloud Ribbon是基于Netflix Ribbon实现的一套<strong>客户端负载均衡的工具</strong></p>
+<p>主要功能是提供客户端的软件负载均衡算法，将NetFlix的中间层服务连接在一起，Ribbon的客户端组件提供一系列完整的配置：连接超时、重试等。就是在配置文件中列出负载均衡LoadBalancer后的所有机器，Ribbon会基于某种规则去连接这些机器。</p>
+</blockquote>
+<p>常见的负载均衡算法：(不是值Ribbon中的负载均衡算法，与之相关)</p>
+<blockquote>
+<p>1.轮询均衡（Round Robin）:每次来自网络的请求轮流分配给内部服务器，从1到N然后重新开始，这种均衡算法适合服务组中的所有服务器都有相同的硬件配置并且平均服务请求相对均衡的情况</p>
+<p>2.权重轮询均衡(Weighted Round Robin)：根据服务器不同的处理能力，给每个服务器分配不同的权值，使其能够接受相应权值数的服务请求。简单来说就是使得每个服务器有不同的使用率，高性能使用率更高</p>
+<p>3.随机均衡(Random)：将请求随机分配给内部的服务器</p>
+<p>4.权重随机均衡(Weight Random):此种均衡算法类似于权重轮循算法，不过在处理请求分担时是个随机选择的过程。  </p>
+<p>5.响应速度均衡(Response  Time探测时间)：负载均衡设备对内部各服务器发出一个探测请求（例如 Ping），然后根据内部中各服务器对探测请求的最快响应时间来决定哪一台服务器来响应客户端的服务请求。  </p>
+<p>6.最少连接数均衡(Last Connection):最少连接数均衡算法对内部中需负载的每一台服务器都有一个数据记录，记录当前该服务器正在处理的连接数量，当有新的服务连接请求时，将把当前请求分配给连接数最少的服务器，使均衡更加符合实际情况，负载更加均衡。此种均衡算法适合长时处理的请求服务，如 FTP。  </p>
+<p>7.处理器能力均衡(cpu、内存)：把服务请求分配给内部中处理负荷（根据服务器 CPU 型号、 CPU 数量、内存大小及当前连接数等换算而成）最轻的服务器  </p>
+<p>8.DNS响应均衡(Flash DNS)：把此域名解析成各自相对应服务器的 IP 地址并返回给客户端， 则客户端将以最先收到的域名解析 IP 地址来继续请求服务，而忽略其它的 IP 地址响应  </p>
+<p>9.哈希算法：一致性 Hash，相同参数的请求总是发到同一提供者。当某一台提供者挂时，原本发往该提供者的请求，基于虚拟节点，平摊到其它提供者，不会引起剧烈变动。  </p>
+<p>10.IP地址散列：管理发送方 IP 和目的地 IP 地址的散列，将来自同一发送方的分组(或发送至同一目的地的分<br>组)统一转发到相同服务器的算法。  保证来自相同客户端的通信能够一直在同一服务器中进行处理。  </p>
+<p>11.URL散列：通过管理客户端请求 URL 信息的散列，将发送至相同 URL 的请求转发至同一服务器的算法  </p>
+</blockquote>
+<p>客户端配置Ribbon：导入依赖，添加配置，添加注解@LoadBalance</p>
+<p><strong>Feign负载均衡：</strong>是声明式的webService客户端，它让微服务之间的调用变得简单，类似于controller调用service，springCloud集成了Ribbon和Eureka，可以使用Feign时提供负载均衡的http客户端，需要创建一个接口并添加注解。</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//使用Feign需要写一个接口，对其接口进行注解配置</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token annotation punctuation">@FeignClient</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"SPRINGCLOUD-PROVIDER"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">DeptClientService</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/dept/get/{id}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Dept <span class="token function">queryById</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> Long id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/dept/list"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Dept<span class="token operator">></span> <span class="token function">queryAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/dept/add"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">addDept</span><span class="token punctuation">(</span>Dept dept<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>feign是通过接口和注解的方式，ribbon是通过微服务的名称来进行负载均衡，Ribbon+RestTemplate是利用RestTemplate对Http请求的封装处理，形成了一套模板化的调用方法，实际开发中，由于对服务依赖的调用可能不止一处，往往一个接口或被多处调用，因此通常都会针对每个微服务自行封装一些客户端类来包装这些依赖服务调用。Feign在此基础上进行了进一步的封装，使用它定义和实现依赖服务接口的定义，在Feign实现下，我们只需要创建一个接口并使用注解的方式配置它，简化了SpringCLoudRibbon，自行封装服务调用客户端的并发量。</p>
+<p>常用的负载均衡的软件有Nginx、LVS</p>
+<p>服务雪崩：多个服务之间调用的时候，假设微服务A调用微服务B和微服务C，微服务B和微服务C又调用其他的微服务，这就是所谓的“扇出”，如果扇出的链路上某个微服务的调用响应时间过长或者不可用，对微服务A的调用就会占用越来越多的系统资源，引起系统崩溃，即所谓的雪崩效应。</p>
+<p><strong>Hystrix服务熔断：</strong> 服务降级、服务熔断、服务限流、接近实时监控</p>
+<p>Hystrix是一个处于分布式系统的延迟和容错的开源库，在分布式系统里，许多依赖不可避免的会调用失败，比如超时，异常等。Hystrix能够保证在一个依赖出问题的情况下，不会导致整体服务失败，避免级联故障，以提高分布式系统的弹性。</p>
+<p>“断路器”本身是一种开关装置，当某个服务单元发生故障之后，通过断路器的故障监控，向调用方式返回一个服务预期的、可处理的备选响应，而不是长时间的等待或者抛出调用方法无法处理的异常，这样就可以保证服务调用方线程不会被长时间不必要的占用，从而避免了故障在分布式系统中的蔓延，乃至雪崩。</p>
+<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Cblogimages%5Cspringcloud0515%5Chystrix.png" alt="熔断器"></p>
+<blockquote>
+<p>当 Hystrix Command 请求后端服务失败数量超过一定比例(默认 50%), 断路器会<br>切换到开路状态(Open). 这时所有请求会直接失败而不会发送到后端服务. 断路器保持在开路状态<br>一段时间后(默认 5 秒), 自动切换到半开路状态(HALF-OPEN). 这时会判断下一次请求的返回情况,<br>如果请求成功, 断路器切回闭路状态(CLOSED), 否则重新切换到开路状态(OPEN). Hystrix 的断路器<br>就像我们家庭电路中的保险丝, 一旦后端服务不可用, 断路器会直接切断请求链, 避免发送大量无效<br>请求影响系统吞吐量, 并且断路器有自我检测并恢复的能力  </p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//服务端程序，服务端在服务有网络延时或者异常因此的服务熔断进行备选处理</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DeptController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+   <span class="token keyword">private</span> DeptService deptService<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@HystrixCommand</span><span class="token punctuation">(</span>fallbackMethod <span class="token operator">=</span> <span class="token string">"hystrixGet"</span><span class="token punctuation">)</span>
+   <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/dept/get/{id}"</span><span class="token punctuation">)</span>
+   <span class="token keyword">public</span> Dept <span class="token function">get</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> Long id<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       Dept dept <span class="token operator">=</span> deptService<span class="token punctuation">.</span><span class="token function">queryById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">if</span><span class="token punctuation">(</span>dept <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">"id=>"</span><span class="token operator">+</span>id<span class="token operator">+</span><span class="token string">",不存在用户，或者信息无法找到"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+       <span class="token keyword">return</span> dept<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token comment" spellcheck="true">//备选方法</span>
+   <span class="token keyword">public</span> Dept <span class="token function">hystrixGet</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span>  Long id<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Dept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setDeptno</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">setDeptname</span><span class="token punctuation">(</span><span class="token string">"id=>"</span><span class="token operator">+</span>id<span class="token operator">+</span><span class="token string">"没有对应的信息，null"</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">setDb_source</span><span class="token punctuation">(</span><span class="token string">"没有对应的数据库信息"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Hystrix是服务器端的处理：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * @author itxing
+ * @create 2020/5/16-spring_cloud
+ */</span>
+<span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableEurekaClient</span> <span class="token comment" spellcheck="true">//配置Eureka客户端，自动将服务配置到注册中心</span>
+<span class="token annotation punctuation">@EnableDiscoveryClient</span><span class="token comment" spellcheck="true">//服务发现</span>
+<span class="token annotation punctuation">@EnableCircuitBreaker</span> <span class="token comment" spellcheck="true">//注解断路器</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DeptProviderHytris</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>DeptProviderHytris<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Hystrix-dashboard:监控页，使用时需要确认服务端的信息是否有actuator监控信息</p>
+<p><strong>服务降级：</strong>是在客户端进行</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//在接口处添加服务降级处理的实现类信息</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token annotation punctuation">@FeignClient</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"SPRINGCLOUD-PROVIDER"</span><span class="token punctuation">,</span>fallbackFactory <span class="token operator">=</span> DeptClientServiceFallbackFactory<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">DeptClientService</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/dept/get/{id}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Dept <span class="token function">queryById</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> Long id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/dept/list"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Dept<span class="token operator">></span> <span class="token function">queryAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/dept/add"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">addDept</span><span class="token punctuation">(</span>Dept dept<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>服务降级实现类如下,服务降级是由客户端访问过高引起部分服务进行暂停用来处理高并发的服务，因此使用Feign尽心相关的配置：</p>
+<pre class=" language-java"><code class="language-java">
+<span class="token comment" spellcheck="true">/**
+ * @author itxing
+ * @create 2020/5/16-spring_cloud
+ *
+ * 服务降级
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DeptClientServiceFallbackFactory</span>  <span class="token keyword">implements</span> <span class="token class-name">FallbackFactory</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> Object <span class="token function">create</span><span class="token punctuation">(</span>Throwable throwable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DeptClientService</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> Dept <span class="token function">queryById</span><span class="token punctuation">(</span>Long id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Dept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setDeptno</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">setDeptname</span><span class="token punctuation">(</span><span class="token string">"id=>"</span><span class="token operator">+</span>id<span class="token operator">+</span><span class="token string">" 没有对应的信息，客户端使用降级，服务暂时停止"</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">setDb_source</span><span class="token punctuation">(</span><span class="token string">"数据源暂时关闭"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Dept<span class="token operator">></span> <span class="token function">queryAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">addDept</span><span class="token punctuation">(</span>Dept dept<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>客户端的yaml的配置：</p>
+<pre class=" language-yml"><code class="language-yml">server:
+  port: 8002
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka8003.com:8003/eureka/,http://eureka8004.com:8004/eureka/,http://eureka8005.com:8005/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+</code></pre>
+<p>API网关：</p>
+<p>API Gateway是一个服务器，也可以说是进入系统的唯一节点。与设计模式中的Facade模式相似，APIGateWay封装内部系统的架构，并且提供API给各个客户端，还有其他的功能，例如：授权、监控、负载均衡、缓存、请求分片和管理、静态响应处理。API网关负责请求转发、合成和协议转换，通过调用多个微服务来处理一个请求以及聚合多个服务的结果。<strong>请求转发、响应合并、协议转换、数据转换、安全认证。</strong></p>
+<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Cblogimages%5Cspringcloud0515%5CapiGateway.png" alt="API网关"></p>
+<p><strong>Zuul路由网关：</strong> 功能是路由+过滤</p>
+<p>Zuul路由包含了请求的路由和过滤两个最主要的功能。路由功能是将一些具体的请求转发到具体的微服务实例上，是实现外部访问同一入口的基础，而过滤器功能则负责对请求的处理过程进行干预，是实现请求校验，服务聚合等功能的基础。zuul和Eureka进行整合，将Zuul自身注册为Eureka服务治理下的应用，同时从Eureka中获取其他服务消息。</p>
+<p>application.yml与bootstrap.yml区别是：前者是用户级别的配置，后者是系统级别的配置</p>
+<p>SpringBoot启动类上需要加入注解：<strong>@EnableZuulProxy</strong></p>
+<p>路由网关的yaml配置:</p>
+<pre class=" language-yml"><code class="language-yml">server:
+  port: 9527
+
+spring:
+  application:
+    name: springcloud-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8003.com:8003/eureka/,http://eureka8004.com:8004/eureka/,http://eureka8005.com:8005/eureka/
+  instance:
+    instance-id: zuul9527.com
+    prefer-ip-address: true
+
+info:
+  app.name: itxing-springcloud
+  company.name: itxing.com
+zuul:
+  routes:
+    mydept.serviceId: spring-provider-dept
+    mydept.path: /mydept/**
+  ignored-services: "*"#springcloud-provider-dept
+  prefix: /itxing</code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/fengyanxing" rel="external nofollow noreferrer">it星</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/fengyanxing/2020/05/15/springcloud-wei-fu-wu/">https://github.com/fengyanxing/2020/05/15/springcloud-wei-fu-wu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://github.com/fengyanxing" target="_blank">it星</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/spring-cloud/">
+                                    <span class="chip bg-color">spring cloud</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="qq,wechat,weibo,qzone,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/05/15/springcloud-wei-fu-wu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="springcloud实验">
+                        
+                        <span class="card-title">springcloud实验</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            SpringCloud微服务入门
+注：个人的学习是通过视频的讲解、阅读相关数据、进行实践、记录笔记进行的，希望与君共勉。个人的实验环境是Windows7，64位，内存16G，建议16G否则效果很差。
+下面是我启动三个注册中心，一个路由网关一
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    java深入学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/spring-cloud/">
+                        <span class="chip bg-color">spring cloud</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/14/spring-xue-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="spring学习">
+                        
+                        <span class="card-title">spring学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1.spring出现之前：
+循环依赖：指的是多个Bean之间的相互调用，A对象创建时，需要构造B对象，构造B对象时需要构建C对象，构建C对象时又依赖A对象
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    java深入学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: it星的博客<br />'
+            + '文章作者: it星<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归it星所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="https://github.com/fengyanxing" target="_blank">it星</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">44.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fengyanxing" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1075335638@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1075335638" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1075335638" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
