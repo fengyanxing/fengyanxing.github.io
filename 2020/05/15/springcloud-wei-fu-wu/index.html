@@ -466,14 +466,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4,837
+                    5,215
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    19 分
                 </div>
                 
 
@@ -492,7 +492,7 @@
                 <p>SpringCloud微服务入门</p>
 <p>注：个人的学习是通过视频的讲解、阅读相关数据、进行实践、记录笔记进行的，希望与君共勉。个人的实验环境是Windows7，64位，内存16G，建议16G否则效果很差。</p>
 <p>下面是我启动三个注册中心，一个路由网关一个服务器端进行测试，使用内存启动后占11~12G</p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Cblogimages%5Cspringcloud0515%5Ccpu.png" alt="启动后内存"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/cpu.png" alt="启动后内存"></p>
 <p>前提条件：在进行接下来的实现希望读者知道java的一些知识、mybatis、spring、springboot、mysql、json、maven等相关的知识。</p>
 <p>如果读者没有学过maven，可以花几分钟读简单看一看maven创建项目的一篇博客：</p>
 <p><a href="https://fengyanxing.github.io/2020/05/14/maven-gong-ju/" target="_blank" rel="noopener">maven学习</a></p>
@@ -751,7 +751,7 @@
 <p><strong>Hystrix服务熔断：</strong> 服务降级、服务熔断、服务限流、接近实时监控</p>
 <p>Hystrix是一个处于分布式系统的延迟和容错的开源库，在分布式系统里，许多依赖不可避免的会调用失败，比如超时，异常等。Hystrix能够保证在一个依赖出问题的情况下，不会导致整体服务失败，避免级联故障，以提高分布式系统的弹性。</p>
 <p>“断路器”本身是一种开关装置，当某个服务单元发生故障之后，通过断路器的故障监控，向调用方式返回一个服务预期的、可处理的备选响应，而不是长时间的等待或者抛出调用方法无法处理的异常，这样就可以保证服务调用方线程不会被长时间不必要的占用，从而避免了故障在分布式系统中的蔓延，乃至雪崩。</p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Cblogimages%5Cspringcloud0515%5Chystrix.png" alt="熔断器"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/hystrix.png" alt="熔断器"></p>
 <blockquote>
 <p>当 Hystrix Command 请求后端服务失败数量超过一定比例(默认 50%), 断路器会<br>切换到开路状态(Open). 这时所有请求会直接失败而不会发送到后端服务. 断路器保持在开路状态<br>一段时间后(默认 5 秒), 自动切换到半开路状态(HALF-OPEN). 这时会判断下一次请求的返回情况,<br>如果请求成功, 断路器切回闭路状态(CLOSED), 否则重新切换到开路状态(OPEN). Hystrix 的断路器<br>就像我们家庭电路中的保险丝, 一旦后端服务不可用, 断路器会直接切断请求链, 避免发送大量无效<br>请求影响系统吞吐量, 并且断路器有自我检测并恢复的能力  </p>
 </blockquote>
@@ -852,7 +852,7 @@ feign:
 </code></pre>
 <p>API网关：</p>
 <p>API Gateway是一个服务器，也可以说是进入系统的唯一节点。与设计模式中的Facade模式相似，APIGateWay封装内部系统的架构，并且提供API给各个客户端，还有其他的功能，例如：授权、监控、负载均衡、缓存、请求分片和管理、静态响应处理。API网关负责请求转发、合成和协议转换，通过调用多个微服务来处理一个请求以及聚合多个服务的结果。<strong>请求转发、响应合并、协议转换、数据转换、安全认证。</strong></p>
-<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Cblogimages%5Cspringcloud0515%5CapiGateway.png" alt="API网关"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/apiGateway.png" alt="API网关"></p>
 <p><strong>Zuul路由网关：</strong> 功能是路由+过滤</p>
 <p>Zuul路由包含了请求的路由和过滤两个最主要的功能。路由功能是将一些具体的请求转发到具体的微服务实例上，是实现外部访问同一入口的基础，而过滤器功能则负责对请求的处理过程进行干预，是实现请求校验，服务聚合等功能的基础。zuul和Eureka进行整合，将Zuul自身注册为Eureka服务治理下的应用，同时从Eureka中获取其他服务消息。</p>
 <p>application.yml与bootstrap.yml区别是：前者是用户级别的配置，后者是系统级别的配置</p>
@@ -882,6 +882,29 @@ zuul:
     mydept.path: /mydept/**
   ignored-services: "*"#springcloud-provider-dept
   prefix: /itxing</code></pre>
+<p>扩展：</p>
+<p>REST(Resource Representational State Transfer):资源表述性状态转移</p>
+<p>HTTP动作设计：</p>
+<blockquote>
+<p>GET：从服务器取出资源</p>
+<p>POST：在服务器新建一个资源</p>
+<p>PUT：在服务器更新一个资源，PUT更新整个对象</p>
+<p>PATCH：在服务器更新一个资源，只更新个别属性</p>
+<p>DELETE：从服务器删除资源</p>
+<p>HEAD：获取一个资源的元数据，比如一个资源的hash值或最后修改日期</p>
+<p>OPTIONS：获得客户端针对一个资源能够实施的操作(获取该资源的api)</p>
+</blockquote>
+<p>状态码：</p>
+<blockquote>
+<p>200 服务器成功返回用户请求的数据    201 用户新建或修改数据成功</p>
+<p> 202 表示一个请求已经进入后台排队  204  用户删除数据成功</p>
+<p> 400 用户发出的请求有错误，服务器没有进行新建或修改数据的操作</p>
+<p> 401 表示用户没有权限，令牌、密码等问题</p>
+<p> 403  用户得到授权但访问被禁止  404  用户请求的是不存在的记录 </p>
+<p>406 用户请求的资源被永久删除，且不会再得到   410  用户请求的资源被永久删除，且不会再得到 </p>
+<p>422 当创建一个对象时，发生一个验证错误   500  服务器发生错误，用户将无法判断发出的请求是否成功</p>
+</blockquote>
+<p>Accept属于请求头，Content-Type属于实体头，只出现在Request中，表示自己希望接收到什么样的数据类型。</p>
 
             </div>
             <hr/>
@@ -1112,32 +1135,33 @@ zuul:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/15/springcloud-wei-fu-wu/">
+                <a href="/2020/05/18/mybatis-xue-xi-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="springcloud实验">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Mybatis学习(一)">
                         
-                        <span class="card-title">springcloud实验</span>
+                        <span class="card-title">Mybatis学习(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SpringCloud微服务入门
-注：个人的学习是通过视频的讲解、阅读相关数据、进行实践、记录笔记进行的，希望与君共勉。个人的实验环境是Windows7，64位，内存16G，建议16G否则效果很差。
-下面是我启动三个注册中心，一个路由网关一
+                            JDBC连接数据库：
+步骤:
+
+注册驱动：Class.forname(“jdbc驱动”);
+获取连接:Connection conn = DriverManager.getConnection(url,username,password);
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1150,12 +1174,11 @@ zuul:
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spring-cloud/">
-                        <span class="chip bg-color">spring cloud</span>
+                    <a href="/tags/Mybatis/">
+                        <span class="chip bg-color">Mybatis</span>
                     </a>
                     
                 </div>
@@ -1394,7 +1417,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44.6k</span>&nbsp;字
+                class="white-color">55.3k</span>&nbsp;字
             
             
             
