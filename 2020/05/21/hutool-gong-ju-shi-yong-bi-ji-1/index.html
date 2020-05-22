@@ -4,10 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Netty入门, it星的博客">
-    <meta name="description" content="Netty入门
-Netty是JBOSS提供的开源项目，github上的独立项目
-Netty是一个异步的、基于事件驱动的网络应用框架，用以快速开发高性能、高可靠的网络IO程序。Netty主要是针对TCP协议下，面向客户端高并发应用或Peer ">
+    <meta name="keywords" content="java工具使用笔记, it星的博客">
+    <meta name="description" content="hutool工具使用笔记：
+
+hutool-aop    JDK动态代理封装，提供非IOC下的切面支持
+hutool-bloomFilter    布隆过滤，提供一些Hash算法的布隆过滤
+hutool-cache  简单缓存实现 
+hut">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +18,7 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Netty入门 | it星的博客</title>
+    <title>java工具使用笔记 | it星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,12 +308,12 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Netty入门</h1>
+                    <h1 class="description center-align post-title">java工具使用笔记</h1>
                 </div>
             </div>
         </div>
@@ -427,8 +430,8 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/netty/">
-                                <span class="chip bg-color">netty</span>
+                            <a href="/tags/java%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">java工具</span>
                             </a>
                         
                     </div>
@@ -439,8 +442,8 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                java深入学习
+                            <a href="/categories/java%E5%B7%A5%E5%85%B7/" class="post-category">
+                                java工具
                             </a>
                         
                     </div>
@@ -452,28 +455,28 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-29
+                    2020-05-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2020-05-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3,372
+                    282
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    1 分
                 </div>
                 
 
@@ -489,232 +492,33 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Netty入门</p>
-<p>Netty是JBOSS提供的开源项目，github上的独立项目</p>
-<p>Netty是一个异步的、基于事件驱动的网络应用框架，用以快速开发高性能、高可靠的网络IO程序。Netty主要是针对TCP协议下，面向客户端高并发应用或Peer to Peer场景下的大量数据持续传输的应用，本质是NIO框架。</p>
-<p>互联网行业在分布式系统中，各个节点之间需要远程服务调用，高性能的RPC框架必不可少，Netty作为异步高性能通信框架。</p>
-<p>java支持3中网络编程模型I/O模式：BIO、NIO、AIO</p>
-<p>java BIO同步并阻塞，服务器实现模式为一个连接一个线程，客户端有一个连接就有一个服务器线程进行处理，如果连接不做任何事产生不必要的开销（服务器监听与等待客户端发送数据产生的阻塞），应用场景：适用于连接数目较小且固定的架构，服务器资源要求较高</p>
-<p>java NIO同步非阻塞，服务器实现模式为一个线程处理多个请求，即客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有I/O请求就进行处理。连接数目较多，连接比较短，聊天服务器，弹幕系统，服务器通讯</p>
-<p>java AIO异步非阻塞：AIO引入通道的概念，采用Proactor模式，有效的请求才启动线程，特点是先有操作系统完成后才通知服务器端程序启动线程去处理，一般适用于连接数较多且连接时间较长的应用。适用于连接数目多且连接比较长的架构，例如相册服务器。</p>
-<p>BIO连接流程：</p>
-<p>1.服务器端启动ServerSocket</p>
-<p>2.客户端启动Socket对服务器进行通信，默认情况下服务器需要对每个客户建立一个线程与之通信。</p>
-<p>3.客户端发出请求后，先咨询是否有线程响应，没有则等待或被拒绝</p>
-<p>4.服务器响应后，客户端等待请求结束后，再继续执行</p>
-<p>Bio服务器端程序（使用线程池）</p>
-<pre class=" language-java"><code class="language-java">
- <span class="token operator">*</span> <span class="token annotation punctuation">@author</span> xing
- <span class="token operator">*</span> <span class="token annotation punctuation">@create</span> <span class="token number">2020</span><span class="token operator">/</span><span class="token number">4</span><span class="token operator">/</span><span class="token number">26</span><span class="token operator">-</span>Multithreading<span class="token operator">-</span>study<span class="token operator">-</span>master
- <span class="token operator">*</span><span class="token operator">/</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BIOServer</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//线程池机制</span>
-
-        <span class="token comment" spellcheck="true">//1.创建一个线程池</span>
-        <span class="token comment" spellcheck="true">//2.如果有客户端连接就创建一个线程，与之通信</span>
-        ExecutorService newCachedThreadPool <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newCachedThreadPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ServerSocket serverSocket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServerSocket</span><span class="token punctuation">(</span><span class="token number">6666</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"服务器启动"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//监听，等待客户端的连接</span>
-            <span class="token keyword">final</span> Socket socket <span class="token operator">=</span> serverSocket<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"连接到一个客户端"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">//线程池监听到一个连接就与之通信</span>
-            newCachedThreadPool<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token annotation punctuation">@Override</span>
-                <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    <span class="token function">handler</span><span class="token punctuation">(</span>socket<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">handler</span><span class="token punctuation">(</span>Socket socket<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"当前线程Id"</span><span class="token operator">+</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"当前线程名"</span><span class="token operator">+</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">//通过socket，获取输入流</span>
-            InputStream inputStream <span class="token operator">=</span> socket<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                <span class="token keyword">int</span> read <span class="token operator">=</span> inputStream<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>read<span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>bytes<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>read<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-                    <span class="token keyword">break</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token keyword">finally</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"关闭socket的连接"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">try</span> <span class="token punctuation">{</span>
-                socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>Bio的程序中会后两个阻塞的位置，第一个位置在于serverSocket.accept();，服务器端箭筒时阻塞，第二个位置在inputStream.read(bytes);，服务器端接受数据的阶段。</p>
-<p>windows7安装telnet服务</p>
-<p>1.点击控制面板——》程序——》打开或关闭windows功能，选择telnet服务器与telnet客户端进行勾选，点击确定。</p>
-<p>2.设置，win+R，services.msc回车，将telnet设置为手动启动</p>
-<p>3.输入命令telnet  ip    端口号  例如： telnet 127.0.0.1   6666</p>
-<p>注：连接后如果不显示字符只显示光标，使用ctrl+]解决</p>
-<p>java NIO，三大核心部分：Channel(通道)、Buffer(缓冲区)、Selector(选择器)</p>
-<p>NIO面向通道，面向块的的编程，数据读取到稍后处理的缓冲区，需要时在缓冲区中前后移动。Bio使用流的方式处理数据，Nio使用快的方式处理数据，I/O的效率比流I/O高很多</p>
-<p>nio三大核心的关系：</p>
-<p>每个channel对应一个Buffer，Selector对应一个线程，一个线程对应多个Channel连接，selector进行切换，轮询channel由事件（Event）决定，Selector根据不同的事件，在各个通道上切换。Buffer是一个内存块，是一个数组，数据的读取写入是通过Buffer，BIO要么是输入流要么是输出流。NIO的buffer可以读也可以写，需要一个flip方法切换，channel是双向的，可以返回底层操作系统的情况。</p>
-<p>缓冲区(Buffer)：缓冲区本质上是一个可以读写数据的内存块，可以理解成一个容器对象该对象提供了一组方法，可以使用内存块，缓冲区对象内置一些机制，能够跟踪和记录缓冲区的状态变化情况。常用的缓冲区：ByteBuffer、shortBuffer、CharBuffer、IntBuffer、LongBuffer、DoubleBuffer、FloatBuffer</p>
-<pre class=" language-java"><code class="language-java">  <span class="token comment" spellcheck="true">//buffer抽象类中的变量</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> mark <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//编辑</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> position <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//位置，下一个要被读或者写的索引，每次读写缓冲区都会改变</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> limit<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//缓冲区的当前终点，不能对缓冲区超过极限的位置进行读写操作</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> capacity<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//容量，缓冲区可容纳最大数据量</span>
-<span class="token comment" spellcheck="true">/*
-常用方法：
-    public static ByteBuffer allocateDirect(int capacity);创建直接缓冲区
-    public static ByteBuffer allocate(int capacity);创建直接缓冲区
-    public abstract byte get();从当前位置position上get，get之后，position会自动+1
-    public abstract byte get(int index);从绝对位置get
-    public abstract ByteBuffer put(byte b);从当前位置上put，put后，position+1
-    public abstract ByteBuffer put(int index,byte b);从绝对位置上put
-*/</span>
-</code></pre>
-<p>通道(Channel)</p>
-<p>通道类似于流，但其能够同时进行读写，而流只能读或者写；通道可以实现异步读写数据；通道可以从缓冲区读数据，也可以在缓冲区写数据</p>
-<p>Channel是一个接口，常用的实现类有：FileChannel(文件的数据读写)、DatagramChannel()、ServletSocketChannel()和SocketChannel()</p>
-<p>FileChannel类：</p>
-<p>public int read(Buffer dst)从通道读取数据并放到缓冲区</p>
-<p>public int write(ByteBuffer src) 把缓冲区的数据写到通道</p>
-<p>public long transferFrom(ReadableByteChannel src,long position,long count);从目标通道复制数据到当前通道</p>
-<p>public long transferTo(long position,long count,WriteableByteChannel target);把数据从当前通道复制给目标通道</p>
-<p>记录linux的一个命令</p>
+                <p>hutool工具使用笔记：</p>
 <blockquote>
-<p>strace -ff -o out  /usr/java/jdk1.8.0_181-amd64/bin/java TestOldSocket</p>
+<p>hutool-aop    JDK动态代理封装，提供非IOC下的切面支持</p>
+<p>hutool-bloomFilter    布隆过滤，提供一些Hash算法的布隆过滤</p>
+<p>hutool-cache  简单缓存实现 </p>
+<p>hutool-core    核心，包括Bean操作、日期、各种Util等</p>
+<p>hutool-cron    定时任务模块，提供类Crontab表达式的定时任务 </p>
+<p>hutool-crypto    加密解密模块，提供对称、非对称和摘要算法封装 </p>
+<p>hutool-db      JDBC封装后的数据操作，基于ActiveRecord思想 </p>
+<p>hutool-dfa   基于DFA模型的多关键字查找 </p>
+<p>hutool-extra      扩展模块，对第三方封装（模板引擎、邮件、Servlet、二维码、Emoji、FTP、分词等）    </p>
+<p>hutool-http      基于HttpUrlConnection的Http客户端封装 </p>
+<p>hutool-log    自动识别日志实现的日志门面     </p>
+<p>hutool-script    脚本执行封装，例如Javascript </p>
+<p>hutool-setting    功能更强大的Setting配置文件和Properties封装</p>
+<p>hutool-system    系统参数调用封装（JVM信息等）</p>
+<p>hutool-json     JSON实现</p>
+<p>hutool-captcha   图片验证码实现</p>
+<p>hutool-poi    针对POI中Excel和Word的封装</p>
+<p>hutool-socket   基于Java的NIO和AIO的Socket封装</p>
 </blockquote>
-<p>Selector(多路复用器)：Selector能够检测多个注册的通道上是否有事件发生，可以同时并发处理多个客户端连接</p>
-<p>Selector类：其子类SelectorImpl，selector与线程相关。</p>
-<p>客户端连接后ServerSocketChannel会有SocketChannel，一个Selector可以注册多个SocketChannel，注册后返回SelectorKey，监听select()有事件发生时，通过SelectorKey能够通过方法channel()反向获取事件发生的channel,</p>
-<p>SelectionKey API：</p>
-<blockquote>
-<p>public static final int OP_READ = 1;<br>public static final int OP_WRITE = 4;<br>public static final int OP_CONNECT = 8;<br>public static final int OP_ACCEPT = 16;</p>
-</blockquote>
-<p>ServletSocketChannel API：</p>
-<p>服务器端监听客户端socket连接</p>
-<blockquote>
-<p>open()；得到一个ServlerSocketChannel通道</p>
-<p>bind(SocketAddress local);设置服务器端口号</p>
-<p>configBlocking(boolean block)；设置阻塞或非阻塞</p>
-<p>accept();接受一个连接，返回代表这个连接的通道对象</p>
-<p>register();注册一个选择器并设置监听事件。</p>
-</blockquote>
-<p>SocketChannel API</p>
-<p>网络IO通道，具体负责进行读写操作，NIO把缓冲区的数据写入通道，或者把通道里的数据读到缓冲区。</p>
-<p>群聊系统：</p>
-<blockquote>
-<p>需求：实现一个服务器和客户端之间的数据简单通讯，实现多人群聊。</p>
-<p>服务器端可以监测用户上线，离线，并实现消息转发功能</p>
-</blockquote>
-<p>零拷贝(没有Cpu参与的拷贝)：</p>
-<p>java中常用的零拷贝有mmap(内存映射)和sendFile。</p>
-<p>java AIO（异步不阻塞的IO）常用的两种模式Readctor和Proactor</p>
-<p>java中的NIO是Reactor模式，有效的请求才能够启动线程，适用于连接数较多且连接时间较长的应用。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>BIO</th>
-<th>NIO</th>
-<th>AIO</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>io模型</td>
-<td>同步阻塞</td>
-<td>同步非阻塞(多路复用)</td>
-<td>异步非阻塞</td>
-</tr>
-<tr>
-<td>编程难度</td>
-<td>简单</td>
-<td>复杂</td>
-<td>复杂</td>
-</tr>
-<tr>
-<td>可靠性</td>
-<td>差</td>
-<td>好</td>
-<td>好</td>
-</tr>
-<tr>
-<td>吞吐量</td>
-<td>低</td>
-<td>高</td>
-<td>高</td>
-</tr>
-</tbody></table>
-<p>Netty：异步的基于时间驱动的网络应用框架，可以快速开发高性能、高可靠的网络IO程序</p>
-<p>原生的NIO存在的问题：API较为复杂，需要熟悉Selector、ServerSocketChannel、SocketChannel、ByteBuffer等，需要熟悉多线程编程以及网络编程。</p>
-<p>优点：高性能、高吞吐量，延迟更低，减少资源消耗，最小化不必要的内存复制</p>
-<p>Reactor解决传统IO的问题：Reactor称之为反应器模式、分发者模式、通知者模式</p>
-<p>1.基于I/O复用模型，多了连接公用一个阻塞对象，应用程序只需要在一个阻塞对象等待，无需阻塞等待所有连接。当某个链接有新的数据可以处理时，操作系统通知应用程序，线程从阻塞状态返回，开始处理业务</p>
-<p>2.基于线程池复用线程资源，不必为每个连接创建线程，将连接完成后的业务处理任务分配给其他线程进行处理，一个线程可以处理多个连接的业务。</p>
-<p>Reactor是将客户端的多个请求交给服务处理器模式（ServiceHandler）又称事件驱动，服务器端程序处理传入的请求并将这些请求同步分派到响应的处理线程。</p>
-<p>核心组成：Rector和Handlers</p>
-<p>Rector在一个单独的线程，用于监听和分发时间</p>
-<p>Handlers是一个事件处理器，用来在线程池中获取线程来处理事件</p>
-<p>模式一:单Reactor单线程(一个线程能够处理多个客户端的消息)</p>
-<p><strong>Reactor里有：Selector和dispatch</strong></p>
-<p>模式二：单Reactor多线程</p>
-<p>Reactor对象通过selector监控客户端请求事件，通过dispatcher进行分发，如果建立连接请求，则Acceptor通过accept处理连接请求，然后创建一个Handler对象，处理完连接后的各种事件。如果不是连接请求，reactor将分发调用连接对象的handler来处理，handler负责响应时间不进行处理，通过read读取数据后，将其发送给后面的worker线程池的某个线程处理，worker线程会分配独立线程完成业务并将结果返回给handler，handler收到响应通过send方法将结果进行返回。</p>
-<p>模式三：主从Reactor多线程</p>
-<p>Reactor主线程MainReactor对象通过select监听连接事件，通过Acceptor处理客户端的连接，将其他的数据请求分给SubReactor进行处理，SubReactor将连接的客户端加入一个队列，并创建handler进行各种事件处理，handler通过read读取数据，分发给后面的worker线程处理。</p>
-<p>Netty模型(基于主从Reator模型)</p>
-<p>BossGroup线程维护Selector，只关注Accept；当接收到Accept事件时，获取对应的Socketchannel，封装成NIOScoketChannel并注册到Worker的selector中，并维护</p>
-<p><strong>Boss Group和WorkerGroup类型都是NioEventGroup</strong>，这是一个事件循环组，每一个事件循环都是一个NIOEventLoop，每个NioEventLoop都有一个Selector，用于监听绑定在其上的socket的网络通讯。Boss专门负责接收客户端的连接，Worker专门负责网络读写操作。</p>
-<p>Boss  NioEventLoop循环的步骤有三步：</p>
-<p>1.轮询accept事件</p>
-<p>2.处理accept事件，与客户端建立连接，生成NioSocketChannel，并将其注册到某个worker NioEventLoop上的selector</p>
-<p>3.处理任务队列的任务，即runAllTasks</p>
-<p>Worker NioEventLoop循环执行的步骤：</p>
-<p>1.轮询read，write事件</p>
-<p>2.处理IO事件，即read，write事件，在对应NioSocketChannel处理</p>
-<p>3.处理任务队列的任务，即runAllTasks</p>
-<p>任务队列的三种使用场景：用户程序自定义普通任务、用户自定义定时任务、非当前Reactor线程调用Channel的各种方法。</p>
-<blockquote>
-<p>NioEventLoopGroup下包含多个NioEventLoop</p>
-<p>每个NioEventLoop中包含有一个Selector，一个taskQueue</p>
-<p>每个NioEventLoop的Selector上可以注册监听多个NioChannel</p>
-<p>每个NioChannel只会绑定在唯一的NioEventLoop上</p>
-<p>每个NioChannel都绑定有一个自己的ChannelPipline</p>
-</blockquote>
-<p>Future表示异步的执行结果，可以通过它提供的方法来检测是否完成。ChannelFuture是一个接口，可以对其添加监听器，当事件发生时监听器会得到通知。</p>
-<p>Bootstrap、ServerBootStrap，一个netty应用通常是由bootstrap开始主要作用是配置整个Netty程序。</p>
-<p>Future、ChannelFuture通过该类或接口实现监听事件</p>
-<p>Channel：Netty的网络组建，能够用于执行网络I/O操作，能够获取网络连接通道状态、网络连接配置等信息。</p>
-<p>NioSocketChannel，异步的客户端TCP Socket连接</p>
-<p>NioServerSocketChannel，异步服务器端TCP Socket连接</p>
-<p>NioDatagramChannel异步UDP连接</p>
-<p>NioSctpChannel，异步的客户端sctp连接</p>
-<p>NioSctpServerChannel，异步的Sctp服务器端连接</p>
-<p>Selector：基于Selector对象实现I/O多路复用，通过Selector一个线程可以监听多个连接的Channel事件。</p>
-<p>ChannelHandler是一个接口，处理O/I事件或拦截I/O操作。</p>
-<blockquote>
-<p>//通道就绪状态事件</p>
-<p>channelActive(ChannelHandlerContext ctx)</p>
-<p>//通道数据读取事件</p>
-<p>channelRead(ChannelHandlerContext ctx, Object msg)</p>
-<p>//异常处理事件</p>
-<p>exceptionCaught(ChannelHandlerContext ctx, Throwable cause)</p>
-</blockquote>
-<p>PipeLine和ChannelPipeline是一个handler集合，一个Piprline中有多个handler，一个Channel包含了一个ChannelPipeline，而ChannelPineline又维护了一个由ChannelHandlerContext组成的双向链表，并且每个ChannelHandlerContext中又关联着一个ChannelHandler。</p>
+<p>maven依赖</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>cn.hutool<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>hutool-all<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>5.3.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
 
             </div>
             <hr/>
@@ -740,7 +544,7 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/fengyanxing/2020/04/29/netty-ru-men/">https://github.com/fengyanxing/2020/04/29/netty-ru-men/</a>
+                    <a href="https://github.com/fengyanxing/2020/05/21/hutool-gong-ju-shi-yong-bi-ji-1/">https://github.com/fengyanxing/2020/05/21/hutool-gong-ju-shi-yong-bi-ji-1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -778,8 +582,8 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/netty/">
-                                    <span class="chip bg-color">netty</span>
+                                <a href="/tags/java%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">java工具</span>
                                 </a>
                             
                         </div>
@@ -945,48 +749,53 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/04/30/spring-shu-ji-yue-du/">
+                <a href="/2020/05/21/hutool-gong-ju-shi-yong-bi-ji-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="spring学习笔记">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="java工具使用笔记">
                         
-                        <span class="card-title">spring学习笔记</span>
+                        <span class="card-title">java工具使用笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Spring学习笔记
-1.IOC的概念：全称是Inversion of  Contorl叫做控制反转，和依赖注入概念等同，思想是不需要自己去创建对象，让IOC创建好拿来。
-主要是通过引入中间代理消除对象间复杂的耦合关系，并统一管理分散的复杂
+                            hutool工具使用笔记：
+
+hutool-aop    JDK动态代理封装，提供非IOC下的切面支持
+hutool-bloomFilter    布隆过滤，提供一些Hash算法的布隆过滤
+hutool-cache  简单缓存实现 
+hut
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    java深入学习
+                            <a href="/categories/java%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    java工具
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spring/">
-                        <span class="chip bg-color">spring</span>
+                    <a href="/tags/java%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">java工具</span>
                     </a>
                     
                 </div>
@@ -1000,34 +809,35 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/29/java-gao-bing-fa/">
+                <a href="/2020/05/20/mysql-yu-ju-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="java高并发">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="mysql语句相关学习">
                         
-                        <span class="card-title">java高并发</span>
+                        <span class="card-title">mysql语句相关学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java高并发
-什么是进程？
-
-进程，是并发执行的程序在执行过程中分配和管理资源的基本单位，是一个动态概念，竟争计算机系统资源的基本单位。每一个进程都有一个自己的地址空 间，即进程空间或（虚空间）。进程空间的大小 只与处理机的位数有关，一个
+                            mysql语句训练：
+mysql数据库创建表语句--商品表
+CREATE TABLE product_info (
+    product_id VARCHAR(32) NOT NULL, 
+    product_name VARCHAR
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    java深入学习
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                             
                             
@@ -1037,8 +847,8 @@ Netty是一个异步的、基于事件驱动的网络应用框架，用以快速
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-                        <span class="chip bg-color">多线程</span>
+                    <a href="/tags/sql/">
+                        <span class="chip bg-color">sql</span>
                     </a>
                     
                 </div>

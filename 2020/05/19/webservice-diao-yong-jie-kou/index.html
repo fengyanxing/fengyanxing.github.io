@@ -459,21 +459,21 @@ Web Service是一个平台独立的，低耦合的，自包含的、基于可编
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-19
+                    2020-05-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2,487
+                    2,195
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    9 分
                 </div>
                 
 
@@ -544,7 +544,7 @@ Web Service是一个平台独立的，低耦合的，自包含的、基于可编
 <p>WebService客户端调用方式</p>
 <p>方式一：根据wsdl创建客户端程序(需要通过wsdl将代码复现到本地，引入项目中使用)</p>
 <blockquote>
-<p>wsimport -p cn.cad.mobile -s . <a href="http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx?wsdl" target="_blank" rel="noopener">http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx?wsdl</a></p>
+<p>wsimport -p cn.cad.mobile -s  <a href="http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx?wsdl" target="_blank" rel="noopener">http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx?wsdl</a></p>
 <p>wsimport   命令参数  包名  参数  wsdl文档地址</p>
 </blockquote>
 <p>方式二：service编程调用方式(需要通过wsdl将代码复现到本地，引入项目中使用)</p>
@@ -665,72 +665,6 @@ Web Service是一个平台独立的，低耦合的，自包含的、基于可编
 <p>第四步：组织SOAP数据，发送请求</p>
 <p>第五步：接收服务端响应 </p>
 </blockquote>
-<pre class=" language-java"><code class="language-java">
-<span class="token comment" spellcheck="true">/**
- * @Class_Name TestEnglishParse
- * @Class_Desc (Webservice客户端程序)
- * @author 冯雁星
- * @date 2020年5月19日上午10:57:47
- * @Version
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestEnglishParse</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">getXmlMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> String <span class="token function">getXmlMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// 创建服务器地址</span>
-            URL url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx?wsdl"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 第二步打开一个通向服务地址的连接</span>
-            HttpURLConnection openConnection <span class="token operator">=</span> <span class="token punctuation">(</span>HttpURLConnection<span class="token punctuation">)</span> url<span class="token punctuation">.</span><span class="token function">openConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 第三步设置请求参数</span>
-            openConnection<span class="token punctuation">.</span><span class="token function">setRequestMethod</span><span class="token punctuation">(</span><span class="token string">"POST"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 设置数据格式</span>
-            openConnection<span class="token punctuation">.</span><span class="token function">setRequestProperty</span><span class="token punctuation">(</span><span class="token string">"content-type"</span><span class="token punctuation">,</span> <span class="token string">"text/xml;charset=utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            StringBuilder sb <span class="token operator">=</span> null<span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 设置输入输出</span>
-            openConnection<span class="token punctuation">.</span><span class="token function">setDoInput</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            openConnection<span class="token punctuation">.</span><span class="token function">setDoOutput</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 第四步，组织soap数据，发送请求</span>
-            String soapXml <span class="token operator">=</span> <span class="token function">getXML</span><span class="token punctuation">(</span><span class="token string">"5555555"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 将信息以流的方式发送出去</span>
-            OutputStream os <span class="token operator">=</span> openConnection<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            os<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>soapXml<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 接受服务端响应，打印</span>
-            <span class="token keyword">int</span> responseCode <span class="token operator">=</span> openConnection<span class="token punctuation">.</span><span class="token function">getResponseCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>responseCode<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">200</span> <span class="token operator">==</span> responseCode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token comment" spellcheck="true">// 服务器响应成功</span>
-                BufferedReader bufferedReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span>
-                        <span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span>openConnection<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                String temp <span class="token operator">=</span> null<span class="token punctuation">;</span>
-                <span class="token keyword">while</span> <span class="token punctuation">(</span>null <span class="token operator">!=</span> <span class="token punctuation">(</span>temp <span class="token operator">=</span> bufferedReader<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                bufferedReader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            os<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// TODO Auto-generated catch block</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token string">"soapXml"</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> String <span class="token function">getXML</span><span class="token punctuation">(</span>String phoneNum<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        String soapXML <span class="token operator">=</span> <span class="token string">"&lt;?xml version=\"1.0\" encoding=\"utf-8\"?>"</span>
-                <span class="token operator">+</span> <span class="token string">"&lt;soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">"</span>
-                <span class="token operator">+</span> <span class="token string">"&lt;soap:Body>"</span> <span class="token operator">+</span> <span class="token string">"&lt;getMobileCodeInfo xmlns=\"http://WebXml.com.cn/\">"</span> <span class="token operator">+</span> <span class="token string">"&lt;mobileCode>"</span> <span class="token operator">+</span> phoneNum
-                <span class="token operator">+</span> <span class="token string">"&lt;/mobileCode>"</span> <span class="token operator">+</span> <span class="token string">"&lt;userID>&lt;/userID>"</span> <span class="token operator">+</span> <span class="token string">"&lt;/getMobileCodeInfo>"</span> <span class="token operator">+</span> <span class="token string">"&lt;/soap:Body>"</span> <span class="token operator">+</span> <span class="token string">"&lt;/soap:Envelope>"</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> soapXML<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
 <p>调用结果:</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">soap:</span>Envelope</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>soap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.xmlsoap.org/soap/envelope/<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsd</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">soap:</span>Body</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>getMobileCodeInfoResponse</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://WebXml.com.cn/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>getMobileCodeInfoResult</span><span class="token punctuation">></span></span>XXXXXXXX：陕西 渭南 陕西电信CDMA卡<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>getMobileCodeInfoResult</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>getMobileCodeInfoResponse</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">soap:</span>Body</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">soap:</span>Envelope</span><span class="token punctuation">></span></span>
 </code></pre>
@@ -1256,7 +1190,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.3k</span>&nbsp;字
+                class="white-color">57.6k</span>&nbsp;字
             
             
             

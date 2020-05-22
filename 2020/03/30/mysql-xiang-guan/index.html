@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mysql学习, it星的博客">
+    <meta name="keywords" content="mysql知识点学习, it星的博客">
     <meta name="description" content="mysql的一些概念与面试常见问题，或许在实际开发中不使用，但是面试有时候会问，烦人(小声bb)。
-mysql数据库创建表语句--商品表
-CREATE TABLE product_info (
-    product_id VARCHAR(">
+Mysql常见的问题索引相当于一个字典，存放一个文件及在文件中的偏移量。索引存在的位置是存放在磁盘位置。基本概念：局部性原理(时间局部性和空">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +14,7 @@ CREATE TABLE product_info (
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>mysql学习 | it星的博客</title>
+    <title>mysql知识点学习 | it星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +304,12 @@ CREATE TABLE product_info (
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mysql学习</h1>
+                    <h1 class="description center-align post-title">mysql知识点学习</h1>
                 </div>
             </div>
         </div>
@@ -460,21 +458,21 @@ CREATE TABLE product_info (
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-17
+                    2020-05-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2,763
+                    2,266
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    8 分
                 </div>
                 
 
@@ -491,87 +489,6 @@ CREATE TABLE product_info (
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>mysql的一些概念与面试常见问题，或许在实际开发中不使用，但是面试有时候会问，烦人(小声bb)。</p>
-<h4 id="mysql数据库创建表语句"><a href="#mysql数据库创建表语句" class="headerlink" title="mysql数据库创建表语句"></a>mysql数据库创建表语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--商品表</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> product_info <span class="token punctuation">(</span>
-    product_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> 
-    product_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_price <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token punctuation">,</span> 
-    product_stock <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_description <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    product_icon <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    category_type <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>product_id<span class="token punctuation">)</span>
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">--类目表</span>
- <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> product_category <span class="token punctuation">(</span>
-    category_id <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-    category_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    category_type <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>category_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
-     <span class="token comment" spellcheck="true">--类型唯一性</span>
-    <span class="token keyword">UNIQUE</span> <span class="token keyword">KEY</span> uqe_category_type <span class="token punctuation">(</span>category_type<span class="token punctuation">)</span>    
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">--订单表</span>
- <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> order_master <span class="token punctuation">(</span>
-    order_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_phone <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_address <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    buyer_openid <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    order_amount <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    order_status <span class="token keyword">TINYINT</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
-    pay_status <span class="token keyword">TINYINT</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-     <span class="token comment" spellcheck="true">--订单主键</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>order_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
-     <span class="token comment" spellcheck="true">--订单索引</span>
-    <span class="token keyword">KEY</span> idx_buyer_openid <span class="token punctuation">(</span>buyer_openid<span class="token punctuation">)</span>
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">--订单明细表</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> order_detial<span class="token punctuation">(</span>
-    detial_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    order_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_price <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    product_quantity   <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    create_time <span class="token keyword">TIMESTAMP</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token punctuation">,</span>
-    update_tine <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>detial_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">KEY</span> idx_order_id <span class="token punctuation">(</span>order_id<span class="token punctuation">)</span>
- <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>需求：创建一个薪资表，表中有员工的信息，查询某个员工薪资变化t以及员工编号emp_no</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--创建薪资表</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>salaries<span class="token punctuation">`</span> <span class="token punctuation">(</span>
-<span class="token punctuation">`</span>emp_no<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token punctuation">`</span>salary<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token punctuation">`</span>from_date<span class="token punctuation">`</span> <span class="token keyword">DATE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token punctuation">`</span>to_date<span class="token punctuation">`</span> <span class="token keyword">DATE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>emp_no<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>from_date<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">--1、用COUNT()函数和GROUP BY语句可以统计同一emp_no值的记录条数</span>
-<span class="token comment" spellcheck="true">--2、输出的涨幅次数为t，故用AS语句将COUNT(emp_no)的值转换为t</span>
-<span class="token comment" spellcheck="true">--3、由于COUNT()函数不可用于WHERE语句中，故使用HAVING语句来限定t>15的条件</span>
-<span class="token keyword">select</span> <span class="token number">a</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">from</span>
-<span class="token punctuation">(</span><span class="token keyword">select</span> emp_no<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">as</span> t <span class="token keyword">from</span> 
-salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> emp_no<span class="token punctuation">)</span>
- <span class="token keyword">as</span> <span class="token number">a</span> 
-<span class="token keyword">where</span> t<span class="token operator">></span><span class="token number">15</span>
-
-<span class="token comment" spellcheck="true">--对于distinct与group by的使用: 1、当对系统的性能高并数据量大时使用group by 2、当对系统的性能不高时使用数据量少时两者皆可 3、尽量使用group by</span>
-<span class="token keyword">select</span> salary <span class="token keyword">from</span> salaries  <span class="token keyword">where</span> to_date<span class="token operator">=</span><span class="token string">'9999-01-01'</span>
-<span class="token keyword">group</span> <span class="token keyword">by</span> salary  <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">DESC</span>
-</code></pre>
-<p>having和where的使用场景</p>
-<blockquote>
-<p>WHERE语句在GROUP BY语句之前；SQL会在分组之前计算WHERE语句。</p>
-<p>HAVING语句在GROUP BY语句之后；SQL会在分组之后计算HAVING语句。  </p>
-</blockquote>
 <h4 id="Mysql常见的问题"><a href="#Mysql常见的问题" class="headerlink" title="Mysql常见的问题"></a>Mysql常见的问题</h4><p>索引相当于一个字典，存放一个文件及在文件中的偏移量。索引存在的位置是存放在磁盘位置。基本概念：局部性原理(时间局部性和空间局部性)和磁盘预读(以页为单位)</p>
 <p>1.mysql原子性和持久性怎么保证？</p>
 <blockquote>
@@ -1178,7 +1095,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.3k</span>&nbsp;字
+                class="white-color">57.6k</span>&nbsp;字
             
             
             
