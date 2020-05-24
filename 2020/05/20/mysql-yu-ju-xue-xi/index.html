@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="mysql语句相关学习, it星的博客">
-    <meta name="description" content="mysql语句训练：
+    <meta name="description" content="mysql语句训练：mysql官网
 mysql数据库创建表语句--商品表
 CREATE TABLE product_info (
     product_id VARCHAR(32) NOT NULL, 
-    product_name VARCHAR">
+    product_name ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -461,21 +461,21 @@ CREATE TABLE product_info (
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-20
+                    2020-05-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1,112
+                    5,470
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    22 分
                 </div>
                 
 
@@ -491,7 +491,7 @@ CREATE TABLE product_info (
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>mysql语句训练：</p>
+                <p>mysql语句训练：<a href="https://dev.mysql.com/" target="_blank" rel="noopener">mysql官网</a></p>
 <h4 id="mysql数据库创建表语句"><a href="#mysql数据库创建表语句" class="headerlink" title="mysql数据库创建表语句"></a>mysql数据库创建表语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--商品表</span>
 <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> product_info <span class="token punctuation">(</span>
     product_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> 
@@ -617,8 +617,8 @@ CREATE TABLE `student`(
 INSERT INTO `student`(`id`,`name`,`tid`) VALUES (1,'小一',1);
 INSERT INTO `student`(`id`,`name`,`tid`) VALUES (2,'小二',1);
 
-INSERT INTO `product`(`pid`,`pname`,`pprice`,`pcategary`) VALUES(1,'玩具','25','1001')
-INSERT INTO `product`(`pid`,`pname`,`pprice`,`pcategary`) VALUES(2,'娃娃','225','1001')
+INSERT INTO `product`(`pid`,`pname`,`pprice`,`pcategary`) VALUES(1,'玩具','25','1001');
+INSERT INTO `product`(`pid`,`pname`,`pprice`,`pcategary`) VALUES(2,'娃娃','225','1001');
 SELECT * FROM test.product
 ##hsujuku 
 
@@ -632,8 +632,8 @@ CREATE TABLE `blog`(
     `views` INT(30) NOT NULL
 )ENGINE = INNODB DEFAULT CHARSET = utf8;
 
-INSERT INTO blog(id,title,author,create_time,views) VALUES('1','nihao','itxing','2020-05-20',10)
-INSERT INTO blog(id,title,author,create_time,views) VALUES('2','ll','itxing','2020-05-21',11)
+INSERT INTO blog(id,title,author,create_time,views) VALUES('1','nihao','itxing','2020-05-20',10);
+INSERT INTO blog(id,title,author,create_time,views) VALUES('2','ll','itxing','2020-05-21',11);
 SELECT  * FROM blog
 </code></pre>
 <p>mysql中的一些函数的使用</p>
@@ -661,13 +661,543 @@ SELECT  * FROM blog
 <p>SELECT 英语 FROM 成绩 LIMIT n OFFSET m</p>
 <p>—–显示从第n条记录开始显示m条</p>
 <p>SELECT 英语 FROM 成绩 LIMIT n ,m</p>
+<p><strong>注意：</strong>mysql的数据是从0行开始算，limit1，1表示第二行的数据，在行数不够时，返回的是最多的数据，limit3,4表示从行3开始取四条记录，limit 4 offset 3也是从行3取4条记录</p>
 </blockquote>
-<p><strong>ifnull函数：</strong>ifnull(a,b),如果表达式a为null结果为表b，否则结果为a</p>
+<p>ifnull函数：**ifnull(a,b),如果表达式a为null结果为表b，否则结果为a</p>
 <blockquote>
 <p>SELECT IFNULL((SELECT 英语 FROM 成绩 WHERE 英语 &gt; 90),NULL) AS 学霸<br>SELECT IFNULL((SELECT 英语 FROM 成绩 WHERE 英语 &lt; 59),NULL) AS 学渣</p>
 </blockquote>
 <p>需求查询表中英语第二大的元素：</p>
 <pre class=" language-mysql"><code class="language-mysql">SELECT IFNULL((SELECT  DISTINCT 英语 FROM 成绩 ORDER BY 英语 DESC LIMIT 1,1),NULL) AS 第二大 </code></pre>
+<p><strong>Order By字句</strong> 字句(clause)，sql语句通常由字句构成，一个字句通常由一个关键字和提供的数组组成，order字句能够进行对列进行字母顺序排序，能够使用<strong>desc</strong>关键字对其进行降序排序操作。</p>
+<blockquote>
+<p>多个列排序，使用,号隔开</p>
+<p>select  column1,column2 from   table1   order by column1,column2</p>
+</blockquote>
+<p>应用场景：使用order by和limit语句可以找出最高或最低的数据</p>
+<blockquote>
+<p>从数据库中找出最贵的商品价格</p>
+<p>select   price  from  products  order by  price  desc   limit 1;  </p>
+</blockquote>
+<p><strong>where字句操作符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">操作符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">=</td>
+<td align="center">等于</td>
+</tr>
+<tr>
+<td align="center">&lt;&gt;</td>
+<td align="center">不等于</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">不等于</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">小于等于</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">大于等于</td>
+</tr>
+<tr>
+<td align="center">between</td>
+<td align="center">两者之间</td>
+</tr>
+</tbody></table>
+<pre class=" language-mysql"><code class="language-mysql">##等值查询
+select * from pprice where pprice = 225;
+##不等查询
+ select * from product where pprice >= 225;
+ ##一下两条语句语义相同，都是找出值不为225的数据
+ select * from product where pprice <> 225;
+ select * from product where pprice != 225;
+ ##区间查询
+ select * from product where pprice between 245 and 260;
+ ##空值查询
+ select * from product where pprice is null;</code></pre>
+<p><strong>操作符：</strong> （operator）用来连结或改变where字句总的句子的关键字，也成为逻辑操作。</p>
+<p>操作符包括：AND操作符(优先级比or高)、or操作符、In操作符、NOT操作符</p>
+<pre class=" language-mysql"><code class="language-mysql">##表示价格不是225,248的产品
+select * from product where pprice not in(225,248) order by pprice;</code></pre>
+<p><strong>通配符：</strong> wildcard用来匹配值的一部分特殊字符，使用时需要有like操作符，like其实是一种谓词。</p>
+<p><strong>搜索模式：</strong> search pattern由字面值、通配符或者两者组合成的搜索条件</p>
+<p>1.百分号通配符（%）：在搜索串中，%表示任何字符出现任意次数</p>
+<pre class=" language-mysql"><code class="language-mysql">##like与%通配符，匹配实体列中以o开头的字符
+select pname from product where pname like 'o%';
+##匹配中间是@xing的所有员工，不论其前后出现何种字符
+ select * from employee where Email like '%@xing%';
+ ##匹配中间的字符
+ select * from employee where email like 'i%m';</code></pre>
+<blockquote>
+<p><strong>注意：</strong>使用%匹配字符串时，存储的数据中若是有空格字符，则可能导致匹配失败，例如匹配like ‘%ss’若数据库中的字符为“miss  ”后面有空格存在，则匹配失败。</p>
+<p>null值的匹配，‘%’不能匹配到数据位NULL的数据</p>
+</blockquote>
+<p>2.下划线（_）通配符，与%用法类似，但下划线<strong>只能匹配单个字符而不是多个字符</strong>。</p>
+<blockquote>
+<p>注：不能过度使用通配符；在确实需要使用通配符时，除非绝对有必要，否则不要将他们用来搜索模式的开始处；需要检查通配符的位置，不能放置错误</p>
+</blockquote>
+<p><strong>正则表达式：</strong>mysql的正则表达式作用是匹配文本，将一个模式与一个文本串进行比较</p>
+<p>1.基本的字符匹配，使用“.”匹配任意一个字符</p>
+<pre class=" language-mysql"><code class="language-mysql">##使用REGEXP关键字和正则表达式匹配字符，匹配所有25开头的数据，258、256、253等等
+select * from product where pprice REGEXP '25.';</code></pre>
+<blockquote>
+<p>LIKE匹配整个列。如果被匹配的文本在列值中出现， LIKE将不会找到它，相应的行也不被返回（除非使用通配符）。而REGEXP在列值内进行匹配，如果被匹配的文本在列值中出现， REGEXP将会找到它，相应的行将被返回。这是一个非常重要的差别。  </p>
+</blockquote>
+<p>2.使用“|”进行匹配，表示or</p>
+<pre class=" language-mysql"><code class="language-mysql">##使用|表达式匹配列中是225或245的数据
+select * from product where pprice REGEXP '225|245';</code></pre>
+<p>3.使用“[]”表示一组字符</p>
+<pre class=" language-mysql"><code class="language-mysql">##使用[]进行匹配，下面表示匹配1001或2001或3001的数据都返回，表示找每个部门中的第一个
+select * from product where pcategary REGEXP '[123]001';</code></pre>
+<blockquote>
+<p>字符集合也可以被否定，即，它们将匹配除指定字符外的任何东西。为否定一个字符集，在集合的开始处放置一个^即可。因此，尽管[123]匹配字符1、 2或3，但[^123]却匹配除这些字符外的任何东西。  </p>
+</blockquote>
+<p>4.匹配范围使用短横线进行匹配-，例如[0-9]、[a-z]、[A-Z]</p>
+<pre class=" language-mysql"><code class="language-mysql">##范围匹配正则[1-3]
+select * from product WHERE pcategary REGEXP '[1-3]001';</code></pre>
+<p>5.匹配特殊字符，转义字符\\</p>
+<p>例如需要查找数据中有.的字符：select   * from 表 where  列  Regexp  ‘\\.’</p>
+<table>
+<thead>
+<tr>
+<th align="center">元字符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\\f</td>
+<td align="center">换页</td>
+</tr>
+<tr>
+<td align="center">\\n</td>
+<td align="center">换行</td>
+</tr>
+<tr>
+<td align="center">\\r</td>
+<td align="center">回车</td>
+</tr>
+<tr>
+<td align="center">\\t</td>
+<td align="center">制表</td>
+</tr>
+<tr>
+<td align="center">\\v</td>
+<td align="center">纵向制表</td>
+</tr>
+</tbody></table>
+<p>重复元字符</p>
+<table>
+<thead>
+<tr>
+<th align="center">元字符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">*</td>
+<td align="center">0个或多个匹配</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">1个或多个匹配({1,})</td>
+</tr>
+<tr>
+<td align="center">？</td>
+<td align="center">0个或1个匹配({0,1})</td>
+</tr>
+<tr>
+<td align="center">{n}</td>
+<td align="center">指定数目的匹配</td>
+</tr>
+<tr>
+<td align="center">{n,}</td>
+<td align="center">不少于指定数目的匹配</td>
+</tr>
+<tr>
+<td align="center">{n,m}</td>
+<td align="center">匹配数目的范围(m不超过255)</td>
+</tr>
+</tbody></table>
+<p>举个栗子：</p>
+<blockquote>
+<p>匹配连在一起的4位数字  ,[[:digit:]]{4}匹配连在一起的任意4位数字 ,四个数字相连，中间不能有其他的字符</p>
+<p>select * from product WHERE pcategary REGEXP ‘[[:digit:]]{4}’;</p>
+</blockquote>
+<p>定位符：</p>
+<table>
+<thead>
+<tr>
+<th align="center">元字符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">^</td>
+<td align="center">文本的开始</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center">文本的结尾</td>
+</tr>
+<tr>
+<td align="center">[[:&lt;:]]</td>
+<td align="center">词的开始</td>
+</tr>
+<tr>
+<td align="center">[[:&gt;:]]</td>
+<td align="center">词的结尾</td>
+</tr>
+</tbody></table>
+<pre class=" language-mysql"><code class="language-mysql">##匹配以1-4开头的数据信息
+select * from product where pcategary regexp '^[1-4]';
+##匹配以2-4结尾的任意数据
+select * from product where pcategary regexp '[2-4]$';</code></pre>
+<p><strong>拼接字段：</strong></p>
+<p>1.Concat()函数拼接两个列</p>
+<blockquote>
+<p>select Concat(pid,’(‘,pcategary,’)’) from product;</p>
+<p>结果：</p>
+<p>1(1001)<br>2(1001)<br>3(1002)<br>4(1003)</p>
+</blockquote>
+<p>2.Rtrim()函数去掉值右边的所有空格，对数据进行整理</p>
+<blockquote>
+<p> select Concat(RTrim(pid),’(‘,RTrim(pcategary),’)’) from product;</p>
+</blockquote>
+<p>3.别名</p>
+<blockquote>
+<p>select  列 as 别名 from  表 as 别名  </p>
+</blockquote>
+<p>4.执行计算</p>
+<pre class=" language-mysql"><code class="language-mysql">###查询pid ，pprice 以及计算两者的和pid+pprice称为一个新的列newcolumn
+select pid,pprice,pid+pprice as newcolume  from product;</code></pre>
+<p><strong>数据处理函数：</strong></p>
+<p>大多数函数支持以下类型的函数：</p>
+<blockquote>
+<p>1.用于处理文本串的文本函数</p>
+<p>2.用于在数值数据上进行算术操作的数值函数</p>
+<p>3.用于处理日期和时间值并从这些值汇提取特定成分的日期函数和时间函数</p>
+<p>4.返回DBMS正使用的特殊信息的系统函数</p>
+</blockquote>
+<p>1.文本处理函数</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">left()</td>
+<td align="center">返回左边的字符</td>
+</tr>
+<tr>
+<td align="center">length()</td>
+<td align="center">返回串的长度</td>
+</tr>
+<tr>
+<td align="center">locate()</td>
+<td align="center">找出串的一个子串</td>
+</tr>
+<tr>
+<td align="center">lower()</td>
+<td align="center">转换成小写</td>
+</tr>
+<tr>
+<td align="center">Ltrim()</td>
+<td align="center">去掉串的左边空格</td>
+</tr>
+<tr>
+<td align="center">right()</td>
+<td align="center">返回串右边的字符</td>
+</tr>
+<tr>
+<td align="center">Rtrim()</td>
+<td align="center">去掉串右边的空格</td>
+</tr>
+<tr>
+<td align="center">soundex()</td>
+<td align="center">返回串的soundex的值</td>
+</tr>
+<tr>
+<td align="center">substring()</td>
+<td align="center">返回子串字符</td>
+</tr>
+<tr>
+<td align="center">upper()</td>
+<td align="center">转换成大写</td>
+</tr>
+</tbody></table>
+<p>soundex是一个将任何文本转换成描述其语音表示的字母数字模式的算法</p>
+<p>使用upper例子</p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/upper052301.png" alt="转换成大写字符"></p>
+<p><strong>日期函数：</strong></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/date052302.png" alt="日期函数"></p>
+<p>数值处理函数：</p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/number052303.png" alt="数值处理函数"></p>
+<p><strong>聚集函数(经常会使用)：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">AVG()</td>
+<td align="center">返回某列的平均值</td>
+</tr>
+<tr>
+<td align="center">COUNT()</td>
+<td align="center">返回某列的行数</td>
+</tr>
+<tr>
+<td align="center">MAX()</td>
+<td align="center">返回某列的最大值</td>
+</tr>
+<tr>
+<td align="center">MIN()</td>
+<td align="center">返回某列的最小值</td>
+</tr>
+<tr>
+<td align="center">SUM()</td>
+<td align="center">返回某列之和</td>
+</tr>
+</tbody></table>
+<pre class=" language-mysql"><code class="language-mysql">##查询产品表中价格的均值
+select avg(pprice) from product;
+##计算有多少条数据
+select count(pprice) from product;
+##计算出价格最大值
+select max(pprice) from product;
+##计算出价格最小值
+select min(pprice) from product;
+##去掉重复的数据再进行平均
+select avg(destinct pprice) as avgprice from product</code></pre>
+<p><strong>数据分组：</strong></p>
+<p>创建分组Group by字句,需要知道的重要的规定</p>
+<blockquote>
+<ol>
+<li>GROUP BY子句可以包含任意数目的列。这使得能对分组进行嵌套，为数据分组提供更细致的控制。  </li>
+<li>如果在GROUP BY子句中嵌套了分组，数据将在最后规定的分组上进行汇总。  </li>
+<li>GROUP BY子句中列出的每个列都必须是检索列或有效的表达式（但不能是聚集函数）。如果在SELECT中使用表达式，则必须在GROUP BY子句中指定相同的表达式。不能使用别名。  </li>
+<li>除聚集计算语句外， SELECT语句中的每个列都必须在GROUP BY子句中给出。  </li>
+<li>如果分组列中具有NULL值，则NULL将作为一个分组返回。  </li>
+<li><strong>GROUP BY子句必须出现在WHERE子句之后， ORDER BY子句之前。</strong>  </li>
+</ol>
+</blockquote>
+<p>过滤分组：过滤分组规定了包括哪些分组，排除哪些分组 。所有类型的WHERE子句都可以用HAVING来替代。<strong>唯一的差别是WHERE过滤行，而HAVING过滤分组。</strong></p>
+<blockquote>
+<p> select * from product group by pcategary having pcategary&gt;1002;  </p>
+</blockquote>
+<p>分组和排序：Group by 和Order by</p>
+<table>
+<thead>
+<tr>
+<th align="left">Order by</th>
+<th align="left">Group by</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">排序产生的输出</td>
+<td align="left">分组行，但输出可能不是分组的顺序</td>
+</tr>
+<tr>
+<td align="left">任意列都可以使用，甚至非选择列也可以使用</td>
+<td align="left">只可能使用选择列或表达式列，且必须使用每个选择列表达式</td>
+</tr>
+<tr>
+<td align="left">不一定需要</td>
+<td align="left">如果与聚集函数一起使用列，必须使用</td>
+</tr>
+</tbody></table>
+<p><strong>子查询</strong> 另一条查询结果作为新一条查询的条件</p>
+<pre class=" language-mysql"><code class="language-mysql">##查询员工表中是管理人员的员工
+select emp_no from dept_emp where emp_no in(select emp_no from dept_manager);
+##查询员工表中不是管理人员的员工
+select emp_no from dept_emp where emp_no not in(select emp_no from dept_manager);
+</code></pre>
+<p><strong>联结表：</strong></p>
+<p>主键：一张表中数据唯一的表示；外键是某一个表中的一列，它包含另一个表中的主键值，定义了表间关系。</p>
+<p>两个或两个以上的表中的字段有相同时，使用完全限定名。</p>
+<p>1.内部联结(inner   join…on)：又称为等值联结，基于两个表之间相等的测试。</p>
+<p>2.自联结：在同一张表中查询出不同的数据，下面使用一个例子说明自联结。</p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/mysql052304.png" alt="自联结"></p>
+<p>每一个员工都有自己的编号，每一个员工记录着自己的领导信息，为null者说明自己就是领导，现在查询salary大于自己领导的员工姓名。</p>
+<pre class=" language-mysql"><code class="language-mysql">##查询员工工资大于自己领导的姓名，也可以使用子查询进行操纵，自连接处理更快
+select e1.name from employee2 e1,employee2 e2 where e2.id = e1.mangerid and e1.salary>e2.salary;</code></pre>
+<p>3.自然联结</p>
+<pre class=" language-mysql"><code class="language-mysql">##自然连接查询出员工的名字，部门名和员工邮件
+select e.LAST_NAME,e.EMAIL,d.DEPT_NAME from employee e,department d where e.ID = d.ID;</code></pre>
+<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Cblogimages%5Cmysql%5C%E8%87%AA%E7%84%B6%E8%81%94%E7%BB%93052305.png" alt="image-20200523111627220"></p>
+<p>4.外部联结 left/right join…on：与内连接类似，用于将主外键关系的数据联结</p>
+<p><strong>总结：</strong> 使用联结和联结条件</p>
+<blockquote>
+<p>需要注意联结类类型，一般使用内连接，使用外连接也是有效地</p>
+<p>保证使用正确的联结条件，都则返回不正确的数据</p>
+<p>应该总是提供联结条件，都则得到的是笛卡尔积</p>
+<p>一个联结包含多个表时，最好先将每个联结测试一下</p>
+</blockquote>
+<p><strong>组合查询</strong> 通常也称作并或符合查询。通常使用组合查询的情况有：</p>
+<blockquote>
+<p>1.在单个查询中从不同的表返回类似结构的数据</p>
+<p>2.对单个表执行多个查询，按单个查询返回数据</p>
+</blockquote>
+<p>使用union将同一张表的不同条件的数据查询出来</p>
+<pre class=" language-mysql"><code class="language-mysql">##查询数据库表中价格小于200的以及属于1002或1004类别的商品数据
+##union自动删除了重复的行，对于既满足第一个条件的数据又满足第二个条件的数据只会查询出一条记录
+##如果需要查询出所有满足第一个条件有需要满足第二个条件的数据且不去重复数据可以使用union ALL子句
+SELECT * FROM product WHERE pprice <200
+UNION 
+SELECT * FROM product WHERE pcategary IN ('1002','1004') ;</code></pre>
+<p>使用union的规则：</p>
+<blockquote>
+<p>1.Union必须由两条或两条以上的select语句组成，语句之间用关键字union分隔</p>
+<p>2.Union中的每个查询必须包含相同的列、表达式或聚集函数(不过各个列不需要以相同的次序列出)</p>
+<p>3.列数据类型必须兼容：类型不必完全相同，但必须是DBMS可以隐含的转换的类型(不同的数值类型)</p>
+</blockquote>
+<p><strong>全文本索引</strong>  Mysql中最常用的引擎MyIsam和InnoDB，前者支持全文本搜索，后者不支持。</p>
+<p> 创建数据库表启动全文本索引，使用FULLTEXT子句：</p>
+<pre class=" language-mysql"><code class="language-mysql">##使用FULLTEXT子句，使用MYISAM引擎
+##再导入数据时，不应该使用FULLTEXT，更新索引要花费时间，先导入数据再进行数据修改
+CREATE TABLE `productnotes`(
+    note_id INT NOT NULL AUTO_INCREMENT,
+    prod_id CHAR(10) NOT NULL,
+    note_date DATETIME NOT NULL,
+    note_text TEXT NULL,
+    PRIMARY KEY(note_id),
+    FULLTEXT(note_text)
+) ENGINE = MYISAM;</code></pre>
+<p>进行全文索引时使用Match()和Against()执行全文本搜索，其中Match()会指定被搜索的列，Against()指定要使用的搜索表达式。</p>
+<p>布尔文本搜索：全文本搜索的另一种形式(后续理解清楚再做详细记录)</p>
+<blockquote>
+<p>布尔方式需有以下细节：</p>
+<p>要匹配的词；要排斥的词；排列提示；表达式分组；另外一些内容</p>
+</blockquote>
+<p><strong>插入数据</strong> 使用insert   values关键字</p>
+<pre class=" language-mysql"><code class="language-mysql">##插入数据操作，使用;号可以一次提交两条语句
+INSERT INTO blog(id,title,author,create_time,views) VALUES('1','nihao','itxing','2020-05-20',10);
+
+INSERT INTO blog(id,title,author,create_time,views) VALUES('2','ll','itxing','2020-05-21',11);</code></pre>
+<p><strong>更新数据与删除数据</strong> update   set   where 语句和delete  from   where 句</p>
+<pre class=" language-mysql"><code class="language-mysql">##更新数据库表中的某一条数据，使用update关键字更新删除时需要有where，否则整个表中的数据都将被修改
+UPDATE test.user SET NAME = 'hanhan',pws = 'like' WHERE id = 6;
+##删除一条数据操作，使用delete from操作
+DELETE FROM test.user WHERE id = 8;</code></pre>
+<p><strong>创建表和操作表</strong> 创建时，需要有表名、列名、列定义。例如：</p>
+<pre class=" language-mysql"><code class="language-mysql">##创建一张表，使用的是MyIsam引擎
+CREATE TABLE `productnotes`(
+    note_id INT NOT NULL AUTO_INCREMENT,
+    prod_id CHAR(10) NOT NULL,
+    note_date DATETIME NOT NULL,
+    note_text TEXT NULL,
+    PRIMARY KEY(note_id),
+    FULLTEXT(note_text)
+) ENGINE = MYISAM;</code></pre>
+<p>建表时需要指定主键，<strong>主键必须唯一，且主键不为null值</strong> 使用AUTO_INCREMENT表示自增，使用default表示默认值。</p>
+<p>使用AUTO_INCREMENT缺点是：新增时不指定，查询时不能将主键与其他列对应起来</p>
+<p>引擎类型：Engine= Myisam、InnoDB、MEMORY</p>
+<blockquote>
+<p>InnoDB：是一个可靠的事务处理引擎，它不支持全文搜索</p>
+<p>Myisam性能极高的引擎，支持全文本搜索，不支持事务和外键</p>
+<p>MEMORY在功能等同于Myisam，由于数据存储在内存中速度快</p>
+</blockquote>
+<p><strong>更新表</strong> 表中的结构做改动时需要使用更新操作，ALTER TABLE</p>
+<pre class=" language-mysql"><code class="language-mysql">##给表中新增一列
+ALTER TABLE test.user ADD nick_name VARCHAR(20);
+##alert table的一种常见用途是定义外键
+ALTER table orderitems add constraint fk_ordertimes_orders foreign key (order_num) references orders (order_num) </code></pre>
+<p><strong>删除表</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">##删除成绩表
+DROP TABLE 成绩;</code></pre>
+<p><strong>重命名表</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">##将数据库中表名为employee2改为employee02
+RENAME TABLE employee2 TO employee02;</code></pre>
+<p><strong>使用视图</strong></p>
+<blockquote>
+<p>视图的应用：重用sql、简化复杂的sql操作、使用表的组成部分而不是整个表、保护数据、更改数据格式表示</p>
+</blockquote>
+<p>视图的规则和限制：</p>
+<blockquote>
+<p>视图命名唯一、视图数目创建没限制、创建视图需有一定的访问权限</p>
+<p>视图可以嵌套，即可以利用从其他视图中检索数据的查询来构造一个视图</p>
+<p>视图检索数据select总有order   by ，视图中的order  by  被覆盖</p>
+<p>视图不能索引，也不能有关联的触发器或者默认值</p>
+<p>视图可以和表一起使用</p>
+</blockquote>
+<p>创建视图：</p>
+<blockquote>
+<p>使用Create VIEW语句创建，使用Show  Create  VIEW viewname；</p>
+<p>来查看创建视图的语句；</p>
+<p>用drop删除视图；</p>
+<p>更新视图时，可以先用drop再用create</p>
+</blockquote>
+<pre class=" language-mysql"><code class="language-mysql">##创建视图，是两张表的联合查询，查询出人员的姓名、人员的邮件、人员所在的部门名称
+CREATE VIEW dept_employ AS
+SELECT LAST_NAME,EMAIL,dept_name FROM employee ,department
+WHERE employee.DEPT_ID=department.ID
+##从视图总获取元素信息
+SELECT * FROM dept_employ
+
+##创建一个过滤空数据的视图
+CREATE VIEW employIsNotNull AS
+SELECT * FROM employee WHERE EMAIL IS NOT NULL;
+SELECT * FROM employIsNotNull;
+
+##更新视图时，如果存在分组、联结、子查询、并、聚集函数、DISTINCT、计算列等，不可以对视图进行更新
+</code></pre>
+<p>*<em>应该将视图用于检索（ SELECT语句），而不用于更新（ INSERT、 UPDATE和DELETE）。  *</em></p>
+<p><strong>存储过程</strong></p>
+<blockquote>
+<p>通过把处理封装在容易使用的单元中，简化复杂的操作  ；</p>
+<p>由于不要求反复建立一系列处理步骤，  保证了数据的完整性  ；</p>
+<p>简化对变动的管理；  </p>
+<p>提高性能； </p>
+<p>存在一些只能用在单个请求中的MySQL元素和特性，存储过程可以使用它们来编写功能更强更灵活的代码  </p>
+</blockquote>
+<p>执行存储过程的操作</p>
+<blockquote>
+<p>创建存储过程：</p>
+<p>create  procedure  product()</p>
+<p>begin</p>
+<p>​      select * from products;</p>
+<p>end</p>
+<p>调用存储过程： call   存储过程名(参数集);</p>
+<p>删除存储过程：drop procedure   存储过程名 ;</p>
+<p>检查存储过程：Show Create  Procedure  存储过程名</p>
+</blockquote>
+<pre class=" language-mysql"><code class="language-mysql">##创建并调用简单的存储过程
+DELIMITER $$
+CREATE PROCEDURE getemploy()
+BEGIN 
+    SELECT * FROM employee;
+END$$
+DELIMITER;
+##存储过程实际上是一种函数，所以存储过程名后需要有()符号
+CALL getemploy();
+
+##删除存储过程
+DROP PROCEDURE  getemploy;</code></pre>
+<blockquote>
+<p>DELIMITER //告诉命令行实用程序使用//作为新的语句结束分隔符，可以看到标志存储过程结束的END定义为END//而不是END;  </p>
+</blockquote>
+<p>使用游标：mysql游标只能用于存储过程</p>
+<p>小结：本篇文章用于记录一些基本的sql语句或者基本的数据库概念，对于一些mysql深入的知识点在另外一篇文章中。<a href="https://fengyanxing.github.io/2020/03/30/mysql-xiang-guan/" target="_blank" rel="noopener">mysql知识点</a></p>
 
             </div>
             <hr/>
@@ -1183,7 +1713,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">57.6k</span>&nbsp;字
+                class="white-color">62.4k</span>&nbsp;字
             
             
             
