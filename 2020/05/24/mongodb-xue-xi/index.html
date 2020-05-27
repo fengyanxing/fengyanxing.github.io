@@ -1,0 +1,1466 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="MongoDB学习, it星的博客">
+    <meta name="description" content="第一步：下载，mongoDB(64位)下载地址：MongoDB下载路径
+第二步：安装，windows版的安装，就像安装一般的软件一样进行next进行安装，安装步骤可以参照：mongodb安装
+第三步：配置环境，mongodb需要配置环境变量">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>MongoDB学习 | it星的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">it星的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>主页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>档案</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>内容</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>朋友</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">it星的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			主页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			档案
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			内容
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			朋友
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="fengyanxing.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="fengyanxing.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">MongoDB学习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/MongoDB/">
+                                <span class="chip bg-color">MongoDB</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-24
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-05-27
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2,527
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>第一步：下载，mongoDB(64位)下载地址：<a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">MongoDB下载路径</a></p>
+<p>第二步：安装，windows版的安装，就像安装一般的软件一样进行next进行安装，安装步骤可以参照：<a href="https://www.runoob.com/mongodb/mongodb-window-install.html" target="_blank" rel="noopener">mongodb安装</a></p>
+<p>第三步：配置环境，mongodb需要配置环境变量：</p>
+<blockquote>
+<p>我的的安装路径是    D:\Program Files (x86)\MongoDB\bin</p>
+</blockquote>
+<p>计算机，右键—选择属性——选择高级系统设置——选择环境变量——选择path——编辑</p>
+<p>将自己的地址加入到环境变量中。</p>
+<p>第四步：在c盘的根目录下创建一个data文件夹，在文件夹中创建一个db文件夹，在启动时可以指定位置，不一定需要在c盘路径下</p>
+<blockquote>
+<p>开启指定数据库路径：mongod   –dbpath  D:\data\db </p>
+<p>开启时指定端口号：mongod   –dbpath  D:\data\db  –port    10021</p>
+</blockquote>
+<p>第五步：测试，win+r打开命令行，cmd中输入mongod，启动服务器。</p>
+<p>第六步：连接服务器，重新启动命令窗口输入mongo，连接服务器</p>
+<p><strong>设置mongodb为系统服务，不需要手动启动。</strong></p>
+<p>步骤一：在之前的data文件夹下创建log文件夹</p>
+<p>步骤二：在自己的安装路径下创建一个配置文件</p>
+<blockquote>
+<p>D:\Program Files (x86)\MongoDB\mongod.cfg</p>
+</blockquote>
+<p>配置文件中写入：</p>
+<pre class=" language-yml"><code class="language-yml">systemLog:
+    destination: file
+    path: c:\data\log\mongod.log
+storage:
+    dbPath: c:\data\db</code></pre>
+<p>步骤三：管理员身份开启命令行工具</p>
+<p>步骤四：执行以下的命令</p>
+<blockquote>
+<p>mongod.exe –logpath C:\data\log\mongodb.log –logappend –dbpath C:\data\ –directoryperdb –serviceName MongoDB –install</p>
+</blockquote>
+<p>在服务中可以看到MongoDB服务启动起来将其设置为手动启动</p>
+<p>如果出错后将c盘中的data中的文件进行清理，重新开始设置。</p>
+<p>MongoDB中的三个概念：</p>
+<blockquote>
+<p>数据库(database)：数据库是一个仓库，在仓库中可以存放集合</p>
+<p>集合(collection)：集合中可以存放文档</p>
+<p>文档(document)：文档是mongodb中的最小单位</p>
+</blockquote>
+<p>基本的指令：</p>
+<blockquote>
+<p>1.显示所有的数据库：show dbs      </p>
+<p> 2.进入一个数据库：use   数据库名(也可以不存在，使用时创建)</p>
+<p>3.查看当前所处的数据库 ：db   </p>
+<ol start="4">
+<li>查看数据库中所有的集合 ： show  collections</li>
+</ol>
+</blockquote>
+<p>数据库CRUD操作</p>
+<pre class=" language-json"><code class="language-json">db.&lt;collection名>.insert(doc<span class="token punctuation">)</span>
+&lt;!--举例，向test数据库中插入一个学生对象-->
+db.stus.insert(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"张三"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>sex<span class="token operator">:</span><span class="token string">"男"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+&lt;!--查看数据库-->
+show dbs
+&lt;!--查看集合-->
+show collections
+&lt;!--查看文档-->
+db.集合名.find(<span class="token punctuation">)</span></code></pre>
+<p>数据库管理工具的安装：</p>
+<p>我的网盘有安装包：链接：<a href="https://pan.baidu.com/s/1pjb6y-Yq99Dy_-uL1fhS8Q" target="_blank" rel="noopener">https://pan.baidu.com/s/1pjb6y-Yq99Dy_-uL1fhS8Q</a> </p>
+<blockquote>
+<p>提取码：8ns4 </p>
+</blockquote>
+<p>安装如果出现问题：可以将软件进行更新重新安装。</p>
+<p>点击软件中的help——选择check   for  updates…自动下载罪行的工具，安装好之后就可以进行使用了</p>
+<p>管理工具更改字体：</p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/nosql052501.png" alt="image-20200525075639998"></p>
+<p>新增数据：</p>
+<pre class=" language-json"><code class="language-json">/*
+*新增数据<span class="token operator">:</span>新增一条数据和新增多条数据，多条数据添加时是一个数组的形式
+*/
+db.stus.insert(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">20</span><span class="token punctuation">,</span>sex<span class="token operator">:</span><span class="token string">"男"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+db.stus.insert(<span class="token punctuation">[</span><span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">20</span><span class="token punctuation">,</span>sex<span class="token operator">:</span><span class="token string">"男"</span><span class="token punctuation">}</span>
+<span class="token punctuation">,</span><span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"han"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">,</span>sex<span class="token operator">:</span><span class="token string">"女"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"chen"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">24</span><span class="token punctuation">,</span>sex<span class="token operator">:</span><span class="token string">"女"</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+/*
+*自动产生一个_id，保证每个文档或对象唯一，该字段也可以自动以产生，但是必须暴增其唯一性
+*/
+ObjectId(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+//新增一条数据insertOne(<span class="token punctuation">)</span>和新增多条数据，只传入数组insertMany(<span class="token punctuation">)</span>
+db.collection.insertOne(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.collection.insertMany(<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>查询数据：</p>
+<pre class=" language-json"><code class="language-json">/*
+*查询数据
+* db.collection.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+* 查询集合中符合条件的文档，可传可不传，不传时查询所有
+*db.collection.find(<span class="token punctuation">{</span>字段名<span class="token operator">:</span>值<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+*/
+db.stus.find(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.stus.find(<span class="token punctuation">{</span>age<span class="token operator">:</span><span class="token number">24</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.stus.find(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"han"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//db.collection.findOne(<span class="token punctuation">{</span>属性名<span class="token operator">:</span>属性值<span class="token punctuation">}</span><span class="token punctuation">)</span>  查找文档中的符合条件的第一个数据，返回的是文档对象
+//find(<span class="token punctuation">)</span>查询结果为数组，可以获取数组中的对象元素
+db.stus.find(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>.name<span class="token punctuation">;</span>
+//查询满足条件的记录条数
+db.stus.find(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>.length(<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>修改数据：</p>
+<pre class=" language-json"><code class="language-json">/*
+* 修改数据
+* db.collection.update(查询条件，新对象<span class="token punctuation">)</span><span class="token punctuation">;</span>
+* 该语句会将满足条件的对象全部替换成新对象，不常用
+* 只更改对象的部分属性
+* db.collection.update(查询条件<span class="token punctuation">,</span><span class="token punctuation">{</span>$set<span class="token operator">:</span><span class="token punctuation">{</span>新对象<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+* 删除对象的某一个属性
+* db.collection.update(查询条件<span class="token punctuation">,</span><span class="token punctuation">{</span>$unset<span class="token operator">:</span><span class="token punctuation">{</span>新对象<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+* updateOne(<span class="token punctuation">)</span>
+* 修改多个符合条件的文档<span class="token punctuation">,</span>update默认只改变满足条件的第一个文档，
+* 使用以下语句将符合条件的都进行更改
+* db.collection.updateMany(查询条件<span class="token punctuation">,</span><span class="token punctuation">{</span>$set<span class="token operator">:</span><span class="token punctuation">{</span>新对象<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+* 根据参数multi设置update方法，修改单个数据或多个数据
+* 替换方法replaceOne(<span class="token punctuation">)</span>
+*/
+
+db.stus.update(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">21</span><span class="token punctuation">,</span>sex<span class="token operator">:</span><span class="token string">"男"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.stus.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+//只改变单个属性的值
+db.stus.update(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>$set<span class="token operator">:</span><span class="token punctuation">{</span>age<span class="token operator">:</span><span class="token number">23</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//设置一个不存在的列，相当于给文档对象添加一个列
+db.stus.update(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>$set<span class="token operator">:</span><span class="token punctuation">{</span>addr<span class="token operator">:</span><span class="token string">"shanxi"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//删除addr列
+db.stus.update(
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>$unset<span class="token operator">:</span><span class="token punctuation">{</span>addr<span class="token operator">:</span><span class="token string">"shanxi"</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+//设置多个数据
+db.stus.update(
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>$set<span class="token operator">:</span><span class="token punctuation">{</span>addr<span class="token operator">:</span><span class="token string">"shanxi"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>multi<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>删除数据：</p>
+<pre class=" language-json"><code class="language-json">/*删除数据 必须传递参数，如果传入<span class="token punctuation">{</span><span class="token punctuation">}</span>表示全部删除
+* db.collection.remove(<span class="token punctuation">)</span><span class="token punctuation">;</span>默认删除多个
+* db.collection.removeMany(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+* db.collection.removeOne(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+*/
+db.stus.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.stus.remove(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//删除一个
+db.stus.remove(<span class="token punctuation">{</span>age<span class="token operator">:</span><span class="token number">20</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//删除所有，性能比较差
+db.stus.remove(<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+show collections<span class="token punctuation">;</span>
+//删除集合<span class="token punctuation">,</span>
+db.stus.drop(<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>练习一：</p>
+<pre class=" language-json"><code class="language-json">//<span class="token number">1</span>.进入my_test数据库
+use my_test
+//向数据库中的user集合中插入一个文档
+db.users.insert(<span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">15</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"hahah"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询user集合中的文档
+db.users.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+//向数据库中的user集合中插入一个文档
+db.users.insert(<span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"lalal"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">15</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//统计数据库user集合的文档数量
+db.users.find(<span class="token punctuation">)</span>.count(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询数据库users集合中的username为xing的文档
+db.users.find(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//向数据库users集合中的username为xing的文档添加一个addr属性，值为xian
+db.users.update(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>$set<span class="token operator">:</span><span class="token punctuation">{</span>addr<span class="token operator">:</span><span class="token string">"xian"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//使用username<span class="token operator">:</span><span class="token string">"tang"</span>替换username：“xing”
+db.users.replaceOne(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"tang"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//删除username为xing的addr属性
+db.users.update(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>$unset<span class="token operator">:</span><span class="token punctuation">{</span>addr<span class="token operator">:</span><span class="token string">"xian"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//向username为xing的文档中，添加一个hobby<span class="token operator">:</span><span class="token punctuation">{</span>cities<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"beijign"</span><span class="token punctuation">,</span><span class="token string">"shanghai"</span><span class="token punctuation">,</span><span class="token string">"shenzhen"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>movies<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"huan"</span><span class="token punctuation">,</span><span class="token string">"pian"</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+//当一个文档的属性的值是一个文档时，称为内嵌文档
+db.users.update(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"xing"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>$set<span class="token operator">:</span><span class="token punctuation">{</span>hobby<span class="token operator">:</span><span class="token punctuation">{</span>cities<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"xian"</span><span class="token punctuation">,</span><span class="token string">"beijing"</span><span class="token punctuation">,</span><span class="token string">"sanghai"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>movies<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"huan"</span><span class="token punctuation">,</span><span class="token string">"pian"</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//向username为tang的文档中，添加一个hobby<span class="token operator">:</span><span class="token punctuation">{</span>movies<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"chinese"</span><span class="token punctuation">,</span><span class="token string">"King"</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+db.users.update(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"tang"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>$set<span class="token operator">:</span><span class="token punctuation">{</span>hobby<span class="token operator">:</span><span class="token punctuation">{</span>movies<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"chinese"</span><span class="token punctuation">,</span><span class="token string">"King"</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询喜欢电影为huan的文档<span class="token punctuation">,</span>mongodb支持通过内嵌文档进行查询，如果查询内嵌文档，可以通过.的形式
+//如果通过内嵌文档查询时，需要对属性是使用引号(单引号和双引号均可<span class="token punctuation">)</span>
+db.users.find(<span class="token punctuation">{</span>'hobby.movies'<span class="token operator">:</span><span class="token string">"huan"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//向tang中添加一个新的电影Interstellar<span class="token punctuation">,</span>内嵌文档的新增数据，使用的是$push操作符
+//向数组中添加元素$push，还有一种操作，$addToSet<span class="token punctuation">,</span>区别是，set添加时数组中已经有该元素则添加失败
+db.users.update(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"tang"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>$push<span class="token operator">:</span><span class="token punctuation">{</span><span class="token property">"hobby.movies"</span><span class="token operator">:</span><span class="token string">"Interstellar"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+//删除喜欢beijing的用户
+db.users.remove(<span class="token punctuation">{</span><span class="token property">"hobby.cities"</span><span class="token operator">:</span><span class="token string">"beijing"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//删除users集合
+db.users.remove(<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//数据集合删除另一种方式
+db.users.drop(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+show dbs<span class="token punctuation">;</span></code></pre>
+<p>练习二：</p>
+<pre class=" language-json"><code class="language-json">//向numbers插入<span class="token number">20000</span>条数据
+var arr = <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+for(var i = <span class="token number">1</span><span class="token punctuation">;</span>i&lt;=<span class="token number">20000</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    arr.push(<span class="token punctuation">{</span>num<span class="token operator">:</span>i<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+db.numbers.insert(arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.numbers.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询numbers中num为<span class="token number">500</span>的文档
+db.numbers.find(<span class="token punctuation">{</span>num<span class="token operator">:</span><span class="token number">500</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.numbers.find(<span class="token punctuation">{</span>num<span class="token operator">:</span><span class="token punctuation">{</span>$eq<span class="token operator">:</span><span class="token number">500</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询numbers中num大于<span class="token number">5000</span>的文档
+db.numbers.find(<span class="token punctuation">{</span>num<span class="token operator">:</span><span class="token punctuation">{</span>$gt<span class="token operator">:</span><span class="token number">500</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询numbers中num小于<span class="token number">30</span>的文档
+db.numbers.find(<span class="token punctuation">{</span>num<span class="token operator">:</span><span class="token punctuation">{</span>$lt<span class="token operator">:</span><span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询numbers中num大于<span class="token number">40</span>小于<span class="token number">50</span>的文档
+db.numbers.find(<span class="token punctuation">{</span>num<span class="token operator">:</span><span class="token punctuation">{</span>$gt<span class="token operator">:</span><span class="token number">40</span><span class="token punctuation">,</span>$lt<span class="token operator">:</span><span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询numbers中num大于<span class="token number">19996</span>文档
+db.numbers.find(<span class="token punctuation">{</span>num<span class="token operator">:</span><span class="token punctuation">{</span>$gt<span class="token operator">:</span><span class="token number">19996</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询numbers集合中的前<span class="token number">10</span>条数据
+db.numbers.find(<span class="token punctuation">{</span>num<span class="token operator">:</span><span class="token punctuation">{</span>$lte<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//分页查询<span class="token punctuation">,</span>skip((页码-<span class="token number">1</span><span class="token punctuation">)</span>*每页条数<span class="token punctuation">)</span>跳过，limit表示每页显示条数
+db.numbers.find(<span class="token punctuation">)</span>.skip(<span class="token number">10</span><span class="token punctuation">)</span>.limit(<span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询numbers集合中的<span class="token number">11</span>到<span class="token number">20</span>条数据
+db.numbers.find(<span class="token punctuation">)</span>.skip(<span class="token number">20</span><span class="token punctuation">)</span>.limit(<span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询numbers节中的第<span class="token number">21</span>条到<span class="token number">30</span>条数据
+db.numbers.find(<span class="token punctuation">)</span>.skip(<span class="token number">30</span><span class="token punctuation">)</span>.limit(<span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>文档之间的关系：</p>
+<p>一对一：文档可以通过内嵌文档体现出一对一的关系</p>
+<pre class=" language-json"><code class="language-json">use test<span class="token punctuation">;</span>
+db.rele.insert(
+    <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"黄蓉"</span><span class="token punctuation">,</span>husband<span class="token operator">:</span><span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"郭靖"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"潘金莲"</span><span class="token punctuation">,</span>husband<span class="token operator">:</span><span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"武大"</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.rele.find(<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>一对多：场景，应用和订单</p>
+<pre class=" language-json"><code class="language-json">db.users.insert(<span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"sun"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"zhu"</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+//映射sun的订单
+db.order.insert(
+    <span class="token punctuation">{</span>
+    list<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"西瓜"</span><span class="token punctuation">,</span><span class="token string">"菠萝"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    user_id<span class="token operator">:</span> ObjectId(<span class="token string">"5ecb2e1f40a59be8c08091d4"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+//映射zhu的订单
+db.order.insert(
+    <span class="token punctuation">{</span>
+    list<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"人参果"</span><span class="token punctuation">,</span><span class="token string">"黄瓜"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    user_id<span class="token operator">:</span> ObjectId(<span class="token string">"5ecb2e1f40a59be8c08091d5"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+db.users.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.order.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询用户sun的订单
+var user_id = db.users.findOne(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"sun"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>._id<span class="token punctuation">;</span>
+db.order.find(<span class="token punctuation">{</span>user_id<span class="token operator">:</span>user_id<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询zhu用户的订单
+var user_id = db.users.findOne(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"zhu"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>._id<span class="token punctuation">;</span>
+db.order.find(<span class="token punctuation">{</span>user_id<span class="token operator">:</span>user_id<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>多对多：场景,多个来时教多个徒弟</p>
+<pre class=" language-json"><code class="language-json">db.teachers.insert(
+   <span class="token punctuation">[</span> <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"太白"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"太乙"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"白眉"</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.teachers.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.student.insert(<span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"sun"</span><span class="token punctuation">,</span>
+    tech_id<span class="token operator">:</span><span class="token punctuation">[</span>
+        ObjectId(<span class="token string">"5ecb32d740a59be8c08091d8"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        ObjectId(<span class="token string">"5ecb32d740a59be8c08091d9"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"nezha"</span><span class="token punctuation">,</span>
+    tech_id<span class="token operator">:</span><span class="token punctuation">[</span>
+       ObjectId(<span class="token string">"5ecb32d740a59be8c08091d8"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       ObjectId(<span class="token string">"5ecb32d740a59be8c08091d9"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       ObjectId(<span class="token string">"5ecb32d740a59be8c08091da"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.student.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+//查看太白的徒弟
+var tech_id = db.teachers.findOne(<span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"太白"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>._id<span class="token punctuation">;</span>
+db.student.find(<span class="token punctuation">{</span>tech_id<span class="token operator">:</span>tech_id<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>.name<span class="token punctuation">;</span></code></pre>
+<p>练习：</p>
+<pre class=" language-json"><code class="language-json">//首先点击上方的tools——》导入文件到数据库——》选择自己的json文件
+db.emp.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.dept.find(<span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询集合工资小于<span class="token number">2000</span>的员工
+db.emp.find(<span class="token punctuation">{</span>sal<span class="token operator">:</span><span class="token punctuation">{</span>$lt<span class="token operator">:</span><span class="token number">2000</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//工资在<span class="token number">1000</span>-<span class="token number">2000</span>
+db.emp.find(<span class="token punctuation">{</span>sal<span class="token operator">:</span><span class="token punctuation">{</span>$gt<span class="token operator">:</span><span class="token number">1000</span><span class="token punctuation">,</span>$lt<span class="token operator">:</span><span class="token number">2000</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//工资小于<span class="token number">1000</span>大于<span class="token number">2500</span>的员工
+db.emp.find(<span class="token punctuation">{</span>$or<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>sal<span class="token operator">:</span><span class="token punctuation">{</span>$lt<span class="token operator">:</span><span class="token number">1000</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>sal<span class="token operator">:</span><span class="token punctuation">{</span>$gt<span class="token operator">:</span><span class="token number">2000</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询财务部员工从部门表中查询出部门的编号，关联员工表中的depno
+var deptno = db.dept.find(<span class="token punctuation">{</span>dname<span class="token operator">:</span><span class="token string">"财务部"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>.deptno<span class="token punctuation">;</span>
+db.emp.find(<span class="token punctuation">{</span>depno<span class="token operator">:</span>deptno<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询销售部的所有员工
+var deptno = db.dept.find(<span class="token punctuation">{</span>dname<span class="token operator">:</span><span class="token string">"销售部"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>.deptno<span class="token punctuation">;</span>
+db.emp.find(<span class="token punctuation">{</span>depno<span class="token operator">:</span>deptno<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询所有mgr为<span class="token number">7698</span>的所有员工
+db.emp.find(<span class="token punctuation">{</span>mgr<span class="token operator">:</span><span class="token number">7698</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//为所有工资低于<span class="token number">1000</span>的员工增加工资<span class="token number">400</span>元
+db.emp.find(<span class="token punctuation">{</span>sal<span class="token operator">:</span><span class="token punctuation">{</span>$lt<span class="token operator">:</span><span class="token number">1400</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.emp.updateMany(<span class="token punctuation">{</span>sal<span class="token operator">:</span><span class="token punctuation">{</span>$lt<span class="token operator">:</span><span class="token number">1000</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>$inc<span class="token operator">:</span><span class="token punctuation">{</span>sal<span class="token operator">:</span><span class="token number">400</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>排序：</p>
+<pre class=" language-json"><code class="language-json">//查询员工表
+db.emp.find(<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//sort(<span class="token punctuation">)</span>用来进行指定文档排序<span class="token punctuation">,</span><span class="token punctuation">{</span>sal<span class="token operator">:</span>-<span class="token number">1</span><span class="token punctuation">}</span>降序排列，<span class="token punctuation">{</span>sal<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">}</span>升序排列
+db.emp.find(<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>.sort(<span class="token punctuation">{</span>sal<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//先按照sal升序排序，相等的按照empno降序排序
+db.emp.find(<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>.sort(<span class="token punctuation">{</span>sal<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>empno<span class="token operator">:</span>-<span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//limit skipke可以进行任意顺序调用<span class="token punctuation">,</span>
+//例如：可以找出工资第二高的员工或者工资第二低的员工
+db.emp.find(<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>.sort(<span class="token punctuation">{</span>sal<span class="token operator">:</span>-<span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+db.emp.find(<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>.sort(<span class="token punctuation">{</span>sal<span class="token operator">:</span>-<span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span>.skip(<span class="token number">1</span><span class="token punctuation">)</span>.limit(<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//查询时，可以再第二个位置设置查询结果  投影。
+//可以自定义自己想要的列，默认_id显示，手动可关闭，例如只需要ename，sal
+db.emp.find(<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>ename<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>_id<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span>sal<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/fengyanxing" rel="external nofollow noreferrer">it星</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/fengyanxing/2020/05/24/mongodb-xue-xi/">https://github.com/fengyanxing/2020/05/24/mongodb-xue-xi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://github.com/fengyanxing" target="_blank">it星</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/MongoDB/">
+                                    <span class="chip bg-color">MongoDB</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="qq,wechat,weibo,qzone,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/05/27/gui-bian-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="GUI编程">
+                        
+                        <span class="card-title">GUI编程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            GUI编程(纯属个人喜好)
+窗口、弹窗、面板、文本框、列表框、按钮、图片、监听事件、鼠标、键盘事件、破解工具
+1.简介GUI核心技术：Swing 、AWT、界面不美观
+GUI编程的学习主要是一些思想：MVC架构，了解监听
+2.AWT2.1简
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    java基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/23/java-zhi-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="java知识">
+                        
+                        <span class="card-title">java知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            java异常异常：在java语言中，将程序执行中发生的不正常情况称为异常，java语言中的异常用于处理非预期的情况，例如文件没找到、网络错误、非法参数等。
+异常的大致分类：
+
+java异常类：
+
+异常处理机制：抓抛模型 程序员只能处理异常对
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    java基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: it星的博客<br />'
+            + '文章作者: it星<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归it星所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="https://github.com/fengyanxing" target="_blank">it星</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">68.0k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fengyanxing" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1075335638@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1075335638" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1075335638" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/gua-pi-43-8" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/gua-pi-43-8" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
