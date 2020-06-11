@@ -461,14 +461,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-31
+                    2020-06-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1,629
+                    1,762
                 </div>
                 
 
@@ -676,7 +676,7 @@ session<span class="token punctuation">.</span><span class="token function">inva
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">_jspService</span><span class="token punctuation">(</span><span class="token keyword">final</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest request<span class="token punctuation">,</span> <span class="token keyword">final</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletResponse response<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//jsp的Destory方法</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">_jspDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span></code></pre>
-<p>内置的对象有:</p>
+<p>jsp被翻译后，内置的对象有:(9大内置对象)</p>
 <pre class=" language-java"><code class="language-java">  <span class="token keyword">final</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>jsp<span class="token punctuation">.</span>PageContext pageContext<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//上下文对象</span>
     javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpSession session <span class="token operator">=</span> null<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//session</span>
     <span class="token keyword">final</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletContext application<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//applicationContext</span>
@@ -685,7 +685,7 @@ session<span class="token punctuation">.</span><span class="token function">inva
     <span class="token keyword">final</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>Object page <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//page</span>
 <span class="token comment" spellcheck="true">//还有service方法传入的request对象和response对象</span>
 <span class="token comment" spellcheck="true">//HttpServletRequest request;HttpServletResponse response;</span></code></pre>
-<p>输出页面的增加的代码有：</p>
+<p>jsp被翻译后，输出页面的增加的代码有：</p>
 <pre class=" language-java"><code class="language-java">response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"text/html; charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 pageContext <span class="token operator">=</span> _jspxFactory<span class="token punctuation">.</span><span class="token function">getPageContext</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> request<span class="token punctuation">,</span> response<span class="token punctuation">,</span>
                   null<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">8192</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -696,6 +696,27 @@ session <span class="token operator">=</span> pageContext<span class="token punc
 out <span class="token operator">=</span> pageContext<span class="token punctuation">.</span><span class="token function">getOut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 _jspx_out <span class="token operator">=</span> out<span class="token punctuation">;</span></code></pre>
 <p>在jsp中的java代码和html代码进行分开输出</p>
+<p>jstl、EL表达式：导入maven的依赖</p>
+<pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>javax.servlet.jsp.jstl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>jstl-api<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>taglibs<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>standard<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.1.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
+<p>导入jstl便签库的头：</p>
+<pre class=" language-jsp"><code class="language-jsp"><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %></code></pre>
+<p>引入是如果出错为JSTL解析错误，将jstl的包和stand的jar包放在tomcat中的lib中。</p>
+<p>javaBean：java的实体类，便于与关系型数据库做映射</p>
+<p>有特定的写法：</p>
+<blockquote>
+<p>必须有无参构造函数</p>
+<p>属性必须私有化</p>
+<p>必须有对象的get/set方法</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -926,52 +947,48 @@ _jspx_out <span class="token operator">=</span> out<span class="token punctuatio
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/31/javaweb-ji-chu-er/">
+                <a href="/2020/06/03/qian-duan-vue-de-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="javaWeb基础 (二)">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vue学习">
                         
-                        <span class="card-title">javaWeb基础 (二)</span>
+                        <span class="card-title">Vue学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            web基础一笔记
-1.Session、Cookie会话：用户通过浏览器，访问web资源，关闭浏览器，此过程称之为会话。
-为什么需要使用会话技术？
-
-因为Http协议是无状态的，也就是说每个客户访问服务器端资源时，服务器并不知道该客户端是谁，
+                            Jquery简化DOM操作，Angular增进了模块化开发、React提出虚拟DOM技术、Vue是一种渐进式javaScript框架，渐进式就是逐步实现新特性、Axios是前端的通信框架，为了处理DOM元素。
+UI框架：
+Ant-Desig
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/javaWeb/" class="post-category">
-                                    javaWeb
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    前端知识
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javaWeb/">
-                        <span class="chip bg-color">javaWeb</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
@@ -1210,7 +1227,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">76.4k</span>&nbsp;字
+                class="white-color">87.0k</span>&nbsp;字
             
             
             

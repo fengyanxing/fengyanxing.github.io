@@ -1,0 +1,1608 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="lence, it星的博客">
+    <meta name="description" content="索引全文检索：
+
+全文索引时将存储在数据库中的整本书或整篇文章中的任意内容信息查找出来的技术。它可以根据需要获取全文中有关章，节，段，句，词等信息，也可以进行各种统计和分析。
+将非结构化数据中的一部分信息提取出来，重新组织，使其变得有一定结">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>lence | it星的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">it星的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>主页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>档案</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>内容</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>朋友</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">it星的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			主页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			档案
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			内容
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			朋友
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="fengyanxing.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="fengyanxing.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">lence</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">java搜索工具</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java%E5%B7%A5%E5%85%B7/" class="post-category">
+                                java工具
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-09
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-06-09
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3,908
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    16 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p><strong>全文检索：</strong></p>
+<blockquote>
+<p>全文索引时将存储在数据库中的整本书或整篇文章中的任意内容信息查找出来的技术。它可以根据需要获取全文中有关章，节，段，句，词等信息，也可以进行各种统计和分析。</p>
+<p>将非结构化数据中的一部分信息提取出来，重新组织，使其变得有一定结构，然后对此又一定结构的数据进行搜索，从而达到搜索相对较快的目的。<strong>根据文档建立索引再通过索引搜索称为全文索引</strong></p>
+</blockquote>
+<p><strong>倒排索引：</strong></p>
+<blockquote>
+<p>全文索引通常使用倒排索引来实现。倒排索引同B+树索引一样，也是一种索引结构。</p>
+<p>注意：创建索引是对语汇单元索引，<strong>通过词语找文档</strong></p>
+</blockquote>
+<p>全文索引的搜索流程：</p>
+<p>原始文档===》创建索引===》建立索引库===》提供查询接口</p>
+<p>创建索引的流程：</p>
+<p>确定要搜索的内容===》获取原始文档===》创建文档===》分析文档===》索引文档</p>
+<p>搜索的过程：</p>
+<p>用户通过搜索界面===》创建查询===》执行搜索===》渲染结果</p>
+<h4 id="原始文件的获取"><a href="#原始文件的获取" class="headerlink" title="原始文件的获取"></a>原始文件的获取</h4><p>原始文件可以使互联网的网页、数据库的数据、磁盘上的文件</p>
+<p>互联网上的数据可以使用爬虫技术将网页内容存储：</p>
+<blockquote>
+<p>Nutch(<a href="http://lucene.apache.org/nutch" target="_blank" rel="noopener">http://lucene.apache.org/nutch</a>), Nutch是apache的一个子项目，包括大规模爬虫工具，能够抓取和分辨web网站数据。</p>
+<p>​    jsoup（<a href="http://jsoup.org/" target="_blank" rel="noopener">http://jsoup.org/</a> ），jsoup 是一款Java 的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。</p>
+<p>​    heritrix（<a href="http://sourceforge.net/projects/archive-crawler/files/），Heritrix" target="_blank" rel="noopener">http://sourceforge.net/projects/archive-crawler/files/），Heritrix</a> 是一个由 java 开发的、开源的网络爬虫，用户可以使用它来从网上抓取想要的资源。其最出色之处在于它良好的可扩展性，方便用户实现自己的抓取逻辑。</p>
+</blockquote>
+<h4 id="创建文档对象"><a href="#创建文档对象" class="headerlink" title="创建文档对象"></a>创建文档对象</h4><p> 获取原始内容的目的是为了索引，在索引前需要将原始内容创建成文档（Document），文档中包括一个一个的域（Field），域中存储内容。</p>
+<p><strong>注意：</strong>每个Document可以有多个Field，不同的Document可以有不同的Field，同一个Document可以有相同的Field（域名和域值都相同）</p>
+<p>每个文档都有一个唯一的编号，就是文档id。</p>
+<h4 id="Lunece下载"><a href="#Lunece下载" class="headerlink" title="Lunece下载"></a>Lunece下载</h4><p>Lucene是开发全文检索功能的工具包，并解压。</p>
+<p><a href="http://lucene.apache.org/" target="_blank" rel="noopener">官方网站</a></p>
+<p>需要的jar包：</p>
+<blockquote>
+<p>Lucene包：</p>
+<p>lucene-core-4.10.3.jar</p>
+<p>lucene-analyzers-common-4.10.3.jar</p>
+<p>lucene-queryparser-4.10.3.jar</p>
+<p>其它：</p>
+<p>commons-io-2.4.jar</p>
+<p>junit-4.9.jar</p>
+</blockquote>
+<h4 id="创建索引库"><a href="#创建索引库" class="headerlink" title="创建索引库"></a>创建索引库</h4><blockquote>
+<p>第一步: Eclipse创建java工程，导入jar包</p>
+<p>第二步：创建一个indexwriter对象</p>
+<p>​    1.指定索引库的存放位置Directory</p>
+<p>​    2.指定一个分析器，对文档内容进行分析</p>
+<p>第三步：创建document对象</p>
+<p>第四步：创建field对象，将field添加到document对象中。</p>
+<p>第五步：使用indexwriter对象将document对象写入索引库，此过程进行索引创建。并将索引和document对象写入索引库。</p>
+<p>第六步：关闭IndexWriter对象。</p>
+</blockquote>
+<p>Field域的属性</p>
+<table>
+<thead>
+<tr>
+<th>Field类</th>
+<th>数据类型</th>
+<th>Analyzed是否分析</th>
+<th>Indexed是否索引</th>
+<th>Stored是否存储</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>StringField(FieldName, FieldValue,Store.YES))</td>
+<td>字符串</td>
+<td>N</td>
+<td>Y</td>
+<td>Y或N</td>
+<td>这个Field用来构建一个字符串Field，但是不会进行分析，会将整个串存储在索引中</td>
+</tr>
+<tr>
+<td>LongField(FieldName, FieldValue,Store.YES)</td>
+<td>Long型</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y或N</td>
+<td>这个Field用来构建一个Long数字型Field，是否存储在文档中用Store.YES或Store.NO决定</td>
+</tr>
+<tr>
+<td>StoredField(FieldName, FieldValue)</td>
+<td>重载方法，支持多种类型</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>这个Field用来构建不同类型Field不分析，不索引，但要Field存储在文档中</td>
+</tr>
+<tr>
+<td>TextField(FieldName, reader)或TextField(FieldName, FieldValue, Store.NO)</td>
+<td>流或字符串</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y或N</td>
+<td>如果是一个Reader, lucene猜测内容比较多,会采用Unstored的策略.</td>
+</tr>
+</tbody></table>
+<h5 id="编写程序建立索引文件"><a href="#编写程序建立索引文件" class="headerlink" title="编写程序建立索引文件"></a>编写程序建立索引文件</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 创建索引方法与步骤</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testLucene</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 1.创建java工程，导入jar包</span>
+        <span class="token comment" spellcheck="true">// 2.创建一个indexwriter对象File System Directory(FSDirectory对象)</span>
+        <span class="token comment" spellcheck="true">//该路径是将创建的索引存放的位置</span>
+        Directory director <span class="token operator">=</span> FSDirectory<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\javacode\\fileupload\\tmp"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//标准分析器</span>
+        Analyzer analy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StandardAnalyzer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//索引写配置</span>
+        IndexWriterConfig condig <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IndexWriterConfig</span><span class="token punctuation">(</span>Version<span class="token punctuation">.</span>LATEST<span class="token punctuation">,</span> analy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        IndexWriter indexw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IndexWriter</span><span class="token punctuation">(</span>director<span class="token punctuation">,</span> condig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 3.创建document对象</span>
+        Document document <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Document</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 4.创建field域对象</span>
+        File ff <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>
+                <span class="token string">"E:\\百度云\\00_黑马JavaEE32期\\02_2016年7月北京黑马32期就业班\\【阶段14】SSM综合练习\\ssm综合练习\\day77\\Lucene&amp;solr\\01.参考资料\\mysource"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        File<span class="token punctuation">[</span><span class="token punctuation">]</span> listfile <span class="token operator">=</span> ff<span class="token punctuation">.</span><span class="token function">listFiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>File file <span class="token operator">:</span> listfile<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 获取文件姓名</span>
+            String file_name <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// lunece中对于域的存储Field有四个子类:</span>
+            <span class="token comment" spellcheck="true">// TextField是对文件该文件进行拆除，建立索引，并保存,常对于姓名等文件</span>
+            <span class="token comment" spellcheck="true">// LongField建立long型的域,用于建立文件大小的索引</span>
+            <span class="token comment" spellcheck="true">// StoredField表示不进行拆分不进行索引但是进行保存，用于路径的域索引</span>
+            <span class="token comment" spellcheck="true">//</span>
+            Field fileNameField <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TextField</span><span class="token punctuation">(</span><span class="token string">"fileName"</span><span class="token punctuation">,</span> file_name<span class="token punctuation">,</span> Store<span class="token punctuation">.</span>YES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 获取文件大小</span>
+            <span class="token keyword">long</span> file_size <span class="token operator">=</span> FileUtils<span class="token punctuation">.</span><span class="token function">sizeOf</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Field fileSizeField <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LongField</span><span class="token punctuation">(</span><span class="token string">"fileSize"</span><span class="token punctuation">,</span> file_size<span class="token punctuation">,</span> Store<span class="token punctuation">.</span>YES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 文件路径</span>
+            String file_path <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Field filePathField <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StoredField</span><span class="token punctuation">(</span><span class="token string">"filePath"</span><span class="token punctuation">,</span> file_path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 文件内容</span>
+            String file_content <span class="token operator">=</span> FileUtils<span class="token punctuation">.</span><span class="token function">readFileToString</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Field fileContentField <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TextField</span><span class="token punctuation">(</span><span class="token string">"fileContent"</span><span class="token punctuation">,</span> file_content<span class="token punctuation">,</span> Store<span class="token punctuation">.</span>NO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            document<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>fileNameField<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            document<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>fileSizeField<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            document<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>filePathField<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            document<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>fileContentField<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 使用Indexwriter索引对象将field添加到document对象中，创建索引并将源文件写入</span>
+            indexw<span class="token punctuation">.</span><span class="token function">addDocument</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 5.关闭Indexwriter对象</span>
+        indexw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>使用like查看索引</p>
+<h4 id="查询索引"><a href="#查询索引" class="headerlink" title="查询索引"></a>查询索引</h4><h5 id="步骤"><a href="#步骤" class="headerlink" title="步骤:"></a>步骤:</h5><blockquote>
+<p>第一步：创建一个Directory对象，也就是索引库存放的位置。</p>
+<p>第二步：创建一个indexReader对象，需要指定Directory对象。</p>
+<p>第三步：创建一个indexsearcher对象，需要指定IndexReader对象</p>
+<p>第四步：创建一个TermQuery对象，指定查询的域和查询的关键词。</p>
+<p>第五步：执行查询。</p>
+<p>第六步：返回查询结果。遍历查询结果并输出。</p>
+<p>第七步：关闭IndexReader对象</p>
+</blockquote>
+<h5 id="IndexSearch搜索方法"><a href="#IndexSearch搜索方法" class="headerlink" title="IndexSearch搜索方法"></a>IndexSearch搜索方法</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>indexSearcher.search(query, n)</td>
+<td>根据Query搜索，返回评分最高的n条记录</td>
+</tr>
+<tr>
+<td>indexSearcher.search(query, filter, n)</td>
+<td>根据Query搜索，添加过滤策略，返回评分最高的n条记录</td>
+</tr>
+<tr>
+<td>indexSearcher.search(query, n, sort)</td>
+<td>根据Query搜索，添加排序策略，返回评分最高的n条记录</td>
+</tr>
+<tr>
+<td>indexSearcher.search(booleanQuery, filter, n, sort)</td>
+<td>根据Query搜索，添加过滤策略，添加排序策略，返回评分最高的n条记录</td>
+</tr>
+</tbody></table>
+<p>查询程序</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 根据索引库，进行搜索程序</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 1.创建一个Directory对象，指向索引库位置</span>
+        Directory directory <span class="token operator">=</span> FSDirectory<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\javacode\\fileupload\\tmp"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 2.创建一个indexReader对象，需要指定的Directory对象</span>
+        IndexReader indexRead <span class="token operator">=</span> DirectoryReader<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>directory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 3.创建一个indexSearcher对象，需要指定IndexReader对象</span>
+        IndexSearcher indexSearch <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IndexSearcher</span><span class="token punctuation">(</span>indexRead<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 4.创建一个TermQuery对象，指定查找的关键词以及查找的域</span>
+        <span class="token comment" spellcheck="true">// 搜索的方法有四个：</span>
+        <span class="token comment" spellcheck="true">// 1.indexSearcher.search(query,n)返回最高的n条记录</span>
+        <span class="token comment" spellcheck="true">// 2.indexSearcher.search(query,filter,n)添加过滤策略，返回最高n条记录</span>
+        <span class="token comment" spellcheck="true">// 3.indexSearcher.search(query,n,sort)添加排序策略，返回评分最高n条记录</span>
+        <span class="token comment" spellcheck="true">// 4.indexSearcher.search(booleanQuery,filter,n,sort)添加过滤策略，添加排序策略，返回n条记录</span>
+        Query query <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TermQuery</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Term</span><span class="token punctuation">(</span><span class="token string">"fileName"</span><span class="token punctuation">,</span> <span class="token string">"java.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 5.执行查询</span>
+        TopDocs topres <span class="token operator">=</span> indexSearch<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 6.返回查询结果，遍历查询结果并输出</span>
+        ScoreDoc<span class="token punctuation">[</span><span class="token punctuation">]</span> scoreDocs <span class="token operator">=</span> topres<span class="token punctuation">.</span>scoreDocs<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>ScoreDoc scdoc <span class="token operator">:</span> scoreDocs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> doc <span class="token operator">=</span> scdoc<span class="token punctuation">.</span>doc<span class="token punctuation">;</span>
+            Document document <span class="token operator">=</span> indexSearch<span class="token punctuation">.</span><span class="token function">doc</span><span class="token punctuation">(</span>doc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String fileName <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"fileName"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String filePath <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"filePath"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String fileSize <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"fileSize"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String fileContent <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"fileContent"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"fileName"</span> <span class="token operator">+</span> fileName <span class="token operator">+</span> <span class="token string">"filePath"</span> <span class="token operator">+</span> filePath <span class="token operator">+</span> <span class="token string">"fileSize"</span> <span class="token operator">+</span> fileSize <span class="token operator">+</span> <span class="token string">"fileContent"</span>
+                    <span class="token operator">+</span> fileContent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"====================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 7.关闭IndexReader对象</span>
+        indexRead<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>Search方法需要指定匹配记录数量：indexSearcer.search(query,n)</p>
+<p>TopDocs.totalHits：匹配索引库中所有记录的数量</p>
+<p>TopDocs.scoreDocs：匹配相关度高的前边记录数组，scoreDocs的长度小于等于search方法指定的参数n</p>
+</blockquote>
+<p>三种分词器的测试：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 查看标准分析器的分词效果</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testTokenStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 1.创建一个标准分析器对象</span>
+        <span class="token comment" spellcheck="true">//Analyzer analyzer = new StandardAnalyzer();</span>
+        <span class="token comment" spellcheck="true">// 2.二分法分词器</span>
+        <span class="token comment" spellcheck="true">//    Analyzer analyzer = new CJKAnalyzer();</span>
+        <span class="token comment" spellcheck="true">// 3.SmartChineseAnalyzer分词器，不可扩展</span>
+        <span class="token comment" spellcheck="true">// 4.第三方分词器，可扩展</span>
+        Analyzer analyzer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IKAnalyzer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 获得tokenStream对象</span>
+        <span class="token comment" spellcheck="true">// 第一个参数：域名，可以随便给一个</span>
+        <span class="token comment" spellcheck="true">// 第二个参数：要分析的文本内容</span>
+        TokenStream tokenStream <span class="token operator">=</span> analyzer<span class="token punctuation">.</span><span class="token function">tokenStream</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">,</span> <span class="token string">"我爱中国"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 添加一个引用，可以获得每个关键词</span>
+        CharTermAttribute charTermAttribute <span class="token operator">=</span> tokenStream<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span>CharTermAttribute<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 添加一个偏移量的引用，记录了关键词的开始位置以及结束位置</span>
+        OffsetAttribute offsetAttribute <span class="token operator">=</span> tokenStream<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span>OffsetAttribute<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 将指针调整到列表的头部</span>
+        tokenStream<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 遍历关键词列表，通过incrementToken方法判断列表是否结束</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>tokenStream<span class="token punctuation">.</span><span class="token function">incrementToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 关键词的起始位置</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"start->"</span> <span class="token operator">+</span> offsetAttribute<span class="token punctuation">.</span><span class="token function">startOffset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 取关键词</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>charTermAttribute<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 结束位置</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"end->"</span> <span class="token operator">+</span> offsetAttribute<span class="token punctuation">.</span><span class="token function">endOffset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        tokenStream<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>IK分词器的配置：文件命名IKAnalyzer.cfg.xml</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token doctype">&lt;!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd"></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>comment</span><span class="token punctuation">></span></span>IK Analyzer 扩展配置<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>comment</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--用户可以在这里配置自己的扩展字典,在同级目录下创建ext.dic，自定义扩展的词--></span> 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>entry</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ext_dict<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ext.dic;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>entry</span><span class="token punctuation">></span></span>     
+    <span class="token comment" spellcheck="true">&lt;!--用户可以在这里配置自己的扩展停止词字典,自定义停用的词--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>entry</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ext_stopwords<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>stopword.dic;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>entry</span><span class="token punctuation">></span></span> 
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span></code></pre>
+<p>第三方分析器：</p>
+<blockquote>
+<p> paoding： 庖丁解牛 <a href="https://code.google.com/p/paoding/" target="_blank" rel="noopener">https://code.google.com/p/paoding/</a> </p>
+<p>mmseg4j：<a href="https://github.com/chenlb/mmseg4j-solr">https://github.com/chenlb/mmseg4j-solr</a></p>
+<p> IK-analyzer：<a href="https://code.google.com/p/ik-analyzer/" target="_blank" rel="noopener">https://code.google.com/p/ik-analyzer/</a></p>
+<p>ansj_seg： <a href="https://github.com/NLPchina/ansj_seg">https://github.com/NLPchina/ansj_seg</a></p>
+<p>Jcseg：开源中国中搜索jcseg</p>
+</blockquote>
+<h4 id="索引库的维护"><a href="#索引库的维护" class="headerlink" title="索引库的维护"></a>索引库的维护</h4><p>向索引库添加document对象：</p>
+<blockquote>
+<p>第一步：先创建一个indexwriter对象</p>
+<p>第二步：创建一个document对象</p>
+<p>第三步：把document对象写入索引库</p>
+<p>第四步：关闭indexwriter</p>
+</blockquote>
+<p>新增索引</p>
+<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//创建方法获取IndexWriter对象</span>
+    <span class="token keyword">public</span> IndexWriter <span class="token function">getIndexWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        Directory directory<span class="token operator">=</span>FSDirectory<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\\\javacode\\\\fileupload\\\\tmp"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Analyzer analyzer<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">StandardAnalyzer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        IndexWriterConfig condig<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">IndexWriterConfig</span><span class="token punctuation">(</span>Version<span class="token punctuation">.</span>LATEST<span class="token punctuation">,</span>analyzer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        IndexWriter indexw<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">IndexWriter</span><span class="token punctuation">(</span>directory<span class="token punctuation">,</span>condig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> indexw<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//添加索引操作</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//获取IndexWriter</span>
+        IndexWriter indexw<span class="token operator">=</span><span class="token function">getIndexWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//创建Document元素</span>
+        Document doc<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Document</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        doc<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TextField</span><span class="token punctuation">(</span><span class="token string">"FileN"</span><span class="token punctuation">,</span><span class="token string">"测试文件名"</span><span class="token punctuation">,</span>Store<span class="token punctuation">.</span>YES<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        doc<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TextField</span><span class="token punctuation">(</span><span class="token string">"FileC"</span><span class="token punctuation">,</span><span class="token string">"测试文件名"</span><span class="token punctuation">,</span>Store<span class="token punctuation">.</span>YES<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        indexw<span class="token punctuation">.</span><span class="token function">addDocument</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        indexw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>删除索引 </p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//获取IndexReader对象</span>
+    <span class="token keyword">public</span> IndexSearcher <span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//1.创建Directory对象，索引库的位置</span>
+        Directory directory<span class="token operator">=</span>FSDirectory<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\\\javacode\\\\fileupload\\\\tmp"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//2.创建一个IndexReader对象，需要指定Directory对象</span>
+        IndexReader indexR <span class="token operator">=</span> DirectoryReader<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>directory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//根据IndexReader创建IndexSearch对象</span>
+        IndexSearcher indexSearch<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">IndexSearcher</span><span class="token punctuation">(</span>indexR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//3.返回该对象</span>
+        <span class="token keyword">return</span> indexSearch<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//删除索引（全部）</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testAllDelete</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//1.获取indexReader对象</span>
+        IndexWriter indexw<span class="token operator">=</span><span class="token function">getIndexWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//2.删除所有索引</span>
+        indexw<span class="token punctuation">.</span><span class="token function">deleteAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//3.关闭indexWriter对象</span>
+        indexw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//条件删除索引</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDelete</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//1.获取indexReader对象</span>
+        IndexWriter indexw<span class="token operator">=</span><span class="token function">getIndexWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//2.添加条件</span>
+        Query query<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">TermQuery</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Term</span><span class="token punctuation">(</span><span class="token string">"fileName"</span><span class="token punctuation">,</span><span class="token string">"apache"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//2.删除所有索引</span>
+        indexw<span class="token punctuation">.</span><span class="token function">deleteDocuments</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//3.关闭indexWriter对象</span>
+        indexw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>修改索引库文件</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//创建方法获取IndexWriter对象</span>
+    <span class="token keyword">public</span> IndexWriter <span class="token function">getIndexWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        Directory directory<span class="token operator">=</span>FSDirectory<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\\\javacode\\\\fileupload\\\\tmp"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Analyzer analyzer<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">StandardAnalyzer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        IndexWriterConfig condig<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">IndexWriterConfig</span><span class="token punctuation">(</span>Version<span class="token punctuation">.</span>LATEST<span class="token punctuation">,</span>analyzer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        IndexWriter indexw<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">IndexWriter</span><span class="token punctuation">(</span>directory<span class="token punctuation">,</span>condig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> indexw<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//修改操作</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//获取IndexWriter</span>
+        IndexWriter indexw<span class="token operator">=</span><span class="token function">getIndexWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//创建Document元素</span>
+        Document doc<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Document</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        doc<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TextField</span><span class="token punctuation">(</span><span class="token string">"FileN"</span><span class="token punctuation">,</span><span class="token string">"测试文件名"</span><span class="token punctuation">,</span>Store<span class="token punctuation">.</span>YES<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        doc<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TextField</span><span class="token punctuation">(</span><span class="token string">"FileC"</span><span class="token punctuation">,</span><span class="token string">"测试文件名"</span><span class="token punctuation">,</span>Store<span class="token punctuation">.</span>YES<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//更改名字为java的索引</span>
+        indexw<span class="token punctuation">.</span><span class="token function">updateDocument</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Term</span><span class="token punctuation">(</span><span class="token string">"fileName"</span><span class="token punctuation">,</span><span class="token string">"java"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>doc<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">IKAnalyzer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>查询索引(难点)</p>
+<blockquote>
+<p>1）使用Lucene提供Query子类</p>
+<p>​    Query是一个抽象类，lucene提供了很多查询对象，比如TermQuery项精确查询，NumericRangeQuery数字范围查询等。</p>
+<p>2）使用QueryParse解析查询表达式</p>
+<p>​    QueryParse会将用户输入的查询表达式解析成Query对象实例。</p>
+</blockquote>
+<p><strong>Query子类查询</strong></p>
+<p>1.查询索引目录中的所有文档</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//查询操作，使用IndexReader对象</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//1.获取indexReader对象</span>
+        IndexSearcher indexSearch <span class="token operator">=</span> <span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//2.创建Qurey对象</span>
+        Query query<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">MatchAllDocsQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//打印查询结果</span>
+        <span class="token function">printResult</span><span class="token punctuation">(</span>indexSearch<span class="token punctuation">,</span>query<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//关闭资源</span>
+        indexSearch<span class="token punctuation">.</span><span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>2.Term查询</p>
+<p>TermQuery不使用分析器所以建议匹配不分词的Field域查询</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//使用Termquery查询</span>
+        <span class="token annotation punctuation">@Test</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testTermQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+            IndexSearcher indexSearcher <span class="token operator">=</span> <span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//创建查询对象</span>
+            Query query <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TermQuery</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Term</span><span class="token punctuation">(</span><span class="token string">"content"</span><span class="token punctuation">,</span> <span class="token string">"lucene"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//执行查询</span>
+            TopDocs topDocs <span class="token operator">=</span> indexSearcher<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//共查询到的document个数</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"查询结果总数量："</span> <span class="token operator">+</span> topDocs<span class="token punctuation">.</span>totalHits<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//遍历查询结果</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>ScoreDoc scoreDoc <span class="token operator">:</span> topDocs<span class="token punctuation">.</span>scoreDocs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                Document document <span class="token operator">=</span> indexSearcher<span class="token punctuation">.</span><span class="token function">doc</span><span class="token punctuation">(</span>scoreDoc<span class="token punctuation">.</span>doc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"filename"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//System.out.println(document.get("content"));</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"size"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">//关闭indexreader</span>
+            indexSearcher<span class="token punctuation">.</span><span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>3.数值范围的查询</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//根据数值类型进行查询</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testresByNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//1.获取indexReader对象</span>
+                IndexSearcher indexSearch <span class="token operator">=</span> <span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//2.创建Qurey对象</span>
+                Query query<span class="token operator">=</span>NumericRangeQuery<span class="token punctuation">.</span><span class="token function">newLongRange</span><span class="token punctuation">(</span><span class="token string">"fieldSize"</span><span class="token punctuation">,</span> 50l<span class="token punctuation">,</span> 200l<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//打印查询结果</span>
+                <span class="token function">printResult</span><span class="token punctuation">(</span>indexSearch<span class="token punctuation">,</span>query<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//关闭资源</span>
+                indexSearch<span class="token punctuation">.</span><span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>4.组合查询</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//组合查询</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testBooleanQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//获取搜索对象</span>
+        IndexSearcher indexs<span class="token operator">=</span><span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//创建组合查询对象</span>
+        BooleanQuery booleanquery<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">BooleanQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//添加索引查询条件</span>
+        Query query1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">TermQuery</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Term</span><span class="token punctuation">(</span><span class="token string">"filedName"</span><span class="token punctuation">,</span><span class="token string">"apache"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Query query2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">TermQuery</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Term</span><span class="token punctuation">(</span><span class="token string">"fieldName"</span><span class="token punctuation">,</span><span class="token string">"lunece"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//将查询呢条件添加到查询对象中</span>
+        booleanquery<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>query1<span class="token punctuation">,</span>Occur<span class="token punctuation">.</span>MUST<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        booleanquery<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>query2<span class="token punctuation">,</span>Occur<span class="token punctuation">.</span>MUST<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//根据搜索对象以及查询条件查询</span>
+        <span class="token function">printResult</span><span class="token punctuation">(</span>indexs<span class="token punctuation">,</span>booleanquery<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//关闭资源</span>
+        indexs<span class="token punctuation">.</span><span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>QueryParse</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//条件解析的对象查询</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testQueryParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        IndexSearcher indexReader <span class="token operator">=</span> <span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//参数 默认查询的域</span>
+        QueryParser queryParser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">QueryParser</span><span class="token punctuation">(</span><span class="token string">"fieldName"</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">IKAnalyzer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//*:*  域：值</span>
+<span class="token comment" spellcheck="true">//        Query query = queryParser.parse("*:*");</span>
+        <span class="token comment" spellcheck="true">//多个域查询使用MultiFieldQueryParser对象</span>
+        Query query <span class="token operator">=</span> queryParser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">"fieldName:apache AND fieldName:lunece"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printResult</span><span class="token punctuation">(</span>indexReader<span class="token punctuation">,</span>query<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        indexReader<span class="token punctuation">.</span><span class="token function">getIndexReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<h4 id="Solr"><a href="#Solr" class="headerlink" title="Solr"></a>Solr</h4><p>使用Lucene实现站内搜索需要开发的工作量较大，主要表现在：索引维护、索引性能优化、搜索性能优化等.</p>
+<blockquote>
+<p>Solr 是Apache下的一个顶级开源项目，采用Java开发，它是基于Lucene的全文搜索服务器。Solr提供了比Lucene更为丰富的查询语言，同时实现了可配置、可扩展，并对索引、搜索性能进行了优化。 </p>
+<p>Solr可以独立运行，运行在Jetty、Tomcat等这些Servlet容器中，Solr 索引的实现方法很简单，用 POST 方法向 Solr 服务器发送一个描述 Field 及其内容的 XML 文档，Solr根据xml文档添加、删除、更新索引 。Solr 搜索只需要发送 HTTP GET 请求，然后对 Solr 返回Xml、json等格式的查询结果进行解析，组织页面布局。Solr不提供构建UI的功能，Solr提供了一个管理界面，通过管理界面可以查询Solr的配置和运行情况</p>
+</blockquote>
+<p>Solr与Lunece的区别</p>
+<blockquote>
+<p>Lucene是一个开放源代码的全文检索引擎工具包，它不是一个完整的全文检索引擎，Lucene提供了完整的查询引擎和索引引擎，目的是为软件开发人员提供一个简单易用的工具包，以方便的在目标系统中实现全文检索的功能，或者以Lucene为基础构建全文检索引擎。</p>
+<p> Solr的目标是打造一款企业级的搜索引擎系统，它是一个搜索引擎服务，可以独立运行，通过Solr可以非常快速的构建企业的搜索引擎，通过Solr也可以高效的完成站内搜索功能。</p>
+</blockquote>
+<p>Solr下载</p>
+<p><a href="http://lucene.apache.org/solr/" target="_blank" rel="noopener">官网下载地址</a></p>
+<p>文件夹结构：</p>
+<blockquote>
+<p>bin：solr的运行脚本</p>
+<p>contrib：solr的一些贡献软件/插件，用于增强solr的功能。</p>
+<p>dist：该目录包含build过程中产生的war和jar文件，以及相关的依赖文件。</p>
+<p>docs：solr的API文档</p>
+<p>example：solr工程的例子目录：</p>
+<p>​    example/solr：</p>
+<p>​    该目录是一个包含了默认配置信息的Solr的Core目录。</p>
+<p>example/multicore</p>
+<p>​    该目录包含了在Solr的multicore中设置的多个Core目录。 </p>
+<p> example/webapps：</p>
+<p>  该目录中包括一个solr.war，该war可作为solr的运行实例工程。</p>
+<p>licenses：solr相关的一些许可信息</p>
+</blockquote>
+<p>(还不是很清楚，后期补充)</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/fengyanxing" rel="external nofollow noreferrer">it星</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/fengyanxing/2020/06/09/lunece-solr-gong-ju/">https://github.com/fengyanxing/2020/06/09/lunece-solr-gong-ju/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://github.com/fengyanxing" target="_blank">it星</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/java%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">java搜索工具</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="qq,wechat,weibo,qzone,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/06/09/lunece-solr-gong-ju/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="lence">
+                        
+                        <span class="card-title">lence</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            索引全文检索：
+
+全文索引时将存储在数据库中的整本书或整篇文章中的任意内容信息查找出来的技术。它可以根据需要获取全文中有关章，节，段，句，词等信息，也可以进行各种统计和分析。
+将非结构化数据中的一部分信息提取出来，重新组织，使其变得有一定结
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    java工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">java搜索工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/03/qian-duan-vue-de-xue-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vue学习">
+                        
+                        <span class="card-title">Vue学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Jquery简化DOM操作，Angular增进了模块化开发、React提出虚拟DOM技术、Vue是一种渐进式javaScript框架，渐进式就是逐步实现新特性、Axios是前端的通信框架，为了处理DOM元素。
+UI框架：
+Ant-Desig
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    前端知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: it星的博客<br />'
+            + '文章作者: it星<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归it星所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="https://github.com/fengyanxing" target="_blank">it星</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">87.0k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fengyanxing" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1075335638@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1075335638" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1075335638" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/gua-pi-43-8" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/gua-pi-43-8" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
