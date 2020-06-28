@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Oracle学习, it星的博客">
-    <meta name="description" content="关系型数据库之Oracle
-Oracle数据库是一个数据管理系统（RDBMS），提供开放的，全面的，近乎完整的信息管理，一个Oracle数据库由多个实例组成，实例操作数据库，任意时刻一个实例只能与一个数据库关联，一个数据库上只有一个实例对其">
+    <meta name="keywords" content="计算机基础, it星的博客">
+    <meta name="description" content="计算机基础注：为了面试将计算机底层知识进行相关复习
+cpu制作过程：沙子+铜+胶水+特定的工艺+特殊金属
+
+沙子脱氧-》石英-》二氧化硅-》提纯-》硅锭-》切割-》晶圆-》涂抹光刻胶-》光刻-》蚀刻-》清除光刻胶-》电镀-》抛光-》铜层-》">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@ Oracle数据库是一个数据管理系统（RDBMS），提供开放的，全面
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Oracle学习 | it星的博客</title>
+    <title>计算机基础 | it星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +306,12 @@ Oracle数据库是一个数据管理系统（RDBMS），提供开放的，全面
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Oracle学习</h1>
+                    <h1 class="description center-align post-title">计算机基础</h1>
                 </div>
             </div>
         </div>
@@ -426,8 +428,8 @@ Oracle数据库是一个数据管理系统（RDBMS），提供开放的，全面
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Oracle/">
-                                <span class="chip bg-color">Oracle</span>
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+                                <span class="chip bg-color">计算机</span>
                             </a>
                         
                     </div>
@@ -438,8 +440,8 @@ Oracle数据库是一个数据管理系统（RDBMS），提供开放的，全面
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                数据库
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                计算机基础
                             </a>
                         
                     </div>
@@ -451,21 +453,21 @@ Oracle数据库是一个数据管理系统（RDBMS），提供开放的，全面
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-15
+                    2020-06-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-04
+                    2020-06-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    385
+                    255
                 </div>
                 
 
@@ -488,31 +490,60 @@ Oracle数据库是一个数据管理系统（RDBMS），提供开放的，全面
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>关系型数据库之Oracle</p>
-<p>Oracle数据库是一个数据管理系统（RDBMS），提供开放的，全面的，近乎完整的信息管理，一个Oracle数据库由多个实例组成，实例操作数据库，任意时刻一个实例只能与一个数据库关联，一个数据库上只有一个实例对其进行操作。</p>
-<p>Oracle数据库：是硬件上存放数据库的文件，文件组织在一起成为一个逻辑整体，成为Oracle数据库。</p>
-<p>Oracle实例：位于物理内存里的数据结构，有一个共享的内存池和多个后台进程所组成，共享的内存池可以被所有进程访问。用户需通过实例获取数据库的数据，不能直接读取硬盘的信息。</p>
-<p>表空间(users)与数据文件：表空间由多个数据文件组成；数据文件只能属于一个表空间。表空间为逻辑概念，数据文件为物理概念。</p>
-<p>段存在于表空间中，段是区的集合；区是数据块的集合，数据块被映射到磁盘块</p>
-<p>oracle命令练习</p>
-<pre class=" language-oracle"><code class="language-oracle">----使用用户名为scott密码为tiger登录oracle数据库
-sqlplus scoitt/tiger
-----查看当前用户
-show user
-----查看表
-select * from tab;
-----降序排列表
-desc 表名
-----显示行大小
-show linesize
-----设置行大小
-set linesize
-----设置列宽
-col 列名 for a8(表示字符长度为8)
-----显示行大小
-col 列名 for 9999(表示设置数字为4位)
-
-</code></pre>
+                <h4 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h4><p>注：为了面试将计算机底层知识进行相关复习</p>
+<p>cpu制作过程：沙子+铜+胶水+特定的工艺+特殊金属</p>
+<blockquote>
+<p>沙子脱氧-》石英-》二氧化硅-》提纯-》硅锭-》切割-》晶圆-》涂抹光刻胶-》光刻-》蚀刻-》清除光刻胶-》电镀-》抛光-》铜层-》测试-》切片-》封装</p>
+</blockquote>
+<p>计算机的发展：</p>
+<blockquote>
+<p> 硅-》加入特殊元素-》P、N半导体-》PN结-》二极管-》场效应管-》逻辑开关</p>
+</blockquote>
+<p>逻辑开关实现：与门、或门、非门（异或门）进而实现加法器，借助内存存储指令控制硬件</p>
+<p>(图片来自马士兵课堂的ppt)</p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/computer2020062707.png" alt="计算机底层"></p>
+<p>ALU计算单元，PC存储指令当前的地址</p>
+<p>计算机中各种存储器存取速度：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>需要cpu周期</th>
+<th>大约需要时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主存</td>
+<td></td>
+<td>约60-80纳秒</td>
+</tr>
+<tr>
+<td>QPI总线传输</td>
+<td></td>
+<td>约20ns</td>
+</tr>
+<tr>
+<td>L3 Cache</td>
+<td>约40-45 cycles</td>
+<td>约15ns</td>
+</tr>
+<tr>
+<td>L2 Cache</td>
+<td>约10cycles</td>
+<td>约3ns</td>
+</tr>
+<tr>
+<td>L1 Cache</td>
+<td>约3-4 cycles</td>
+<td>约1ns</td>
+</tr>
+<tr>
+<td>寄存器</td>
+<td>1 cycle</td>
+<td>仅次于cpu</td>
+</tr>
+</tbody></table>
+<p>一个cpu多核，每个核有自己的L1、L2缓存，共享L3缓存。(待续)</p>
 
             </div>
             <hr/>
@@ -538,7 +569,7 @@ col 列名 for 9999(表示设置数字为4位)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/fengyanxing/2020/04/15/guan-xi-xing-shu-ju-ku-zhi-oracle/">https://github.com/fengyanxing/2020/04/15/guan-xi-xing-shu-ju-ku-zhi-oracle/</a>
+                    <a href="https://github.com/fengyanxing/2020/06/27/ji-suan-ji-ji-chu/">https://github.com/fengyanxing/2020/06/27/ji-suan-ji-ji-chu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,8 +607,8 @@ col 列名 for 9999(表示设置数字为4位)
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Oracle/">
-                                    <span class="chip bg-color">Oracle</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+                                    <span class="chip bg-color">计算机</span>
                                 </a>
                             
                         </div>
@@ -743,57 +774,51 @@ col 列名 for 9999(表示设置数字为4位)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/04/22/bos-xiang-mu-ji-lu/">
+                <a href="/2020/06/27/ji-suan-ji-ji-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Bos项目的简单记录">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="计算机基础">
                         
-                        <span class="card-title">Bos项目的简单记录</span>
+                        <span class="card-title">计算机基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            BOS项目
-1.数据库环境搭建：
+                            计算机基础注：为了面试将计算机底层知识进行相关复习
+cpu制作过程：沙子+铜+胶水+特定的工艺+特殊金属
 
-
-net start mysql
-
-mysql -uroot -p123
-
-create database bos32 character set utf-8;
-
-use bos32;
-—-查看所有的用户
+沙子脱氧-》石英-》二氧化硅-》提纯-》硅锭-》切割-》晶圆-》涂抹光刻胶-》光刻-》蚀刻-》清除光刻胶-》电镀-》抛光-》铜层-》
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    java基础
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+                        <span class="chip bg-color">计算机</span>
                     </a>
                     
                 </div>
@@ -807,48 +832,34 @@ use bos32;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/13/webservice-xue-xi/">
+                <a href="/2020/06/27/wen-ben-shu-ju-yu-chu-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="WebService学习">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="文本数据预处理">
                         
-                        <span class="card-title">WebService学习</span>
+                        <span class="card-title">文本数据预处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WebService学习注：(不会maven的可以先去学习maven配置和简单的命令)
-Webservice介绍apacheCXF简单测试1.pox文件引用：
-&lt;!--项目依赖--> 
-&lt;dependencies>
-    &l
+                            title: python文本处理date: 2020-06-27 13:41tags: 数据处理categories: python
+文本数据预处理毕业试验数据的要求被迫学习python处理数据
+文本预处理一般包括分词、词形归一化、删除停
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-27
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    java深入学习
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            it星
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/WebService/">
-                        <span class="chip bg-color">WebService</span>
-                    </a>
-                    
                 </div>
                 
             </div>
