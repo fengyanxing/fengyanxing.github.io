@@ -124,6 +124,58 @@ Mysql常见的问题索引相当于一个字典，存放一个文件及在文件
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>休闲</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>喜欢的音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>喜欢的视频</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>喜欢的书籍</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -223,6 +275,61 @@ Mysql常见的问题索引相当于一个字典，存放一个文件及在文件
 			
 			朋友
 		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			休闲
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/medias/musics " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>喜欢的音乐</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/movies " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>喜欢的视频</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>喜欢的书籍</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/galleries " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>相册</span>
+                  </a>
+                </li>
+               
+            </ul>
           
         </li>
         
@@ -458,21 +565,21 @@ Mysql常见的问题索引相当于一个字典，存放一个文件及在文件
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-20
+                    2020-07-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2,266
+                    3,656
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    13 分
                 </div>
                 
 
@@ -579,6 +686,60 @@ Mysql常见的问题索引相当于一个字典，存放一个文件及在文件
 <p>水平切分(按照规则划分存储)</p>
 <blockquote>
 <p>当一个表中的数据量过大时，我们可以把该表的数据按照某种规则，例如 userID 散列，进行划分，然后存储到多个结构相同的表，和不同的库上  </p>
+</blockquote>
+<p><strong>再谈索引(2020年7月1日)</strong></p>
+<h5 id="你好啊，七月！"><a href="#你好啊，七月！" class="headerlink" title="你好啊，七月！"></a>你好啊，七月！</h5><p>为什么需要索引？</p>
+<p>索引是为了更快速地查找到文件或查找到数据，类似于查字典时的前面的拼音或偏旁部首。索引一般需要存储的是：</p>
+<blockquote>
+<p>关键值Key 、文件名称、偏移量offset</p>
+</blockquote>
+<pre class=" language-mysql"><code class="language-mysql">select  name from user where id = 1;</code></pre>
+<p>其中在id上建立索引，根据id = 1进行查找相关的数据</p>
+<p>Mysql中的存储引擎：</p>
+<p>MySam（B+树）、InnoDB（B+树）、Memory（Hash表）</p>
+<p>磁盘读取与cpu速度之间的不匹配性，因此在做相关的IO读取时会利用局部性原理，局部性原理是程序的数据的访问都有聚集性成群的倾向，在一个时间段内，仅适用其中的一小部分，即<strong>空间局部性</strong>，或者最近访问过的程序代码和数据，很快又被访问的可能性跟大，即<strong>时间局部性原理</strong>。因此，再设计磁盘读取文件时一般会有预读，以页(页的大小通常为4k或4k的整数倍)为单位进行数据读取。</p>
+<blockquote>
+<p>页是存储器的逻辑块，操作系统往往将主存和磁盘存储区分割为连续的大小相等的块，每个存储块称为一页，主存和磁盘以页为单位交换数据。</p>
+</blockquote>
+<h4 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h4><p><strong>InnoDb是Mysql的默认事务型引擎</strong>，也是最重要、最广泛的存储引擎，用来处理大量短期事务。</p>
+<p>InnoDB的数据存储在表空间中，是一系列的数据文件组成，<strong>InnoDB可以将每个表的数据和索引存放在单独的文件中</strong>。InnoDB采用MVCC来支持高并发，并实现四个隔离级别，默认级别为可重复读(REPEATABLE READ)，可以通过间隙锁策略(这个并不了解)放置幻读。</p>
+<blockquote>
+<p>InnoDB内部做了很多的优化，从磁盘读取数据时采用可预读性预读，能够自动在内存中创建hash索引以加速读操作的自适应哈希索引(adaptive hash index)，以及能够加速插入操作的插入缓冲区(insert buffer)。</p>
+</blockquote>
+<h4 id="MYISAM存储引擎"><a href="#MYISAM存储引擎" class="headerlink" title="MYISAM存储引擎"></a>MYISAM存储引擎</h4><blockquote>
+<p>myisam是默认的引擎，拥有全文索引、压缩、空间函数等特性，但是<strong>MYISAM不支持事务和行级锁</strong> 崩溃后无法安全恢复</p>
+</blockquote>
+<p>MyISAM将数据文件和索引文件存放在两个文件中，分别为.MYD和.MYI的扩展名文件，该引擎能够对整张数据表进行加锁操作，读取数据时加共享锁，写入时则对表加排他锁，数据崩溃时可以手动或者自动检查和修复操作。</p>
+<h4 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h4><p>B-Tree索引(这个不叫B减)</p>
+<p>B-tree（多路搜索树，并不是二叉的）是一种常见的数据结构。B-Tree每个节点包含有：本结点所含关键字的个数、指向父节点的指针、关键字、指向子节点的指针(图片来自MYsql高性能)</p>
+<p><img src="F:%5C%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%5Cblogimages%5C0701%5Ctree20070102.png" alt="平衡搜索树"></p>
+<p>通过从根节点开始进行向下查找，通过比较节点页与要查找的值可以适合进入下一层子节点，在节点中有页的上限和下限，对于叶子节点，其指向的是被索引的数据，而不是其他的节点页</p>
+<p>1.全值匹配：与所有的列进行匹配。</p>
+<p>2.匹配最左前缀：从左进行匹配，只是用索引中的最左边的信息</p>
+<p>3.匹配列前缀：只匹配某一列的值的开头部分</p>
+<p>4.匹配范围值：查询时使用范围查询，因此只是用某一列进行匹配</p>
+<p>5.精确匹配某一列并范围匹配另外一列：使用某两列进行先关的数据信息查询</p>
+<p>6.只访问索引的查询：查询只访问索引，不访问数据行。</p>
+<p>B-Tree索引的限制：</p>
+<blockquote>
+<p>必须进行最左匹配，否则无法使用索引</p>
+<p>不能跳过索引的列</p>
+<p>如果查询中是某个列的范围，则右边的所有列无法使用索引优化查找</p>
+</blockquote>
+<h4 id="哈希索引"><a href="#哈希索引" class="headerlink" title="哈希索引"></a>哈希索引</h4><p>其基于hash表实现，只有精确匹配索引所有的列的查询才有效，对于没一行数据，存储引擎都会对所有的索引列计算一个hash码，hash码作为键指向数据行。Mysql中的Memory引擎显示的支持hash索引。</p>
+<p>hash索引的限制：</p>
+<blockquote>
+<p>1.hash索引只包含哈希值和行指针，不存储字段值，因此不能使用索引中的值来避免读取行</p>
+<p>2.不可以排序</p>
+<p>3.哈希索引不支持部分索引列匹配，即不支持范围查询，只支持等值查询</p>
+<p>4.可能存在哈希冲突，哈希冲突高时，会导致索引维护代价高</p>
+</blockquote>
+<h4 id="空间数据索引"><a href="#空间数据索引" class="headerlink" title="空间数据索引"></a>空间数据索引</h4><p>MYISAM支持空间数据索引，一般作为地理数据存储，这类索引无需前缀信息，空间索引会进行所有维度的索引数据，查询时，可以任意维度组合查询。空间函数的支持GIS</p>
+<h4 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h4><p>全文索引是一种特殊的类型的索引，其是从文件中找出关键词，而不是进行比较索引中的值。</p>
+<h4 id="索引的优点"><a href="#索引的优点" class="headerlink" title="索引的优点"></a>索引的优点</h4><blockquote>
+<p>1.索引大大减少服务器需要扫描的数据量</p>
+<p>2.索引可以帮助服务器避免排序和临时表</p>
+<p>3.索引可以将随机I/O变为顺序I/O</p>
 </blockquote>
 
             </div>
@@ -775,7 +936,7 @@ Mysql常见的问题索引相当于一个字典，存放一个文件及在文件
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
                         <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
@@ -927,7 +1088,7 @@ yum install ep
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('80')) {
             return;
         }
 
@@ -1094,7 +1255,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">91.5k</span>&nbsp;字
+                class="white-color">94.3k</span>&nbsp;字
             
             
             

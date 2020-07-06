@@ -123,6 +123,58 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>休闲</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>喜欢的音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>喜欢的视频</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>喜欢的书籍</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -222,6 +274,61 @@
 			
 			朋友
 		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			休闲
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/medias/musics " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>喜欢的音乐</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/movies " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>喜欢的视频</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>喜欢的书籍</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/galleries " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>相册</span>
+                  </a>
+                </li>
+               
+            </ul>
           
         </li>
         
@@ -534,7 +641,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2019-06","2019-07","2019-08","2019-09","2019-10","2019-11","2019-12","2020-01","2020-02","2020-03","2020-04","2020-05","2020-06"]
+            data: ["2019-07","2019-08","2019-09","2019-10","2019-11","2019-12","2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07"]
         },
         yAxis: {
             type: 'value',
@@ -544,7 +651,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,1,0,7,13,14,4],
+                data: [0,0,0,0,0,0,1,0,7,13,14,4,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -586,7 +693,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"java基础","value":6},{"name":"数据库","value":7},{"name":"java工具","value":4},{"name":"java深入学习","value":13},{"name":"个人操作记录","value":1},{"name":"javaWeb","value":2},{"name":"前端知识","value":1},{"name":"个人操作记录#文章分类","value":1},{"name":"计算机基础","value":1},{"name":"课题相关","value":1},{"name":"java算法记录","value":1}],
+                data: [{"name":"java基础","value":6},{"name":"java工具","value":4},{"name":"java深入学习","value":13},{"name":"数据库","value":7},{"name":"个人操作记录","value":1},{"name":"javaWeb","value":2},{"name":"前端知识","value":1},{"name":"java算法记录","value":1},{"name":"个人操作记录#文章分类","value":1},{"name":"课题相关","value":1},{"name":"计算机的相关知识点","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -610,7 +717,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["java","java工具","sql","Mybatis","WebService","spring","javaWeb","MongoDB","jvm","spring cloud"]
+                data: ["java","java工具","sql","Mybatis","spring","WebService","javaWeb","jvm","MongoDB","netty"]
             }
         ],
         yAxis: [
@@ -746,12 +853,6 @@
             
             
             
-            <a href="/tags/MongoDB/">
-                <span class="chip center-align waves-effect waves-light chip-default">MongoDB</span>
-            </a>
-            
-            
-            
             <a href="/tags/java%E5%B7%A5%E5%85%B7/">
                 <span class="chip center-align waves-effect waves-light chip-default">java工具</span>
             </a>
@@ -764,8 +865,8 @@
             
             
             
-            <a href="/tags/spring-cloud/">
-                <span class="chip center-align waves-effect waves-light chip-default">spring cloud</span>
+            <a href="/tags/MongoDB/">
+                <span class="chip center-align waves-effect waves-light chip-default">MongoDB</span>
             </a>
             
             
@@ -782,14 +883,20 @@
             
             
             
-            <a href="/tags/WebService/">
-                <span class="chip center-align waves-effect waves-light chip-default">WebService</span>
+            <a href="/tags/spring-cloud/">
+                <span class="chip center-align waves-effect waves-light chip-default">spring cloud</span>
             </a>
             
             
             
             <a href="/tags/spring/">
                 <span class="chip center-align waves-effect waves-light chip-default">spring</span>
+            </a>
+            
+            
+            
+            <a href="/tags/WebService/">
+                <span class="chip center-align waves-effect waves-light chip-default">WebService</span>
             </a>
             
             
@@ -812,8 +919,8 @@
             
             
             
-            <a href="/tags/neo4j/">
-                <span class="chip center-align waves-effect waves-light chip-default">neo4j</span>
+            <a href="/tags/java%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/">
+                <span class="chip center-align waves-effect waves-light chip-default">java搜索工具</span>
             </a>
             
             
@@ -824,8 +931,8 @@
             
             
             
-            <a href="/tags/java%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7/">
-                <span class="chip center-align waves-effect waves-light chip-default">java搜索工具</span>
+            <a href="/tags/neo4j/">
+                <span class="chip center-align waves-effect waves-light chip-default">neo4j</span>
             </a>
             
             
@@ -836,8 +943,8 @@
             
             
             
-            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                <span class="chip center-align waves-effect waves-light chip-default">前端</span>
+            <a href="/tags/nosql/">
+                <span class="chip center-align waves-effect waves-light chip-default">nosql</span>
             </a>
             
             
@@ -848,8 +955,8 @@
             
             
             
-            <a href="/tags/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2-%E6%96%87%E7%AB%A0%E6%A0%87%E7%AD%BE/">
-                <span class="chip center-align waves-effect waves-light chip-default">测试我的博客#文章标签</span>
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                <span class="chip center-align waves-effect waves-light chip-default">前端</span>
             </a>
             
             
@@ -860,20 +967,20 @@
             
             
             
-            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
-                <span class="chip center-align waves-effect waves-light chip-default">计算机</span>
-            </a>
-            
-            
-            
-            <a href="/tags/nosql/">
-                <span class="chip center-align waves-effect waves-light chip-default">nosql</span>
-            </a>
-            
-            
-            
             <a href="/tags/docker/">
                 <span class="chip center-align waves-effect waves-light chip-default">docker</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                <span class="chip center-align waves-effect waves-light chip-default">算法</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2-%E6%96%87%E7%AB%A0%E6%A0%87%E7%AD%BE/">
+                <span class="chip center-align waves-effect waves-light chip-default">测试我的博客#文章标签</span>
             </a>
             
             
@@ -884,8 +991,8 @@
             
             
             
-            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                <span class="chip center-align waves-effect waves-light chip-default">算法</span>
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+                <span class="chip center-align waves-effect waves-light chip-default">计算机</span>
             </a>
             
             
@@ -956,7 +1063,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">91.5k</span>&nbsp;字
+                class="white-color">94.3k</span>&nbsp;字
             
             
             
