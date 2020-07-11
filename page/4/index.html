@@ -472,6 +472,41 @@
                     
 
                     
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="title center-align">
+        <i class="fas fa-music"></i>&nbsp;&nbsp;听听音乐
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '',
+        audio: eval([{"name":"大鱼","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%91%A8%E6%B7%B1-%E5%A4%A7%E9%B1%BC.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"},{"name":"像鱼","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%83%8F%E9%B1%BC.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"},{"name":"化身孤岛的鲸","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%8C%96%E8%BA%AB%E5%AD%A4%E5%B2%9B%E7%9A%84%E9%B2%B8.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"}])
+    });
+});
+</script>
+                    
 
                     
 
@@ -649,53 +684,6 @@ yum install ep
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/03/26/hello-world/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="标题党--it星">
-                            
-                            <span class="card-title">标题党--it星</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-26
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E4%B8%AA%E4%BA%BA%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" class="post-category">
-                                    个人操作记录
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">
-                            <span class="chip bg-color">测试我的博客</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
                     <a href="/2020/03/26/redis-xue-xi-jian-dan-ji-lu/">
                         <div class="card-image">
                             
@@ -738,6 +726,53 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
                         
                         <a href="/tags/nosql/">
                             <span class="chip bg-color">nosql</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/03/26/hello-world/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="标题党--it星">
+                            
+                            <span class="card-title">标题党--it星</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E4%B8%AA%E4%BA%BA%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" class="post-category">
+                                    个人操作记录
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%B5%8B%E8%AF%95%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">
+                            <span class="chip bg-color">测试我的博客</span>
                         </a>
                         
                     </div>
