@@ -565,7 +565,7 @@ Mysql常见的问题索引相当于一个字典，存放一个文件及在文件
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-01
+                    2020-08-07
                 </div>
                 
 
@@ -600,8 +600,8 @@ Mysql常见的问题索引相当于一个字典，存放一个文件及在文件
 <p>1.mysql原子性和持久性怎么保证？</p>
 <blockquote>
 <p><strong>read log</strong>为了提升不会将每次修改的数据实时同步到磁盘中，而是先存放到缓存中，然后再使用线程去做缓冲池和磁盘中的同步。read log是重做日志，当事务提交的时候会把所有的修改信息存放在read log中，并且会把read Log持久化到磁盘中，当电脑重启后就会重新执行read   log的修改信息，进而达到<strong>持久化</strong>的目的。read log包括两部分，重做日志缓冲和重做日志文件，一个是缓存一个是持久化的文件。read log分为两个步骤，prepare和commit也就是两阶段提交。</p>
-<p>undo log：一个事务中的操作要么全部成功提交、要么全部失败回滚，这就是事务的原子性。undo log称之为回滚日志，每条数据的变化(insert/update/delete)都会产生一条记录，并且日志持久化到磁盘，undo log用来记录数据修改前的信息。</p>
-<p>read log恢复事务导致的数据页的修改，是一种物理日志，undo log能够恢复数据记录到某个特定的版本，是一种逻辑日志</p>
+<p><strong>undo log：</strong>一个事务中的操作要么全部成功提交、要么全部失败回滚，这就是事务的原子性。undo log称之为回滚日志，每条数据的变化(insert/update/delete)都会产生一条记录，并且日志持久化到磁盘，undo log用来记录数据修改前的信息。</p>
+<p><strong>read log恢复事务导致的数据页的修改，是一种物理日志，undo log能够恢复数据记录到某个特定的版本，是一种逻辑日志</strong></p>
 </blockquote>
 <p>2.innode和myisam区别</p>
 <blockquote>
@@ -1255,7 +1255,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">114.4k</span>&nbsp;字
+                class="white-color">124.9k</span>&nbsp;字
             
             
             
