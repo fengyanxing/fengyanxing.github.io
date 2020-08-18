@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="mysql语句相关学习, it星的博客">
     <meta name="description" content="mysql语句训练：mysql官网
-mysql数据库创建表语句--商品表
+1. mysql数据库创建表语句--商品表
 CREATE TABLE product_info (
     product_id VARCHAR(32) NOT NULL, 
-    product_name ">
+    product_na">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -568,21 +568,21 @@ CREATE TABLE product_info (
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-07
+                    2020-08-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5,511
+                    7,796
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    31 分
                 </div>
                 
 
@@ -599,7 +599,7 @@ CREATE TABLE product_info (
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>mysql语句训练：<a href="https://dev.mysql.com/" target="_blank" rel="noopener">mysql官网</a></p>
-<h4 id="mysql数据库创建表语句"><a href="#mysql数据库创建表语句" class="headerlink" title="mysql数据库创建表语句"></a>mysql数据库创建表语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--商品表</span>
+<h4 id="1-mysql数据库创建表语句"><a href="#1-mysql数据库创建表语句" class="headerlink" title="1. mysql数据库创建表语句"></a>1. mysql数据库创建表语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--商品表</span>
 <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> product_info <span class="token punctuation">(</span>
     product_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> 
     product_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
@@ -752,7 +752,7 @@ salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY
     <span class="token punctuation">`</span>英语<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">,</span>
     <span class="token punctuation">`</span>化学<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span>
 <span class="token punctuation">)</span><span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">INNODB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span> <span class="token operator">=</span>utf8<span class="token punctuation">;</span></code></pre>
-<h4 id="常用聚合函数"><a href="#常用聚合函数" class="headerlink" title="常用聚合函数"></a>常用聚合函数</h4><p><strong>distinct函数：</strong> 去重复，将查询的某一列中重复的值去掉</p>
+<h4 id="2-常用聚合函数"><a href="#2-常用聚合函数" class="headerlink" title="2. 常用聚合函数"></a>2. 常用聚合函数</h4><p><strong>distinct函数：</strong> 去重复，将查询的某一列中重复的值去掉</p>
 <blockquote>
 <p>SELECT DISTINCT(英语) FROM 成绩</p>
 </blockquote>
@@ -1133,7 +1133,7 @@ salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY
 <td align="left">如果与聚集函数一起使用列，必须使用</td>
 </tr>
 </tbody></table>
-<h4 id="各种查询"><a href="#各种查询" class="headerlink" title="各种查询"></a>各种查询</h4><p><strong>子查询</strong> 另一条查询结果作为新一条查询的条件</p>
+<h4 id="3-各种查询"><a href="#3-各种查询" class="headerlink" title="3. 各种查询"></a>3. 各种查询</h4><p><strong>子查询</strong> 另一条查询结果作为新一条查询的条件</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">##查询员工表中是管理人员的员工</span>
 <span class="token keyword">select</span> emp_no <span class="token keyword">from</span> dept_emp <span class="token keyword">where</span> emp_no <span class="token operator">in</span><span class="token punctuation">(</span><span class="token keyword">select</span> emp_no <span class="token keyword">from</span> dept_manager<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">##查询员工表中不是管理人员的员工</span>
@@ -1196,7 +1196,7 @@ salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY
 <p>布尔方式需有以下细节：</p>
 <p>要匹配的词；要排斥的词；排列提示；表达式分组；另外一些内容</p>
 </blockquote>
-<h4 id="表中记录的相关操作"><a href="#表中记录的相关操作" class="headerlink" title="表中记录的相关操作"></a>表中记录的相关操作</h4><p><strong>插入数据</strong> 使用insert   values关键字</p>
+<h4 id="4-表中记录的相关操作"><a href="#4-表中记录的相关操作" class="headerlink" title="4. 表中记录的相关操作"></a>4. 表中记录的相关操作</h4><p><strong>插入数据</strong> 使用insert   values关键字</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">##插入数据操作，使用;号可以一次提交两条语句</span>
 <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> blog<span class="token punctuation">(</span>id<span class="token punctuation">,</span>title<span class="token punctuation">,</span>author<span class="token punctuation">,</span>create_time<span class="token punctuation">,</span>views<span class="token punctuation">)</span> <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span><span class="token string">'nihao'</span><span class="token punctuation">,</span><span class="token string">'itxing'</span><span class="token punctuation">,</span><span class="token string">'2020-05-20'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1206,7 +1206,7 @@ salaries <span class="token keyword">GROUP</span> <span class="token keyword">BY
 UPDATE test.user SET NAME = 'hanhan',pws = 'like' WHERE id = 6;
 ##删除一条数据操作，使用delete from操作
 DELETE FROM test.user WHERE id = 8;</code></pre>
-<h4 id="相关表的操作"><a href="#相关表的操作" class="headerlink" title="相关表的操作"></a>相关表的操作</h4><p><strong>创建表和操作表</strong> 创建时，需要有表名、列名、列定义。例如：</p>
+<h4 id="5-相关表的操作"><a href="#5-相关表的操作" class="headerlink" title="5.相关表的操作"></a>5.相关表的操作</h4><p><strong>创建表和操作表</strong> 创建时，需要有表名、列名、列定义。例如：</p>
 <pre class=" language-mysql"><code class="language-mysql">##创建一张表，使用的是MyIsam引擎
 CREATE TABLE `productnotes`(
     note_id INT NOT NULL AUTO_INCREMENT,
@@ -1236,7 +1236,7 @@ CREATE TABLE `productnotes`(
 <p><strong>重命名表</strong></p>
 <pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">##将数据库中表名为employee2改为employee02</span>
 <span class="token keyword">RENAME</span> <span class="token keyword">TABLE</span> employee2 <span class="token keyword">TO</span> employee02<span class="token punctuation">;</span></code></pre>
-<h4 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h4><p><strong>使用视图</strong></p>
+<h4 id="6-视图"><a href="#6-视图" class="headerlink" title="6.视图"></a>6.视图</h4><p><strong>使用视图</strong></p>
 <blockquote>
 <p>视图的应用：重用sql、简化复杂的sql操作、使用表的组成部分而不是整个表、保护数据、更改数据格式表示</p>
 </blockquote>
@@ -1270,7 +1270,7 @@ CREATE TABLE `productnotes`(
 <span class="token comment" spellcheck="true">##更新视图时，如果存在分组、联结、子查询、并、聚集函数、DISTINCT、计算列等，不可以对视图进行更新</span>
 </code></pre>
 <p>*<em>应该将视图用于检索（ SELECT语句），而不用于更新（ INSERT、 UPDATE和DELETE）。  *</em></p>
-<h4 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h4><p><strong>存储过程</strong></p>
+<h4 id="7-存储过程"><a href="#7-存储过程" class="headerlink" title="7.存储过程"></a>7.存储过程</h4><p><strong>存储过程</strong></p>
 <blockquote>
 <p>通过把处理封装在容易使用的单元中，简化复杂的操作  ；</p>
 <p>由于不要求反复建立一系列处理步骤，  保证了数据的完整性  ；</p>
@@ -1306,6 +1306,159 @@ CREATE TABLE `productnotes`(
 </blockquote>
 <p>使用游标：mysql游标只能用于存储过程</p>
 <p>小结：本篇文章用于记录一些基本的sql语句或者基本的数据库概念，对于一些mysql深入的知识点在另外一篇文章中。<a href="https://itxingzai.xyz/2020/03/30/mysql-zhi-shi-dian/" target="_blank" rel="noopener">mysql知识点</a></p>
+<h4 id="8-操作数据库引擎"><a href="#8-操作数据库引擎" class="headerlink" title="8.操作数据库引擎"></a>8.操作数据库引擎</h4><h4 id="数据库引擎的介绍"><a href="#数据库引擎的介绍" class="headerlink" title="数据库引擎的介绍"></a>数据库引擎的介绍</h4><p>1.ISAM(Index Sequential Access Method)</p>
+<blockquote>
+<p>ISAM主要针对于查询次数远远大于更新次数的场景，不支持事务，不占用内存和存储资源。目前不适用，一般使用Myisam</p>
+</blockquote>
+<p>2.MyISAM</p>
+<blockquote>
+<p>mysql5.5之前默认的存储引擎，支持表级锁的机制，用于优化并发的读写操作。Optimize Table命令，来恢复更新机制所浪费的空间，但是会使用锁对表进行锁定。</p>
+<p>注意：MyISAM引擎使用，必须经常使用Optimize Table命令清理空间；必须经常备份所有的试试数据，工具：<strong>用来修复数据库文件的MyISAMCHK工具</strong>和<strong>用来恢复空间的MyISAMPACK工具</strong>。</p>
+<p>该引擎会有三个文件产生：</p>
+<p>.frm表结构、.MYD数据文件、.MYI表的索引信息</p>
+</blockquote>
+<p>3.Innodb</p>
+<blockquote>
+<p>由于MyIsam不支持事务，innodb提供了具有提交、回滚和崩溃恢复能力的事务安全的存储引擎。innodb锁定在行级锁、外键支持。</p>
+<p>特点：</p>
+<p>支持事务、数据多版本读取、锁定机制的改进(行级)、实现外键</p>
+<p>数据库表更换数据库引擎时，innodb中的表中涉及到外键时不能转换成MyISAM引擎。</p>
+</blockquote>
+<h5 id="MyISAM与Innodb的区别"><a href="#MyISAM与Innodb的区别" class="headerlink" title="MyISAM与Innodb的区别"></a>MyISAM与Innodb的区别</h5><blockquote>
+<p>1.Innodb支持事务，MyISAN不支持，对于Innodb将sql语句默认封装成事务，自动提交，最好是将多条的sql语句放在begin和commit之间，组成一个事务。</p>
+<p>2.Innodb支持外键，MyISAM不支持。对一个包含外键的InnoDB转换成MyISAM会失败</p>
+<p>3.InnoDB是聚集索引，数据库文件和索引文件在一起，不需要有主键，通过主键索引效率很高。但是辅助索引会有两次查询(回表)，先查询到主键，再找数据，因此主键不应该过大，主键过大，其他索引会变大。MyISAM是非聚集索引，数据文件与索引文件分离，索引保存的是数据文件的指针。</p>
+<p>4.Innodb不保存具体的行数，执行select count(*) from table时是一个全表扫描的过程。MyISAM用一个变量保存了整个表的行数，速度快。</p>
+<p>5.Innodb不支持全文索引，而MyIsam支持全文索引，查询效率MyISAM高</p>
+</blockquote>
+<h5 id="数据库引擎的选择"><a href="#数据库引擎的选择" class="headerlink" title="数据库引擎的选择"></a>数据库引擎的选择</h5><blockquote>
+<p>1.要有事务，使用Innode</p>
+<p>2.一个表大多数只是读取数据，使用MyIsam，读写频繁的数据表使用Innodb</p>
+<p>3.系统奔溃后，MyISaM数据恢复更困难</p>
+<p>4.最好使用Innodb(mysql5.5默认的)</p>
+</blockquote>
+<h5 id="查看数据库支持的引擎"><a href="#查看数据库支持的引擎" class="headerlink" title="查看数据库支持的引擎"></a>查看数据库支持的引擎</h5><blockquote>
+<p>SHOW ENGINES;</p>
+</blockquote>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/mysql20081801.png" alt="image-20200818105658881"></p>
+<h5 id="查看数据库当前的默认引擎"><a href="#查看数据库当前的默认引擎" class="headerlink" title="查看数据库当前的默认引擎"></a>查看数据库当前的默认引擎</h5><blockquote>
+<p>SHOW VARIABLES LIKE ‘%storage_engine%’;</p>
+</blockquote>
+<p>默认的数据库引擎</p>
+<h5 id="查看数据库表使用的引擎"><a href="#查看数据库表使用的引擎" class="headerlink" title="查看数据库表使用的引擎"></a>查看数据库表使用的引擎</h5><blockquote>
+<p>SHOW CREATE TABLE tableName</p>
+</blockquote>
+<p>查看自己的表使用的是哪一种数据库引擎</p>
+<h5 id="修改表的存储引擎"><a href="#修改表的存储引擎" class="headerlink" title="修改表的存储引擎"></a>修改表的存储引擎</h5><blockquote>
+<p>alert table table_name engine = engine_name</p>
+</blockquote>
+<h5 id="事物的隔离级别"><a href="#事物的隔离级别" class="headerlink" title="事物的隔离级别"></a>事物的隔离级别</h5><blockquote>
+<p>读未提交(read uncommitted)  事务产生的问题都不能解决</p>
+<p>读已提交(read committed)   解决脏读</p>
+<p>可重复读(repeatable read)  解决不可重复读</p>
+<p>串行化(serializable)  都能够解决(脏读、幻读、不可重复读)</p>
+</blockquote>
+<h4 id="9-数据库的索引优化条件"><a href="#9-数据库的索引优化条件" class="headerlink" title="9.数据库的索引优化条件"></a>9.数据库的索引优化条件</h4><h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><blockquote>
+<p>1.通过创建唯一性索引，保证数据库表中的每一行数据的唯一性</p>
+<p>2.可以大大加快数据的检索速度，这也是创建索引的最主要的原因</p>
+<p>3.可以加速表和表之间的连接，特别是在实现数据的参考完整性方面特别有意义</p>
+<p>4.在使用分组和排序字句进行数据检索时，同样可以显著减少查询中分组和排序的时间</p>
+<p>5.通过使用索引，可以在查询的过程中，使用优化隐藏器，提高系统的性能</p>
+</blockquote>
+<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><blockquote>
+<p>1.创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加</p>
+<p>2.索引需要占用物理空间，除了数据表占数据空间之外，每一个索引还要占一定物理空间，如果是聚簇索引，那么空间更大</p>
+<p>3.当对表中数据进行增加、删除和修改的时候，索引也要动态的维护，降低了数据的维护速度</p>
+</blockquote>
+<h5 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h5><h6 id="1-普通索引-INDEX"><a href="#1-普通索引-INDEX" class="headerlink" title="1.普通索引 (INDEX)"></a>1.普通索引 (INDEX)</h6><p>1.1 直接创建</p>
+<blockquote>
+<p>创建索引需要索引名、表名、以及列和需要匹配的字符长度</p>
+<p>CREATE INDEX [index_name] ON [table_name] (column(length))</p>
+</blockquote>
+<p>1.2 修改表结构的方式</p>
+<blockquote>
+<p>Alter table 表名 add index 索引名(列名[(length)])</p>
+</blockquote>
+<p>1.3 创建表时指定索引</p>
+<blockquote>
+<p>Create Table 表名 ([…],Index 索引名 (列名1，列名2，…))</p>
+</blockquote>
+<p>1.4 查看索引</p>
+<blockquote>
+<p>Show   Index  From  表名</p>
+</blockquote>
+<p>1.5 删除索引</p>
+<blockquote>
+<p>DROP INDEX 索引名  ON 表名</p>
+<p>Alert table 表名 DROP  INDEX 索引名</p>
+</blockquote>
+<h6 id="2-唯一索引-UNIQUE"><a href="#2-唯一索引-UNIQUE" class="headerlink" title="2.唯一索引 (UNIQUE)"></a>2.唯一索引 (UNIQUE)</h6><blockquote>
+<p>ALTER TABLE 表名 ADD UNIQUE(列名)</p>
+</blockquote>
+<h6 id="3-全文索引-fulltext"><a href="#3-全文索引-fulltext" class="headerlink" title="3.全文索引 fulltext"></a>3.全文索引 fulltext</h6><p>创建一个带有全文索引的表，全文索引使用FULLTEXT</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> fulltext_test <span class="token punctuation">(</span>
+    id <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+    content <span class="token keyword">text</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    tag <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    FULLTEXT <span class="token keyword">KEY</span> content_tag_fulltext<span class="token punctuation">(</span>content<span class="token punctuation">,</span>tag<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 创建联合全文索引列</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span>MyISAM <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8<span class="token punctuation">;</span></code></pre>
+<p>在已经创建的表中添加全文索引</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> fulltext <span class="token keyword">index</span> content_tag_fulltext
+    <span class="token keyword">on</span> fulltext_test<span class="token punctuation">(</span>content<span class="token punctuation">,</span>tag<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>修改表创建全文索引</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> fulltext_test
+    <span class="token keyword">add</span> fulltext <span class="token keyword">index</span> content_tag_fulltext<span class="token punctuation">(</span>content<span class="token punctuation">,</span>tag<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>全文索引的使用</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> fulltext_test 
+    <span class="token keyword">where</span> <span class="token keyword">match</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span>tag<span class="token punctuation">)</span> against<span class="token punctuation">(</span><span class="token string">'xxx xxx'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h6 id="4-组合索引"><a href="#4-组合索引" class="headerlink" title="4.组合索引"></a>4.组合索引</h6><blockquote>
+<p>如果对col1、col2、col3进行一个组合索引创建，会产生col1、（col1,col2）、(col1、col2、col3)三个索引</p>
+</blockquote>
+<h5 id="索引优化的前提："><a href="#索引优化的前提：" class="headerlink" title="索引优化的前提："></a>索引优化的前提：</h5><p>什么样的数据能够建立索引？</p>
+<blockquote>
+<p>1.在<strong>经常需要搜索的列上</strong>，可以加快搜索的速度</p>
+<p>2.在<strong>作为主键的列上</strong>，强制该列的唯一性和组织表中数据的排列结构</p>
+<p>3.在<strong>经常用在连接的列上，这些列主要是一些外键</strong>，可以加快连接的速度</p>
+<p>4.在经常需要<strong>根据范围进行搜索的列上创建索引</strong>，因为索引已经排序，其指定的范围是连续的</p>
+<p>5.在<strong>经常需要排序的列</strong>上创建索引，因为索引已经排序，这样利用索引的排序加快查询</p>
+<p>6.在<strong>经常使用在Where字句中的列上面创建索引</strong>，加快条件的判断速度</p>
+<p>  建立索引，一般根据where的条件来建立，select的条件是where   f1  和f2  只有在f1和f2上同时建立索引才有用。</p>
+</blockquote>
+<p>不适合建立索引的列</p>
+<blockquote>
+<p>1.查询很少的列</p>
+<p>2.又很少数据值的列</p>
+<p>3.对于那些定义为text、image和bit数据类型的列不应该建立索引</p>
+<p>4.当修改性能远远大于检索性能时，不应该创建索引</p>
+</blockquote>
+<h5 id="sql的优化"><a href="#sql的优化" class="headerlink" title="sql的优化"></a>sql的优化</h5><blockquote>
+<p>1.避免全表扫描，例如select * from 表  等等</p>
+<p>2.尽量避免where字句中对字段进行null值判断，否则将导致引擎放弃使用索引进行全表扫描 例如(select * from t where num is null)，可以将null设置一个默认的值0来避免</p>
+<p>3.尽量避免where字句中使用！= 或者&lt;&gt;操作符，会放弃索引，全表扫描</p>
+<p>4.尽量避免在where字句中使用or作为连接条件;</p>
+<p>例如select id from t where num=10 or num=20</p>
+<p>可以使用连接字句查询 </p>
+<p>select id from t where num = 10 union all   select id from t where num = 20</p>
+<p>5.in和not in也需要慎用</p>
+<p>例如：select id from t where num in (1,2,3)</p>
+<p>优化使用:select id from t were num between 1 and 3</p>
+<p>6.下面的查询也将导致全表扫描</p>
+<p>select id from t where name like ‘%abc%’</p>
+<p>7.尽量避免在where字句中对字段进行表达式操作，这样导致引擎全表扫描</p>
+<p>例如：select id  form t where num/2 = 100(对索引列进行表达式，将不走索引)</p>
+<p>优化：select id  form t where num = 100*2(对条件进行表达式运算，走索引)</p>
+<p>8.尽量避免在where字句中对字段进行函数操作，这将引擎全表扫描</p>
+<p>select id  form t where sunstring(name,1,3) = ‘abc’    查询name以abc开头的id</p>
+<p>优化：select id from t where name like ‘abc%’</p>
+<p>9.不要在where字句中”=”左边进行函数、算数、表达式等运算</p>
+<p>10.在使用索引字段作为条件时，如果索引是复合索引，那么必须使用到该索引第一个字段作为条件才能保证系统使用该索引</p>
+<p>11.使用exist代替in 例如select num from t where num in（select num from b）优化select num from a where exit (select 1from b where a.num = b.num)</p>
+<p>12.索引并不是越多越好，索引加快了搜索的效率，降低了插入与更新的效率</p>
+<p>13.尽量使用数字类型的字段，只含数字信息的字段使用数值类型的字段</p>
+<p>14.尽可能使用varchar代替char，因为是可变长的字段，空间小，可以节省存储空间，其次对于查询来说，在一个相对较小的字段内搜索效率较高</p>
+<p>15.任何地方都不要使用select * from，用具体的字段列代替*</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -1821,7 +1974,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">131.0k</span>&nbsp;字
+                class="white-color">133.3k</span>&nbsp;字
             
             
             
