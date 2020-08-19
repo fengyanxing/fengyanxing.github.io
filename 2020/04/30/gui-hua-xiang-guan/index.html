@@ -569,7 +569,7 @@ a plus（+）means“one or more of”
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-02
+                    2020-08-19
                 </div>
                 
 
@@ -638,7 +638,7 @@ a plus（+）means“one or more of”
 <p>跟大多数分层任务网络规划系统不一样，SHOP2是从初始状态向前规划:给出几个任务需要分解SHOP2按它们同一执行顺序来得到规划。在规划过程中的每个点上，SHOP2已经知道在这个点之前所执行的操作，故SHOP2了解当前状态。这种技术使得SHOP2的预处理估计机制相当强大: SHOP2预处理方法和操作可以包含逻辑推理、复杂数值计算和外接程序。</p>
 <p>SHOP2比SHOP成功的地方在于它的预处理过程。SHOP 需要他的任务是全序结构,然而SHOP2只需要它的任务是半序结构。因为SHOP2可以插入不同的子任务，- - 些领域知识在SHOP2比SHOP更容易表示。</p>
 <h5 id="基于约束可满足的规划方法"><a href="#基于约束可满足的规划方法" class="headerlink" title="基于约束可满足的规划方法"></a>基于约束可满足的规划方法</h5><p>起初SATPLAN是Henry Kautz和Bart Selman深入地分析了传统的基于定理证明的规划以后提出来的完全不同于以往演绎技术的一种特殊的规划系统，它克服了传统规划系统的异常(每一个模型不一定对应一一个有效的规划解)情况，使得每-一个 正确模型都有一个有效的规划解与其相对应。</p>
-<p><img src="%5Cmedias%5Cimages%5Cplanimages%5CplanGsat.png" alt="image-20200430101424036"></p>
+<p><img src="https://github.com/fengyanxing/fengyanxing.github.io/raw/master/medias/images/planimages/planGsat.png" alt="算法描述"></p>
 <p>SAT规划系统的体系结构如图11.10 所示，编译器(Compiler) 的输入是规划问题(包括初始状态、目标状态和动作集合)，它首先猜测规划解的长度，产生一个逻辑命题公式，如果逻辑命题公式是可满足的，它蕴涵着规划解是存在的:符号表( Symbol Table)记录了命题变量和规划实例之间的对应;简化器(Simplifier)运用较快(通常为线性时间)的技术(如单元子句法，纯文字消去法等)来降低CNF公式的规模;求解器(Solver)运用系统或统计的方法来找到-一个满足的赋值:解码器(Decoder) 用符号表把赋值转换成一个规划解。如果求解器发现公式是不可满足的，那么编译器就会产生新的编码(代表更长的规划解)。</p>
 <p>由基于SAT的规划的体系结构可以看到，这种规划方法关键在于两个环节，- -个是编码方式，另一个是求解方式。有关第一个问题的研究取得了一系列的进展，如[38]中综合叙述了几种普遍的编码方式，由于基于SAT的规划算法是基于SAT算法来实现的，所以第二个问题其实就是选择好的SAT算法，而可满足性(SAT)问题是人工智能研究领域中的一个基本理论问题，最近几年来，每年都有新的SAT算法问世，人们设计各种各样的技术来提高解决SAT问题的效率39-441，这几年来主要有GSAT算法和WALKSAT算法，但是这两个算法都不是完备的，一一个比较经典的完备SAT 算法是DP算法，以下就先来介绍GSAT算法和DP算法。</p>
 <p>总结GraphPlan和SATPlan的相同点和异同点之处，共同点: SATPlan 和GraphPlan都分两阶段进行，建立一个命题结构( Propositional Structure) ，在图规划中是规划图，在SAT规划中是CNF wff， 在第一-步所建立的结构中搜索规划解。异同点:图规划(GrphPlan)用的实例化命题结构算法较好，SAT规划( SatPlan)的搜索算法更加强大。</p>
@@ -1199,7 +1199,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">133.3k</span>&nbsp;字
+                class="white-color">134.2k</span>&nbsp;字
             
             
             

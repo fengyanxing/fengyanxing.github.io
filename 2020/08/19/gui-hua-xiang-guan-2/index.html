@@ -4,11 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java算法, it星的博客">
-    <meta name="description" content="
-主要的算法刷题以及算法思想记录在csdn中
+    <meta name="keywords" content="规划研究, it星的博客">
+    <meta name="description" content="经典的规划#####　特征
 
-dijestla算法思想：引入两个集合，closelist和openlist，闭集合用来记录已经求出最短路径的顶点，开集合用阿里记录为求出最短路径的顶点。集合1：记录源节点（A）到各个节点之间">
+完全可观测:Fully Observable
+唯一已知初始状态:a unique known initial state
+静态环境:static environments
+确定性动作:deterministic">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +18,7 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>java算法 | it星的博客</title>
+    <title>规划研究 | it星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -413,12 +415,12 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java算法</h1>
+                    <h1 class="description center-align post-title">规划研究</h1>
                 </div>
             </div>
         </div>
@@ -535,8 +537,8 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/%E8%A7%84%E5%88%92/">
+                                <span class="chip bg-color">规划</span>
                             </a>
                         
                     </div>
@@ -547,8 +549,8 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/java%E7%AE%97%E6%B3%95%E8%AE%B0%E5%BD%95/" class="post-category">
-                                java算法记录
+                            <a href="/categories/%E8%AF%BE%E9%A2%98%E7%9B%B8%E5%85%B3/" class="post-category">
+                                课题相关
                             </a>
                         
                     </div>
@@ -560,28 +562,28 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-09
+                    2020-08-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2020-08-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    382
+                    880
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -597,10 +599,125 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>主要的算法刷题以及算法思想记录在csdn中</p>
+                <h4 id="经典的规划"><a href="#经典的规划" class="headerlink" title="经典的规划"></a>经典的规划</h4><p>#####　特征</p>
+<blockquote>
+<p>完全可观测:Fully Observable</p>
+<p>唯一已知初始状态:a unique known initial state</p>
+<p>静态环境:static environments</p>
+<p>确定性动作:deterministic actions</p>
+<p>每次仅一个动作:can be taken only one at a time</p>
+<p>单一智能体 a single agent</p>
 </blockquote>
-<p>dijestla算法思想：<br>引入两个集合，<br>closelist和openlist，闭集合用来记录已经求出最短路径的顶点，开集合用阿里记录为求出最短路径的顶点。<br>集合1：记录源节点（A）到各个节点之间的距离；集合2记录节点对应上一级点（父节点）<br>1.将源节点A放入closelist，其余节点放入closelist，A不能到达的节点记为无穷大<br>2.从openlist中选出距离最短的点N，将顶点N加入closelist中，同时从openlist移除N<br>3.重新计算openlist中各个节点到起点A的距离<br>（重新计算openlist中节点的距离，是由于上一步中确定了N是求出最短路径的顶点，从而可以利用N更新其他顶点的距离，）<br>4.重复以上步骤，遍历所有的节点<br>Astar算法：在静态环境中求解最优路径的有效的直接搜索算法，算法采用启发式搜索，A<em>算法通过一个代价函数来确定搜索方向，从起点开始向周围扩展，通过代价函数计算得到周围每个节点的代价值，选择最小代价节点作为下一个扩展点，直到到达目标为止。<br>A</em>算法的代价函数f(n)=g(n)+h(n)<br>常见的估价函数：曼哈顿距离d12=|x1-x2|+|y1-y2|<br>欧式距离：p=sqrt((x2-x1)^2+(y2-y1)^2)</p>
+<h5 id="规划问题的难度取决于以下问题"><a href="#规划问题的难度取决于以下问题" class="headerlink" title="规划问题的难度取决于以下问题"></a>规划问题的难度取决于以下问题</h5><table>
+<thead>
+<tr>
+<th>Properties 特性</th>
+<th>Questions 问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>actions</td>
+<td>确定还是非确定性问题？是否持续一段时间，可并发执行还是串行</td>
+</tr>
+<tr>
+<td>state variables状态变量</td>
+<td>离散还是连续</td>
+</tr>
+<tr>
+<td>初始状态</td>
+<td>有限还是任意多</td>
+</tr>
+<tr>
+<td>目标</td>
+<td>要达到指定的目标状态？/要最大化回报函数</td>
+</tr>
+<tr>
+<td>智能体</td>
+<td>仅一个angent还是多个/合作还是单人做</td>
+</tr>
+</tbody></table>
+<h5 id="问题求解与规划Agent的比较"><a href="#问题求解与规划Agent的比较" class="headerlink" title="问题求解与规划Agent的比较"></a>问题求解与规划Agent的比较</h5><table>
+<thead>
+<tr>
+<th></th>
+<th>问题求解Problem-solving Agent</th>
+<th>规划智能体Planning Agent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>state(初始/目标)</td>
+<td>Atomic representation原子表示</td>
+<td>Factored representation 因子表示 (变量的集合)</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>Instantiated actions</td>
+<td>Actions schemas 动作模式，使用PDDL规划定义语言</td>
+</tr>
+<tr>
+<td>Heuristic</td>
+<td>Domain-specific领域特定启发发</td>
+<td>Domain-independent领域无关启发法</td>
+</tr>
+</tbody></table>
+<h4 id="PDDL语言"><a href="#PDDL语言" class="headerlink" title="PDDL语言"></a>PDDL语言</h4><p>PDDL定义规划语言中的三要素</p>
+<p>1.状态：</p>
+<p>表示为变数的合取，是一种conjunction of fluents的形式(从一个变化关系到另一种变化关系)</p>
+<p>2.动作：</p>
+<p>用一组动作模式描述，隐式定义函数，是一种action schema</p>
+<p>3.目标</p>
+<p>使用文件的合取，一个基本的命题，conjunction of literals</p>
+<p>实例  航空运货</p>
+<blockquote>
+<p>1.问题  from SFO to JFK从旧金山到纽约机场</p>
+<p>2.动作</p>
+<p>Load、unload、fly</p>
+<p>3.谓词Predicates</p>
+<p>In(c,p)获取在飞机内</p>
+<p>At(x,a)获取在机场内</p>
+</blockquote>
+<h5 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/pddl20081901.png" alt="航空货物的例子"></p>
+<p>Solution解答</p>
+<blockquote>
+<p>能够达到目标的动作序列</p>
+<p>[Load(C1,P1,SFO),Fly(P1,SFO,JFK),Unload(C1,P1,JFK),Load(C2,P2,JFK),Fly(P2,JFK,SFO),Unload(C2,P2,SFO)]</p>
+</blockquote>
+<p>错误的动作</p>
+<blockquote>
+<p>不能从起飞的地方飞到起飞的地方</p>
+<p>Fly(P1,JFK,JFK)</p>
+</blockquote>
+<p>矛盾的作用</p>
+<blockquote>
+<p>一个获取在一个</p>
+<p>At(P1,JFK)^~At(P1,JFK)</p>
+</blockquote>
+<h5 id="经典规划搜索"><a href="#经典规划搜索" class="headerlink" title="经典规划搜索"></a>经典规划搜索</h5><p>1.前向计算搜索</p>
+<p>2.反向状态空间搜索</p>
+<p>3.启发式搜索</p>
+<p>将规划问题视作一个图，其中节点表示状态、边为动作，寻找一条连接初始状态到达目标状态的路径</p>
+<p>问题的简化方式:增加边、状态抽象(多个节点组成在一起)</p>
+<h5 id="图规划算法"><a href="#图规划算法" class="headerlink" title="图规划算法"></a>图规划算法</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20281902.png" alt="图规划算法描述"></p>
+<h4 id="规划问题转化"><a href="#规划问题转化" class="headerlink" title="规划问题转化"></a>规划问题转化</h4><h5 id="1-布尔可满足规划"><a href="#1-布尔可满足规划" class="headerlink" title="1.布尔可满足规划"></a>1.布尔可满足规划</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081903.png" alt="布尔可满足规划"></p>
+<h5 id="2-一阶逻辑推理的规划"><a href="#2-一阶逻辑推理的规划" class="headerlink" title="2.一阶逻辑推理的规划"></a>2.一阶逻辑推理的规划</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081904.png" alt="一阶逻辑推理规划"></p>
+<p>一阶逻辑中的情景演算，用来设计动态域的表示和推理。</p>
+<h5 id="3-将规划化作约束满足的规划"><a href="#3-将规划化作约束满足的规划" class="headerlink" title="3.将规划化作约束满足的规划"></a>3.将规划化作约束满足的规划</h5><p>约束可满足和布尔可满足有一定的共性，其对调度问题很有效，将有界的问题进行编码为CSP，还可以将规划图编码为CSP</p>
+<h5 id="4-将规划问题化作精进的规划"><a href="#4-将规划问题化作精进的规划" class="headerlink" title="4.将规划问题化作精进的规划"></a>4.将规划问题化作精进的规划</h5><p>全序规划是由严格的动作序列组成，该问题忽略了许多子问题是独立的事实。</p>
+<p>经典规划的局限性</p>
+<p>经典规划可以表示做什么？按什么顺序做?等问题，但是对于动作持续多长时间、什么时候发生？这样的问题不能描述。</p>
+<h4 id="分层规划"><a href="#分层规划" class="headerlink" title="分层规划"></a>分层规划</h4><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081905.png" alt="经典规划与分层规划对比"></p>
+<h4 id="多智能体规划"><a href="#多智能体规划" class="headerlink" title="多智能体规划"></a>多智能体规划</h4><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081906.png" alt="多智能体规划"></p>
+<h5 id="多个agent与单个agent之间的比较问题"><a href="#多个agent与单个agent之间的比较问题" class="headerlink" title="多个agent与单个agent之间的比较问题"></a>多个agent与单个agent之间的比较问题</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081907.png" alt="单个与多个agent的比较"></p>
+<h5 id="多个agent之间设计的特性"><a href="#多个agent之间设计的特性" class="headerlink" title="多个agent之间设计的特性"></a>多个agent之间设计的特性</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081908.png" alt="多个agent特性"></p>
+<h4 id="机器人中的规划问题"><a href="#机器人中的规划问题" class="headerlink" title="机器人中的规划问题"></a>机器人中的规划问题</h4><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081909.png" alt="机器人规划"></p>
+<h5 id="多个agent规划之间涉及的组件"><a href="#多个agent规划之间涉及的组件" class="headerlink" title="多个agent规划之间涉及的组件"></a>多个agent规划之间涉及的组件</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081910.png" alt="规划涉及组件"></p>
+<h5 id="协商规划问题"><a href="#协商规划问题" class="headerlink" title="协商规划问题"></a>协商规划问题</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081911.png" alt="多智能体规划"></p>
+<h4 id="决策理论规划"><a href="#决策理论规划" class="headerlink" title="决策理论规划"></a>决策理论规划</h4><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081912.png" alt="决策性规划"></p>
+<h5 id="马尔科夫决策过程"><a href="#马尔科夫决策过程" class="headerlink" title="马尔科夫决策过程"></a>马尔科夫决策过程</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081913.png" alt="马尔科夫过程"></p>
+<h5 id="经典规划与MDP的比较"><a href="#经典规划与MDP的比较" class="headerlink" title="经典规划与MDP的比较"></a>经典规划与MDP的比较</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081914.png" alt="马尔科夫的核心问题"></p>
+<h5 id="MDP问题的优化与效用"><a href="#MDP问题的优化与效用" class="headerlink" title="MDP问题的优化与效用"></a>MDP问题的优化与效用</h5><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081915.png" alt="效用和优化策略"></p>
+<h6 id="值迭代"><a href="#值迭代" class="headerlink" title="值迭代"></a>值迭代</h6><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081916.png" alt="值迭代"></p>
+<h6 id="策略迭代"><a href="#策略迭代" class="headerlink" title="策略迭代"></a>策略迭代</h6><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/plan20081917.png" alt="策略迭代"></p>
 
             </div>
             <hr/>
@@ -626,7 +743,7 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/fengyanxing/2020/04/09/suan-fa-si-xiang-ji-lu/">https://github.com/fengyanxing/2020/04/09/suan-fa-si-xiang-ji-lu/</a>
+                    <a href="https://github.com/fengyanxing/2020/08/19/gui-hua-xiang-guan-2/">https://github.com/fengyanxing/2020/08/19/gui-hua-xiang-guan-2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -664,8 +781,8 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/%E8%A7%84%E5%88%92/">
+                                    <span class="chip bg-color">规划</span>
                                 </a>
                             
                         </div>
@@ -831,50 +948,53 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/04/10/jvm-xu-ni-ji-xue-xi/">
+                <a href="/2020/08/19/gui-hua-xiang-guan-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="JVM虚拟机学习">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="规划研究">
                         
-                        <span class="card-title">JVM虚拟机学习</span>
+                        <span class="card-title">规划研究</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于该学习笔记参考网上的jvm课程以及一些文章的讲解
-JVM结构：
+                            经典的规划#####　特征
 
-局部变量表存放了编译期可知的基本数据类型、对象引用和returnAddress类型，其所需的内存空间在编译期间完成分配，方法运行期间不会改变局部变量表的大小。
-除了程序计
+完全可观测:Fully Observable
+唯一已知初始状态:a unique known initial state
+静态环境:static environments
+确定性动作:deterministic
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    java深入学习
+                            <a href="/categories/%E8%AF%BE%E9%A2%98%E7%9B%B8%E5%85%B3/" class="post-category">
+                                    课题相关
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jvm/">
-                        <span class="chip bg-color">jvm</span>
+                    <a href="/tags/%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">规划</span>
                     </a>
                     
                 </div>
@@ -888,34 +1008,40 @@ JVM结构：
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/07/java-cao-zuo-excel/">
+                <a href="/2020/08/12/qian-hou-duan-fen-chi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="java操作excel">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="前后端分离">
                         
-                        <span class="card-title">java操作excel</span>
+                        <span class="card-title">前后端分离</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java操作excel
-使用apache提供的工具POI操作Excel1.Maven的依赖
-        &lt;dependency>
-            &lt;groupId>org.apache.poi&lt;/groupId
+                            前后端分离开发流程
+试验环境：
+windows7+16G内存+Idea2018+mysql5.6
+后端使用springBoot
+前端使用的是vue
+jdk1.8
+vue4.5.2
+npm 6.13.4
+
+相关准备对于vue的简单熟悉VUE学
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    java基础
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    前端知识
                                 </a>
                             
                             
@@ -925,8 +1051,8 @@ JVM结构：
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
