@@ -4,11 +4,22 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java算法, it星的博客">
-    <meta name="description" content="
-主要的算法刷题以及算法思想记录在csdn中
+    <meta name="keywords" content="动态规划, it星的博客">
+    <meta name="description" content="动态规划题目特点
+1.计数的问题
 
-dijestla算法思想：引入两个集合，closelist和openlist，闭集合用来记录已经求出最短路径的顶点，开集合用阿里记录为求出最短路径的顶点。集合1：记录源节点（A）到各个节点之间">
+有多少种方式走到右下角
+有多少种方法选出k个数使得和是Sum
+
+2.求最大值最小值
+
+从左上角走到右下角路径的最大数字和
+最长上升子序列长度
+
+3.求存在性
+
+取石子游戏，先手是否必胜
+能不能选出k个数使">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +27,7 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>java算法 | it星的博客</title>
+    <title>动态规划 | it星的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -413,12 +424,12 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java算法</h1>
+                    <h1 class="description center-align post-title">动态规划</h1>
                 </div>
             </div>
         </div>
@@ -547,8 +558,8 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/java%E7%AE%97%E6%B3%95%E8%AE%B0%E5%BD%95/" class="post-category">
-                                java算法记录
+                            <a href="/categories/Java%E7%AE%97%E6%B3%95/" class="post-category">
+                                Java算法
                             </a>
                         
                     </div>
@@ -560,28 +571,28 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-09
+                    2020-07-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2020-09-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    382
+                    1,589
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -597,10 +608,149 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>主要的算法刷题以及算法思想记录在csdn中</p>
+                <p>动态规划题目特点</p>
+<p>1.计数的问题</p>
+<blockquote>
+<p>有多少种方式走到右下角</p>
+<p>有多少种方法选出k个数使得和是Sum</p>
 </blockquote>
-<p>dijestla算法思想：<br>引入两个集合，<br>closelist和openlist，闭集合用来记录已经求出最短路径的顶点，开集合用阿里记录为求出最短路径的顶点。<br>集合1：记录源节点（A）到各个节点之间的距离；集合2记录节点对应上一级点（父节点）<br>1.将源节点A放入closelist，其余节点放入closelist，A不能到达的节点记为无穷大<br>2.从openlist中选出距离最短的点N，将顶点N加入closelist中，同时从openlist移除N<br>3.重新计算openlist中各个节点到起点A的距离<br>（重新计算openlist中节点的距离，是由于上一步中确定了N是求出最短路径的顶点，从而可以利用N更新其他顶点的距离，）<br>4.重复以上步骤，遍历所有的节点<br>Astar算法：在静态环境中求解最优路径的有效的直接搜索算法，算法采用启发式搜索，A<em>算法通过一个代价函数来确定搜索方向，从起点开始向周围扩展，通过代价函数计算得到周围每个节点的代价值，选择最小代价节点作为下一个扩展点，直到到达目标为止。<br>A</em>算法的代价函数f(n)=g(n)+h(n)<br>常见的估价函数：曼哈顿距离d12=|x1-x2|+|y1-y2|<br>欧式距离：p=sqrt((x2-x1)^2+(y2-y1)^2)</p>
+<p>2.求最大值最小值</p>
+<blockquote>
+<p>从左上角走到右下角路径的最大数字和</p>
+<p>最长上升子序列长度</p>
+</blockquote>
+<p>3.求存在性</p>
+<blockquote>
+<p>取石子游戏，先手是否必胜</p>
+<p>能不能选出k个数使得和是Sum</p>
+</blockquote>
+<p>以上是动态规划能够解题的题目种类。</p>
+<h4 id="1-例题1："><a href="#1-例题1：" class="headerlink" title="1. 例题1："></a>1. 例题1：</h4><p>假设有三种硬币，分别面值2元，5元，7元，每种硬币都足够的多，需要买一本27元的书，要求硬币数量尽可能的少</p>
+<p><strong>动态规划组成部分1：</strong>确定状态</p>
+<blockquote>
+<p>动态规划一般需要一个额外的空间记录状态，一般是开一个数组</p>
+</blockquote>
+<p>题目的最优策略是什么？该题目最优策略是K枚硬币A1…Ak的面值加起来是27，索引一定有一枚最后的硬币Ak，除去该硬币前面的k-1硬币之和为27-Ak</p>
+<blockquote>
+<p>关键点1：对于前面的K-1枚硬币是如何组成的不需要关系，而且也不知道Ak和K，但是知道了前面的硬币得到的是27-Ak</p>
+<p>关键点2：因为最优策略，所以拼出27-Ak的硬币数量一定要少，否则就不是最优策略</p>
+</blockquote>
+<p><strong>原问题：</strong>最少用多少枚硬币拼出27</p>
+<p><strong>子问题：</strong>最少用多少枚硬币拼出27-Ak</p>
+<p>f(x) = 使用多少枚硬币拼出x+1</p>
+<p>根据最后一枚硬币的可能性，最后一枚是2,5,7</p>
+<blockquote>
+<p>如果Ak为2,f(27)=f(27-2)+1加上最后一枚硬币</p>
+<p>如果Ak为5,f(27)=f(27-5)+1加上最后一枚硬币</p>
+<p>如果Ak为7,f(27)=f(27-7)+1加上最后一枚硬币</p>
+<p>最后取三种结果的最小值，f(27) = min(f(27)=f(27-2)+1,f(27)=f(27-5)+1,f(27)=f(27-7)+1)</p>
+</blockquote>
+<p>采用递归实现</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> <span class="token function">coin</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> res <span class="token operator">=</span> Integer<span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">>=</span><span class="token number">2</span><span class="token punctuation">)</span>res <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span><span class="token function">coin</span><span class="token punctuation">(</span>x<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">>=</span><span class="token number">5</span><span class="token punctuation">)</span>res <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span><span class="token function">coin</span><span class="token punctuation">(</span>x<span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">>=</span><span class="token number">7</span><span class="token punctuation">)</span>res <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span><span class="token function">coin</span><span class="token punctuation">(</span>x<span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>递归运算的缺点是：计算的中间结果比较多，会产生重复的计算过程。</p>
+<p><strong>动态规划组成部分2：</strong>转移方程</p>
+<p>对于任意x,状态转移方程   f[x]  = min {f[x-2]+1,f[x-5]+1,f[x-7]+1}</p>
+<p>动态规划组成部分3：初始条件和边界情况</p>
+<p>  f[x]  = min {f[x-2]+1,f[x-5]+1,f[x-7]+1}</p>
+<p>对于中间状态可能会产生小于0的状态，即边界控制条件。如果拼不出y值，则返回系统最大值，f[y]=系统最大，不会影响其他的判断。例如，f[1] = min{f[-1]+1,f[-4]+1,f[-6]+1}，2,5,7拼不出来1</p>
+<p>初始条件是f[0] = 0</p>
+<p><strong>动态规划组成部分4：</strong>计算顺序</p>
+<p>一般来书都是从前向后，从上向下计算，当然也存在例外。</p>
+<p>时间复杂度：n*m,n表示需要拼出的数值，m表示硬币面值数，本题目时间复杂度是27*3</p>
+<p>题目小结：</p>
+<blockquote>
+<p>动态规划组成部分：</p>
+<p>1.确定状态</p>
+<p>​    最后一步(最优策略中使用的最后一枚硬币)</p>
+<p>​    化成子问题</p>
+<p>2.转移方程</p>
+<p>​    f[x] = min{f[x-2]+1,f[x-5]+1,f[x-7]+1}</p>
+<p>3.初始条件和边界情况</p>
+<p>​    f[0] = 0,如果不能拼出Y，f[Y] = 正无穷</p>
+<p>4.计算顺序</p>
+<p>​    f[0],f[1]…</p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 钱数最小</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">coin</span><span class="token punctuation">(</span><span class="token keyword">int</span> val<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> coins<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 初始化一个数组，记录中间状态</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>val <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 原始位置初始化</span>
+        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> val<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> Integer<span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> coins<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">>=</span> coins<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> coins<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">!=</span> Integer<span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i <span class="token operator">-</span> coins<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>dp<span class="token punctuation">[</span>val<span class="token punctuation">]</span> <span class="token operator">==</span> Integer<span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            dp<span class="token punctuation">[</span>val<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>val<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<h4 id="2-例题2"><a href="#2-例题2" class="headerlink" title="2.例题2"></a>2.例题2</h4><p>计数型的动态规划</p>
+<p>给定一个m行n列的网格，有一个机器人从左上角(0,0出发，每一步可以向下或者向右走一步)，问题是有多少种不同的方式走到右下角。</p>
+<p>原问题：从(0,0)位置到达(m-1,n-1)位置</p>
+<p>子问题：最后一个位置能到达是由于机器人要么来自其上方，要么来自其左方。即来自(m-1,n-2)或者(m-2,n-1)</p>
+<p><strong>初始条件和边界</strong></p>
+<p>初始条件：f[0][0] = 1</p>
+<p>边界条件：i=0;j=0,只有一个方向到达</p>
+<p><strong>计算顺序</strong></p>
+<blockquote>
+<p>计算第0行：f[0][0],f[0][1]…f[0][n-1]</p>
+<p>计算第1行：f[1][0],f[1][1]…f[1][n-1]</p>
+<p>….</p>
+<p>计算第m-1行：f[m-1][0],f[m-1][1]…f[m-1][n-1]</p>
+</blockquote>
+<p>最终的结果是f[m-1][n-1]</p>
+<p>时间复杂度O(MN),空间复杂度O(MN)</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 获取路径</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">getPath</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> j <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<h4 id="3-例题3"><a href="#3-例题3" class="headerlink" title="3.例题3"></a>3.例题3</h4><p>青蛙跳台阶，在n块石头分别在x轴的0,1…n-1的位置，一只青蛙在石头0，想要跳到石头n-1，如果青蛙在第i块石头上，他最多可以向右跳距离ai，问青蛙是否可以跳到石头n-1。</p>
+<blockquote>
+<p>输入:a=[2,3,1,1,4]</p>
+<p>输出:true</p>
+</blockquote>
+<p><strong>确定状态：</strong></p>
+<p>假设青蛙能够跳到最后一块石头n-1，其前一步是在第i块石头上跳过来的，i&lt;n-1，这两个条件同时满足，青蛙可以跳到石头i，最后一步不超过跳跃的最大距离：n-1-i&lt;=ai</p>
+<p><strong>子问题：</strong>确定青蛙能不能跳到i位置的石头</p>
+<p><strong>转移方程：</strong>f[i] = Skip(f[i] AND i+a[i]&gt;=j)，f[i]表示青蛙能不能跳到i位置</p>
+<p><strong>初始条件：</strong>f[0] = true，因为青蛙一开始就在石头0</p>
+<p><strong>计算顺序：</strong>f[0] f[2]…f[n-1]</p>
+<p>时间复杂度O(N^2),空间复杂度O(N)</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">skip</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">boolean</span><span class="token punctuation">[</span><span class="token punctuation">]</span> skip <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">boolean</span><span class="token punctuation">[</span>num<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        skip<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> skip<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            skip<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>skip<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> j <span class="token operator">+</span> num<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">>=</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    skip<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> skip<span class="token punctuation">[</span>num<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -626,7 +776,7 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/fengyanxing/2020/04/09/suan-fa-si-xiang-ji-lu/">https://github.com/fengyanxing/2020/04/09/suan-fa-si-xiang-ji-lu/</a>
+                    <a href="https://github.com/fengyanxing/2020/07/22/dong-tai-gui-hua/">https://github.com/fengyanxing/2020/07/22/dong-tai-gui-hua/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -835,28 +985,25 @@ dijestla算法思想：引入两个集合，closelist和openlist，闭集合用�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/10/jvm-xu-ni-ji-xue-xi/">
+                <a href="/2020/07/27/java-duo-xian-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="JVM虚拟机学习">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="java多线程(JUC)">
                         
-                        <span class="card-title">JVM虚拟机学习</span>
+                        <span class="card-title">java多线程(JUC)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于该学习笔记参考网上的jvm课程以及一些文章的讲解
-JVM结构：
-
-局部变量表存放了编译期可知的基本数据类型、对象引用和returnAddress类型，其所需的内存空间在编译期间完成分配，方法运行期间不会改变局部变量表的大小。
-除了程序计
+                            狂神的课程还是蛮好的B站视频 多线程的马士兵也很好，就是不开源，学费有点贵，公开课讲的也挺深入的。
+1.什么是JUCjava.util中关于并发的工具包。线程的三种方式：继承Thread类、实现Runnable、实现Callable接口，C
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-27
                         </span>
                         <span class="publish-author">
                             
@@ -873,8 +1020,8 @@ JVM结构：
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jvm/">
-                        <span class="chip bg-color">jvm</span>
+                    <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                        <span class="chip bg-color">多线程</span>
                     </a>
                     
                 </div>
@@ -888,34 +1035,35 @@ JVM结构：
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/07/java-cao-zuo-excel/">
+                <a href="/2020/07/19/elasticsearch-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="java操作excel">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="ElasticSearch(二)">
                         
-                        <span class="card-title">java操作excel</span>
+                        <span class="card-title">ElasticSearch(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java操作excel
-使用apache提供的工具POI操作Excel1.Maven的依赖
-        &lt;dependency>
-            &lt;groupId>org.apache.poi&lt;/groupId
+                            1. ES继承SpringBoot自学一门技术首先去官方文档找资料。
+ES客户端官网
+一般使用高级客户端的文档：7.6的文档传送门
+1.1 获取ESmaven依赖&lt;dependency>
+    &lt;groupId>org.ela
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    java基础
+                            <a href="/categories/java%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    java工具
                                 </a>
                             
                             
@@ -925,8 +1073,8 @@ JVM结构：
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/java%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">java工具</span>
                     </a>
                     
                 </div>
@@ -1114,7 +1262,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">139.7k</span>&nbsp;字
+                class="white-color">142.6k</span>&nbsp;字
             
             
             
