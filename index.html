@@ -611,41 +611,6 @@
                     
 
                     
-                        
-
-<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<div class="music-player">
-    
-    <div class="title center-align">
-        <i class="fas fa-music"></i>&nbsp;&nbsp;听听音乐
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s12">
-            <div id="aplayer" class="music"></div>
-        </div>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script>
-$(function () {
-    new APlayer({
-        container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
-        autoplay: 'false' === 'true',
-        theme: '#42b983',
-        loop: 'all',
-        order: 'list',
-        preload: 'auto',
-        volume: Number('0.7'),
-        listFolded: 'false' === 'true',
-        listMaxHeight: '',
-        audio: eval([{"name":"大鱼","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%91%A8%E6%B7%B1-%E5%A4%A7%E9%B1%BC.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"},{"name":"像鱼","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%83%8F%E9%B1%BC.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"},{"name":"化身孤岛的鲸","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%8C%96%E8%BA%AB%E5%AD%A4%E5%B2%9B%E7%9A%84%E9%B2%B8.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"}])
-    });
-});
-</script>
-                    
 
                     
 
@@ -664,12 +629,97 @@ $(function () {
     
 
     
+        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="">
+    
+    <div class="title center-align">
+        <i class="fas fa-music"></i>&nbsp;&nbsp;听听音乐
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'true' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'true' === 'true',
+        listMaxHeight: '',
+        audio: eval([{"name":"大鱼","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%91%A8%E6%B7%B1-%E5%A4%A7%E9%B1%BC.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"},{"name":"像鱼","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%83%8F%E9%B1%BC.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"},{"name":"化身孤岛的鲸","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%8C%96%E8%BA%AB%E5%AD%A4%E5%B2%9B%E7%9A%84%E9%B2%B8.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"}])
+    });
+});
+</script>
+    
 
     
 
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/09/09/shell-jiao-ben-fu-xi-bi-ji/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="复习shell编程">
+                            
+                            <span class="card-title">复习shell编程</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前言
+学习linux过程中，对shell简单的做过一定的连接与使用，但是没有对其进行深入的研究，最近将之前学习的基础知识进行巩固一下，以后自己想做一些关于大数据方向的工作，因此对于shell进行再次的学习，也将之前的知识进行梳理。
+
+she
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-09
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/linux/" class="post-category">
+                                    linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/shell%E7%BC%96%E7%A8%8B/">
+                            <span class="chip bg-color">shell编程</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -1236,55 +1286,6 @@ ES客户端官网
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/07/18/elasticsearch/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="ElasticSearch(一)">
-                            
-                            <span class="card-title">ElasticSearch(一)</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                ElasticSearch狂神说ElasticSearch
-大数据的时代发展
-ElasticSearch是基于Lucene的一个封装的，Lunece是一个用于文本搜索的函数库，其目标是为各种小型应用软件加入全文检索功能。(作者Doug  C
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/java%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    java工具
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/java%E5%B7%A5%E5%85%B7/">
-                            <span class="chip bg-color">java工具</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1328,7 +1329,7 @@ ElasticSearch是基于Lucene的一个封装的，Lunece是一个用于文本搜�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">147.5k</span>&nbsp;字
+                class="white-color">153.2k</span>&nbsp;字
             
             
             

@@ -472,41 +472,6 @@
                     
 
                     
-                        
-
-<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<div class="music-player">
-    
-    <div class="title center-align">
-        <i class="fas fa-music"></i>&nbsp;&nbsp;听听音乐
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s12">
-            <div id="aplayer" class="music"></div>
-        </div>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script>
-$(function () {
-    new APlayer({
-        container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
-        autoplay: 'false' === 'true',
-        theme: '#42b983',
-        loop: 'all',
-        order: 'list',
-        preload: 'auto',
-        volume: Number('0.7'),
-        listFolded: 'false' === 'true',
-        listMaxHeight: '',
-        audio: eval([{"name":"大鱼","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%91%A8%E6%B7%B1-%E5%A4%A7%E9%B1%BC.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"},{"name":"像鱼","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%83%8F%E9%B1%BC.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"},{"name":"化身孤岛的鲸","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%8C%96%E8%BA%AB%E5%AD%A4%E5%B2%9B%E7%9A%84%E9%B2%B8.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"}])
-    });
-});
-</script>
-                    
 
                     
 
@@ -531,6 +496,59 @@ $(function () {
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/04/26/tcp-xie-yi-ma-shi-bing-jiang-jie/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="互联网通信">
+                            
+                            <span class="card-title">互联网通信</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                互联网通信(后期自己对内容进行完善)
+1.分层（主要是为了解耦）
+exec 9 /dev/tcp/www.baidu.com/80
+#9表示文件描述符
+#：表示输入输出流
+#exec
+#/dev/tcp/www.baidu.com/80  
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    java基础
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                            <span class="chip bg-color">网络</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -842,6 +860,59 @@ JVM结构：
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2020/04/01/qian-ren-qian-mian-tui-jian-xi-tong/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="千人千面推荐系统">
+                            
+                            <span class="card-title">千人千面推荐系统</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                需求分析
+业务需求BRD(Bussiness Requirement Document)
+用户故事(User Story)
+产品PRD(Product Requirement Document)
+
+业务需求BRD
+业务目的：仿大众点评系统，
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/java%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                    java项目
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/java/">
+                            <span class="chip bg-color">java</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2020/03/30/mysql-zhi-shi-dian/">
                         <div class="card-image">
                             
@@ -1039,105 +1110,6 @@ Nosql数据库种类较多，但是都有一个特点是去点关系型数据库
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/03/25/neo4j-xue-xi-yu-dao-de-keng/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="neo4j学习">
-                            
-                            <span class="card-title">neo4j学习</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                neo4j下载与安装(windows环境下)neo4j官网
-注：官网下载neo4j相当的慢。
-国内下载地址
-1.neo4j简单介绍其是基于java语言编写的图形数据库。图是一组节点和连接这些节点的关系，图数据库也被称作图形数据库管理系统(G
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/neo4j/">
-                            <span class="chip bg-color">neo4j</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/03/14/gradle-gong-ju-de-shi-yong/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Gradle工具">
-                            
-                            <span class="card-title">Gradle工具</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                gradle是一个项目自动化构建开源工具，spring源码使用gradle构建的，因此进行学习一下
-Gradle工具的使用：安装Gradle：
-gradle的下载地址：https://services.gradle.org/distribu
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/java%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    java工具
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/java%E5%B7%A5%E5%85%B7/">
-                            <span class="chip bg-color">java工具</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1182,7 +1154,7 @@ gradle的下载地址：https://services.gradle.org/distribu
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">147.5k</span>&nbsp;字
+                class="white-color">153.2k</span>&nbsp;字
             
             
             

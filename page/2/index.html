@@ -472,41 +472,6 @@
                     
 
                     
-                        
-
-<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<div class="music-player">
-    
-    <div class="title center-align">
-        <i class="fas fa-music"></i>&nbsp;&nbsp;听听音乐
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s12">
-            <div id="aplayer" class="music"></div>
-        </div>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script>
-$(function () {
-    new APlayer({
-        container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
-        autoplay: 'false' === 'true',
-        theme: '#42b983',
-        loop: 'all',
-        order: 'list',
-        preload: 'auto',
-        volume: Number('0.7'),
-        listFolded: 'false' === 'true',
-        listMaxHeight: '',
-        audio: eval([{"name":"大鱼","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%91%A8%E6%B7%B1-%E5%A4%A7%E9%B1%BC.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"},{"name":"像鱼","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%83%8F%E9%B1%BC.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"},{"name":"化身孤岛的鲸","artist":"AnimeVibe","url":"https://gitee.com/fengyanxing/myImage/raw/master/mp3/%E5%8C%96%E8%BA%AB%E5%AD%A4%E5%B2%9B%E7%9A%84%E9%B2%B8.mp3","cover":"https://gitee.com/fengyanxing/myImage/raw/master/img/bigfish.jpg"}])
-    });
-});
-</script>
-                    
 
                     
 
@@ -531,6 +496,55 @@ $(function () {
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/07/18/elasticsearch/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="ElasticSearch(一)">
+                            
+                            <span class="card-title">ElasticSearch(一)</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                ElasticSearch狂神说ElasticSearch
+大数据的时代发展
+ElasticSearch是基于Lucene的一个封装的，Lunece是一个用于文本搜索的函数库，其目标是为各种小型应用软件加入全文检索功能。(作者Doug  C
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-18
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/java%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    java工具
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/java%E5%B7%A5%E5%85%B7/">
+                            <span class="chip bg-color">java工具</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -1087,57 +1101,6 @@ CREATE TABLE product_info (
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/05/19/mybatis-xue-xi-er/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Mybatis学习(二)">
-                            
-                            <span class="card-title">Mybatis学习(二)</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                接上次的mybatis学习
-日志
-
-Mybatis提供的日志支持
-可选的值有：SLF4J、LOG4J、LOG4J2、JDK_LOGGING、COMMONS_LOGGING、STDOUT_LOGGING、NO_LOGGING，或者是实现了 o
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/java%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    java深入学习
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Mybatis/">
-                            <span class="chip bg-color">Mybatis</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1182,7 +1145,7 @@ Mybatis提供的日志支持
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">147.5k</span>&nbsp;字
+                class="white-color">153.2k</span>&nbsp;字
             
             
             
