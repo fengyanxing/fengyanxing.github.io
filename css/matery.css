@@ -552,10 +552,10 @@ header .go-back i {
 .post-cover {
     height: 40vh !important;
 }
-
+/* 动态背景颜色设置 */
 .bg-cover:after {
-    -webkit-animation: rainbow 60s infinite;
-    animation: rainbow 60s infinite;
+    /*-webkit-animation: rainbow 60s infinite;
+    animation: rainbow 60s infinite;*/
 }
 
 .bg-cover:before,
@@ -568,6 +568,9 @@ header .go-back i {
     left: 0;
     top: 0;
     content: "";
+	/* 设置背景颜色以及透明度 */
+	background-color: #fa8072;
+    opacity: 30%;
 }
 
 .bg-cover .container {
