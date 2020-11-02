@@ -99,7 +99,7 @@ she">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>关于</span>
+      <span>个人信息</span>
     </a>
     
   </li>
@@ -253,7 +253,7 @@ she">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			关于
+			个人信息
 		</a>
           
         </li>
@@ -567,7 +567,7 @@ she">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-09-13
+                    2020-11-02
                 </div>
                 
 
@@ -622,7 +622,7 @@ bash helloshell.sh
 sh helloshell.sh
 ##方式三 相对路径执行，如果不能执行可能是因为权限问题，使用chmod修改文件权限
 ./helloshell.sh</code></pre>
-<p><img src="../../../blogimages/springcloud0515/linux20090901.png" alt="image-20200909152347169"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20090901.png" alt="编写shell文件并修改权限"></p>
 <h4 id="测试二"><a href="#测试二" class="headerlink" title="测试二"></a>测试二</h4><p>使用sh创建一个文本文件，并在文本文件中写入文字</p>
 <blockquote>
 <p>touch test.sh</p>
@@ -655,7 +655,7 @@ echo "lalala,I LOVE YOU" >> biaobai.txt</code></pre>
 <p>A=`ls -la`</p>
 <p>或者</p>
 <p>A=$(ls -la)</p>
-<p><img src="../../../blogimages/springcloud0515/linux20090902.png" alt="image-20200909161843573"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20090902.png" alt="查看变量的值"></p>
 </blockquote>
 <h5 id="3-linux设置环境变量"><a href="#3-linux设置环境变量" class="headerlink" title="3.linux设置环境变量"></a>3.linux设置环境变量</h5><blockquote>
 <p>1)export 变量名=值</p>
@@ -667,7 +667,7 @@ echo "lalala,I LOVE YOU" >> biaobai.txt</code></pre>
 <p>source /etc/profile</p>
 </blockquote>
 <p>自定义的环境信息</p>
-<p><img src="../../../blogimages/springcloud0515/linux20090903.png" alt="image-20200909162208019"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20090903.png" alt="修改配置"></p>
 <h3 id="位置参数变量"><a href="#位置参数变量" class="headerlink" title="位置参数变量"></a>位置参数变量</h3><p>1.执行脚本时，需要接收命令行传递的参数</p>
 <blockquote>
 <p> 例如：./test.sh 100 200</p>
@@ -681,7 +681,7 @@ echo "lalala,I LOVE YOU" >> biaobai.txt</code></pre>
 <p>$# 表示命令行中参数的个数</p>
 </blockquote>
 <p>3.应用实例</p>
-<p><img src="../../../blogimages/springcloud0515/linux20090904.png" alt="image-20200909171500057"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20090904.png" alt="接受参数的shell脚本"></p>
 <h3 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h3><p>1.说明</p>
 <blockquote>
 <p>提前定义好的变量，在shell中可以使用</p>
@@ -691,9 +691,9 @@ echo "lalala,I LOVE YOU" >> biaobai.txt</code></pre>
 <p> $$:当前进程的进程号PID<br> $!后台运行的最后一个进程的进程号<br> $?最后一次执行命令的返回状态，如果变量的值为0，上一个命令正确执行；如果变量值非0，证明上一个命令执行不正确</p>
 </blockquote>
 <p>3.应用实例</p>
-<p><img src="../../../blogimages/springcloud0515/linux20090905.png" alt="image-20200909172553472"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20090905.png" alt="执行脚本"></p>
 <p>结果：</p>
-<p><img src="../../../blogimages/springcloud0515/linux20090906.png" alt="image-20200909172626813"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20090906.png" alt="结果显示"></p>
 <h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>1.基本介绍</p>
 <blockquote>
 <p>将变量进行常见的运算操作，例如+-*/等</p>
@@ -710,13 +710,13 @@ echo "lalala,I LOVE YOU" >> biaobai.txt</code></pre>
 <p>计算(2+3)*4的值</p>
 </blockquote>
 <p>$((运算式))</p>
-<p><img src="../../../blogimages/springcloud0515/linux20090907.png" alt="image-20200909173530468"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20090907.png" alt="shell文件中计算"></p>
 <p>$[运算式]</p>
-<p><img src="../../../blogimages/springcloud0515/linux20090908.png" alt="image-20200909173710839"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20090908.png" alt="简单运行"></p>
 <p>expr</p>
-<p><img src="../../../blogimages/springcloud0515/linux20090909.png" alt="image-20200909173941792"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20090909.png" alt="中间变量表达式"></p>
 <p>计算两个传入的参数的和</p>
-<p><img src="../../../blogimages/springcloud0515/linux20090910.png" alt="image-20200909174811792"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20090910.png" alt="接受参数并计算"></p>
 <h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><blockquote>
 <p>[ condition ] <strong>注意</strong>：condition前后需要有空格，非空返回true，可用$?验证(&gt;0为true，&gt;1为false) </p>
 </blockquote>
@@ -856,7 +856,7 @@ esac</code></pre>
     <span class="token keyword">echo</span> <span class="token string">"您输入的数字为 <span class="token variable">$j</span>"</span>
 <span class="token keyword">done</span></code></pre>
 <p>输出结果：</p>
-<p><img src="../../../blogimages/springcloud0515/linux20091301.png" alt="image-20200913120255309"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/linux20091301.png" alt="打印输入的字符"></p>
 <p>2.计算1-100的和</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#！ /bin/bash</span>
 SUM<span class="token operator">=</span>0
@@ -1263,10 +1263,6 @@ Apache ShardingSphere是一个开源分布式数据库中间件解决方案，�
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1369,7 +1365,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
@@ -1398,6 +1394,50 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "1";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             
@@ -1518,6 +1558,54 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+	<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: blue;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="523251118"
+                   fixed='true'
+                   autoplay='false'
+                   theme='blue'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
 </body>
 

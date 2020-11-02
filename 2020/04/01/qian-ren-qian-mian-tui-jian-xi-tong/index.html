@@ -5,13 +5,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="千人千面推荐系统, it星的博客">
-    <meta name="description" content="需求分析
+    <meta name="description" content="需求分析(尚未完善)
+
 业务需求BRD(Bussiness Requirement Document)
 用户故事(User Story)
 产品PRD(Product Requirement Document)
 
 业务需求BRD
-业务目的：仿大众点评系统，">
+业务目的：仿">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -102,7 +103,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>关于</span>
+      <span>个人信息</span>
     </a>
     
   </li>
@@ -256,7 +257,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			关于
+			个人信息
 		</a>
           
         </li>
@@ -570,14 +571,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-04
+                    2020-11-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4,167
+                    4,171
                 </div>
                 
 
@@ -600,7 +601,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><blockquote>
+                <h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>(尚未完善)</p>
+<blockquote>
 <p>业务需求BRD(Bussiness Requirement Document)</p>
 <p>用户故事(User Story)</p>
 <p>产品PRD(Product Requirement Document)</p>
@@ -656,8 +658,8 @@
 <p>服务类型创建、服务类型查询浏览</p>
 <p>门店创建，门店搜索及筛选，门店推荐</p>
 </blockquote>
-<h4 id="ER模型图"><a href="#ER模型图" class="headerlink" title="ER模型图"></a>ER模型图</h4><p><img src="../../../blogimages/springcloud0515/ermodel20040101.png" alt="image-20200915100306788"></p>
-<h4 id="系统架构设计"><a href="#系统架构设计" class="headerlink" title="系统架构设计"></a>系统架构设计</h4><p><img src="../../../blogimages/springcloud0515/system20040102.png" alt="image-20200915102404153"></p>
+<h4 id="ER模型图"><a href="#ER模型图" class="headerlink" title="ER模型图"></a>ER模型图</h4><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/ermodel20040101.png" alt="用例设计"></p>
+<h4 id="系统架构设计"><a href="#系统架构设计" class="headerlink" title="系统架构设计"></a>系统架构设计</h4><p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/system20040102.png" alt="系统架构设计"></p>
 <h4 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h4><blockquote>
 <p>后端业务：Java(jdk1.8)，SpringBoot框架</p>
 <p>后端存储：mysql数据库(5.6)，mybatis接入</p>
@@ -1012,9 +1014,9 @@ PUT /movie
 <p>将数据导入操作，性github上下载导入数据的项目，能够通过使用开源的项目将csv文件导入到ES中。<a href="https://github.com/wenjunnie/csvimportes">github项目下载地址</a></p>
 <p>项目中需要更改的是：</p>
 <p>1.ESConfig类中的相关ES的信息</p>
-<p><img src="../../../blogimages/0701/es20050101.png" alt="image-20200923092425101"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/es20050101.png" alt="image-20200923092425101"></p>
 <p>2.修改自己的csv文件的地址(个人使用的绝对地址)</p>
-<p><img src="../../../blogimages/0701/es20050102.png" alt="image-20200923092635725"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/es20050102.png" alt="将数据导入ES"></p>
 <p>直接访问localhost:8080/es/importdata ，将数据导入到ES中。tmdb数据导入后，学习高级的查询操作</p>
 <h4 id="掌握Query-DSL-domain-Specific-Language"><a href="#掌握Query-DSL-domain-Specific-Language" class="headerlink" title="掌握Query DSL(domain Specific Language)"></a>掌握Query DSL(domain Specific Language)</h4><p>ES中的_score表示文档与搜索字符串的关系紧密程度，计算使用的是TF/IDF，TF表示词频，是一个字符在在document字段中出现的次数；IDF为逆文档频率，代表basketball这样的一个分词在整个文档中出现的频率的倒数；TFNorm（token frequency nomalized）：词频归一化。</p>
 <p>BM25算法：解决词频问题</p>
@@ -1248,9 +1250,9 @@ PUT /shop
 <p>ELK:ElasticSearch、Kibana、logstash</p>
 </blockquote>
 <p>自定义mysql与logstash的配置文件</p>
-<p><img src="../../../blogimages/0701/es20050103.png" alt="image-20200923162201620"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/es20050103.png" alt="logstash相关文件"></p>
 <p>在bin文件中创建自己的mysql文件夹以及mysql的数据配置</p>
-<p><img src="../../../blogimages/0701/es20050104.png" alt="image-20200923162347091"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/es20050104.png" alt="添加mysql相关配置"></p>
 <pre class=" language-conf"><code class="language-conf">input{
     jdbc{
         #mysql数据库连接，commentdb为数据库名
@@ -1356,7 +1358,7 @@ output{
 <span class="token operator">or</span> <span class="token number">b</span><span class="token punctuation">.</span>update_at <span class="token operator">></span> :sql_last_value
 <span class="token operator">or</span> <span class="token number">c</span><span class="token punctuation">.</span>update_at <span class="token operator">></span> :sql_last_value </code></pre>
 <p>启动出现错误，文件不能读取</p>
-<p><img src="../../../blogimages/0701/es20050201.png" alt="image-20201003092640148"></p>
+<p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/es20050201.png" alt="image-20201003092640148"></p>
 <p>该错误是将mysql的连接工具的版本写错，修改与文件夹下的连接jar包一致的版本</p>
 <p>简单的查询测试，在ES中的索引名为shop</p>
 <pre class=" language-script"><code class="language-script">//根据距离进行排序
@@ -1636,6 +1638,12 @@ GET /shop/_search
                         
                         <span class="card-title">java操作excel</span>
                     </div>
+
+					<div class="text-color" align=center style="font-size:large">
+						
+						<i class="far fa-square"></i> it星
+						
+					</div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
@@ -1789,10 +1797,6 @@ Mysql常见的问题索引相当于一个字典，存放一个文件及在文件
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1895,7 +1899,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
@@ -1924,6 +1928,50 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "1";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             
@@ -2044,6 +2092,54 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+	<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: blue;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="523251118"
+                   fixed='true'
+                   autoplay='false'
+                   theme='blue'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
 </body>
 

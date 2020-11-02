@@ -34,7 +34,7 @@
 }
 
 body {
-    background-color: #eaeaea;
+    background-color: #BBDEFB;
     margin: 0;
     color: #34495e;
 }
@@ -105,7 +105,7 @@ blockquote {
 .line-numbers {
     padding: 1.5rem 1.5rem 1.5rem 3.5rem !important;
     margin: 1rem 0 !important;
-    background: #272822;
+    background: #2196f3;
     overflow: auto;
     border-radius: 0.35rem;
     tab-size: 4;
@@ -114,7 +114,7 @@ blockquote {
 pre {
     padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
     margin: 1rem 0 !important;
-    background: #272822;
+    background: #2196f3;
     overflow: auto;
     border-radius: 0.35rem;
     tab-size: 4;
@@ -248,7 +248,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #2196F3 0%, #0f9d58 100%);
 }
 
 .text-color {
