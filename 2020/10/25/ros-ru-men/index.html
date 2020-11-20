@@ -5,8 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Ros仿真系统, 骨子里有风">
-    <meta name="description" content="Ros的安装
-Ubuntu安装地址
+    <meta name="description" content="Ros的安装Ubuntu安装地址
 
 本次环境：Ubuntu16.04+ROS Kinetic版本
 
@@ -16,7 +15,7 @@ Ubuntu安装地址
 
 安装成功后，下载编译工具：
 
-sudo wget https://github.com/Ton">
+sudo wget https://github.com/Tony">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -575,21 +574,21 @@ sudo wget https://github.com/Ton">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-02
+                    2020-11-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    381
+                    564
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -605,8 +604,7 @@ sudo wget https://github.com/Ton">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Ros的安装</p>
-<p><a href="http://wiki.ros.org/kinetic/Installation/Ubuntu" target="_blank" rel="noopener">Ubuntu安装地址</a></p>
+                <h3 id="Ros的安装"><a href="#Ros的安装" class="headerlink" title="Ros的安装"></a>Ros的安装</h3><p><a href="http://wiki.ros.org/kinetic/Installation/Ubuntu" target="_blank" rel="noopener">Ubuntu安装地址</a></p>
 <blockquote>
 <p>本次环境：Ubuntu16.04+ROS Kinetic版本</p>
 </blockquote>
@@ -675,8 +673,7 @@ sudo wget https://github.com/Ton">
 </blockquote>
 <p>ros中的launch标签及说明</p>
 <p><img src="https://gitee.com/fengyanxing/myImage/raw/master/img/ros20102501.png" alt="常用配置"></p>
-<p>安装idea</p>
-<p>下载robware</p>
+<h3 id="ubuntu安装编译器"><a href="#ubuntu安装编译器" class="headerlink" title="ubuntu安装编译器"></a>ubuntu安装编译器</h3><p>下载robware</p>
 <p>百度云下载链接</p>
 <blockquote>
 <p>链接：<a href="https://pan.baidu.com/s/1G7LqCFXK7cL9DmnqLDiMUg" target="_blank" rel="noopener">https://pan.baidu.com/s/1G7LqCFXK7cL9DmnqLDiMUg</a><br>提取码：ee6e </p>
@@ -691,6 +688,36 @@ sudo wget https://github.com/Ton">
 <blockquote>
 <p>sudo dpkg -i ubuntu_roboware-studio_1.2.0-1524709819_amd64.deb </p>
 </blockquote>
+<h3 id="ROSPlan仿真环境搭建"><a href="#ROSPlan仿真环境搭建" class="headerlink" title="ROSPlan仿真环境搭建"></a>ROSPlan仿真环境搭建</h3><p>1.安装依赖</p>
+<pre class=" language-bash"><code class="language-bash"> <span class="token function">sudo</span> apt <span class="token function">install</span> flex bison freeglut3-dev libbdd-dev python-catkin-tools ros-<span class="token variable">$ROS_DISTRO</span>-tf2-bullet</code></pre>
+<p>2.安装ROSPlan功能包</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> ~/catkin_ws/src <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> clone https://github.com/KCL-Planning/rosplan
+<span class="token function">cd</span> ~/catkin_ws <span class="token operator">&amp;&amp;</span> catkin_make</code></pre>
+<p>3.安装turtlebot3 gazebo simulator仿真</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> ros-<span class="token variable">${ROS_DISTRO}</span>-turtlebot3-gazebo ros-<span class="token variable">${ROS_DISTRO}</span>-turtlebot3-navigation ros-<span class="token variable">${ROS_DISTRO}</span>-move-base-msgs</code></pre>
+<p>4.安装依赖以及demo程序</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> ~/catkin_ws/src
+<span class="token function">git</span> clone https://github.com/clearpathrobotics/occupancy_grid_utils
+<span class="token function">git</span> clone https://github.com/KCL-Planning/rosplan_demos.git
+<span class="token function">cd</span> ~/catkin_ws <span class="token operator">&amp;&amp;</span> catkin_make</code></pre>
+<p>5.启动仿真，rviz可视化，ROSPlan节点</p>
+<pre class=" language-bash"><code class="language-bash"> roslaunch rosplan_turtlebot3_demo turtlebot.launch</code></pre>
+<p>出错记录：</p>
+<p><img src="../../../blogimages/ros/ros20110401.png" alt="image-20201104101315196"></p>
+<p>查看环境变量</p>
+<blockquote>
+<p>cd</p>
+<p>gedit ~/.bashrc</p>
+</blockquote>
+<p>解决办法：</p>
+<p><a href="https://blog.csdn.net/qq_42145185/article/details/81003419" target="_blank" rel="noopener">参考博客</a></p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">export</span> TURTLEBOT3_MODEL<span class="token operator">=</span>burger
+$ roslaunch rosplan_turtlebot3_demo turtlebot.launch</code></pre>
+<p>6.调用生成的规划进行探索</p>
+<pre class=" language-bash"><code class="language-bash">rosrun rosplan_turtlebot3_demo turtlebot_explore.bash</code></pre>
+<p>7.自定义导航点</p>
+<pre class=" language-bash"><code class="language-bash">rosed rosplan_turtlebot3_demo waypoints.yaml
+rosrun rosplan_turtlebot3_demo turtlebot_explore_wp_from_file.bash</code></pre>
 
             </div>
             <hr/>
@@ -938,8 +965,7 @@ sudo wget https://github.com/Ton">
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ros的安装
-Ubuntu安装地址
+                            Ros的安装Ubuntu安装地址
 
 本次环境：Ubuntu16.04+ROS Kinetic版本
 
@@ -949,7 +975,7 @@ Ubuntu安装地址
 
 安装成功后，下载编译工具：
 
-sudo wget https://github.com/Ton
+sudo wget https://github.com/Tony
                         
                     </div>
                     <div class="publish-info">
@@ -987,29 +1013,28 @@ sudo wget https://github.com/Ton
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/01/zu-sai-dui-lie/">
+                <a href="/2020/10/04/gui-bian-cheng-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="阻塞队列">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="GUI编程2">
                         
-                        <span class="card-title">阻塞队列</span>
+                        <span class="card-title">GUI编程2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.阻塞队列
-队列是一个数据结构，阻塞队列就是线程从一端添加数据，从一端拿取数据。当阻塞队列时空时，从队列中获取元素的操作将会被阻塞；当阻塞队列是满时，往队列里添加元素的操作将会被阻塞。
+                            GUI简单介绍java.awt:Abstract Window ToolKit(抽象窗口工具包)，需要调用本地系统方法实现功能
+javax.swing：在AWT基础上建立的一套工具包，移植性更强
+GUI体系结构图
 
-为什么需要阻塞队列？
-
-线程之间的通信一般使用的是
+Container:容器
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-04
                             </span>
                         <span class="publish-author">
                             
@@ -1026,8 +1051,8 @@ sudo wget https://github.com/Ton
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/java%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">java基础</span>
                     </a>
                     
                 </div>
@@ -1210,7 +1235,7 @@ sudo wget https://github.com/Ton
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">156.5k</span>&nbsp;字
+                class="white-color">157.6k</span>&nbsp;字
             
             
             
